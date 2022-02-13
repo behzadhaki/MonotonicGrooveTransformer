@@ -59,7 +59,6 @@ class OscReceiver(threading.Thread):
             # uncomment the sleep(1) line to see the impact of processing time
             self.server.handle_request()
             count = (count+1)                           # Increase counter
-            print("count {}".format(count))             # Print current count, i.e. total number of messages received
             #time.sleep(1)
 
     def default_handler(self, address, *args):
@@ -82,28 +81,74 @@ class OscReceiver(threading.Thread):
 
 
 if __name__ == '__main__':
-
     # used to quit osc_receiver
     quit_event = threading.Event()
 
-    # define the dedicated handler for a specific message
-    def clock_message_handler(address, *args):
-        # handler for messages starting with /clock
-        print("Clock Received")
-        print("address: ", address)
-        print("args: ", args)
+    ##################################################################
+    ##################################################################
+    ########### OSC MESSAGE HANDLERS #################################
+    ##################################################################
+    ##################################################################
+    #  Values received from sliders or numboxes will be stored/updated
+    #       in the dedicated lists: slider_values and num_box_values
+    #       if you need more than 10 sliders, increase the length of
+    #       the default lists in lines 101-102
+    #
+    #  The methods slider_message_handler and num_box_message_handler
+    #       are in charge of updating the slider_values and num_box_values
+    #       lists using the corresponding received osc messages
 
-    address_list = ["/clock*"]
-    address_handler_list = [clock_message_handler]
+    n_sliders = 10
+    n_num_boxes = 10
+    quitFlag = False
 
-    osc_receiver_from_pd = OscReceiver(ip="127.0.0.1", receive_from_port=1415, quit_event=quit_event,
-                                       address_list=address_list, address_handler_list=address_handler_list)
+    # Lists for storing slider and nbox values
+    slider_values = [0 for _ in range(n_sliders)]
+    num_box_values = [0 for _ in range(n_num_boxes)]
+    quitFlag = [quitFlag]
 
-    osc_receiver_from_pd.start()
-    print("here")
+    # connection parameters
+    ip = "127.0.0.1"
+    receiving_from_port = 1415
 
-    # Wait for 60 seconds then quit the receiver
-    time.sleep(60)
+    # dispatcher is used to assign a callback to a received osc message
+    # in other words the dispatcher routes the osc message to the right action using the address provided
+    dispatcher = Dispatcher()
 
-    # Note: after setting the quit_event, at least one message should be received for quitting to happen
-    quit_event.set()
+    # define the handler for messages starting with /slider/[slider_id]
+    def slider_message_handler(address, *args):
+        slider_id = address.split("/")[-1]
+        slider_values[int(float(slider_id))] = args[0]
+
+    # define handler for messages starting with /nbox/[nbox_id]
+    def num_box_message_handler(address, *args):
+        nbox_id = address.split("/")[-1]
+        num_box_values[int(float(nbox_id))] = args[0]
+
+    def quit_message_handler(address, *args):
+        quitFlag[0] = True
+        print("QUITTING!")
+
+    # pass the handlers to the dispatcher
+    dispatcher.map("/slider*", slider_message_handler)
+    dispatcher.map("/nbox*", num_box_message_handler)
+    dispatcher.map("/quit*", quit_message_handler)
+
+
+    # you can have a default_handler for messages that don't have dedicated handlers
+    def default_handler(address, *args):
+        print(f"No action taken for message {address}: {args}")
+    dispatcher.set_default_handler(default_handler)
+
+    # python-osc method for establishing the UDP communication with pd
+    server = BlockingOSCUDPServer((ip, receiving_from_port), dispatcher)
+
+    ##################################################################
+    ##################################################################
+    ########### MAIN CODE HERE #######################################
+    ##################################################################
+    ##################################################################
+
+    while (quitFlag[0] is False):
+        server.handle_request()
+        print("sliders: ", slider_values, "nbox: ", num_box_values)
