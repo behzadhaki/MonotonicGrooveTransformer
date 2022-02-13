@@ -60,17 +60,18 @@ class NoteGenerator:
         self.vel_range = vel_range
         self.dur_range = dur_range
 
-    def generate(self, n_examples=1):
+    def generate(self, n_notes=1):
 
-        message_parameters = ["/note/velocity", "/note/duration", "/note/pitch"]
+        message_parameters = ["/note/pitch", "/note/velocity", "/note/duration"]
         message_values = []
 
-        for ix in range(n_examples):
+        for ix in range(n_notes):
+            # (*self.vel_range) is equivalent to (self.vel_range[0], self.vel_range[1])
             velocity = int(random.randrange(*self.vel_range))
             duration=int(random.randrange(*self.dur_range))
             pitch = int(random.randrange(*self.pitch_range))
 
-            message_values.append([velocity, duration, pitch])
+            message_values.append([pitch, velocity, duration])
 
         return message_parameters, message_values
 
@@ -85,14 +86,19 @@ if __name__ == '__main__':
     note_generator = NoteGenerator(min_pitch=48, pitch_semitone_range=24,
                                    vel_range=(20, 90), dur_range=(110, 2000))
 
-    # Generate the notes
-    number_of_note_to_gen = 32
-    message_parameters, message_values = note_generator.generate(n_examples=number_of_note_to_gen)
+    # Generate notes using the generate() method in note_generator class
+    number_of_note_to_gen = 12
+    message_parameters, message_values = note_generator.generate(n_notes=number_of_note_to_gen)
 
-    # Let's send some random notes to pd
-
+    # Send generated notes to pd
     for ix, vals in enumerate(message_values):
 
+        print(f"\n Playing Note {ix} | {message_parameters[0]} = {message_values[ix][0]} | {message_parameters[1]} = {message_values[ix][1]} | {message_parameters[2]} = {message_values[ix][2]} |")
+
+        #Send the note[
         py_to_pd.send_to_pd(message_parameters, vals)
 
-        time.sleep(random.randrange(1, 10)/30)
+        # wait for a random period of 0.5 to 2 second before playing back the next note
+        wait_time_before_next_note = random.randrange(1, 100)/30 # this is basically IOI (inter-onset interval)
+        print("\t\t\t Wait for {:.2f} seconds".format(wait_time_before_next_note))
+        time.sleep(wait_time_before_next_note)

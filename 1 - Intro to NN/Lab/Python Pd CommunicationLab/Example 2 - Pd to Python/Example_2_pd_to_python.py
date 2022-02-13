@@ -103,7 +103,7 @@ if __name__ == '__main__':
     print("here")
 
     # Wait for 60 seconds then quit the receiver
-    time.sleep(1000)
+    time.sleep(60)
 
     # Note: after setting the quit_event, at least one message should be received for quitting to happen
     quit_event.set()
