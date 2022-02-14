@@ -9,7 +9,7 @@ from pythonosc.dispatcher import Dispatcher
 
 class OscReceiver(threading.Thread):
 
-    def __init__(self, ip, receive_from_port, quit_event, address_list=["/clock*"], address_handler_list=[None]):
+    def __init__(self, ip, receive_from_port, quit_event, address_list, address_handler_list):
         """
         Constructor for OscReceiver CLASS
 
@@ -31,12 +31,14 @@ class OscReceiver(threading.Thread):
         # dispatcher is used to assign a callback to a received osc message
         self.dispatcher = Dispatcher()
 
+        # default handler
+        def default_handler(address, *args):
+            print(f"No action taken for message {address}: {args}")
+        self.dispatcher.set_default_handler(default_handler)
+
         # assign each handler to it's corresponding message
         for ix, address in enumerate(address_list):
             self.dispatcher.map(address, address_handler_list[ix])
-
-        # you can have a default_handler for messages that don't have dedicated handlers
-        self.dispatcher.set_default_handler(self.default_handler)
 
         # python-osc method for establishing the UDP communication with pd
         self.server = BlockingOSCUDPServer((self.ip, self.receiving_from_port), self.dispatcher)
@@ -60,10 +62,6 @@ class OscReceiver(threading.Thread):
             self.server.handle_request()
             count = (count+1)                           # Increase counter
             #time.sleep(1)
-
-    def default_handler(self, address, *args):
-        # handler for osc messages with no specific defined decoder/handler
-        print(f"DEFAULT {address}: {args}")
 
     def get_ip(self):
         return self.ip
@@ -92,7 +90,7 @@ if __name__ == '__main__':
     #  Values received from sliders or numboxes will be stored/updated
     #       in the dedicated lists: slider_values and num_box_values
     #       if you need more than 10 sliders, increase the length of
-    #       the default lists in lines 101-102
+    #       the default lists in lines 96-98
     #
     #  The methods slider_message_handler and num_box_message_handler
     #       are in charge of updating the slider_values and num_box_values
@@ -129,19 +127,14 @@ if __name__ == '__main__':
         quitFlag[0] = True
         print("QUITTING!")
 
-    # pass the handlers to the dispatcher
-    dispatcher.map("/slider*", slider_message_handler)
-    dispatcher.map("/nbox*", num_box_message_handler)
-    dispatcher.map("/quit*", quit_message_handler)
+    # Creat an OscReceiver instance using the above params and handlers
+    address_list = ["/slider*", "/nbox*", "/quit*"]
+    address_handler_list = [slider_message_handler, num_box_message_handler, quit_message_handler]
 
+    osc_receiver_from_pd = OscReceiver(ip="127.0.0.1", receive_from_port=1415, quit_event=quit_event,
+                                       address_list=address_list, address_handler_list=address_handler_list)
 
-    # you can have a default_handler for messages that don't have dedicated handlers
-    def default_handler(address, *args):
-        print(f"No action taken for message {address}: {args}")
-    dispatcher.set_default_handler(default_handler)
-
-    # python-osc method for establishing the UDP communication with pd
-    server = BlockingOSCUDPServer((ip, receiving_from_port), dispatcher)
+    osc_receiver_from_pd.start()
 
     ##################################################################
     ##################################################################
@@ -150,5 +143,8 @@ if __name__ == '__main__':
     ##################################################################
 
     while (quitFlag[0] is False):
-        server.handle_request()
+        time.sleep(1)
         print("sliders: ", slider_values, "nbox: ", num_box_values)
+
+    # Note: after setting the quit_event, at least one message should be received for quitting to happen
+    quit_event.set()
