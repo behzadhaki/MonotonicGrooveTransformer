@@ -41,9 +41,9 @@ if __name__ == '__main__':
         message_parameters = ["/note/pitch", "/note/velocity", "/note/duration"]
         print(f"Sending OSC | /note/pitch/{pitch} | /note/velocity/{velocity} | /note/duration/{duration}")
 
-        py_to_pd_OscSender.send_message("/note/pitch", pitch)
         py_to_pd_OscSender.send_message("/note/velocity", velocity)
         py_to_pd_OscSender.send_message("/note/duration", duration)
+        py_to_pd_OscSender.send_message("/note/pitch", pitch)
 
         # wait for a random period of 0.5 to 2 second before playing back the next note
         print("\t\t\t Wait for {:.2f} seconds".format(rhythm_timings[ix % len(rhythm_timings)]))

@@ -1,15 +1,11 @@
 import time
 
-import threading
-
 #!pip install python-osc
 from pythonosc.osc_server import BlockingOSCUDPServer
 from pythonosc.dispatcher import Dispatcher
 
 if __name__ == '__main__':
     # used to quit osc_receiver
-    quit_event = threading.Event()
-
     ##################################################################
     ##################################################################
     ########### OSC MESSAGE HANDLERS #################################
