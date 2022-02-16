@@ -1,15 +1,15 @@
 #N canvas 44 62 1396 768 12;
 #X obj 88 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 2900 1;
+10 -262144 -1 -1 10600 1;
 #X text 15 245 velocity;
 #X text 19 318 uTiming;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array groove 192 float 1;
-#A 0 29 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#A 0 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 97 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100
+0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 108
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 27 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 127 192 0 317 140 1 0 0;
 #X restore 75 371 graph;
@@ -113,11 +113,11 @@
 #X obj 158 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 206 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 9700 1;
+10 -262144 -1 -1 400 1;
 #X obj 198 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 246 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 10000 1;
+10 -262144 -1 -1 10800 1;
 #X obj 238 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 286 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
@@ -125,7 +125,7 @@
 #X obj 278 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 326 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 2700 1;
+10 -262144 -1 -1 1900 1;
 #X obj 318 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #N canvas 669 246 450 300 s3 0;
@@ -371,7 +371,7 @@
 #X obj 365 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 357 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 1200 1;
+0 4 -262144 -1 -1 0 1;
 #N canvas 669 246 450 300 s8 0;
 #X obj 56 32 inlet;
 #X msg 278 67 bang;
@@ -421,7 +421,7 @@
 #X connect 20 0 19 0;
 #X restore 353 337 pd s8;
 #X obj 77 534 hsl 314 15 0 192 0 0 empty playback_pos empty -2 -8 0
-10 -228856 -1 -1 8314 1;
+10 -228856 -1 -1 12716 1;
 #X obj 74 549 tabread groove;
 #X floatatom 74 586 5 0 0 0 - - -;
 #X obj 74 567 moses 1;
@@ -434,13 +434,13 @@
 #X msg 196 653 connect 127.0.0.1 1415;
 #X obj 196 629 loadbang;
 #X obj 158 705 netsend -u -b;
-#X obj 813 416 cnv 15 300 120 empty empty TEMPO_(QPM) 20 12 0 14 -228856
+#X obj 625 16 cnv 15 300 120 empty empty TEMPO_(QPM) 20 12 0 14 -228856
 -4160 0;
-#X obj 978 435 tgl 30 0 empty empty empty 17 7 0 30 -262144 -1 -1 0
+#X obj 790 35 tgl 30 0 empty empty empty 17 7 0 30 -262144 -1 -1 0
 1;
-#X floatatom 890 490 5 0 0 0 - - -;
-#X text 1012 440 Run;
-#X floatatom 890 448 5 0 0 0 - bpm_init -;
+#X floatatom 702 90 5 0 0 0 - - -;
+#X text 824 40 Run;
+#X floatatom 702 48 5 0 0 0 - bpm_init -;
 #N canvas 245 23 1195 807 clock 0;
 #X obj 581 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -491,9 +491,9 @@
 #X connect 23 0 16 1;
 #X connect 24 0 13 0;
 #X connect 24 1 23 0;
-#X restore 890 468 pd clock;
+#X restore 702 68 pd clock;
 #X f 13;
-#X obj 890 511 s playback_pos;
+#X obj 702 111 s playback_pos;
 #X text 23 11 2 quarter notes - ppq resolution 96 16th note grid;
 #N canvas 449 181 991 650 init 0;
 #X obj 41 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
