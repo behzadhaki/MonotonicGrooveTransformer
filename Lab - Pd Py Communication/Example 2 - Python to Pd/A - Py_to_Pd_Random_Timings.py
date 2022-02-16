@@ -32,6 +32,6 @@ if __name__ == '__main__':
         py_to_pd_OscSender.send_message("/note/pitch", pitch)
 
         # wait for a random period of 0.5 to 2 second before playing back the next note
-        wait_time_before_next_note = random.randrange(1, 10)/30    # this is basically IOI (inter-onset interval)
+        wait_time_before_next_note = random.randrange(1, 100)/30    # this is basically IOI (inter-onset interval)
         print("\t\t\t Wait for {:.2f} seconds".format(wait_time_before_next_note))
         time.sleep(wait_time_before_next_note)

@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
     # Specify and generate rhythm
     total_duration_sec = 4
-    rhythm_ioi_ratios = [1, 3, 2, 2, 0.5, 1.5, 1, 1] # [1, 1, 1, 1]
+    rhythm_ioi_ratios = [1, 1, 1, 1, 3, 2] #[1, 3, 2, 2, 0.5, 1.5, 1, 1]  # [1, 1, 1, 1]
     rhythm_timings = generate_rhythm_timings(total_duration_sec, rhythm_ioi_ratios)
 
     # Start generating each note with associated timing
