@@ -1,25 +1,24 @@
 #N canvas 44 62 1396 768 12;
 #X obj 88 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 9000 1;
+10 -262144 -1 -1 2900 1;
 #X text 15 245 velocity;
 #X text 19 318 uTiming;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array groove 192 float 1;
-#A 0 0 0 0 0 0 90 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#A 0 29 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 16.3286 0 0 0 0 0 48.0786 0 0 0 0 0 0 0 0 0 17.2357 0 0 0
-0 0 0 0 0 0 92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12.7 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 19.9571 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 47 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0;
+0 0 0 0 0 0 0 97 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 100
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 27 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 127 192 0 317 140 1 0 0;
 #X restore 75 371 graph;
 #X obj 80 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 700 1;
+0 4 -262144 -1 -1 0 1;
 #X obj 126 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 118 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 1000 1;
+0 4 -262144 -1 -1 0 1;
 #N canvas 669 246 450 300 s2 0;
 #X obj 56 32 inlet;
 #X msg 278 67 bang;
@@ -112,13 +111,13 @@
 #X obj 166 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
 10 -262144 -1 -1 0 1;
 #X obj 158 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 1900 1;
+0 4 -262144 -1 -1 0 1;
 #X obj 206 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 9700 1;
 #X obj 198 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 500 1;
+0 4 -262144 -1 -1 0 1;
 #X obj 246 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 9200 1;
+10 -262144 -1 -1 10000 1;
 #X obj 238 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 286 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
@@ -126,7 +125,7 @@
 #X obj 278 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 326 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 0 1;
+10 -262144 -1 -1 2700 1;
 #X obj 318 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #N canvas 669 246 450 300 s3 0;
@@ -370,9 +369,9 @@
 #X connect 20 0 19 0;
 #X restore 314 337 pd s7;
 #X obj 365 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 4700 1;
+10 -262144 -1 -1 0 1;
 #X obj 357 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 0 1;
+0 4 -262144 -1 -1 1200 1;
 #N canvas 669 246 450 300 s8 0;
 #X obj 56 32 inlet;
 #X msg 278 67 bang;
@@ -422,7 +421,7 @@
 #X connect 20 0 19 0;
 #X restore 353 337 pd s8;
 #X obj 77 534 hsl 314 15 0 192 0 0 empty playback_pos empty -2 -8 0
-10 -228856 -1 -1 13857 1;
+10 -228856 -1 -1 8314 1;
 #X obj 74 549 tabread groove;
 #X floatatom 74 586 5 0 0 0 - - -;
 #X obj 74 567 moses 1;
@@ -435,15 +434,15 @@
 #X msg 196 653 connect 127.0.0.1 1415;
 #X obj 196 629 loadbang;
 #X obj 158 705 netsend -u -b;
-#X obj 82 45 cnv 15 300 120 empty empty TEMPO_(QPM) 20 12 0 14 -228856
+#X obj 813 416 cnv 15 300 120 empty empty TEMPO_(QPM) 20 12 0 14 -228856
 -4160 0;
-#X obj 247 64 tgl 30 0 empty empty empty 17 7 0 30 -262144 -1 -1 1
+#X obj 978 435 tgl 30 0 empty empty empty 17 7 0 30 -262144 -1 -1 0
 1;
-#X floatatom 159 119 5 0 0 0 - - -;
-#X text 281 69 Run;
-#X floatatom 159 77 5 0 0 0 - bpm_init -;
-#N canvas 298 23 1195 807 clock 0;
-#X obj 581 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X floatatom 890 490 5 0 0 0 - - -;
+#X text 1012 440 Run;
+#X floatatom 890 448 5 0 0 0 - bpm_init -;
+#N canvas 245 23 1195 807 clock 0;
+#X obj 581 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 465 96 5 0 0 0 - - -;
 #X floatatom 458 215 5 0 0 0 - - -;
@@ -492,10 +491,10 @@
 #X connect 23 0 16 1;
 #X connect 24 0 13 0;
 #X connect 24 1 23 0;
-#X restore 159 97 pd clock;
+#X restore 890 468 pd clock;
 #X f 13;
-#X obj 159 140 s playback_pos;
-#X text 18 8 2 quarter notes - ppq resolution 96 16th note grid;
+#X obj 890 511 s playback_pos;
+#X text 23 11 2 quarter notes - ppq resolution 96 16th note grid;
 #N canvas 449 181 991 650 init 0;
 #X obj 41 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -506,7 +505,7 @@
 \; vel_init_val 0 \; enable_init 1 \; pd dsp 1 \;;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X restore 464 12 pd init;
+#X restore 469 15 pd init;
 #N canvas 511 155 901 619 gamelan_synth 0;
 #X obj -61 126 hip~ 3;
 #X obj -61 148 clip~ -1 1;
@@ -1346,7 +1345,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X coords 0 619 1 618 350 270 0;
 #X restore 462 507 pd gamelan_synth;
 #X obj 570 481 tgl 15 0 empty enable_init empty 17 7 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #N canvas 351 86 712 506 spectrolog 0;
 #N canvas 556 61 872 789 FFT_Analyse 0;
 #X obj 101 102 inlet~;
@@ -2514,7 +2513,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 130 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 175 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 4600 1;
+-262144 -1 -1 7700 1;
 #X obj 130 397 i;
 #X floatatom 175 384 5 0 0 0 - - -;
 #X obj 130 232 t b f;
@@ -2551,7 +2550,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 430 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 475 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 8900 1;
+-262144 -1 -1 11900 1;
 #X obj 430 397 i;
 #X floatatom 475 384 5 0 0 0 - - -;
 #X obj 430 232 t b f;
@@ -2587,7 +2586,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 730 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 775 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 4708 1;
+-262144 -1 -1 1400 1;
 #X obj 730 397 i;
 #X floatatom 775 384 5 0 0 0 - - -;
 #X obj 730 232 t b f;
@@ -2622,7 +2621,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 1030 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1075 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 1533 1;
+-262144 -1 -1 11500 1;
 #X obj 1030 397 i;
 #X floatatom 1075 384 5 0 0 0 - - -;
 #X obj 1030 232 t b f;
@@ -2963,13 +2962,13 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 1287 566 i;
 #X obj 1332 566 i;
 #X obj 1370 417 vsl 16 127 1 127 0 1 empty empty CLOSED 0 -9 0 10 -257985
--1 -1 4600 1;
+-1 -1 400 1;
 #X obj 1370 552 nbx 3 16 1 127 0 1 empty empty empty 0 -8 0 10 -257985
--1 -1 47 256;
+-1 -1 5 256;
 #X obj 1420 417 vsl 16 127 1 127 0 1 empty empty OPEN 0 -9 0 10 -261123
--1 -1 1896 1;
+-1 -1 200 1;
 #X obj 1420 552 nbx 3 16 1 127 0 1 empty empty empty 0 -8 0 10 -261123
--1 -1 19.9571 256;
+-1 -1 3 256;
 #X text 1376 624 Email: mianmogra94@gmail.com;
 #X text 1376 639 GitHub: github.com/MikeMorenoAudio;
 #X text 1376 664 Facebook: fb.com/MikeMorenoAudio;
@@ -3132,6 +3131,24 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X restore 603 512 pd drum_synth;
 #X obj 690 481 tgl 15 0 empty enable_init empty 17 7 0 10 -262144 -1
 -1 0 1;
+#X floatatom 77 159 5 0 0 0 - - -;
+#X obj 77 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 77 123 random 127, f 5;
+#X obj 77 88 metro 1000, f 5;
+#X floatatom 287 129 5 0 0 0 - - -;
+#X obj 287 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 287 93 random 127, f 5;
+#X obj 303 37 r f;
+#X obj 312 151 expr 127 - $f1;
+#X obj 287 58 metro 2000, f 5;
+#X floatatom 201 143 5 0 0 0 - - -;
+#X obj 201 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 201 107 random 127, f 5;
+#X obj 217 51 r f;
+#X obj 201 72 metro 2000, f 5;
 #X connect 0 0 8 0;
 #X connect 4 0 8 1;
 #X connect 5 0 7 0;
@@ -3176,3 +3193,19 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X connect 62 0 51 1;
 #X connect 62 0 50 0;
 #X connect 64 0 63 1;
+#X connect 65 0 0 0;
+#X connect 66 0 68 0;
+#X connect 67 0 65 0;
+#X connect 68 0 67 0;
+#X connect 69 0 13 0;
+#X connect 69 0 73 0;
+#X connect 70 0 74 0;
+#X connect 71 0 69 0;
+#X connect 72 0 74 1;
+#X connect 73 0 17 0;
+#X connect 74 0 71 0;
+#X connect 75 0 11 0;
+#X connect 76 0 79 0;
+#X connect 77 0 75 0;
+#X connect 78 0 79 1;
+#X connect 79 0 77 0;
