@@ -26,7 +26,7 @@ Feel free to use any of the source codes/patches provided.
 ## Option 1 
 In this option, you are asked to modify the patches/source codes provided for Example 3 (two-way communication). 
 
-### Task A. (1 Mark)
+### Task A. (2 Marks)
 Extend the existing pd patch (Example_3_two_way_communication.pd) to 4 quarter notes (i.e. extend to 16 steps).
 
 ### Task B. (2 Marks)
@@ -36,17 +36,17 @@ Implement two sliders or number boxes to specify the minimum and maximum pitch a
 Remove the note quantizer from the pd patch. Instead, implement a note quantizer in python such that only specific notes can be generated.
 
 ### Task D. (2 Marks)
-Right now the drum generation is uniformly random. Modify the drum generator such that the generations are not sampled given a set of weights for each instrument. 
+Right now the drum generation is uniformly random. Modify the drum generator such that a set of user-defined weights denote the relative likelihood of each voice generated. 
 For example, let's assume we are dealing with Kick Snare and Hat generation. If we randomly sample these, there is a 1/3 probability of any of these to be active.
 if we want to modify the code such that kicks are 3 times and snares are 2 times more likely than hats, 
 then the probability of a kick happening would be 3/(3+2+1) and snare would be 2/(3+2+1) and hats would be 1/(3+2+1). 
 
-## Option 2 (7 Marks)
+## Option 2 (8 Marks)
 **Please only attempt this option if you are experienced with the concepts discussed in class as well as multi-threaded programming.** 
 Implement a note delay in python. The delay time and feedback should be controllable from pd. 
 For this work, we assume notes come via osc from pd, and the delayed versions are broadcast back to pd at the right time specified by the delay time and the feedback. 
 You don't need to implement a sequencer in pd to send notes, you can manually do so via a trigger button that signals osc sender to send a specified pitch, velocity, duration to python
 
-One approach here would be to use a separate Thread for each note received, in which the repetitions are sent back to pd at correct times. 
+One approach here could be to use a separate Thread for each note received, in which the repetitions are sent back to pd at correct times. 
 
 **Note** You can assume that the delay time and feedback for a note are constant after the note is received in python  
