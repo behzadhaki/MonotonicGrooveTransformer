@@ -1,16 +1,16 @@
-#N canvas 44 62 1396 768 12;
+#N canvas 960 24 960 987 12;
 #X obj 88 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 10600 1;
+10 -262144 -1 -1 3700 1;
 #X text 15 245 velocity;
 #X text 19 318 uTiming;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array groove 192 float 1;
-#A 0 106 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+#A 0 37 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 108
+0 0 0 0 0 0 0 0 0 83 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 31 0
 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 19 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+0 0 0 0 0 0 0 0 0 0 0 0 96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 #X coords 0 127 192 0 317 140 1 0 0;
 #X restore 75 371 graph;
 #X obj 80 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
@@ -113,11 +113,11 @@
 #X obj 158 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 206 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 400 1;
+10 -262144 -1 -1 8300 1;
 #X obj 198 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
-0 4 -262144 -1 -1 0 1;
+0 4 -262144 -1 -1 300 1;
 #X obj 246 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 10800 1;
+10 -262144 -1 -1 3100 1;
 #X obj 238 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 286 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
@@ -125,7 +125,7 @@
 #X obj 278 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #X obj 326 189 vsl 15 128 0 127 0 0 empty vel_init_val empty 0 -9 0
-10 -262144 -1 -1 1900 1;
+10 -262144 -1 -1 9600 1;
 #X obj 318 321 hsl 32 15 0 23 0 0 empty utiming_init_val empty -2 -8
 0 4 -262144 -1 -1 0 1;
 #N canvas 669 246 450 300 s3 0;
@@ -420,9 +420,9 @@
 #X connect 19 0 18 1;
 #X connect 20 0 19 0;
 #X restore 353 337 pd s8;
-#X obj 77 534 hsl 314 15 0 192 0 0 empty playback_pos empty -2 -8 0
-10 -228856 -1 -1 12716 1;
-#X obj 74 549 tabread groove;
+#X obj 77 528 hsl 314 15 0 192 0 0 empty playback_pos empty -2 -8 0
+10 -228856 -1 -1 29996 1;
+#X obj 74 546 tabread groove;
 #X floatatom 74 586 5 0 0 0 - - -;
 #X obj 74 567 moses 1;
 #X obj 75 605 cnv 15 314 160 empty empty Send_to_Python_Via_OSC 120
@@ -436,13 +436,13 @@
 #X obj 158 705 netsend -u -b;
 #X obj 625 16 cnv 15 300 120 empty empty TEMPO_(QPM) 20 12 0 14 -228856
 -4160 0;
-#X obj 790 35 tgl 30 0 empty empty empty 17 7 0 30 -262144 -1 -1 0
+#X obj 790 35 tgl 30 0 empty empty empty 17 7 0 30 -262144 -1 -1 1
 1;
 #X floatatom 702 90 5 0 0 0 - - -;
 #X text 824 40 Run;
 #X floatatom 702 48 5 0 0 0 - bpm_init -;
 #N canvas 245 23 1195 807 clock 0;
-#X obj 581 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 581 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 465 96 5 0 0 0 - - -;
 #X floatatom 458 215 5 0 0 0 - - -;
@@ -1345,7 +1345,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X coords 0 619 1 618 350 270 0;
 #X restore 462 507 pd gamelan_synth;
 #X obj 570 481 tgl 15 0 empty enable_init empty 17 7 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #N canvas 351 86 712 506 spectrolog 0;
 #N canvas 556 61 872 789 FFT_Analyse 0;
 #X obj 101 102 inlet~;
@@ -1604,7 +1604,7 @@ energie;
 #X msg 530 640 listen 0;
 #X obj 438 615 loadbang;
 #X obj 439 742 s osc_received_from_python;
-#N canvas 203 153 1052 634 osc_decode 0;
+#N canvas 0 23 1920 988 osc_decode 0;
 #X floatatom 556 252 5 0 0 0 - - -;
 #X floatatom 639 405 5 0 0 0 - - -;
 #X floatatom 710 405 5 0 0 0 - - -;
@@ -2513,7 +2513,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 130 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 175 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 7700 1;
+-262144 -1 -1 5400 1;
 #X obj 130 397 i;
 #X floatatom 175 384 5 0 0 0 - - -;
 #X obj 130 232 t b f;
@@ -2550,7 +2550,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 430 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 475 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 11900 1;
+-262144 -1 -1 6700 1;
 #X obj 430 397 i;
 #X floatatom 475 384 5 0 0 0 - - -;
 #X obj 430 232 t b f;
@@ -2586,7 +2586,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 730 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 775 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 1400 1;
+-262144 -1 -1 5400 1;
 #X obj 730 397 i;
 #X floatatom 775 384 5 0 0 0 - - -;
 #X obj 730 232 t b f;
@@ -2621,7 +2621,7 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 1030 377 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 1075 248 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 11500 1;
+-262144 -1 -1 6600 1;
 #X obj 1030 397 i;
 #X floatatom 1075 384 5 0 0 0 - - -;
 #X obj 1030 232 t b f;
@@ -2962,13 +2962,13 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 1287 566 i;
 #X obj 1332 566 i;
 #X obj 1370 417 vsl 16 127 1 127 0 1 empty empty CLOSED 0 -9 0 10 -257985
--1 -1 400 1;
+-1 -1 6600 1;
 #X obj 1370 552 nbx 3 16 1 127 0 1 empty empty empty 0 -8 0 10 -257985
--1 -1 5 256;
+-1 -1 67 256;
 #X obj 1420 417 vsl 16 127 1 127 0 1 empty empty OPEN 0 -9 0 10 -261123
--1 -1 200 1;
+-1 -1 6600 1;
 #X obj 1420 552 nbx 3 16 1 127 0 1 empty empty empty 0 -8 0 10 -261123
--1 -1 3 256;
+-1 -1 67 256;
 #X text 1376 624 Email: mianmogra94@gmail.com;
 #X text 1376 639 GitHub: github.com/MikeMorenoAudio;
 #X text 1376 664 Facebook: fb.com/MikeMorenoAudio;
@@ -3132,23 +3132,23 @@ empty 17 7 0 10 -66577 -262144 -1 0 1;
 #X obj 690 481 tgl 15 0 empty enable_init empty 17 7 0 10 -262144 -1
 -1 0 1;
 #X floatatom 77 159 5 0 0 0 - - -;
-#X obj 77 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 77 71 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 77 123 random 127, f 5;
 #X obj 77 88 metro 1000, f 5;
 #X floatatom 287 129 5 0 0 0 - - -;
-#X obj 287 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 287 41 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 287 93 random 127, f 5;
 #X obj 303 37 r f;
 #X obj 312 151 expr 127 - $f1;
 #X obj 287 58 metro 2000, f 5;
 #X floatatom 201 143 5 0 0 0 - - -;
-#X obj 201 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 201 55 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 201 107 random 127, f 5;
 #X obj 217 51 r f;
-#X obj 201 72 metro 2000, f 5;
+#X obj 201 72 metro 300, f 5;
 #X connect 0 0 8 0;
 #X connect 4 0 8 1;
 #X connect 5 0 7 0;
