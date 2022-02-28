@@ -1,4 +1,4 @@
-#N canvas 0 23 720 808 12;
+#N canvas 0 23 720 806 12;
 #X obj 45 -3 r realtime_velocity;
 #X obj 105 40 r run;
 #X obj 47 96 spigot;

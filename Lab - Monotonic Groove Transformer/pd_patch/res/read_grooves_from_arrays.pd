@@ -98,6 +98,10 @@
 #X obj 806 103 tabread TOM_2_MID;
 #X obj 98 436 tabread TOM_1_HI;
 #X obj 683 107 tabread TOM_3_LO;
+#X msg 563 624 10;
+#X obj 566 586 loadbang;
+#X msg 310 351 10;
+#X obj 313 313 loadbang;
 #X connect 0 0 2 0;
 #X connect 1 0 6 0;
 #X connect 2 0 3 0;
@@ -215,3 +219,14 @@
 #X connect 96 0 52 0;
 #X connect 97 0 66 0;
 #X connect 98 0 46 0;
+#X connect 99 0 93 2;
+#X connect 99 0 81 2;
+#X connect 99 0 79 2;
+#X connect 100 0 99 0;
+#X connect 101 0 35 2;
+#X connect 101 0 37 2;
+#X connect 101 0 39 2;
+#X connect 101 0 43 2;
+#X connect 101 0 59 2;
+#X connect 101 0 61 2;
+#X connect 102 0 101 0;

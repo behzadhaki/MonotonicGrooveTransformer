@@ -10,7 +10,7 @@ from pythonosc.udp_client import SimpleUDPClient
 
 if __name__ == '__main__':
     # ------------------ Load Trained Model  ------------------ #
-    model_name = "groove_transformer_trained_2"     #  "groove_transformer_trained"
+    model_name = "groove_transformer_trained_2"         # "groove_transformer_trained"
     model_path = f"trained_torch_models/{model_name}.model"
 
     groove_transformer = load_model(model_name, model_path)
@@ -27,7 +27,6 @@ if __name__ == '__main__':
     # get velocity and timing
     groove_velocities = torch.rand((32))
     groove_timings = -0.5 + torch.rand((32))
-
     # -----------------------------------------------------
 
     # ------------------ OSC ips / ports ------------------ #
@@ -35,7 +34,6 @@ if __name__ == '__main__':
     ip = "127.0.0.1"
     receiving_from_pd_port = 1415
     sending_to_pd_port = 1123
-
     # ----------------------------------------------------------
 
     # ------------------ OSC Receiver from Pd ------------------ #
