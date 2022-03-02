@@ -1,0 +1,35 @@
+#N canvas 0 23 1248 776 12;
+#X obj 66 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 66 27 loadbang;
+#X obj 73 49 r reset;
+#X msg 66 379 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r 0
+\; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r 0
+\; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
+0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
+0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
+#X msg 147 379 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
+ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
+0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
+\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
+ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
+0 \; ut32r 0 \;;
+#X msg 66 109 \; meter_numerator_preset 3 \; meter_denominator_preset
+2 \; KICK const 0 \; SNARE const 0 \; HH_CLOSED const 0 \; HH_OPEN
+const 0 \; TOM_3_LO const 0 \; TOM_2_MID const 0 \; TOM_1_HI const
+0 \; CRASH const 0 \; RIDE const 0 \; pd dsp 1 \;, f 56;
+#X msg 528 96 \; thres_0_init 0.4 \; max_count_0_init 6 \; thres_1_init
+0.5 \; max_count_1_init 2 \; thres_2_init 0.8 \; max_count_2_init 32
+\; thres_3_init 1 \; max_count_3_init 32 \; thres_4_init 1 \; max_count_4_init
+0 \; thres_5_init 1 \; max_count_5_init 0 \; thres_6_init 1 \; max_count_6_init
+0 \; thres_7_init 1 \; max_count_7_init 0 \; thres_8_init 1 \; max_count_8_init
+0 \; thres_9_init 0.8 \; max_count_9_init 2 \;;
+#X msg 246 22 \; bpm_init 70 \; metronome_volume_init 0.1 \; groove_volume
+0.1 \;;
+#X connect 0 0 5 0;
+#X connect 0 0 3 0;
+#X connect 0 0 4 0;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 1 0 7 0;
+#X connect 2 0 0 0;
