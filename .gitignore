@@ -129,3 +129,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/Lab - Monotonic Groove Transformer/TorchOSC_venv/
+/TorchOSC_venv/

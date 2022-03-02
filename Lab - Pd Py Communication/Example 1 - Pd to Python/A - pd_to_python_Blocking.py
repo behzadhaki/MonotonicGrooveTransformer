@@ -74,3 +74,4 @@ if __name__ == '__main__':
     while (quitFlag[0] is False):
         server.handle_request()
         print("sliders: ", slider_values, "nbox: ", num_box_values)
+
