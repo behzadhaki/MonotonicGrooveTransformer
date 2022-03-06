@@ -1,5 +1,5 @@
 #N canvas 0 23 1440 806 12;
-#X obj 521 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 521 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 245 93 5 0 0 0 - - -;
 #X obj 245 46 inlet;
@@ -10,18 +10,18 @@
 #X obj 546 698 outlet;
 #X obj 599 58 t b b;
 #X obj 688 44 loadbang;
-#X obj 74 355 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 74 355 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 207 349 5 0 0 0 - - -;
 #X text 220 368 BPM-->;
 #X text 137 486 clock out;
 #X obj 74 448 midisystemrealtime;
 #X obj 75 483 midiout;
-#X obj 515 -2 tgl 30 0 empty run empty 17 7 0 30 -262144 -1 -1 0 1
+#X obj 515 -2 tgl 30 0 empty run empty 17 7 0 30 -262144 -1 -1 1 1
 ;
 #X text 549 3 Run;
 #X obj 186 -9 r bpm;
-#X obj 138 397 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 138 397 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 134 303 r send_clock_out;
 #X obj 518 432 qpm_tick_generator;

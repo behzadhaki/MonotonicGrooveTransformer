@@ -8,6 +8,20 @@ from pythonosc.osc_server import BlockingOSCUDPServer
 from pythonosc.dispatcher import Dispatcher
 from pythonosc.udp_client import SimpleUDPClient
 
+# Parser for terminal commands
+import argparse
+parser = argparse.ArgumentParser(description='Monotonic Groove to Drum Generator')
+parser.add_argument('--py2pd_port', type=int, default=1123,
+                    help='Port for sending messages from python engine to pd (default = 1123)',
+                    required=False)
+parser.add_argument('--pd2py_port', type=int, default=1415,
+                    help='Port for receiving messages sent from pd within the py program (default = 1415)',
+                    required=False)
+
+args = parser.parse_args()
+
+
+
 if __name__ == '__main__':
     # ------------------ Load Trained Model  ------------------ #
     model_name = "groove_transformer_trained_2"         # "groove_transformer_trained"
@@ -32,8 +46,8 @@ if __name__ == '__main__':
     # ------------------ OSC ips / ports ------------------ #
     # connection parameters
     ip = "127.0.0.1"
-    receiving_from_pd_port = 1415
-    sending_to_pd_port = 1123
+    receiving_from_pd_port = args.pd2py_port
+    sending_to_pd_port = args.py2pd_port
     # ----------------------------------------------------------
 
     # ------------------ OSC Receiver from Pd ------------------ #
@@ -78,7 +92,8 @@ if __name__ == '__main__':
     # ------------------ NOTE GENERATION  ------------------ #
     drum_voice_pitch_map = {"kick": 36, 'snare': 38, 'tom-1': 47, 'tom-2': 42, 'chat': 64, 'ohat': 63}
     drum_voices = list(drum_voice_pitch_map.keys())
-
+    
+    number_of_generations = 0
     while (1):
         server.handle_request()
         # get new generated pattern
@@ -88,7 +103,13 @@ if __name__ == '__main__':
 
         # send to pd
         osc_messages_to_send = get_new_drum_osc_msgs((h_new, v_new, o_new))
-        print("RESET TABLE!")
+        number_of_generations += 1
+        
+        # First clear generations on pd by sending a message
         py_to_pd_OscSender.send_message("/reset_table", 1)
+        
+        # Then send over generated notes one at a time
         for (address, h_v_ix_tuple) in osc_messages_to_send:
             py_to_pd_OscSender.send_message(address, h_v_ix_tuple)
+            
+        
