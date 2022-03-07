@@ -1,7 +1,7 @@
 # Import model
 from utils import load_model, get_new_drum_osc_msgs, get_prediction, OscMessageReceiver
 import torch
-
+import time
 
 # Import OSC
 from pythonosc.osc_server import BlockingOSCUDPServer
@@ -17,6 +17,9 @@ parser.add_argument('--py2pd_port', type=int, default=1123,
                     required=False)
 parser.add_argument('--pd2py_port', type=int, default=1415,
                     help='Port for receiving messages sent from pd within the py program (default = 1415)',
+                    required=False)
+parser.add_argument('--wait', type=float, default=1,
+                    help='minimum rate of wait time (in seconds) between two executive generation (default = 0.1 seconds)',
                     required=False)
 
 args = parser.parse_args()
@@ -39,9 +42,10 @@ if __name__ == '__main__':
     # ------  Create an empty h, v, o tuple for previously generated events to avoid duplicate messages
     (h_old, v_old, o_old) = (torch.zeros((1, 32, 9)), torch.zeros((1, 32, 9)), torch.zeros((1, 32, 9)))
 
-    # get velocity and timing
-    groove_velocities = torch.rand((32))
-    groove_timings = -0.5 + torch.rand((32))
+    # set the minimum time needed between generations
+    min_wait_time_btn_gens = args.wait
+    print(min_wait_time_btn_gens)
+
     # -----------------------------------------------------
 
     # ------------------ OSC ips / ports ------------------ #
@@ -73,6 +77,7 @@ if __name__ == '__main__':
 
     # ---------------------------------------------------------- #
 
+
     # ------------------ NOTE GENERATION  ------------------ #
     drum_voice_pitch_map = {"kick": 36, 'snare': 38, 'tom-1': 47, 'tom-2': 42, 'chat': 64, 'ohat': 63}
     drum_voices = list(drum_voice_pitch_map.keys())
@@ -89,6 +94,7 @@ if __name__ == '__main__':
             h_new, v_new, o_new = get_prediction(groove_transformer, input_tensor, voice_thresholds,
                                                  voice_max_count_allowed)
             _h, v, o = groove_transformer.forward(input_tensor)
+            print("+", end='')
 
             # send to pd
             osc_messages_to_send = get_new_drum_osc_msgs((h_new, v_new, o_new))
@@ -102,3 +108,5 @@ if __name__ == '__main__':
                 py_to_pd_OscSender.send_message(address, h_v_ix_tuple)
             
             count += 1
+
+            time.sleep(min_wait_time_btn_gens)

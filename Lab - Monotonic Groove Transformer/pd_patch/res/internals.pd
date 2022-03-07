@@ -1,348 +1,478 @@
-#N canvas 215 23 1225 806 12;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array groove 3072 float 2;
-#X coords 0 127 3072 0 864 35 2 0 0;
-#X restore 215 263 graph;
-#X obj 214 333 hsl 866 15 0 3072 0 0 current_pos playback_pos empty
--2 -8 0 10 -228856 -1 -1 56737 1;
-#X obj 126 166 tgl 30 0 run run_interface RUN 4 -10 0 10 -262144 -1
--1 1 1;
-#X obj 213 353 vsl 27 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
--1 0 0;
-#X text 149 375 velocity;
-#X text 156 414 uTiming;
-#X obj 217 421 hsl 22 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
--262144 -1 1061 0;
-#X obj 241 353 vsl 27 65 0 127 0 0 v2 v2r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 244 421 hsl 22 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 268 353 vsl 27 65 0 127 0 0 v3 v3r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 271 421 hsl 22 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 295 353 vsl 27 65 0 127 0 0 v4 v4r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 298 421 hsl 22 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 322 353 vsl 27 65 0 127 0 0 v5 v5r empty 0 -9 0 10 -228856 -33289
--1 0 0;
-#X obj 325 421 hsl 22 8 -0.5 0.49 0 0 ut5 ut5r empty -2 -8 0 4 -228856
--33289 -1 1061 0;
-#X obj 349 353 vsl 27 65 0 127 0 0 v6 v6r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 352 421 hsl 22 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 376 353 vsl 27 65 0 127 0 0 v7 v7r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 379 421 hsl 22 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 403 353 vsl 27 65 0 127 0 0 v8 v8r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 406 421 hsl 22 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 430 353 vsl 27 65 0 127 0 0 v9 v9r empty 0 -9 0 10 -228856 -33289
--1 0 0;
-#X obj 433 421 hsl 22 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
--33289 -1 1061 0;
-#X obj 457 353 vsl 27 65 0 127 0 0 v10 v10r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 460 421 hsl 22 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 484 353 vsl 27 65 0 127 0 0 v11 v11r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 487 421 hsl 22 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 511 353 vsl 27 65 0 127 0 0 v12 v12r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 514 421 hsl 22 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 538 353 vsl 27 65 0 127 0 0 v13 v13r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 541 421 hsl 22 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
--33289 -1 1061 0;
-#X obj 565 353 vsl 27 65 0 127 0 0 v14 v14r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 568 421 hsl 22 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 592 353 vsl 27 65 0 127 0 0 v15 v15r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 595 421 hsl 22 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 619 353 vsl 27 65 0 127 0 0 v16 v16r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 622 421 hsl 22 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 125 333 bng 30 250 50 0 reset empty Reset 0 -10 0 10 -262144
--1 -1;
-#X text 223 433 1;
-#X text 330 433 5;
-#X text 434 433 9;
-#X text 542 431 13;
-#X obj 646 353 vsl 27 65 0 127 0 0 v17 v17r empty 0 -9 0 10 -128992
--262144 -1 0 0;
-#X obj 649 421 hsl 22 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
--262144 -1 1061 0;
-#X obj 673 353 vsl 27 65 0 127 0 0 v18 v18r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 676 421 hsl 22 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 700 353 vsl 27 65 0 127 0 0 v19 v19r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 703 421 hsl 22 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 727 353 vsl 27 65 0 127 0 0 v20 v20r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 730 421 hsl 22 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 754 353 vsl 27 65 0 127 0 0 v21 v21r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 757 421 hsl 22 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
--33289 -1 1061 0;
-#X obj 781 353 vsl 27 65 0 127 0 0 v22 v22r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 784 421 hsl 22 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 808 353 vsl 27 65 0 127 0 0 v23 v23r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 811 421 hsl 22 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 835 353 vsl 27 65 0 127 0 0 v24 v24r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 838 421 hsl 22 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 862 353 vsl 27 65 0 127 0 0 v25 v25r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 865 421 hsl 22 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
--33289 -1 1061 0;
-#X obj 889 353 vsl 27 65 0 127 0 0 v26 v26r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 892 421 hsl 22 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 916 353 vsl 27 65 0 127 0 0 v27 v27r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 919 421 hsl 22 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 943 353 vsl 27 65 0 127 0 0 v28 v28r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 946 421 hsl 22 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 970 353 vsl 27 65 0 127 0 0 v29 v29r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 973 421 hsl 22 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
--33289 -1 1061 0;
-#X obj 997 353 vsl 27 65 0 127 0 0 v30 v30r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 1000 421 hsl 22 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 1024 353 vsl 27 65 0 127 0 0 v31 v31r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 1027 421 hsl 22 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X obj 1051 353 vsl 27 65 0 127 0 0 v32 v32r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 1054 421 hsl 22 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
--1 -1 1061 0;
-#X text 648 445 17;
-#X text 759 443 21;
-#X text 865 443 25;
-#X text 974 442 29;
-#X text 315 903 |______________|;
-#X text 423 903 |______________|;
-#X text 531 903 |______________|;
-#X text 640 903 |______________|;
-#X text 747 903 |______________|;
-#X text 855 903 |______________|;
-#X text 963 903 |______________|;
-#X text 207 903 |______________|;
-#X text 204 930 |_____________________________________________________________|
-, f 63;
-#X text 640 930 |_____________________________________________________________|
-, f 63;
-#X text 839 930 Bar 2;
-#X floatatom 127 270 10 0 0 2 BPM bpm_init bpm;
-#X text 229 885 Beat 1 (384 Ticks);
-#X text 405 931 Bar 1 (384*4 Ticks);
-#X obj 347 166 vsl 15 64 0 1 0 0 groove_volume groove_volume_init Groove_Volume
-0 -9 0 10 -262144 -1 -1 0 0;
-#X obj 461 182 vsl 15 16 0 1 0 0 metronome_volume metronome_volume_init
-Metronome_Volume 0 -9 0 10 -262144 -1 -1 150 0;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array KICK 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 484 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array SNARE 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 530 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array HH_CLOSED 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 575 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array HH_OPEN 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 623 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array TOM_3_LO 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 671 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array TOM_2_MID 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 718 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array TOM_1_HI 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 761 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array CRASH 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 808 graph;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array RIDE 3072 float 2;
-#X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 213 853 graph;
+#N canvas 0 88 1529 1061 12;
 #X text 802 20 Todo: 1 per voice tres 2 per voice max count 3 scale
 velocities of sliders 4 live record via midi, f 38;
-#X obj 135 471 vsl 37 16 0 1 0 0 empty thres_0_init empty 0 -9 0 10
--262144 -1 -1 600 0;
-#X floatatom 135 490 5 0 0 0 - - thres0;
-#X obj 172 471 vsl 37 16 0 32 0 0 empty max_count_0_init empty 0 -9
-0 10 -262144 -1 -1 281 0;
-#X floatatom 172 490 5 0 0 0 - - max_count_0;
-#X obj 135 516 vsl 37 16 0 1 0 0 empty thres_1_init empty 0 -9 0 10
--262144 -1 -1 750 0;
-#X floatatom 135 535 5 0 0 0 - - thres1;
-#X obj 172 516 vsl 37 16 0 32 0 0 empty max_count_1_init empty 0 -9
-0 10 -262144 -1 -1 94 0;
-#X floatatom 172 535 5 0 0 0 - - max_count_1;
-#X obj 135 561 vsl 37 16 0 1 0 0 empty thres_2_init empty 0 -9 0 10
--262144 -1 -1 1200 0;
-#X floatatom 135 580 5 0 0 0 - - thres2;
-#X obj 172 561 vsl 37 16 0 32 0 0 empty max_count_2_init empty 0 -9
-0 10 -262144 -1 -1 1500 0;
-#X floatatom 172 580 5 0 0 0 - - max_count_2;
-#X obj 135 606 vsl 37 16 0 1 0 0 empty thres_3_init empty 0 -9 0 10
--262144 -1 -1 1500 0;
-#X floatatom 135 625 5 0 0 0 - - thres3;
-#X obj 172 606 vsl 37 16 0 32 0 0 empty max_count_3_init empty 0 -9
-0 10 -262144 -1 -1 1500 0;
-#X floatatom 172 625 5 0 0 0 - - max_count_3;
-#X obj 135 653 vsl 37 16 0 1 0 0 empty thres_4_init empty 0 -9 0 10
--262144 -1 -1 1500 0;
-#X floatatom 135 672 5 0 0 0 - - thres4;
-#X obj 172 653 vsl 37 16 0 32 0 0 empty max_count_4_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 172 672 5 0 0 0 - - max_count_4;
-#X obj 135 700 vsl 37 16 0 1 0 0 empty thres_5_init empty 0 -9 0 10
--262144 -1 -1 1500 0;
-#X floatatom 135 719 5 0 0 0 - - thres5;
-#X obj 172 700 vsl 37 16 0 32 0 0 empty max_count_5_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 172 719 5 0 0 0 - - max_count_5;
-#X obj 135 748 vsl 37 16 0 1 0 0 empty thres_6_init empty 0 -9 0 10
--262144 -1 -1 1500 0;
-#X floatatom 135 767 5 0 0 0 - - thres6;
-#X obj 172 748 vsl 37 16 0 32 0 0 empty max_count_6_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 172 767 5 0 0 0 - - max_count_6;
-#X obj 135 794 vsl 37 16 0 1 0 0 empty thres_7_init empty 0 -9 0 10
--262144 -1 -1 1500 0;
-#X floatatom 135 813 5 0 0 0 - - thres7;
-#X obj 172 794 vsl 37 16 0 32 0 0 empty max_count_7_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 172 813 5 0 0 0 - - max_count_7;
-#X obj 135 840 vsl 37 16 0 1 0 0 empty thres_8_init empty 0 -9 0 10
--262144 -1 -1 1500 0;
-#X floatatom 135 859 5 0 0 0 - - thres8;
-#X obj 172 840 vsl 37 16 0 32 0 0 empty max_count_8_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 172 859 5 0 0 0 - - max_count_8;
-#X text 178 433 max cnt, f 5;
-#X text 128 434 like- lihood, f 9;
-#X obj 159 166 tgl 30 0 record empty RECORD 4 -10 0 10 -262144 -1 -1
-0 1;
-#X obj 269 166 tgl 30 0 send_clock_out empty Send_Clock_Out -30 -10
-0 10 -262144 -1 -1 1 1;
-#X obj 1080 486 vsl 37 16 0 1 0 0 empty vel_scale_0_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 505 5 0 0 0 - - vel_scale_0;
-#X obj 1080 531 vsl 37 16 0 1 0 0 empty vel_scale_1_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 550 5 0 0 0 - - vel_scale_1;
-#X obj 1080 576 vsl 37 16 0 1 0 0 empty vel_scale_2_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 595 5 0 0 0 - - vel_scale_2;
-#X obj 1080 621 vsl 37 16 0 1 0 0 empty vel_scale_3_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 640 5 0 0 0 - - vel_scale_3;
-#X obj 1080 668 vsl 37 16 0 1 0 0 empty vel_scale_4_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 687 5 0 0 0 - - vel_scale_4;
-#X obj 1080 715 vsl 37 16 0 1 0 0 empty vel_scale_5_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 734 5 0 0 0 - - vel_scale_5;
-#X obj 1080 763 vsl 37 16 0 1 0 0 empty vel_scale_6_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 782 5 0 0 0 - - vel_scale_6;
-#X obj 1080 809 vsl 37 16 0 1 0 0 empty vel_scale_7_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 828 5 0 0 0 - - vel_scale_7;
-#X obj 1080 855 vsl 37 16 0 1 0 0 empty vel_scale_8_init empty 0 -9
-0 10 -262144 -1 -1 0 0;
-#X floatatom 1080 874 5 0 0 0 - - vel_scale_8;
-#X obj 1088 354 vsl 27 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 1986 0;
-#X floatatom 1088 423 5 0 0 0 - - groove_vel_scale;
-#X text 1235 446 implement a sfz player using samples from https://github.com/crabacus/the-open-source-drumkit
-;
 #X text 1236 496 implement a in python receive osc for events in the
 background and do generation only when a specific signal is received
 on pd side and also when there has been a change!!!;
 #X text 1238 560 work on velocity scaling of groove;
-#X floatatom 853 153 5 0 0 0 py2pd_port py2pd_port_init py2pd_port
+#X obj 1245 114 cnv 15 400 200 empty empty Settings_and_Source_Not_Shown_On_Main_GUI
+20 12 0 14 -258113 -66577 0;
+#X floatatom 219 11 5 0 0 0 - - -;
+#X obj 217 -14 ctlin 1, f 41;
+#X floatatom 218 50 5 0 0 0 - - -;
+#X obj 218 73 s groove_vel_scale_init;
+#X obj 219 30 expr ($f1/127+.1)*2;
+#N canvas 0 23 1920 1127 \$0-generations-panes 0;
+#X obj 1314 52 inlet;
+#X msg 1321 180 0;
+#X obj 1194 68 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 3;
+#X obj 1407 212 pack f f;
+#X obj 1461 152 sel 1 2 3;
+#X obj 1320 82 t f f b;
+#X obj 1294 126 != 0;
+#X text 1127 182 get's messy without this ->;
+#X text 1583 70 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
 ;
-#X floatatom 854 181 5 0 0 0 pd2py_port pd2py_port_init pd2py_port
+#X msg 1474 184 0;
+#X obj 88 463 cnv 15 865 36 empty empty KICK 0 8 0 12 -229182 -33289
+0;
+#X obj 87 509 cnv 15 865 36 empty empty SNARE 0 8 0 12 -225077 -33289
+0;
+#X obj 87 554 cnv 15 865 36 empty empty HH_CLOSED 0 8 0 12 -262013
+-33289 0;
+#X obj 87 602 cnv 15 865 36 empty empty HH_OPEN 0 8 0 12 -257398 -33289
+0;
+#X obj 87 650 cnv 15 865 36 empty empty TOM_3_LO 0 8 0 12 -262136 -33289
+0;
+#X obj 87 697 cnv 15 865 36 empty empty TOM_2_MID 0 8 0 12 -261996
+-33289 0;
+#X obj 87 740 cnv 15 865 36 empty empty TOM_1_HI 0 8 0 12 -261600 -33289
+0;
+#X obj 87 787 cnv 15 865 36 empty empty CRASH 0 8 0 12 -55982 -33289
+0;
+#X obj 87 832 cnv 15 865 36 empty empty RIDE 0 8 0 12 -26605 -33289
+0;
+#X msg 1515 185 440;
+#X msg 1549 188 880;
+#X obj 88 903 cnv 15 865 36 empty empty KICK 0 8 0 12 -229182 -33289
+0;
+#X obj 87 949 cnv 15 865 36 empty empty SNARE 0 8 0 12 -225077 -33289
+0;
+#X obj 87 994 cnv 15 865 36 empty empty HH_CLOSED 0 8 0 12 -262013
+-33289 0;
+#X obj 87 1042 cnv 15 865 36 empty empty HH_OPEN 0 8 0 12 -257398 -33289
+0;
+#X obj 87 1090 cnv 15 865 36 empty empty TOM_3_LO 0 8 0 12 -262136
+-33289 0;
+#X obj 87 1137 cnv 15 865 36 empty empty TOM_2_MID 0 8 0 12 -261996
+-33289 0;
+#X obj 87 1180 cnv 15 865 36 empty empty TOM_1_HI 0 8 0 12 -261600
+-33289 0;
+#X obj 87 1227 cnv 15 865 36 empty empty CRASH 0 8 0 12 -55982 -33289
+0;
+#X obj 87 1272 cnv 15 865 36 empty empty RIDE 0 8 0 12 -26605 -33289
+0;
+#X text 836 6 GENERATED PATTERNS;
+#X obj 1344 326 s pd-\$0-generations-panes;
+#X msg 1344 300 donecanvasdialog 1 -1 \$1 0 -1 1 1 970 440 0 \$2;
+#X obj 175 472 hsl 128 17 0 1 0 0 empty thres_0_in empty -2 -8 0 10
+-262144 -1 -1 7620 0;
+#X text 203 445 Likelihood;
+#X floatatom 305 472 5 0 1 0 - - thres0;
+#X obj 385 472 hsl 128 17 0 32 0 0 empty max_count_0_in empty -2 -8
+0 10 -262144 -1 -1 1072 0;
+#X floatatom 515 472 5 0 32 0 - - max_count_0;
+#X text 428 444 Max Count;
+#X obj 586 472 hsl 128 17 0 32 0 0 empty vel_scale_0_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X text 641 444 Vol;
+#X text 802 446 Generation Parameters;
+#X floatatom 716 472 5 0 0 0 - - vel_scale_0;
+#X obj 175 518 hsl 128 17 0 1 0 0 empty thres_1_in empty -2 -8 0 10
+-262144 -1 -1 7620 0;
+#X floatatom 305 518 5 0 1 0 - - thres1;
+#X obj 385 518 hsl 128 17 0 32 0 0 empty max_count_1_in empty -2 -8
+0 10 -262144 -1 -1 6350 0;
+#X floatatom 515 518 5 0 32 0 - - max_count_1;
+#X obj 586 518 hsl 128 17 0 32 0 0 empty vel_scale_1_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 716 518 5 0 0 0 - - vel_scale_1;
+#X obj 175 563 hsl 128 17 0 1 0 0 empty thres_2_in empty -2 -8 0 10
+-262144 -1 -1 11430 0;
+#X floatatom 305 563 5 0 1 0 - - thres2;
+#X obj 385 563 hsl 128 17 0 32 0 0 empty max_count_2_in empty -2 -8
+0 10 -262144 -1 -1 12700 0;
+#X floatatom 515 563 5 0 32 0 - - max_count_2;
+#X obj 586 563 hsl 128 17 0 32 0 0 empty vel_scale_2_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 716 563 5 0 0 0 - - vel_scale_2;
+#X obj 177 610 hsl 128 17 0 1 0 0 empty thres_3_in empty -2 -8 0 10
+-262144 -1 -1 12700 0;
+#X floatatom 307 610 5 0 1 0 - - thres3;
+#X obj 387 610 hsl 128 17 0 32 0 0 empty max_count_3_in empty -2 -8
+0 10 -262144 -1 -1 2421 0;
+#X floatatom 517 610 5 0 32 0 - - max_count_3;
+#X obj 588 610 hsl 128 17 0 32 0 0 empty vel_scale_3_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 718 610 5 0 0 0 - - vel_scale_3;
+#X obj 176 660 hsl 128 17 0 1 0 0 empty thres_4_in empty -2 -8 0 10
+-262144 -1 -1 11430 0;
+#X floatatom 306 660 5 0 1 0 - - thres4;
+#X obj 386 660 hsl 128 17 0 32 0 0 empty max_count_4_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 516 660 5 0 32 0 - - max_count_4;
+#X obj 587 660 hsl 128 17 0 32 0 0 empty vel_scale_4_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 717 660 5 0 0 0 - - vel_scale_4;
+#X obj 176 706 hsl 128 17 0 1 0 0 empty thres_5_in empty -2 -8 0 10
+-262144 -1 -1 11430 0;
+#X floatatom 306 706 5 0 1 0 - - thres5;
+#X obj 386 706 hsl 128 17 0 32 0 0 empty max_count_5_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 516 706 5 0 32 0 - - max_count_5;
+#X obj 587 706 hsl 128 17 0 32 0 0 empty vel_scale_5_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 717 706 5 0 0 0 - - vel_scale_5;
+#X obj 176 751 hsl 128 17 0 1 0 0 empty thres_6_in empty -2 -8 0 10
+-262144 -1 -1 11430 0;
+#X floatatom 306 751 5 0 1 0 - - thres6;
+#X obj 386 751 hsl 128 17 0 32 0 0 empty max_count_6_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 516 751 5 0 32 0 - - max_count_6;
+#X obj 587 751 hsl 128 17 0 32 0 0 empty vel_scale_6_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 717 751 5 0 0 0 - - vel_scale_6;
+#X obj 178 798 hsl 128 17 0 1 0 0 empty thres_7_in empty -2 -8 0 10
+-262144 -1 -1 10160 0;
+#X floatatom 308 798 5 0 1 0 - - thres7;
+#X obj 388 798 hsl 128 17 0 32 0 0 empty max_count_7_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 518 798 5 0 32 0 - - max_count_7;
+#X obj 589 798 hsl 128 17 0 32 0 0 empty vel_scale_7_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 719 798 5 0 0 0 - - vel_scale_7;
+#X obj 179 842 hsl 128 17 0 1 0 0 empty thres_8_in empty -2 -8 0 10
+-262144 -1 -1 11430 0;
+#X floatatom 309 842 5 0 1 0 - - thres8;
+#X obj 389 842 hsl 128 17 0 32 0 0 empty max_count_8_in empty -2 -8
+0 10 -262144 -1 -1 11073 0;
+#X floatatom 519 842 5 0 32 0 - - max_count_8;
+#X obj 590 842 hsl 128 17 0 32 0 0 empty vel_scale_8_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 720 842 5 0 0 0 - - vel_scale_8;
+#X floatatom 41 39 5 0 32 0 - max_count_0 -;
+#X floatatom 41 85 5 0 32 0 - max_count_1 -;
+#X floatatom 41 130 5 0 32 0 - max_count_2 -;
+#X floatatom 43 177 5 0 32 0 - max_count_3 -;
+#X floatatom 42 227 5 0 32 0 - max_count_4 -;
+#X floatatom 42 273 5 0 32 0 - max_count_5 -;
+#X floatatom 42 318 5 0 32 0 - max_count_6 -;
+#X floatatom 44 365 5 0 32 0 - max_count_7 -;
+#X floatatom 45 409 5 0 32 0 - max_count_8 -;
+#X floatatom 1 38 5 0 1 0 - thres0 -;
+#X floatatom 1 84 5 0 1 0 - thres1 -;
+#X floatatom 1 129 5 0 1 0 - thres2 -;
+#X floatatom 3 176 5 0 1 0 - thres3 -;
+#X floatatom 2 226 5 0 1 0 - thres4 -;
+#X floatatom 2 272 5 0 1 0 - thres5 -;
+#X floatatom 2 317 5 0 1 0 - thres6 -;
+#X floatatom 5 364 5 0 1 0 - thres7 -;
+#X floatatom 5 408 5 0 1 0 - thres8 -;
+#X obj 4 4 hradio 29 1 0 3 cc_page_for_generations cc_page_for_generations_in
+empty 0 -8 0 14 -262144 -1 -1 1;
+#X obj 66 7 res/see_generated_pattern;
+#N canvas 198 272 1722 766 midi_cc_map_for_per_voice_generation_parameters
+0;
+#X obj 908 179 sel 0 1 2, f 54;
+#X msg 909 202 \; thres_page_enabled 1 \; max_count_page_enabled 0
+\; vol_scale_page_enabled 0 \;;
+#X msg 1033 270 \; thres_page_enabled 0 \; max_count_page_enabled 1
+\; vol_scale_page_enabled 0 \;;
+#X msg 1169 352 \; thres_page_enabled 0 \; max_count_page_enabled 0
+\; vol_scale_page_enabled 1 \;;
+#X text 940 431 top 9 push encoders control each voice's generation
+params depending on which which their on (change page using right left
+buttons);
+#X obj 908 150 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 77 111 res/pushbutton_cc2toggle, f 26;
+#X obj 135 191 mod 3;
+#X floatatom 135 214 5 0 0 0 - - -;
+#X obj 77 92 ctlin 44, f 14;
+#X obj 277 109 res/pushbutton_cc2toggle, f 26;
+#X msg 75 138 -1;
+#X obj 123 171 +;
+#X obj 169 168 i;
+#X obj 277 90 ctlin 45, f 14;
+#X msg 229 151 1;
+#X obj 134 237 s cc_page_for_generations_in;
+#X obj 788 84 change;
+#X obj 792 114 s cc_page_for_generations_in;
+#X obj 785 51 r cc_page_for_generations;
+#X text 81 74 page left cc toggle;
+#X text 280 69 page right cc toggle;
+#X text 767 24 ensures synchronization of multiple instances;
+#X text 77 40 Step 1;
+#X text 651 53 Step 2;
+#X text 144 585 Step 4;
+#X text 144 552 Step 3;
+#X obj 206 585 res/max_count_cc_adjustments;
+#X obj 206 551 res/likelihood_cc_adjustments;
+#X obj 1018 39 loadbang;
+#X msg 1018 66 1;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 0 2 3 0;
+#X connect 5 0 0 0;
+#X connect 6 0 11 0;
+#X connect 7 0 8 0;
+#X connect 8 0 16 0;
+#X connect 9 0 6 0;
+#X connect 10 0 15 0;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 12 0 7 0;
+#X connect 13 0 12 1;
+#X connect 14 0 10 0;
+#X connect 15 0 12 0;
+#X connect 17 0 18 0;
+#X connect 17 0 5 0;
+#X connect 19 0 17 0;
+#X connect 29 0 30 0;
+#X connect 30 0 18 0;
+#X restore 1054 514 pd midi_cc_map_for_per_voice_generation_parameters
 ;
-#X obj 782 208 bng 15 250 50 0 disconnect_py2pd_connection empty disconnect_py2pd_connection
+#X obj 4 447 hradio 29 1 0 3 cc_page_for_generations cc_page_for_generations_in
+empty 0 -8 0 14 -262144 -1 -1 1;
+#X connect 0 0 5 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 32 0;
+#X connect 4 0 9 0;
+#X connect 4 1 19 0;
+#X connect 4 2 20 0;
+#X connect 5 0 6 0;
+#X connect 5 1 4 0;
+#X connect 5 2 1 0;
+#X connect 6 0 3 0;
+#X connect 9 0 3 1;
+#X connect 19 0 3 1;
+#X connect 20 0 3 1;
+#X connect 32 0 31 0;
+#X connect 33 0 35 0;
+#X connect 36 0 37 0;
+#X connect 39 0 42 0;
+#X connect 43 0 44 0;
+#X connect 45 0 46 0;
+#X connect 47 0 48 0;
+#X connect 49 0 50 0;
+#X connect 51 0 52 0;
+#X connect 53 0 54 0;
+#X connect 55 0 56 0;
+#X connect 57 0 58 0;
+#X connect 59 0 60 0;
+#X connect 61 0 62 0;
+#X connect 63 0 64 0;
+#X connect 65 0 66 0;
+#X connect 67 0 68 0;
+#X connect 69 0 70 0;
+#X connect 71 0 72 0;
+#X connect 73 0 74 0;
+#X connect 75 0 76 0;
+#X connect 77 0 78 0;
+#X connect 79 0 80 0;
+#X connect 81 0 82 0;
+#X connect 83 0 84 0;
+#X connect 85 0 86 0;
+#X connect 87 0 88 0;
+#X connect 89 0 90 0;
+#X coords 0 -1 1 1 970 440 1 0 0;
+#X restore 141 443 pd \$0-generations-panes;
+#X obj 107 105 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#N canvas 0 23 1920 1127 \$0-setting-panes 0;
+#X obj 1503 64 inlet;
+#X msg 1510 192 0;
+#X obj 1383 80 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
+-1 -1 5;
+#X obj 1596 224 pack f f;
+#X obj 1509 94 t f f b;
+#X obj 1483 138 != 0;
+#X text 1316 194 get's messy without this ->;
+#X text 1772 82 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
+;
+#X obj 1533 338 s pd-\$0-setting-panes;
+#X obj 202 115 tgl 30 0 run run_interface RUN 4 -10 0 10 -262144 -1
+-1 0 1;
+#X obj 322 116 tgl 30 0 record empty RECORD 4 -10 0 10 -262144 -1 -1
+0 1;
+#X obj 261 116 tgl 30 0 send_clock_out empty Send_Clock_Out -30 -10
+0 10 -262144 -1 -1 0 1;
+#X floatatom 148 49 10 0 0 2 BPM bpm_init -;
+#X floatatom 308 704 5 0 0 0 py2pd_port py2pd_port_init py2pd_port
+;
+#X floatatom 432 705 5 0 0 0 pd2py_port pd2py_port_init pd2py_port
+;
+#X obj 195 529 hradio 10 1 0 5 meter_numerator meter_numerator_preset
+_1_2_3_4_6_ -2 -8 0 8 -262144 -1 -1 3;
+#X obj 338 530 hradio 10 1 0 4 meter_denominator meter_denominator_preset
+_1_2_4_8_ -2 -8 0 8 -262144 -1 -1 2;
+#X text 258 524 Numerator;
+#X text 388 526 Denominator;
+#X text 567 618 Run the python script before opening the pd patch (python
+main.py --py2pd_port 1123 --pd2py_port 1415), f 121;
+#X floatatom 433 727 5 0 0 0 drum_out_channel drum_out_channel_init
+drum_out_channel;
+#X obj 765 74 bng 15 250 50 0 disconnect_py2pd_connection empty disconnect_py2pd_connection
 17 7 0 10 -262144 -1 -1;
-#X obj 783 226 bng 15 250 50 0 disconnect_pd2py_connection empty disconnect_pd2py_connection
+#X obj 766 92 bng 15 250 50 0 disconnect_pd2py_connection empty disconnect_pd2py_connection
 17 7 0 10 -262144 -1 -1;
-#X obj 1244 114 cnv 15 400 200 empty empty Settings_and_Source_Not_Shown_On_Main_GUI
-20 12 0 14 -233017 -66577 0;
-#N canvas 0 23 800 806 guts 1;
-#X obj 40 134 cnv 15 300 120 empty empty TEMPO_(QPM) 20 12 0 14 -228856
+#X floatatom 709 58 5 0 0 0 - - -;
+#X obj -3 99 ctlin 85, f 14;
+#X obj -3 118 res/pushbutton_cc2toggle, f 26;
+#X obj 683 132 ctlin, f 27;
+#X floatatom 682 159 5 0 0 0 - - -;
+#X floatatom 775 170 5 0 0 0 - - -;
+#X floatatom 870 171 5 0 0 0 - - -;
+#X obj -4 173 res/pushbutton_cc2toggle, f 26;
+#X floatatom 380 124 10 0 0 2 BPM - bpm;
+#X obj -4 154 ctlin 86, f 14;
+#X obj 36 49 ctlin 14, f 14;
+#X obj 36 67 res/rotary_encoder_to_value;
+#X floatatom 517 241 10 0 0 2 metronome_volume_init metronome_volume_init
+-;
+#X obj 517 277 res/rotary_encoder_to_value, f 26;
+#X obj 517 259 ctlin 15, f 14;
+#X floatatom 620 309 5 0 0 0 - - -;
+#X obj 621 239 loadbang;
+#X msg 683 258 0 3;
+#X msg 621 257 0.01;
+#X msg 1663 197 80;
+#X msg 1704 197 280;
+#X msg 1738 201 480;
+#X msg 1776 200 680;
+#X msg 1533 311 donecanvasdialog 1 -1 \$1 0 -1 1 1 300 70 180 \$2;
+#X obj 200 321 hsl 110 15 0 1 0 0 groove_volume groove_volume_init
+Numpad_Volume -2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 349 322 hsl 110 15 0 1 0 0 metronome_volume empty Metronome_Volume
+-2 -8 0 10 -262144 -1 -1 1090 1;
+#X text 202 497 Meter (only affects metronome sound);
+#X obj 1650 164 sel 1 2 3 4 5 6;
+#X obj 267 814 hradio 30 1 0 4 ppq_selection ppq_selection_init PPQ_384_192__96__48
+-19 -8 0 12 -262144 -1 -1 0;
+#X msg 1822 198 780;
+#X msg 1865 194 880;
+#X text 398 797 Resolution;
+#X text 422 782 PPQ;
+#X text 192 905 To open the main patch find [pd main];
+#X connect 0 0 4 0;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 46 0;
+#X connect 4 0 5 0;
+#X connect 4 1 50 0;
+#X connect 4 2 1 0;
+#X connect 5 0 3 0;
+#X connect 12 0 34 1;
+#X connect 24 0 25 0;
+#X connect 25 0 9 0;
+#X connect 26 0 27 0;
+#X connect 26 1 28 0;
+#X connect 26 2 29 0;
+#X connect 30 0 10 0;
+#X connect 32 0 30 0;
+#X connect 33 0 34 0;
+#X connect 34 1 31 0;
+#X connect 35 0 36 1;
+#X connect 36 1 38 0;
+#X connect 37 0 36 0;
+#X connect 38 0 48 0;
+#X connect 39 0 41 0;
+#X connect 39 0 40 0;
+#X connect 40 0 36 3;
+#X connect 41 0 36 2;
+#X connect 42 0 3 1;
+#X connect 43 0 3 1;
+#X connect 44 0 3 1;
+#X connect 45 0 3 1;
+#X connect 46 0 8 0;
+#X connect 50 0 42 0;
+#X connect 50 1 43 0;
+#X connect 50 2 44 0;
+#X connect 50 3 45 0;
+#X connect 50 4 52 0;
+#X connect 50 5 53 0;
+#X connect 52 0 3 1;
+#X connect 53 0 3 1;
+#X coords 0 -1 1 1 300 70 1 180 80;
+#X restore 107 120 pd \$0-setting-panes;
+#X obj 103 49 loadbang;
+#X msg 104 67 1;
+#X obj 422 145 bng 30 250 50 0 reset empty Reset 0 -10 0 10 -262144
+-1 -1;
+#N canvas 63 413 1675 657 \$0-groove-visualizer 0;
+#X msg 1381 184 0;
+#X obj 1254 72 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X obj 1467 216 pack f f;
+#X obj 1521 156 sel 1 2 3;
+#X obj 1380 86 t f f b;
+#X obj 1354 130 != 0;
+#X text 1187 186 get's messy without this ->;
+#X text 1643 74 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
+;
+#X msg 1534 188 0;
+#X msg 1575 189 440;
+#X msg 1609 192 880;
+#X floatatom 1278 156 5 0 0 0 - - -;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array groove 3072 float 2;
+#X coords 0 127 3072 0 864 35 2 0 0;
+#X restore 98 40 graph;
+#X obj 1244 28 inlet;
+#X obj 1349 328 s pd-\$0-groove-visualizer;
+#X msg 1461 241 donecanvasdialog 1 -1 \$1 0 -1 1 1 970 80 0 \$2;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 15 0;
+#X connect 3 0 8 0;
+#X connect 3 1 9 0;
+#X connect 3 2 10 0;
+#X connect 4 0 5 0;
+#X connect 4 1 3 0;
+#X connect 4 2 0 0;
+#X connect 5 0 2 0;
+#X connect 5 0 11 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 1;
+#X connect 10 0 2 1;
+#X connect 13 0 1 0;
+#X connect 15 0 14 0;
+#X coords 0 0 1 1 970 80 0;
+#X restore 141 363 pd \$0-groove-visualizer;
+#N canvas 252 -983 1483 961 main 0;
+#X obj 40 134 cnv 15 600 120 empty empty TEMPO_(QPM)_&_Clock_Related_Stuff
+20 12 0 14 -261682 -4160 0;
+#X floatatom 85 202 5 0 0 0 - - -;
+#X obj 85 223 s playback_pos;
+#X obj 40 6 cnv 15 600 120 empty empty Initialize 20 12 0 14 -228856
 -4160 0;
-#X floatatom 63 182 5 0 0 0 - - -;
-#X obj 63 203 s playback_pos;
-#X obj 40 6 cnv 15 300 120 empty empty Initialize 20 12 0 14 -228856
+#X obj 41 257 cnv 15 600 300 empty empty Update_groove_when_a_velocity_is_received
+20 12 0 14 -204800 -4160 0;
+#X obj 770 220 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 -228856
 -4160 0;
-#X obj 41 257 cnv 15 300 50 empty empty Code_to_plot_and_playback 20
-12 0 14 -228856 -4160 0;
-#X obj 347 135 cnv 15 300 120 empty empty SYNTHESIZER 20 12 0 14 -228856
--4160 0;
-#X obj 347 7 cnv 15 300 120 empty empty Recording_Groove 20 12 0 14
+#X obj 769 93 cnv 15 600 120 empty empty Recording_Groove 20 12 0 14
 -228856 -4160 0;
-#X obj 348 259 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
+#X obj 771 344 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
 -228856 -4160 0;
-#X obj 63 160 res/clock, f 13;
-#X obj 353 192 res/metronome_sound;
-#X obj 353 218 dac~;
-#X obj 350 160 res/mixer_and_synths;
-#X obj 353 293 res/send_groove_events;
-#X obj 354 318 res/receive_generated_notes;
-#X obj 377 41 res/keyboard_interface;
-#X obj 378 75 res/update_slider_for_event;
-#X obj 43 310 cnv 15 300 50 empty empty Code_to_plot_and_playback 20
-12 0 14 -228856 -4160 0;
-#X obj 60 334 res/midi_out_drums;
-#X obj 378 102 res/midi_in;
+#X obj 85 180 res/clock, f 10;
+#X obj 776 277 res/metronome_sound;
+#X obj 776 303 dac~;
+#X obj 773 245 res/mixer_and_synths;
+#X obj 776 378 res/send_groove_events;
+#X obj 777 403 res/receive_generated_notes;
+#X obj 799 127 res/keyboard_interface;
+#X obj 800 161 res/update_slider_for_event;
+#X obj 769 31 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
+12 0 14 -262130 -4160 0;
+#X obj 786 55 res/midi_out_drums;
+#X obj 800 188 res/midi_in;
 #X obj 66 37 res/initialize;
 #X obj 66 74 res/ppq_setter;
-#X obj 64 282 res/update_on_new_groove_event;
-#X obj 252 410 res/scale_groove_vels;
-#N canvas 0 23 888 639 metronome_midi_note_out 1;
+#X obj 405 267 res/update_on_new_groove_event;
+#X obj 784 434 res/scale_groove_vels;
+#N canvas 0 23 888 639 metronome_midi_note_out 0;
 #X obj 67 170 pack f f;
 #X obj 60 120 t f f;
 #X obj 69 208 s \$0-drumNote;
@@ -387,70 +517,231 @@ on pd side and also when there has been a change!!!;
 #X connect 19 0 3 0;
 #X connect 20 0 8 0;
 #X connect 20 0 11 0;
-#X restore 232 539 pd metronome_midi_note_out;
-#X obj 466 501 r metronome_beat_trigger;
-#X obj 96 475 r metronome_measure_trigger;
-#X obj 113 544 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 515 561 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X restore 415 218 pd metronome_midi_note_out;
+#X obj 425 194 r metronome_beat_trigger;
+#X obj 403 171 r metronome_measure_trigger;
+#X text 78 160 Master Clock;
+#X text 377 135 sends midi note 1 and 2 for;
+#X text 376 150 beat locations to manually sync daw;
+#X text 51 290 Whenever a note is played \, the velocity and utimings
+are updated at their corresponding time-steps (for an event to be sent
+out to python via osc the values of the vel and utime sliders should
+be changed rather than the groove plot - in other words \, the groove
+plot just visualizes the groove, f 84;
+#X text 997 33 reads the voice by voice generated drums (defined and
+tracked in res/see_generated_pattern) and sends out (via midi out drum_out_channel)
+;
+#X text 964 121 Use numbers 1 to 9 (low to hi) to play a groove using
+keyboard (increase groove_volume on gui to hear the sound);
 #X connect 1 0 2 0;
 #X connect 8 0 1 0;
 #X connect 9 0 10 0;
 #X connect 9 0 10 1;
 #X connect 24 0 23 1;
-#X connect 24 0 27 0;
 #X connect 25 0 23 0;
-#X connect 25 0 26 0;
-#X restore 1295 148 pd guts;
-#X obj 1293 227 hradio 16 1 0 4 ppq_selection ppq_selection_init PPQ_384_192__96__48
--15 -8 0 6 -262144 -1 -1 0;
-#X obj 578 177 hradio 10 1 0 5 meter_numerator meter_numerator_preset
-_1_2_3_4_6_ -2 -8 0 8 -262144 -1 -1 3;
-#X obj 584 208 hradio 10 1 0 4 meter_denominator meter_denominator_preset
-_1_2_4_8_ -2 -8 0 8 -262144 -1 -1 2;
-#X text 641 172 Numerator;
-#X text 634 204 Denominator;
-#X text 569 183 ---------;
-#X text 115 115 Run the python script before opening the pd patch (python
-main.py --py2pd_port 1123 --pd2py_port 1415), f 121;
-#X floatatom 1064 121 5 0 0 0 drum_out_channel drum_out_channel_init
-drum_out_channel;
-#X floatatom 220 39 5 0 0 0 - - -;
-#X obj 218 14 ctlin 1, f 41;
-#X floatatom 219 78 5 0 0 0 - - -;
-#X obj 219 101 s groove_vel_scale_init;
-#X obj 220 58 expr ($f1/127+.1)*2;
-#X connect 104 0 105 0;
-#X connect 106 0 107 0;
-#X connect 108 0 109 0;
-#X connect 110 0 111 0;
-#X connect 112 0 113 0;
-#X connect 114 0 115 0;
-#X connect 116 0 117 0;
-#X connect 118 0 119 0;
-#X connect 120 0 121 0;
-#X connect 122 0 123 0;
-#X connect 124 0 125 0;
-#X connect 126 0 127 0;
-#X connect 128 0 129 0;
-#X connect 130 0 131 0;
-#X connect 132 0 133 0;
-#X connect 134 0 135 0;
-#X connect 136 0 137 0;
-#X connect 138 0 139 0;
-#X connect 144 0 145 0;
-#X connect 146 0 147 0;
-#X connect 148 0 149 0;
-#X connect 150 0 151 0;
-#X connect 152 0 153 0;
-#X connect 154 0 155 0;
-#X connect 156 0 157 0;
-#X connect 158 0 159 0;
-#X connect 160 0 161 0;
-#X connect 162 0 163 0;
-#X connect 181 0 185 0;
-#X connect 182 0 181 0;
-#X connect 183 0 184 0;
-#X connect 185 0 183 0;
+#X restore 1335 165 pd main;
+#X f 17;
+#X obj 111 239 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 63 413 1675 657 \$0-groove-velocities-offsets 0;
+#X msg 1381 184 0;
+#X obj 1254 72 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 1467 216 pack f f;
+#X obj 1521 156 sel 1 2 3;
+#X obj 1380 86 t f f b;
+#X obj 1354 130 != 0;
+#X text 1187 186 get's messy without this ->;
+#X text 1643 74 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
+;
+#X msg 1534 188 0;
+#X msg 1575 189 440;
+#X msg 1609 192 880;
+#X floatatom 1278 156 5 0 0 0 - - -;
+#X obj 1244 28 inlet;
+#X obj 1467 259 s pd-\$0-groove-velocities-offsets;
+#X obj 99 9 hsl 866 15 0 3072 0 0 current_pos playback_pos empty -2
+-8 0 10 -228856 -1 -1 1352 1;
+#X obj 98 29 vsl 27 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
+-1 4787 0;
+#X obj 102 97 hsl 22 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
+-262144 -1 844 0;
+#X obj 126 29 vsl 27 65 0 127 0 0 v2 v2r empty 0 -9 0 10 -262144 -33289
+-1 788 0;
+#X obj 129 97 hsl 22 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 -262144
+-1 -1 628 0;
+#X obj 153 29 vsl 27 65 0 127 0 0 v3 v3r empty 0 -9 0 10 -262144 -33289
+-1 3679 0;
+#X obj 156 97 hsl 22 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 -262144
+-1 -1 346 0;
+#X obj 180 29 vsl 27 65 0 127 0 0 v4 v4r empty 0 -9 0 10 -262144 -33289
+-1 4334 0;
+#X obj 183 97 hsl 22 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 -262144
+-1 -1 563 0;
+#X obj 207 29 vsl 27 65 0 127 0 0 v5 v5r empty 0 -9 0 10 -228856 -33289
+-1 5644 0;
+#X obj 210 97 hsl 22 8 -0.5 0.49 0 0 ut5 ut5r empty -2 -8 0 4 -228856
+-33289 -1 996 0;
+#X obj 234 29 vsl 27 65 0 127 0 0 v6 v6r empty 0 -9 0 10 -262144 -33289
+-1 703 0;
+#X obj 237 97 hsl 22 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 -262144
+-1 -1 519 0;
+#X obj 261 29 vsl 27 65 0 127 0 0 v7 v7r empty 0 -9 0 10 -262144 -33289
+-1 4838 0;
+#X obj 264 97 hsl 22 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
+-1 -1 325 0;
+#X obj 288 29 vsl 27 65 0 127 0 0 v8 v8r empty 0 -9 0 10 -262144 -33289
+-1 6400 0;
+#X obj 291 97 hsl 22 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
+-1 -1 152 0;
+#X obj 315 29 vsl 27 65 0 127 0 0 v9 v9r empty 0 -9 0 10 -228856 -33289
+-1 6047 0;
+#X obj 318 97 hsl 22 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
+-33289 -1 1558 0;
+#X obj 342 29 vsl 27 65 0 127 0 0 v10 v10r empty 0 -9 0 10 -262144
+-33289 -1 4636 0;
+#X obj 345 97 hsl 22 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 -262144
+-1 -1 1104 0;
+#X obj 369 29 vsl 27 65 0 127 0 0 v11 v11r empty 0 -9 0 10 -262144
+-33289 -1 3880 0;
+#X obj 372 97 hsl 22 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 -262144
+-1 -1 303 0;
+#X obj 396 29 vsl 27 65 0 127 0 0 v12 v12r empty 0 -9 0 10 -262144
+-33289 -1 4586 0;
+#X obj 399 97 hsl 22 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
+-1 -1 866 0;
+#X obj 423 29 vsl 27 65 0 127 0 0 v13 v13r empty 0 -9 0 10 -228856
+-33289 -1 4687 0;
+#X obj 426 97 hsl 22 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
+-33289 -1 693 0;
+#X obj 450 29 vsl 27 65 0 127 0 0 v14 v14r empty 0 -9 0 10 -262144
+-33289 -1 703 0;
+#X obj 453 97 hsl 22 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
+-1 -1 801 0;
+#X obj 477 29 vsl 27 65 0 127 0 0 v15 v15r empty 0 -9 0 10 -262144
+-33289 -1 3477 0;
+#X obj 480 97 hsl 22 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
+-1 -1 1061 0;
+#X obj 504 29 vsl 27 65 0 127 0 0 v16 v16r empty 0 -9 0 10 -262144
+-33289 -1 3074 0;
+#X obj 507 97 hsl 22 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
+-1 -1 1515 0;
+#X text 108 105 1;
+#X text 215 105 5;
+#X text 319 105 9;
+#X text 427 105 13;
+#X obj 531 29 vsl 27 65 0 127 0 0 v17 v17r empty 0 -9 0 10 -128992
+-262144 -1 3528 0;
+#X obj 534 97 hsl 22 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
+-262144 -1 1732 0;
+#X obj 558 29 vsl 27 65 0 127 0 0 v18 v18r empty 0 -9 0 10 -262144
+-33289 -1 703 0;
+#X obj 561 97 hsl 22 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
+-1 -1 108 0;
+#X obj 585 29 vsl 27 65 0 127 0 0 v19 v19r empty 0 -9 0 10 -262144
+-33289 -1 1159 0;
+#X obj 588 97 hsl 22 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
+-1 -1 628 0;
+#X obj 612 29 vsl 27 65 0 127 0 0 v20 v20r empty 0 -9 0 10 -262144
+-33289 -1 3326 0;
+#X obj 615 97 hsl 22 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
+-1 -1 584 0;
+#X obj 639 29 vsl 27 65 0 127 0 0 v21 v21r empty 0 -9 0 10 -228856
+-33289 -1 703 0;
+#X obj 642 97 hsl 22 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
+-33289 -1 887 0;
+#X obj 666 29 vsl 27 65 0 127 0 0 v22 v22r empty 0 -9 0 10 -262144
+-33289 -1 703 0;
+#X obj 669 97 hsl 22 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
+-1 -1 130 0;
+#X obj 693 29 vsl 27 65 0 127 0 0 v23 v23r empty 0 -9 0 10 -262144
+-33289 -1 4586 0;
+#X obj 696 97 hsl 22 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
+-1 -1 455 0;
+#X obj 720 29 vsl 27 65 0 127 0 0 v24 v24r empty 0 -9 0 10 -262144
+-33289 -1 4334 0;
+#X obj 723 97 hsl 22 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
+-1 -1 281 0;
+#X obj 747 29 vsl 27 65 0 127 0 0 v25 v25r empty 0 -9 0 10 -228856
+-33289 -1 3276 0;
+#X obj 750 97 hsl 22 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
+-33289 -1 1732 0;
+#X obj 774 29 vsl 27 65 0 127 0 0 v26 v26r empty 0 -9 0 10 -262144
+-33289 -1 4334 0;
+#X obj 777 97 hsl 22 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 -262144
+-1 -1 714 0;
+#X obj 801 29 vsl 27 65 0 127 0 0 v27 v27r empty 0 -9 0 10 -262144
+-33289 -1 3931 0;
+#X obj 804 97 hsl 22 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
+-1 -1 130 0;
+#X obj 828 29 vsl 27 65 0 127 0 0 v28 v28r empty 0 -9 0 10 -262144
+-33289 -1 3880 0;
+#X obj 831 97 hsl 22 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
+-1 -1 0 0;
+#X obj 855 29 vsl 27 65 0 127 0 0 v29 v29r empty 0 -9 0 10 -228856
+-33289 -1 4082 0;
+#X obj 858 97 hsl 22 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
+-33289 -1 628 0;
+#X obj 882 29 vsl 27 65 0 127 0 0 v30 v30r empty 0 -9 0 10 -262144
+-33289 -1 703 0;
+#X obj 885 97 hsl 22 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 -262144
+-1 -1 1667 0;
+#X obj 909 29 vsl 27 65 0 127 0 0 v31 v31r empty 0 -9 0 10 -262144
+-33289 -1 814 0;
+#X obj 912 97 hsl 22 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
+-1 -1 563 0;
+#X obj 936 29 vsl 27 65 0 127 0 0 v32 v32r empty 0 -9 0 10 -262144
+-33289 -1 703 0;
+#X obj 939 97 hsl 22 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
+-1 -1 1558 0;
+#X text 534 105 17;
+#X text 645 104 21;
+#X text 751 104 25;
+#X text 860 103 29;
+#X obj 27 28 vsl 27 65 0.1 3 0 0 empty groove_vel_scale_init empty
+0 -9 0 10 -262144 -1 -1 221 0;
+#X floatatom 27 97 5 0 0 0 - - groove_vel_scale;
+#X text 61 30 Vel;
+#X text 54 69 uTime;
+#X text -1 46 +/-;
+#X msg 1467 237 donecanvasdialog 1 -1 \$1 0 -1 1 1 970 124 0 \$2;
+#X connect 0 0 2 0;
+#X connect 1 0 4 0;
+#X connect 2 0 92 0;
+#X connect 3 0 8 0;
+#X connect 3 1 9 0;
+#X connect 3 2 10 0;
+#X connect 4 0 5 0;
+#X connect 4 1 3 0;
+#X connect 4 2 0 0;
+#X connect 5 0 2 0;
+#X connect 5 0 11 0;
+#X connect 8 0 2 1;
+#X connect 9 0 2 1;
+#X connect 10 0 2 1;
+#X connect 12 0 1 0;
+#X connect 87 0 88 0;
+#X connect 92 0 13 0;
+#X coords 0 -1 1 1 970 124 1 0 0;
+#X restore 141 239 pd \$0-groove-velocities-offsets;
+#X obj 111 364 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 112 443 vradio 30 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X obj 8 475 loadbang;
+#X msg 11 499 1;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 7 0;
+#X connect 8 0 6 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 13 0 10 0;
+#X connect 17 0 18 0;
+#X connect 19 0 15 0;
+#X connect 20 0 9 0;
+#X connect 21 0 22 0;
+#X connect 22 0 20 0;
+#X connect 22 0 19 0;
+#X connect 22 0 17 0;
 #X coords 0 0 1 1 1024 1024 2 100 100;

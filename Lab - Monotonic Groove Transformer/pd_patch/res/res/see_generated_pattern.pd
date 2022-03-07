@@ -1,0 +1,56 @@
+#N canvas 174 -924 1440 806 12;
+#X obj 22 16 cnv 15 865 36 empty empty empty 0 8 0 12 -229182 -33289
+0;
+#X obj 21 62 cnv 15 865 36 empty empty empty 0 8 0 12 -225077 -33289
+0;
+#X obj 21 107 cnv 15 865 36 empty empty empty 0 8 0 12 -262013 -33289
+0;
+#X obj 21 155 cnv 15 865 36 empty empty empty 0 8 0 12 -257398 -33289
+0;
+#X obj 21 203 cnv 15 865 36 empty empty empty 0 8 0 12 -262136 -33289
+0;
+#X obj 21 250 cnv 15 865 36 empty empty empty 0 8 0 12 -261996 -33289
+0;
+#X obj 21 293 cnv 15 865 36 empty empty empty 0 8 0 12 -261600 -33289
+0;
+#X obj 21 340 cnv 15 865 36 empty empty empty 0 8 0 12 -55982 -33289
+0;
+#X obj 21 385 cnv 15 865 36 empty empty empty 0 8 0 12 -26605 -33289
+0;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array HH_CLOSED 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 123 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array HH_OPEN 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 171 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array TOM_3_LO 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 219 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array TOM_2_MID 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 266 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array TOM_1_HI 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 309 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array CRASH 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 355 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array RIDE 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 21 401 graph;
+#N canvas 0 23 450 278 (subpatch) 0;
+#X array KICK 3072 float 2;
+#X coords 0 1 3072 0 864 20 2 0 0;
+#X restore 22 32 graph;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array SNARE 3072 float 2;
+#X coords 0 1 3072 0 864 20 1 0 0;
+#X restore 21 78 graph;
+#X coords 0 -1 1 1 900 430 2 0 0;
