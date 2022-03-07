@@ -24,8 +24,6 @@ parser.add_argument('--wait', type=float, default=1,
 
 args = parser.parse_args()
 
-
-
 if __name__ == '__main__':
     # ------------------ Load Trained Model  ------------------ #
     model_name = "groove_transformer_trained_2"         # "groove_transformer_trained"
