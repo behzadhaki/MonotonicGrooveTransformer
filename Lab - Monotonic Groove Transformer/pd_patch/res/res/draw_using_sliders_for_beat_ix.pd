@@ -1,8 +1,8 @@
-#N canvas 106 298 1334 533 12;
+#N canvas 106 296 1334 533 12;
 #X obj 134 264 loadbang, f 3;
 #X obj 134 313 i 1;
-#X obj 42 360 tabwrite groove, f 16;
-#X obj 42 386 tabwrite groove, f 16;
+#X obj 18 404 tabwrite groove, f 16;
+#X obj 18 430 tabwrite groove, f 16;
 #X obj 39 -21 inlet;
 #X obj 42 312 unpack f f;
 #X obj 659 -12 inlet;

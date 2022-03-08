@@ -1,11 +1,11 @@
-#N canvas 512 478 928 318 10;
+#N canvas 720 24 720 805 10;
 #X msg 163 123 252;
 #X msg 64 123 250;
 #X msg 13 123 248;
 #X obj 13 102 metro 20.8333;
 #X obj 372 40 expr (60000/$f1/24), f 7;
 #X obj 13 72 tgl 15 0 empty empty Clock -7 -5 0 10 -203904 -1 -262144
-0 1;
+1 1;
 #X msg 114 123 251;
 #X obj 114 67 bng 15 250 50 0 empty empty Continue -17 -7 0 10 -203904
 -4034 -262144;
@@ -15,11 +15,11 @@
 -262144;
 #X obj 309 50 select;
 #X obj 237 67 tgl 15 0 empty empty Start(X)/Stop+Clock -44 -7 0 10
--228992 -1 -262144 0 1;
-#X msg 307 82 set 0, f 3;
-#X msg 338 82 set 1, f 3;
+-258699 -262144 -262144 1 1;
+#X msg 191 108 set 0, f 3;
+#X msg 222 108 set 1, f 3;
 #X obj 339 -157 nbx 5 14 1 1000 0 0 empty empty BPM 0 -8 0 10 -203904
--1 -262144 120 256;
+-1 -262144 70 256;
 #X msg 237 180 color 13 0 0;
 #X obj 13 144 select;
 #X msg 237 160 color 8 22 0;

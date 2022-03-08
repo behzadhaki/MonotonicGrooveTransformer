@@ -1,5 +1,5 @@
-#N canvas 401 -1057 1009 1035 12;
-#X obj 67 62 r v1;
+#N canvas 0 -1057 1009 1035 12;
+#X obj 67 0 r v1;
 #X obj 127 63 r ut1;
 #X text 232 53 step;
 #X obj 203 24 loadbang;

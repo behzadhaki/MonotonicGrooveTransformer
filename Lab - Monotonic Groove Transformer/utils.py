@@ -3,6 +3,14 @@ import torch
 from trained_torch_models.params import model_params
 from BaseGrooveTransformers.models.transformer import GrooveTransformerEncoder
 
+import time
+
+import threading
+
+#!pip install python-osc
+from pythonosc.osc_server import BlockingOSCUDPServer
+from pythonosc.dispatcher import Dispatcher
+
 # MAGENTA MAPPING
 ROLAND_REDUCED_MAPPING = {
     "KICK": [36],
@@ -89,3 +97,67 @@ def get_prediction(trained_model, input_tensor, voice_thresholds, voice_max_coun
         h[:, :, ix] = torch.where(h[:, :, ix] > thres, 1, 0)
 
     return h, v, o
+
+
+class OscMessageReceiver(threading.Thread):
+
+    def __init__(self, ip, receive_from_port, message_queue):
+        """
+        Constructor for OscReceiver CLASS
+
+        :param ip:                      ip address that pd uses to send messages to python
+        :param receive_from_port:       port  that pd uses to send messages to python
+        :param quit_event:              a Threading.Event object, for finishing the receiving process
+        :param address_list:            list of osc addresses that need to be assigned a specific handler
+        :param address_handler_list:    the handlers for a received osc message
+        """
+
+        # we want the OscReceiver to run in a separate concurrent thread
+        # hence it is a child instance of the threading.Thread class
+        super(OscMessageReceiver, self).__init__()
+
+        # connection parameters
+        self.ip = ip
+        self.receiving_from_port = receive_from_port
+        self.message_queue = message_queue
+
+        # dispatcher is used to assign a callback to a received osc message
+        self.dispatcher = Dispatcher()
+        self.dispatcher.set_default_handler(self.default_handler)
+
+        # python-osc method for establishing the UDP communication with pd
+        self.server = BlockingOSCUDPServer((self.ip, self.receiving_from_port), self.dispatcher)
+
+    def run(self):
+        # When you start() an instance of the class, this method starts running
+        print("OscMessageReceiver Started ---")
+
+        # Counter for the number messages are received
+        count = 0
+
+        # Keep waiting of osc messages (unless the you've quit the receiver)
+        while 1:
+            # handle_request() waits until a new message is received
+            # Messages are buffered! so if each loop takes a long time, messages will be stacked in the buffer
+            # uncomment the sleep(1) line to see the impact of processing time
+            self.server.handle_request()
+            count = (count + 1)  # Increase counter
+            # time.sleep(1)
+
+    def default_handler(self, address, *args):
+        self.message_queue.put((address, args))
+
+
+    def get_ip(self):
+        return self.ip
+
+    def get_receiving_from_port(self):
+        return self.receiving_from_port
+
+    def get_server(self):
+        return self.server
+
+    def change_ip_port(self, ip, port):
+        self.ip = ip
+        self.receiving_from_port = port
+        self.server = BlockingOSCUDPServer(self.ip, self.receiving_from_port)
