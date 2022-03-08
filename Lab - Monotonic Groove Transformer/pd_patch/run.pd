@@ -1,3 +1,3 @@
-#N canvas 300 199 843 818 12;
-#X obj 11 -194 res/internals;
-#X coords 0 818 1 817 1024 1024 0;
+#N canvas 960 24 845 803 12;
+#X obj 11 -209 res/internals;
+#X coords 0 803 1 802 1024 1024 0;
