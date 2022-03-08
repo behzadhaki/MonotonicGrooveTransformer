@@ -24,18 +24,11 @@ const 0 \; CRASH const 0 \; RIDE const 0 \;;
 #X msg 612 294 \; groove_vel_scale_init 1 \; meter_numerator_preset
 3 \; meter_denominator_preset 2 \; metronome_volume_init 0.1 \; groove_volume
 0 \; ppq_selection_init 0 \; pd dsp 1 \;, f 56;
-#X msg 410 207 \; thres_0_init 0.6 \; max_count_0_init 6 \; thres_1_init
-0.6 \; max_count_1_init 4 \; thres_2_init 0.9 \; max_count_2_init 32
-\; thres_3_init 1 \; max_count_3_init 12 \; thres_4_init 0.9 \; max_count_4_init
-1 \; thres_5_init 0.9 \; max_count_5_init 1 \; thres_6_init 0.9 \;
-max_count_6_init 1 \; thres_7_init 0.8 \; max_count_7_init 2 \; thres_8_init
-0.9 \; max_count_8_init 0 \;;
 #X connect 0 0 3 0;
 #X connect 1 0 7 0;
 #X connect 2 0 0 0;
 #X connect 3 9 4 0;
 #X connect 3 10 5 0;
-#X connect 3 11 10 0;
 #X connect 3 12 6 0;
 #X connect 3 13 9 0;
 #X connect 7 0 0 0;

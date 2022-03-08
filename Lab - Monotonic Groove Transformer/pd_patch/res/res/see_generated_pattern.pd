@@ -1,56 +1,216 @@
-#N canvas 174 -924 1440 806 12;
-#X obj 22 16 cnv 15 865 36 empty empty empty 0 8 0 12 -229182 -33289
+#N canvas 0 24 720 826 12;
+#X obj 168 32 cnv 15 865 36 empty empty empty 0 8 0 12 -229182 -33289
 0;
-#X obj 21 62 cnv 15 865 36 empty empty empty 0 8 0 12 -225077 -33289
+#X obj 167 78 cnv 15 865 36 empty empty empty 0 8 0 12 -225077 -33289
 0;
-#X obj 21 107 cnv 15 865 36 empty empty empty 0 8 0 12 -262013 -33289
+#X obj 167 123 cnv 15 865 36 empty empty empty 0 8 0 12 -262013 -33289
 0;
-#X obj 21 155 cnv 15 865 36 empty empty empty 0 8 0 12 -257398 -33289
+#X obj 167 171 cnv 15 865 36 empty empty empty 0 8 0 12 -257398 -33289
 0;
-#X obj 21 203 cnv 15 865 36 empty empty empty 0 8 0 12 -262136 -33289
+#X obj 167 219 cnv 15 865 36 empty empty empty 0 8 0 12 -262136 -33289
 0;
-#X obj 21 250 cnv 15 865 36 empty empty empty 0 8 0 12 -261996 -33289
+#X obj 167 266 cnv 15 865 36 empty empty empty 0 8 0 12 -261996 -33289
 0;
-#X obj 21 293 cnv 15 865 36 empty empty empty 0 8 0 12 -261600 -33289
+#X obj 167 309 cnv 15 865 36 empty empty empty 0 8 0 12 -261600 -33289
 0;
-#X obj 21 340 cnv 15 865 36 empty empty empty 0 8 0 12 -55982 -33289
+#X obj 167 356 cnv 15 865 36 empty empty empty 0 8 0 12 -55982 -33289
 0;
-#X obj 21 385 cnv 15 865 36 empty empty empty 0 8 0 12 -26605 -33289
+#X obj 167 401 cnv 15 865 36 empty empty empty 0 8 0 12 -26605 -33289
 0;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array HH_CLOSED 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 123 graph;
+#X restore 167 139 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array HH_OPEN 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 171 graph;
+#X restore 167 187 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array TOM_3_LO 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 219 graph;
+#X restore 167 235 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array TOM_2_MID 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 266 graph;
+#X restore 167 282 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array TOM_1_HI 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 309 graph;
+#X restore 167 325 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array CRASH 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 355 graph;
+#X restore 167 371 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array RIDE 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 21 401 graph;
+#X restore 167 417 graph;
 #N canvas 0 23 450 278 (subpatch) 0;
 #X array KICK 3072 float 2;
 #X coords 0 1 3072 0 864 20 2 0 0;
-#X restore 22 32 graph;
+#X restore 168 48 graph;
 #N canvas 0 22 450 278 (subpatch) 0;
 #X array SNARE 3072 float 2;
 #X coords 0 1 3072 0 864 20 1 0 0;
-#X restore 21 78 graph;
-#X coords 0 -1 1 1 900 430 2 0 0;
+#X restore 167 94 graph;
+#X obj 18 32 cnv 15 140 36 empty empty empty 0 8 0 12 -229182 -33289
+0;
+#X obj 17 78 cnv 15 140 36 empty empty empty 0 8 0 12 -225077 -33289
+0;
+#X obj 17 123 cnv 15 140 36 empty empty empty 0 8 0 12 -262013 -33289
+0;
+#X obj 17 171 cnv 15 140 36 empty empty empty 0 8 0 12 -257398 -33289
+0;
+#X obj 17 219 cnv 15 140 36 empty empty empty 0 8 0 12 -262136 -33289
+0;
+#X obj 17 266 cnv 15 140 36 empty empty empty 0 8 0 12 -261996 -33289
+0;
+#X obj 17 309 cnv 15 140 36 empty empty empty 0 8 0 12 -261600 -33289
+0;
+#X obj 17 356 cnv 15 140 36 empty empty empty 0 8 0 12 -55982 -33289
+0;
+#X obj 17 401 cnv 15 140 36 empty empty empty 0 8 0 12 -26605 -33289
+0;
+#X floatatom 70 49 5 0 32 0 - max_count_0 -;
+#X floatatom 70 96 5 0 32 0 - max_count_1 -;
+#X floatatom 70 141 5 0 32 0 - max_count_2 -;
+#X floatatom 70 189 5 0 32 0 - max_count_3 -;
+#X floatatom 70 236 5 0 32 0 - max_count_4 -;
+#X floatatom 70 284 5 0 32 0 - max_count_5 -;
+#X floatatom 70 327 5 0 32 0 - max_count_6 -;
+#X floatatom 70 374 5 0 32 0 - max_count_7 -;
+#X floatatom 70 419 5 0 32 0 - max_count_8 -;
+#X floatatom 30 49 5 0 1 0 - thres0 -;
+#X floatatom 30 96 5 0 1 0 - thres1 -;
+#X floatatom 30 141 5 0 1 0 - thres2 -;
+#X floatatom 30 189 5 0 1 0 - thres3 -;
+#X floatatom 30 236 5 0 1 0 - thres4 -;
+#X floatatom 30 284 5 0 1 0 - thres5 -;
+#X floatatom 30 327 5 0 1 0 - thres6 -;
+#X floatatom 30 374 5 0 1 0 - thres7 -;
+#X floatatom 30 419 5 0 1 0 - thres8 -;
+#X obj 58 18 hradio 20 1 0 3 cc_page_for_generations cc_page_for_generations_in
+empty 0 -8 0 14 -262144 -1 -1 0;
+#X floatatom 112 49 5 0 3 0 - vel_scale_0 -;
+#X floatatom 112 96 5 0 3 0 - vel_scale_1 -;
+#X floatatom 112 141 5 0 3 0 - vel_scale_2 -;
+#X floatatom 112 189 5 0 3 0 - vel_scale_3 -;
+#X floatatom 112 236 5 0 3 0 - vel_scale_4 -;
+#X floatatom 112 284 5 0 3 0 - vel_scale_5 -;
+#X floatatom 112 327 5 0 3 0 - vel_scale_6 -;
+#X floatatom 112 374 5 0 3 0 - vel_scale_7 -;
+#X floatatom 112 419 5 0 3 0 - vel_scale_8 -;
+#X obj 38 2 cnv 15 30 13 empty empty likelihood 0 6 0 5 -233017 -1
+0;
+#X obj 74 2 cnv 15 26 13 empty empty Max_Count 0 6 0 5 -233017 -1 0
+;
+#X obj 105 1 cnv 15 24 13 empty empty Volume 0 6 0 6 -233017 -1 0;
+#X obj -373 65 change;
+#X obj -373 84 s thres_0_in;
+#X obj -373 112 change;
+#X obj -372 159 change;
+#X obj -372 207 change;
+#X obj -373 131 s thres_1_in;
+#X obj -372 178 s thres_2_in;
+#X obj -372 226 s thres_3_in;
+#X obj -371 253 change;
+#X obj -371 272 s thres_4_in;
+#X obj -371 300 change;
+#X obj -371 344 change;
+#X obj -370 392 change;
+#X obj -370 436 change;
+#X obj -371 319 s thres_5_in;
+#X obj -371 363 s thres_6_in;
+#X obj -370 411 s thres_7_in;
+#X obj -370 455 s thres_8_in;
+#X obj -279 66 change;
+#X obj -279 113 change;
+#X obj -278 160 change;
+#X obj -278 208 change;
+#X obj -277 254 change;
+#X obj -277 301 change;
+#X obj -277 345 change;
+#X obj -276 393 change;
+#X obj -276 437 change;
+#X obj -279 85 s max_count_0_in;
+#X obj -279 132 s max_count_1_in;
+#X obj -278 179 s max_count_2_in;
+#X obj -278 226 s max_count_3_in;
+#X obj -277 273 s max_count_4_in;
+#X obj -277 320 s max_count_5_in;
+#X obj -277 364 s max_count_6_in;
+#X obj -276 412 s max_count_7_in;
+#X obj -276 456 s max_count_8_in;
+#X obj -154 66 change;
+#X obj -154 113 change;
+#X obj -153 160 change;
+#X obj -153 208 change;
+#X obj -152 254 change;
+#X obj -152 301 change;
+#X obj -152 345 change;
+#X obj -151 393 change;
+#X obj -151 437 change;
+#X obj -154 85 s vel_scale_0_in;
+#X obj -154 131 s vel_scale_1_in;
+#X obj -153 179 s vel_scale_2_in;
+#X obj -153 226 s vel_scale_3_in;
+#X obj -152 273 s vel_scale_4_in;
+#X obj -152 320 s vel_scale_5_in;
+#X obj -152 364 s vel_scale_6_in;
+#X obj -151 412 s vel_scale_7_in;
+#X obj -151 456 s vel_scale_8_in;
+#X connect 27 0 76 0;
+#X connect 28 0 77 0;
+#X connect 29 0 78 0;
+#X connect 30 0 79 0;
+#X connect 31 0 80 0;
+#X connect 32 0 81 0;
+#X connect 33 0 82 0;
+#X connect 34 0 83 0;
+#X connect 35 0 84 0;
+#X connect 36 0 58 0;
+#X connect 37 0 60 0;
+#X connect 38 0 61 0;
+#X connect 39 0 62 0;
+#X connect 40 0 66 0;
+#X connect 41 0 68 0;
+#X connect 42 0 69 0;
+#X connect 43 0 70 0;
+#X connect 44 0 71 0;
+#X connect 46 0 94 0;
+#X connect 47 0 95 0;
+#X connect 48 0 96 0;
+#X connect 49 0 97 0;
+#X connect 50 0 98 0;
+#X connect 51 0 99 0;
+#X connect 52 0 100 0;
+#X connect 53 0 101 0;
+#X connect 54 0 102 0;
+#X connect 58 0 59 0;
+#X connect 60 0 63 0;
+#X connect 61 0 64 0;
+#X connect 62 0 65 0;
+#X connect 66 0 67 0;
+#X connect 68 0 72 0;
+#X connect 69 0 73 0;
+#X connect 70 0 74 0;
+#X connect 71 0 75 0;
+#X connect 76 0 85 0;
+#X connect 77 0 86 0;
+#X connect 78 0 87 0;
+#X connect 79 0 88 0;
+#X connect 80 0 89 0;
+#X connect 81 0 90 0;
+#X connect 82 0 91 0;
+#X connect 83 0 92 0;
+#X connect 84 0 93 0;
+#X connect 94 0 103 0;
+#X connect 95 0 104 0;
+#X connect 96 0 105 0;
+#X connect 97 0 106 0;
+#X connect 98 0 107 0;
+#X connect 99 0 108 0;
+#X connect 100 0 109 0;
+#X connect 101 0 110 0;
+#X connect 102 0 111 0;
+#X coords 0 -1 1 1 1050 480 2 0 0;
