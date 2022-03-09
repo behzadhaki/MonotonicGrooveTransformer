@@ -18,8 +18,11 @@ parser.add_argument('--py2pd_port', type=int, default=1123,
 parser.add_argument('--pd2py_port', type=int, default=1415,
                     help='Port for receiving messages sent from pd within the py program (default = 1415)',
                     required=False)
-parser.add_argument('--wait', type=float, default=1,
-                    help='minimum rate of wait time (in seconds) between two executive generation (default = 0.1 seconds)',
+parser.add_argument('--wait', type=float, default=2,
+                    help='minimum rate of wait time (in seconds) between two executive generation (default = 2 seconds)',
+                    required=False)
+parser.add_argument('--show_count', type=bool, default=True,
+                    help='prints out the number of sequences generated',
                     required=False)
 
 args = parser.parse_args()
@@ -92,7 +95,6 @@ if __name__ == '__main__':
             h_new, v_new, o_new = get_prediction(groove_transformer, input_tensor, voice_thresholds,
                                                  voice_max_count_allowed)
             _h, v, o = groove_transformer.forward(input_tensor)
-            print("+", end='')
 
             # send to pd
             osc_messages_to_send = get_new_drum_osc_msgs((h_new, v_new, o_new))
@@ -104,7 +106,15 @@ if __name__ == '__main__':
             # Then send over generated notes one at a time
             for (address, h_v_ix_tuple) in osc_messages_to_send:
                 py_to_pd_OscSender.send_message(address, h_v_ix_tuple)
-            
+
+
+            if args.count:
+                print("Generation #", count)
+
+            # Message pd that sent is over by sending the counter value for number of generations
+            # used so to take snapshots in pd
+            py_to_pd_OscSender.send_message("/generation_count", count)
+
             count += 1
 
             time.sleep(min_wait_time_btn_gens)
