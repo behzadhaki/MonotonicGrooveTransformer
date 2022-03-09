@@ -34,3 +34,18 @@ Now, install python-osc package
 
     pip3 install python-osc
 
+### Running Python script
+
+Go to CMC folder, and activate environment
+    
+    cd .../CMC_SMC/
+    source TorchOSC_venv/bin/activate
+    
+Then change to the lab directory
+
+    cd "Lab - Monotonic Groove Transformer"
+    
+Finally, run the python script
+
+    python main.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2
+    
