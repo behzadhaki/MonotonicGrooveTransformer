@@ -1,0 +1,100 @@
+#N canvas -1547 -252 1440 827 12;
+#X obj 25 141 cnv 15 600 120 empty empty TEMPO_(QPM)_&_Clock_Related_Stuff
+20 12 0 14 -261682 -4160 0;
+#X floatatom 70 209 5 0 0 0 - - -;
+#X obj 70 230 s playback_pos;
+#X obj 25 13 cnv 15 600 120 empty empty Initialize 20 12 0 14 -228856
+-4160 0;
+#X obj 26 264 cnv 15 600 300 empty empty Update_groove_when_a_velocity_is_received
+20 12 0 14 -204800 -4160 0;
+#X obj 755 227 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 -228856
+-4160 0;
+#X obj 754 100 cnv 15 600 120 empty empty Recording_Groove 20 12 0
+14 -228856 -4160 0;
+#X obj 756 351 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
+-228856 -4160 0;
+#X obj 761 310 dac~;
+#X obj 754 38 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
+12 0 14 -262130 -4160 0;
+#N canvas 0 23 888 639 metronome_midi_note_out 0;
+#X obj 67 170 pack f f;
+#X obj 60 120 t f f;
+#X obj 69 208 s \$0-drumNote;
+#X obj 65 260 makenote 0 100;
+#X obj 72 326 noteout;
+#X obj 136 297 r drum_out_channel;
+#X obj 64 53 inlet;
+#X floatatom 323 106 5 0 0 0 - - -;
+#X obj 329 177 pack f f;
+#X obj 322 127 t f f;
+#X obj 331 215 s \$0-drumNote;
+#X obj 327 267 makenote 0 100;
+#X obj 334 333 noteout;
+#X obj 398 304 r drum_out_channel;
+#X obj 326 60 inlet;
+#X text 115 53 Bar beginning;
+#X text 373 58 beats;
+#X msg 62 90 100;
+#X msg 283 83 100;
+#X msg 62 144 1;
+#X msg 324 151 2;
+#X connect 0 0 2 0;
+#X connect 1 0 19 0;
+#X connect 1 1 0 1;
+#X connect 1 1 3 1;
+#X connect 3 0 4 0;
+#X connect 3 1 4 1;
+#X connect 5 0 4 2;
+#X connect 6 0 17 0;
+#X connect 7 0 9 0;
+#X connect 8 0 10 0;
+#X connect 9 0 20 0;
+#X connect 9 1 8 1;
+#X connect 9 1 11 1;
+#X connect 11 0 12 0;
+#X connect 11 1 12 1;
+#X connect 13 0 12 2;
+#X connect 14 0 18 0;
+#X connect 17 0 1 0;
+#X connect 18 0 7 0;
+#X connect 19 0 0 0;
+#X connect 19 0 3 0;
+#X connect 20 0 8 0;
+#X connect 20 0 11 0;
+#X restore 400 225 pd metronome_midi_note_out;
+#X obj 410 201 r metronome_beat_trigger;
+#X obj 388 178 r metronome_measure_trigger;
+#X text 63 167 Master Clock;
+#X text 362 142 sends midi note 1 and 2 for;
+#X text 361 157 beat locations to manually sync daw;
+#X text 36 297 Whenever a note is played \, the velocity and utimings
+are updated at their corresponding time-steps (for an event to be sent
+out to python via osc the values of the vel and utime sliders should
+be changed rather than the groove plot - in other words \, the groove
+plot just visualizes the groove, f 84;
+#X text 982 40 reads the voice by voice generated drums (defined and
+tracked in res/see_generated_pattern) and sends out (via midi out drum_out_channel)
+;
+#X text 949 128 Use numbers 1 to 9 (low to hi) to play a groove using
+keyboard (increase groove_volume on gui to hear the sound);
+#X obj 51 44 initialize_2;
+#X obj 52 79 ppq_setter;
+#X obj 70 187 clock, f 10;
+#X obj 390 274 update_on_new_groove_event;
+#X obj 761 284 metronome_sound;
+#X obj 758 252 mixer_and_synths;
+#X obj 785 195 midi_in;
+#X obj 785 168 update_slider_for_event;
+#X obj 784 134 keyboard_interface;
+#X obj 771 62 midi_out_drums;
+#X obj 761 385 send_groove_events;
+#X obj 762 410 process_received_generated_notes;
+#X obj 769 441 scale_groove_vels;
+#X obj 968 379 osc_receiver;
+#X connect 1 0 2 0;
+#X connect 11 0 10 1;
+#X connect 12 0 10 0;
+#X connect 21 0 1 0;
+#X connect 23 0 8 0;
+#X connect 23 0 8 1;
+#X coords 0 827 1 826 800 800 0;
