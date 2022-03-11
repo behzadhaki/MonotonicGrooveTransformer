@@ -2,12 +2,14 @@ Installation
 ----
 ### Source code
 Clone the repository wherever you prefer
-
+    
+        git clone https://github.com/behzadhaki/MonotonicGrooveTransformer
+        
 ### Python Environment Setup (using venv) 
 
-Then, open the terminal and navigate to the lab folder
+Then, open the terminal and navigate to the project folder
     
-    cd "CMC_SMC/Lab"
+    cd MonotonicGrooveTransformer
     
 Now create a virtual environment for installing the dependencies
 
@@ -38,14 +40,9 @@ Now, install python-osc package
 
 Go to CMC folder, and activate environment
     
-    cd .../CMC_SMC/
     source TorchOSC_venv/bin/activate
-    
-Then change to the lab directory
-
-    cd "Lab - Monotonic Groove Transformer"
     
 Finally, run the python script
 
-    python main.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2
+    python run_generative_engine.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2 --model light_version
     

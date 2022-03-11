@@ -1,5 +1,5 @@
 model_params = {
-    'groove_transformer_trained':
+    'light_version':
         {
             'd_model': 128,
             'embedding_sz': 27,
@@ -9,7 +9,7 @@ model_params = {
             'n_layers': 11,
             'max_len': 32,
             'device': 'cpu' },
-    'groove_transformer_trained_2':
+    'heavy_version':
         {
             'd_model': 512,
             'embedding_sz': 27,

@@ -1,4 +1,4 @@
-#N canvas -1441 -248 1440 827 12;
+#N canvas 454 67 960 1035 12;
 #X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 793 -28 Todo: 1 per voice tres 2 per voice max count 3 scale
@@ -11,7 +11,7 @@ on pd side and also when there has been a change!!!;
 20 12 0 14 -258113 -66577 0;
 #X obj 132 102 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#N canvas 0 24 960 1126 \$0-setting-panes 0;
+#N canvas 0 23 960 1125 \$0-setting-panes 0;
 #X obj 1503 64 inlet;
 #X msg 1510 192 0;
 #X obj 1383 80 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
@@ -52,9 +52,6 @@ main.py --py2pd_port 1123 --pd2py_port 1415), f 121;
 #X msg 1865 194 880;
 #X obj 181 881 cnv 15 298 68 empty empty empty 20 12 0 14 -262144 -66577
 0;
-#X text 225 890 To run the python engine run;
-#X text 207 905 python main.py --py2pd_port 1123, f 36;
-#X text 223 922 --pd2py_port 1415 --wait 2, f 35;
 #X obj 181 781 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
 0;
 #X obj 267 814 hradio 30 1 0 4 ppq_selection ppq_selection_init PPQ_384_192__96__48
@@ -72,9 +69,9 @@ drum_out_channel;
 #X obj 181 481 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
 0;
 #X obj 195 519 hradio 10 1 0 5 meter_numerator meter_numerator_preset
-_1_2_3_4_6_ -2 -8 0 8 -262144 -1 -1 0;
+_1_2_3_4_6_ -2 -8 0 8 -262144 -1 -1 3;
 #X obj 338 520 hradio 10 1 0 4 meter_denominator meter_denominator_preset
-_1_2_4_8_ -2 -8 0 8 -262144 -1 -1 0;
+_1_2_4_8_ -2 -8 0 8 -262144 -1 -1 2;
 #X text 258 514 Numerator;
 #X text 388 516 Denominator;
 #X text 202 487 Meter (only affects metronome sound);
@@ -83,27 +80,28 @@ _1_2_4_8_ -2 -8 0 8 -262144 -1 -1 0;
 #X obj 200 311 hsl 110 15 0 1 0 0 groove_volume groove_volume_init
 Numpad_Volume -2 -8 0 10 -262144 -1 -1 0 1;
 #X obj 349 312 hsl 110 15 0 1 0 0 metronome_volume empty Metronome_Volume
--2 -8 0 10 -262144 -1 -1 0 1;
+-2 -8 0 10 -262144 -1 -1 1090 1;
 #X obj 181 81 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
 0;
-#X obj 202 105 tgl 30 0 run run_interface RUN 4 -10 0 10 -262144 -1
+#X obj 202 105 tgl 30 0 run run_r RUN 4 -10 0 10 -262144 -1 -1 0 1
+;
+#X obj 322 106 tgl 30 0 record record_r RECORD 4 -10 0 10 -262144 -1
 -1 0 1;
-#X obj 322 106 tgl 30 0 record empty RECORD 4 -10 0 10 -262144 -1 -1
-0 1;
-#X obj 261 106 tgl 30 0 send_clock_out empty Send_Clock_Out -30 -10
-0 10 -262144 -1 -1 0 1;
+#X obj 261 106 tgl 30 0 send_clock_out send_clock_out_r Send_Clock_Out
+-30 -10 0 10 -262144 -1 -1 0 1;
 #X floatatom 148 49 10 0 0 2 BPM bpm_init -;
 #X obj -3 99 ctlin 85, f 14;
 #X obj -3 118 res/pushbutton_cc2toggle, f 26;
 #X obj -4 173 res/pushbutton_cc2toggle, f 26;
-#X floatatom 380 114 10 0 0 2 BPM - bpm;
+#X floatatom 380 114 10 0 0 2 BPM bpm_r bpm;
 #X obj -4 154 ctlin 86, f 14;
 #X obj 36 49 ctlin 14, f 14;
 #X obj 36 67 res/rotary_encoder_to_value;
 #X obj 784 336 cnv 15 698 490 empty empty empty 20 12 0 14 -241339
 -66577 0;
-#X obj 443 907 bng 30 250 50 0 reset empty Reset 0 -10 0 10 -258113
--1 -1;
+#X text 185 928 >> python run_generative_engine.py --help;
+#X text 205 905 Prior to Loading a Preset/Session;
+#X text 181 884 Don't Forget to Load the Generative Engine;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
@@ -118,7 +116,7 @@ Numpad_Volume -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 17 0 18 1;
 #X connect 18 1 20 0;
 #X connect 19 0 18 0;
-#X connect 20 0 52 0;
+#X connect 20 0 49 0;
 #X connect 21 0 23 0;
 #X connect 21 0 22 0;
 #X connect 22 0 18 3;
@@ -136,117 +134,16 @@ Numpad_Volume -2 -8 0 10 -262144 -1 -1 0 1;
 #X connect 29 5 31 0;
 #X connect 30 0 3 1;
 #X connect 31 0 3 1;
-#X connect 57 0 64 1;
-#X connect 58 0 59 0;
-#X connect 59 0 54 0;
-#X connect 60 0 55 0;
-#X connect 62 0 60 0;
-#X connect 63 0 64 0;
-#X connect 64 1 61 0;
+#X connect 54 0 61 1;
+#X connect 55 0 56 0;
+#X connect 56 0 51 0;
+#X connect 57 0 52 0;
+#X connect 59 0 57 0;
+#X connect 60 0 61 0;
 #X coords 0 -1 1 1 300 70 1 180 80;
 #X restore 132 117 pd \$0-setting-panes;
 #X obj 128 46 loadbang;
 #X msg 129 64 1;
-#N canvas 806 185 1114 827 main 0;
-#X obj 40 134 cnv 15 600 120 empty empty TEMPO_(QPM)_&_Clock_Related_Stuff
-20 12 0 14 -261682 -4160 0;
-#X floatatom 85 202 5 0 0 0 - - -;
-#X obj 85 223 s playback_pos;
-#X obj 40 6 cnv 15 600 120 empty empty Initialize 20 12 0 14 -228856
--4160 0;
-#X obj 41 257 cnv 15 600 300 empty empty Update_groove_when_a_velocity_is_received
-20 12 0 14 -204800 -4160 0;
-#X obj 770 220 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 -228856
--4160 0;
-#X obj 769 93 cnv 15 600 120 empty empty Recording_Groove 20 12 0 14
--228856 -4160 0;
-#X obj 771 344 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
--228856 -4160 0;
-#X obj 85 180 res/clock, f 10;
-#X obj 776 277 res/metronome_sound;
-#X obj 776 303 dac~;
-#X obj 773 245 res/mixer_and_synths;
-#X obj 776 378 res/send_groove_events;
-#X obj 799 127 res/keyboard_interface;
-#X obj 800 161 res/update_slider_for_event;
-#X obj 769 31 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
-12 0 14 -262130 -4160 0;
-#X obj 786 55 res/midi_out_drums;
-#X obj 800 188 res/midi_in;
-#X obj 66 37 res/initialize;
-#X obj 66 74 res/ppq_setter;
-#X obj 405 267 res/update_on_new_groove_event;
-#X obj 784 434 res/scale_groove_vels;
-#N canvas 0 23 888 639 metronome_midi_note_out 0;
-#X obj 67 170 pack f f;
-#X obj 60 120 t f f;
-#X obj 69 208 s \$0-drumNote;
-#X obj 65 260 makenote 0 100;
-#X obj 72 326 noteout;
-#X obj 136 297 r drum_out_channel;
-#X obj 64 53 inlet;
-#X floatatom 323 106 5 0 0 0 - - -;
-#X obj 329 177 pack f f;
-#X obj 322 127 t f f;
-#X obj 331 215 s \$0-drumNote;
-#X obj 327 267 makenote 0 100;
-#X obj 334 333 noteout;
-#X obj 398 304 r drum_out_channel;
-#X obj 326 60 inlet;
-#X text 115 53 Bar beginning;
-#X text 373 58 beats;
-#X msg 62 90 100;
-#X msg 283 83 100;
-#X msg 62 144 1;
-#X msg 324 151 2;
-#X connect 0 0 2 0;
-#X connect 1 0 19 0;
-#X connect 1 1 0 1;
-#X connect 1 1 3 1;
-#X connect 3 0 4 0;
-#X connect 3 1 4 1;
-#X connect 5 0 4 2;
-#X connect 6 0 17 0;
-#X connect 7 0 9 0;
-#X connect 8 0 10 0;
-#X connect 9 0 20 0;
-#X connect 9 1 8 1;
-#X connect 9 1 11 1;
-#X connect 11 0 12 0;
-#X connect 11 1 12 1;
-#X connect 13 0 12 2;
-#X connect 14 0 18 0;
-#X connect 17 0 1 0;
-#X connect 18 0 7 0;
-#X connect 19 0 0 0;
-#X connect 19 0 3 0;
-#X connect 20 0 8 0;
-#X connect 20 0 11 0;
-#X restore 415 218 pd metronome_midi_note_out;
-#X obj 425 194 r metronome_beat_trigger;
-#X obj 403 171 r metronome_measure_trigger;
-#X text 78 160 Master Clock;
-#X text 377 135 sends midi note 1 and 2 for;
-#X text 376 150 beat locations to manually sync daw;
-#X text 51 290 Whenever a note is played \, the velocity and utimings
-are updated at their corresponding time-steps (for an event to be sent
-out to python via osc the values of the vel and utime sliders should
-be changed rather than the groove plot - in other words \, the groove
-plot just visualizes the groove, f 84;
-#X text 997 33 reads the voice by voice generated drums (defined and
-tracked in res/see_generated_pattern) and sends out (via midi out drum_out_channel)
-;
-#X text 964 121 Use numbers 1 to 9 (low to hi) to play a groove using
-keyboard (increase groove_volume on gui to hear the sound);
-#X obj 983 372 res/osc_receiver;
-#X obj 777 403 res/process_received_generated_notes;
-#X connect 1 0 2 0;
-#X connect 8 0 1 0;
-#X connect 9 0 10 0;
-#X connect 9 0 10 1;
-#X connect 23 0 22 1;
-#X connect 24 0 22 0;
-#X restore 1179 144 pd main;
 #X obj 131 191 cnv 15 698 700 empty empty empty 20 12 0 14 -237242
 -66577 0;
 #X obj 102 271 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -281,67 +178,67 @@ keyboard (increase groove_volume on gui to hear the sound);
 -8 0 10 -228856 -1 -1 798 1;
 #X obj 171 29 vsl 16 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
 -1 0 0;
-#X obj 171 97 hsl 11 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
+#X obj 174 97 hsl 11 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
 -262144 -1 505 0;
 #X obj 187 29 vsl 16 65 0 127 0 0 v2 v2r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
-#X obj 187 97 hsl 11 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 -262144
+#X obj 190 97 hsl 11 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 203 29 vsl 16 65 0 127 0 0 v3 v3r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
-#X obj 203 97 hsl 11 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 -262144
+#X obj 206 97 hsl 11 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 219 29 vsl 16 65 0 127 0 0 v4 v4r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
-#X obj 219 97 hsl 11 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 -262144
+#X obj 222 97 hsl 11 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 235 29 vsl 16 65 0 127 0 0 v5 v5r empty 0 -9 0 10 -228856 -33289
 -1 0 0;
-#X obj 235 97 hsl 11 8 -0.5 0.49 0 0 ut5 ut5r empty -2 -8 0 4 -228856
+#X obj 238 97 hsl 11 8 -0.5 0.49 0 0 ut5 ut5r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 251 29 vsl 16 65 0 127 0 0 v6 v6r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
-#X obj 251 97 hsl 11 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 -262144
+#X obj 254 97 hsl 11 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 267 29 vsl 16 65 0 127 0 0 v7 v7r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
-#X obj 267 97 hsl 11 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
+#X obj 270 97 hsl 11 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 283 29 vsl 16 65 0 127 0 0 v8 v8r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
-#X obj 283 97 hsl 11 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
+#X obj 286 97 hsl 11 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 299 29 vsl 16 65 0 127 0 0 v9 v9r empty 0 -9 0 10 -228856 -33289
 -1 0 0;
-#X obj 299 97 hsl 11 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
+#X obj 302 97 hsl 11 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 315 29 vsl 16 65 0 127 0 0 v10 v10r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 315 97 hsl 11 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 -262144
+#X obj 318 97 hsl 11 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 331 29 vsl 16 65 0 127 0 0 v11 v11r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 331 97 hsl 11 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 -262144
+#X obj 334 97 hsl 11 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 347 29 vsl 16 65 0 127 0 0 v12 v12r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 347 97 hsl 11 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
+#X obj 350 97 hsl 11 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 363 29 vsl 16 65 0 127 0 0 v13 v13r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
-#X obj 363 97 hsl 11 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
+#X obj 366 97 hsl 11 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 379 29 vsl 16 65 0 127 0 0 v14 v14r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 379 97 hsl 11 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
+#X obj 382 97 hsl 11 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 395 29 vsl 16 65 0 127 0 0 v15 v15r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 395 97 hsl 11 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
+#X obj 398 97 hsl 11 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 411 29 vsl 16 65 0 127 0 0 v16 v16r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 411 97 hsl 11 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
+#X obj 414 97 hsl 11 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X text 175 105 1;
 #X text 237 105 5;
@@ -349,74 +246,74 @@ keyboard (increase groove_volume on gui to hear the sound);
 #X text 361 105 13;
 #X obj 427 29 vsl 16 65 0 127 0 0 v17 v17r empty 0 -9 0 10 -128992
 -262144 -1 0 0;
-#X obj 427 97 hsl 11 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
+#X obj 430 97 hsl 11 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
 -262144 -1 505 0;
 #X obj 443 29 vsl 16 65 0 127 0 0 v18 v18r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 443 97 hsl 11 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
+#X obj 446 97 hsl 11 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 459 29 vsl 16 65 0 127 0 0 v19 v19r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 459 97 hsl 11 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
+#X obj 462 97 hsl 11 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 475 29 vsl 16 65 0 127 0 0 v20 v20r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 475 97 hsl 11 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
+#X obj 478 97 hsl 11 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 491 29 vsl 16 65 0 127 0 0 v21 v21r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
-#X obj 491 97 hsl 11 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
+#X obj 494 97 hsl 11 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 507 29 vsl 16 65 0 127 0 0 v22 v22r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 507 97 hsl 11 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
+#X obj 510 97 hsl 11 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 523 29 vsl 16 65 0 127 0 0 v23 v23r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 523 97 hsl 11 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
+#X obj 526 97 hsl 11 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 539 29 vsl 16 65 0 127 0 0 v24 v24r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 539 97 hsl 11 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
+#X obj 542 97 hsl 11 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 555 29 vsl 16 65 0 127 0 0 v25 v25r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
-#X obj 555 97 hsl 11 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
+#X obj 558 97 hsl 11 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 571 29 vsl 16 65 0 127 0 0 v26 v26r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 571 97 hsl 11 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 -262144
+#X obj 574 97 hsl 11 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 587 29 vsl 16 65 0 127 0 0 v27 v27r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 587 97 hsl 11 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
+#X obj 590 97 hsl 11 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 603 29 vsl 16 65 0 127 0 0 v28 v28r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 603 97 hsl 11 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
+#X obj 606 97 hsl 11 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 619 29 vsl 16 65 0 127 0 0 v29 v29r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
-#X obj 619 97 hsl 11 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
+#X obj 622 97 hsl 11 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 635 29 vsl 16 65 0 127 0 0 v30 v30r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 635 97 hsl 11 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 -262144
+#X obj 638 97 hsl 11 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 651 29 vsl 16 65 0 127 0 0 v31 v31r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 651 97 hsl 11 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
+#X obj 654 97 hsl 11 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 667 29 vsl 16 65 0 127 0 0 v32 v32r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
-#X obj 667 97 hsl 11 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
+#X obj 670 97 hsl 11 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X text 424 105 17;
 #X text 491 104 21;
 #X text 553 104 25;
-#X text 618 103 29;
+#X text 621 103 29;
 #X obj 93 28 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 0 0;
+0 -9 0 10 -262144 -1 -1 1986 0;
 #X floatatom 93 97 5 0 0 0 - - groove_vel_scale;
 #X text 134 30 Vel;
 #X text 127 69 uTime;
@@ -490,7 +387,7 @@ keyboard (increase groove_volume on gui to hear the sound);
 #X connect 14 0 13 0;
 #X coords 0 -1 1 1 700 80 1 0 0;
 #X restore 132 191 pd \$0-visualizer;
-#N canvas 222 22 1440 827 \$0-params 0;
+#N canvas 222 23 1440 827 \$0-params 0;
 #X obj 1 502 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
 0;
 #X obj 1 1 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
@@ -593,11 +490,11 @@ buttons);
 #X obj 170 921 cnv 15 512 36 empty empty RIDE 0 8 0 12 -26605 -33289
 0;
 #X obj 258 561 hsl 48 17 0 1 0 0 empty thres_0_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 1880 0;
 #X text 266 534 Likelihood;
 #X floatatom 308 561 5 0 1 0 - - thres0;
 #X obj 358 561 hsl 48 17 0 32 0 0 empty max_count_0_in empty -2 -8
-0 10 -262144 -1 -1 0 0;
+0 10 -262144 -1 -1 881 0;
 #X floatatom 408 561 5 0 32 0 - - max_count_0;
 #X text 381 533 Max Count;
 #X obj 459 561 hsl 48 17 0 3 0 0 empty vel_scale_0_in empty -2 -8 0
@@ -605,34 +502,34 @@ buttons);
 #X text 494 533 Vol;
 #X floatatom 509 561 5 0 0 0 - - vel_scale_0;
 #X obj 258 607 hsl 48 17 0 1 0 0 empty thres_1_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 2350 0;
 #X floatatom 308 607 5 0 1 0 - - thres1;
 #X obj 358 607 hsl 48 17 0 32 0 0 empty max_count_1_in empty -2 -8
-0 10 -262144 -1 -1 0 0;
+0 10 -262144 -1 -1 294 0;
 #X floatatom 408 607 5 0 32 0 - - max_count_1;
 #X obj 459 607 hsl 48 17 0 3 0 0 empty vel_scale_1_in empty -2 -8 0
 10 -262144 -1 -1 0 0;
 #X floatatom 509 607 5 0 0 0 - - vel_scale_1;
 #X obj 258 652 hsl 48 17 0 1 0 0 empty thres_2_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 3760 0;
 #X floatatom 308 652 5 0 1 0 - - thres2;
 #X obj 358 652 hsl 48 17 0 32 0 0 empty max_count_2_in empty -2 -8
-0 10 -262144 -1 -1 0 0;
+0 10 -262144 -1 -1 4700 0;
 #X floatatom 408 652 5 0 32 0 - - max_count_2;
 #X obj 459 652 hsl 48 17 0 3 0 0 empty vel_scale_2_in empty -2 -8 0
 10 -262144 -1 -1 0 0;
 #X floatatom 509 652 5 0 0 0 - - vel_scale_2;
 #X obj 260 699 hsl 48 17 0 1 0 0 empty thres_3_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 4700 0;
 #X floatatom 310 699 5 0 1 0 - - thres3;
 #X obj 360 699 hsl 48 17 0 32 0 0 empty max_count_3_in empty -2 -8
-0 10 -262144 -1 -1 0 0;
+0 10 -262144 -1 -1 4700 0;
 #X floatatom 410 699 5 0 32 0 - - max_count_3;
 #X obj 461 699 hsl 48 17 0 3 0 0 empty vel_scale_3_in empty -2 -8 0
 10 -262144 -1 -1 0 0;
 #X floatatom 511 699 5 0 0 0 - - vel_scale_3;
 #X obj 259 749 hsl 48 17 0 1 0 0 empty thres_4_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 4700 0;
 #X floatatom 309 749 5 0 1 0 - - thres4;
 #X obj 359 749 hsl 48 17 0 32 0 0 empty max_count_4_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
@@ -641,7 +538,7 @@ buttons);
 10 -262144 -1 -1 0 0;
 #X floatatom 510 749 5 0 0 0 - - vel_scale_4;
 #X obj 259 795 hsl 48 17 0 1 0 0 empty thres_5_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 4700 0;
 #X floatatom 309 795 5 0 1 0 - - thres5;
 #X obj 359 795 hsl 48 17 0 32 0 0 empty max_count_5_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
@@ -650,7 +547,7 @@ buttons);
 10 -262144 -1 -1 0 0;
 #X floatatom 510 795 5 0 0 0 - - vel_scale_5;
 #X obj 259 840 hsl 48 17 0 1 0 0 empty thres_6_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 4700 0;
 #X floatatom 309 840 5 0 1 0 - - thres6;
 #X obj 359 840 hsl 48 17 0 32 0 0 empty max_count_6_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
@@ -659,7 +556,7 @@ buttons);
 10 -262144 -1 -1 0 0;
 #X floatatom 510 840 5 0 0 0 - - vel_scale_6;
 #X obj 261 887 hsl 48 17 0 1 0 0 empty thres_7_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 4700 0;
 #X floatatom 311 887 5 0 1 0 - - thres7;
 #X obj 361 887 hsl 48 17 0 32 0 0 empty max_count_7_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
@@ -668,7 +565,7 @@ buttons);
 10 -262144 -1 -1 0 0;
 #X floatatom 512 887 5 0 0 0 - - vel_scale_7;
 #X obj 262 931 hsl 48 17 0 1 0 0 empty thres_8_in empty -2 -8 0 10
--262144 -1 -1 0 0;
+-262144 -1 -1 4700 0;
 #X floatatom 312 931 5 0 1 0 - - thres8;
 #X obj 362 931 hsl 48 17 0 32 0 0 empty max_count_8_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
@@ -884,325 +781,241 @@ empty 0 -8 0 14 -262144 -1 -1 1;
 #X connect 179 0 16 0;
 #X coords 0 -1 1 1 700 492 1 0 0;
 #X restore 132 395 pd \$0-params;
-#X msg -70 593 \; thres_0_init 0.6 \; max_count_0_init 6 \; thres_1_init
-0.6 \; max_count_1_init 4 \; thres_2_init 0.9 \; max_count_2_init 32
-\; thres_3_init 1 \; max_count_3_init 12 \; thres_4_init 0.9 \; max_count_4_init
-1 \; thres_5_init 0.9 \; max_count_5_init 1 \; thres_6_init 0.9 \;
-max_count_6_init 1 \; thres_7_init 0.8 \; max_count_7_init 2 \; thres_8_init
-0.9 \; max_count_8_init 0 \; vel_scale_0_init 1 \; vel_scale_1_init
-1 \; vel_scale_2_init 1 \; vel_scale_3_init 1 \; vel_scale_4_init 1
-\; vel_scale_5_init 1 \; vel_scale_6_init 1 \; vel_scale_7_init 1 \;
-vel_scale_8_init 1 \;;
-#X obj 105 571 bng 23 250 50 0 empty empty Params 0 -5 0 6 -262144
--1 -1;
 #X obj 972 419 cyclone/coll;
 #C restore;
-#X obj 105 857 bng 23 250 50 0 empty empty Params 0 -5 0 6 -262144
--1 -1;
-#X msg 71 1037 \; thres_0_init 0.6 \; max_count_0_init 6 \; max_count_1_init
-4 \; thres_2_init 0.9 \; max_count_2_init 32 \; thres_3_init 1 \; max_count_3_init
-12 \; thres_4_init 0.9 \; max_count_4_init 1 \; thres_5_init 0.9 \;
-max_count_5_init 1 \; thres_6_init 0.9 \; max_count_6_init 1 \; thres_7_init
-0.8 \; max_count_7_init 2 \; thres_8_init 0.9 \; max_count_8_init 0
-\; vel_scale_0_init 1 \; vel_scale_1_init 1 \; vel_scale_2_init 1 \;
-vel_scale_3_init 1 \; vel_scale_4_init 1 \; vel_scale_5_init 1 \; vel_scale_6_init
-1 \; vel_scale_7_init 1 \; vel_scale_8_init 1 \;;
-#X msg 327 960 \; thres_0_init 0.2 \; thres_1_init 0.3 \; thres_2_init
-0.4 \; thres_3_init 0.5 \; thres_4_init 0.6 \; thres_5_init 0.7 \;
-thres_6_init 0.8 \; thres_7_init 0.9 \; thres_8_init 0.95 \; max_count_0_init
-2 \; max_count_1_init 3 \; max_count_2_init 4 \; max_count_3_init 5
-\; max_count_4_init 6 \; max_count_5_init 7 \; max_count_6_init 8 \;
-max_count_7_init 9 \; max_count_8_init 10 \; vel_scale_0_init 0.1 \;
-vel_scale_1_init 0.15 \; vel_scale_2_init 0.2 \; vel_scale_3_init 0.25
-\; vel_scale_4_init 0.3 \; vel_scale_5_init 0.35 \; vel_scale_6_init
-0.4 \; vel_scale_7_init 0.45 \; vel_scale_8_init 0.5 \;;
-#X obj 440 102 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+#X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X obj 436 46 loadbang;
-#X msg 437 64 1;
-#N canvas 960 24 960 1126 \$0-saveloadpresets 0;
-#X obj 1503 64 inlet;
-#X msg 1510 192 0;
-#X obj 1383 80 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
+#X obj 428 46 loadbang;
+#X msg 429 64 1;
+#N canvas 1062 -1057 784 1035 \$0-saveloadsession 0;
+#X obj 181 781 cnv 15 398 68 empty empty empty 20 12 0 14 -237242 -66577
+0;
+#X obj 964 403 inlet;
+#X msg 971 516 0;
+#X obj 844 421 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X obj 1596 224 pack f f;
-#X obj 1509 94 t f f b;
-#X obj 1483 138 != 0;
-#X text 1316 194 get's messy without this ->;
-#X text 1772 82 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
+#X obj 1040 606 pack f f;
+#X obj 964 447 t f f b;
+#X obj 944 479 != 0;
+#X text 811 552 get's messy without this ->;
+#X text 1028 350 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
 ;
-#X msg 1663 197 80;
-#X msg 1704 197 280;
-#X msg 1738 201 480;
-#X msg 1776 200 680;
-#X obj 1650 164 sel 1 2 3 4 5 6;
-#X msg 1822 198 780;
-#X msg 1865 194 880;
-#X obj 181 781 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
+#X msg 1111 560 80;
+#X obj 1111 516 sel 1 2 3 4 5 6;
+#X obj 994 696 s pd-\$0-saveloadsession;
+#X obj 181 81 cnv 15 398 68 empty empty empty 20 12 0 14 -237242 -66577
 0;
-#X obj 181 681 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 181 481 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 195 519 hradio 10 1 0 5 meter_numerator meter_numerator_preset
-_1_2_3_4_6_ -2 -8 0 8 -262144 -1 -1 0;
-#X obj 338 520 hradio 10 1 0 4 meter_denominator meter_denominator_preset
-_1_2_4_8_ -2 -8 0 8 -262144 -1 -1 0;
-#X text 258 514 Numerator;
-#X text 388 516 Denominator;
-#X text 202 487 Meter (only affects metronome sound);
-#X obj 554 157 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 181 81 cnv 15 148 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 784 336 cnv 15 698 490 empty empty empty 20 12 0 14 -241339
--66577 0;
-#X obj 635 180 bng 30 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
--262144 -1 -1;
-#X obj 735 180 bng 30 250 50 0 empty empty LOAD_SESSION -18 -7 0 10
--262144 -1 -1;
-#X obj 687 236 r reset;
-#X obj 202 104 bng 30 250 50 0 empty empty SAVE_Preset -18 -7 0 10
--262144 -1 -1;
-#X obj 272 104 bng 30 250 50 0 empty empty LOAD_PRESET -18 -7 0 10
--262144 -1 -1;
-#X obj 203 169 res/save_preset;
-#X obj 543 277 res/save_session;
-#X msg 1533 311 donecanvasdialog 1 -1 \$1 0 -1 1 1 150 70 180 \$2;
-#X obj 1532 337 s pd-\$0-saveloadpresets;
-#X connect 0 0 4 0;
-#X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 3 0 33 0;
-#X connect 4 0 5 0;
-#X connect 4 1 12 0;
-#X connect 4 2 1 0;
-#X connect 5 0 3 0;
-#X connect 8 0 3 1;
-#X connect 9 0 3 1;
-#X connect 10 0 3 1;
-#X connect 11 0 3 1;
-#X connect 12 0 8 0;
-#X connect 12 1 9 0;
-#X connect 12 2 10 0;
-#X connect 12 3 11 0;
-#X connect 12 4 13 0;
-#X connect 12 5 14 0;
-#X connect 13 0 3 1;
-#X connect 14 0 3 1;
-#X connect 26 0 32 1;
-#X connect 27 0 32 0;
-#X connect 28 0 32 3;
-#X connect 29 0 31 0;
-#X connect 30 0 31 1;
-#X connect 33 0 34 0;
-#X coords 0 -1 1 1 150 70 1 180 80;
-#X restore 440 117 pd \$0-saveloadpresets;
-#X obj 599 102 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 596 46 loadbang;
-#X msg 597 64 1;
-#N canvas 960 24 960 1126 \$0-saveloadsession 1;
-#X obj 181 81 cnv 15 230 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 784 336 cnv 15 698 490 empty empty empty 20 12 0 14 -241339
--66577 0;
-#X obj 692 475 tgl 30 0 empty empty AUTO_SNAPSHOT -20 -6 0 8 -262144
--1 -1 0 1;
-#X obj 611 465 change;
-#X obj 181 281 cnv 15 230 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 219 309 bng 30 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
--262144 -1 -1;
-#X obj 308 309 bng 30 250 50 0 empty empty LOAD 2 -7 0 10 -262144 -1
--1;
-#X obj 374 392 r reset;
-#X obj 248 436 res/save_session;
-#X floatatom 228 96 8 0 0 2 nSnapshots - -;
+#X floatatom 228 96 8 0 0 2 nSnapshots nSnapshots_r nSnapshots_s;
 #X floatatom 237 117 6 0 0 3 Current - -;
 #X obj 310 116 bng 20 250 50 0 empty empty > 5 9 0 18 -4034 -1 -159808
 ;
 #X obj 189 117 bng 20 250 50 0 empty empty < 5 9 0 18 -261234 -1 -159808
 ;
-#X obj -15 1087 r take_snapshot;
-#X obj -15 1131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 228 8 r nSnapshots_r;
-#X obj -15 1171 f;
-#X obj 24 1166 + 1;
-#X obj -25 1362 s currentSnapshots_r;
-#X obj 213 183 s currentSnapshots_r;
-#X obj 577 47 r previous_snap;
-#X obj -32 24 change;
-#X obj 228 52 change;
-#X obj -71 58 expr if($f1<0 \, 0 \, if($f1>$f2 \, $f2 \, $f1));
-#X obj 384 -20 change;
-#X obj 363 8 s nSnapshots;
-#X obj 16 1329 s nSnapshots_r;
-#X obj -32 -20 r currentSnapshots_r;
-#X obj -16 1295 t f f;
-#X obj 964 403 inlet;
-#X msg 971 516 0;
-#X obj 844 421 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 1057 553 pack f f;
-#X obj 964 447 t f f b;
-#X obj 944 479 != 0;
-#X text 777 552 get's messy without this ->;
-#X text 1233 420 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
-;
-#X msg 1111 560 80;
-#X msg 1165 553 280;
-#X msg 1199 553 480;
-#X msg 1237 553 680;
-#X obj 1111 516 sel 1 2 3 4 5 6;
-#X msg 1283 553 780;
-#X msg 1326 535 880;
-#X obj 994 696 s pd-\$0-saveloadsession;
-#X msg 994 652 donecanvasdialog 1 -1 \$1 0 -1 1 1 232 70 180 \$2;
-#X obj 858 150 s currentSnapshots_r;
-#X obj 968 47 r currentSnapshots_r;
-#X obj 891 91 expr $f2+1;
-#X obj 851 47 r next_snap;
-#X msg 104 1175 0;
-#X floatatom -4 1210 5 0 0 0 - - -;
-#X obj 104 1131 r reset;
-#X obj -101 160 change;
-#X obj -101 204 t f b;
-#X obj 422 184 change;
-#X obj 420 208 t f b;
-#X msg 490 199 \; auto_snapshotter_enabled 0 \;;
-#X msg -82 258 \; auto_snapshotter_enabled 0 \;;
-#X obj -55 516 r finished_receiving_generations;
-#X obj -55 593 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 32 810 spigot;
-#X obj 80 773 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 613 524 s auto_snapshot;
-#X obj 611 421 r auto_snapshot_r;
-#X obj -8 916 spigot;
-#X obj -8 960 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj -8 1000 s take_snapshot;
-#X obj -19 553 t b b;
-#X obj 45 852 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X text -60 473 Check if snapshot should be automatically taken;
-#X text -27 1055 Take Snapshot either automatically or manually;
-#X obj -224 334 s currentSnapshots_r;
-#X obj -114 231 r currentSnapshots_r;
-#X obj -191 275 expr $f2-1;
-#X obj 441 347 s currentSnapshots_r;
-#X obj 551 244 r currentSnapshots_r;
-#X obj 474 288 expr $f2+1;
-#X obj 324 366 r nSnapshots_r;
-#X obj 391 437 r currentSnapshots_r;
-#X msg -55 624 \; auto_snapshotter_enabled 1 \;;
-#X obj 234 151 t f b;
-#X msg 253 205 \; auto_snapshotter_enabled 0 \;;
-#X obj 80 729 r auto_snapshotter_enabled;
-#X obj 32 697 r auto_snapshot;
 #X obj 368 105 bng 30 250 50 0 empty empty SNAPSHOT -5 -7 0 8 -204800
 -1 -1;
-#X obj 446 147 s take_snapshot;
-#X obj 379 60 r signal_take_snapshot;
-#X obj 773 62;
-#X connect 2 0 63 0;
-#X connect 3 0 2 0;
-#X connect 5 0 8 1;
-#X connect 6 0 8 0;
-#X connect 7 0 8 3;
+#X floatatom 225 253 5 0 0 0 - - -;
+#X floatatom 290 211 5 0 0 0 - - -;
+#X obj 392 189 r reset;
+#X msg 342 189 0;
+#X obj 225 273 s nSnapshots_r;
+#N canvas 0 23 976 557 snapshot_counter 0;
+#X obj 174 183 f;
+#X obj 212 183 + 1;
+#X obj 174 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X floatatom 176 252 5 0 0 0 - - -;
+#X floatatom 177 339 5 0 0 0 - - -;
+#X obj 161 54 inlet;
+#X text 210 59 increase count;
+#X obj 177 375 outlet;
+#X obj 399 53 inlet;
+#X floatatom 399 77 5 0 0 0 - - -;
+#X text 453 55 start at shift;
+#X obj 627 59 inlet;
+#X obj 627 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 680 57 reset;
+#X msg 365 221 0;
+#X obj 177 288 + 1;
+#X msg 214 297 \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 0 15 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 1;
+#X connect 9 0 16 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 14 0 4 0;
+#X connect 14 0 3 0;
+#X connect 15 0 4 0;
+#X connect 16 0 4 0;
+#X restore 225 232 pd snapshot_counter;
+#N canvas 0 23 1245 819 move_to_snapshot 0;
+#X obj 285 26 inlet;
+#X obj 385 28 inlet;
+#X obj 478 36 inlet;
+#X text 374 -1 move right;
+#X text 281 0 move left;
+#X text 486 3 nSnapshots;
+#X msg 287 64 -1;
+#X msg 387 62 1;
+#X floatatom 344 299 5 0 0 0 - - -;
+#X floatatom 539 82 5 0 0 0 - - -;
+#X obj 334 496 outlet;
+#X text 381 463 current snapshot pos;
+#X obj 244 188 f;
+#X obj 827 33 inlet, f 6;
+#X floatatom 827 81 5 0 0 0 - - -;
+#X text 795 4 force position to;
+#X obj 290 155 t f b;
+#X floatatom 396 244 5 0 0 0 - - -;
+#X obj 343 347 mod;
+#X obj 347 391 + 1;
+#X obj 322 216 expr if ($f3==0 \, 1 \, if($f1<0 \, $f2-1 \, $f2+1))
+;
+#X floatatom 355 431 5 0 0 0 - - -;
+#X obj 357 122 spigot;
+#X obj 417 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 456 94 != 0;
+#X obj 463 294 - 1;
+#X obj 624 300 - 1;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 6 0 22 0;
+#X connect 7 0 22 0;
+#X connect 8 0 12 1;
+#X connect 8 0 18 0;
+#X connect 9 0 18 1;
+#X connect 9 0 20 2;
 #X connect 9 0 24 0;
-#X connect 10 0 81 0;
-#X connect 11 0 55 0;
-#X connect 12 0 53 0;
+#X connect 9 0 25 0;
+#X connect 12 0 20 1;
 #X connect 13 0 14 0;
-#X connect 14 0 16 0;
-#X connect 15 0 22 0;
-#X connect 16 0 51 0;
-#X connect 17 0 16 1;
-#X connect 21 0 23 0;
-#X connect 22 0 9 0;
-#X connect 22 0 23 1;
-#X connect 23 0 10 0;
+#X connect 14 0 26 0;
+#X connect 16 0 20 0;
+#X connect 16 1 12 0;
+#X connect 17 0 8 0;
+#X connect 18 0 19 0;
+#X connect 19 0 21 0;
+#X connect 20 0 17 0;
+#X connect 21 0 10 0;
+#X connect 22 0 16 0;
+#X connect 23 0 22 1;
+#X connect 24 0 23 0;
+#X connect 25 0 8 0;
+#X connect 26 0 8 0;
+#X restore 49 234 pd move_to_snapshot;
+#X floatatom 64 271 5 0 0 0 - - -;
+#X obj 53 300 s currentSnapshots;
+#X obj 126 195 change;
+#X obj 299 160 r snapshot_init_from_load_session;
+#X obj 218 804 bng 30 250 50 0 empty empty SAVE_TEMPLATE -18 -7 0 10
+-262144 -1 -1;
+#X obj 318 804 bng 30 250 50 0 empty empty LOAD_TEMPLATE -18 -7 0 10
+-262144 -1 -1;
+#X obj 229 869 res/save_preset;
+#X msg 994 652 donecanvasdialog 1 -1 \$1 0 -1 1 1 400 70 180 \$2;
+#X obj 447 104 bng 30 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
+-262144 -1 -1;
+#X obj 536 104 bng 30 250 50 0 empty empty LOAD 2 -7 0 10 -262144 -1
+-1;
+#X obj 602 187 r reset;
+#X obj 476 231 res/save_session;
+#X obj 619 232 r currentSnapshots;
+#X obj 552 161 r nSnapshots_r;
+#X obj 456 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 1165 553 480;
+#X obj 181 481 cnv 15 398 68 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X text 206 522 You can move back to a snapshot taken previously;
+#X msg 1237 553 780;
+#X msg 1199 553 600;
+#X obj 181 601 cnv 15 398 68 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X text 181 615 If you like a pattern \, take a snapshot of it;
+#X text 181 598 Save the entirety of the session \, and reload it later
+on;
+#X text 205 505 Snapshots save the current state of the program;
+#X text 204 488 This functionality requires the cyclone/coll external
+;
+#X text 180 633 You can navigate back to any of the snapshots during
+the performance;
+#X msg 1283 553 900;
+#X obj 181 901 cnv 15 398 68 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X text 181 923 You can save the parameters of the program as a template
+;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 32 0;
+#X connect 5 0 6 0;
+#X connect 5 1 10 0;
+#X connect 5 2 2 0;
+#X connect 6 0 4 0;
+#X connect 9 0 4 1;
+#X connect 10 0 9 0;
+#X connect 10 1 40 0;
+#X connect 10 2 44 0;
+#X connect 10 3 43 0;
+#X connect 10 4 51 0;
+#X connect 14 0 27 0;
+#X connect 15 0 24 1;
+#X connect 16 0 24 0;
+#X connect 17 0 23 0;
+#X connect 18 0 22 0;
+#X connect 18 0 24 2;
+#X connect 19 0 23 1;
+#X connect 20 0 21 0;
+#X connect 20 0 23 2;
+#X connect 21 0 19 0;
+#X connect 23 0 18 0;
 #X connect 24 0 25 0;
-#X connect 27 0 21 0;
-#X connect 28 0 18 0;
-#X connect 28 1 26 0;
+#X connect 25 0 14 0;
+#X connect 25 0 26 0;
+#X connect 27 0 24 3;
+#X connect 28 0 19 0;
 #X connect 29 0 31 0;
-#X connect 30 0 32 0;
-#X connect 31 0 33 0;
-#X connect 32 0 45 0;
-#X connect 33 0 34 0;
-#X connect 33 1 41 0;
-#X connect 33 2 30 0;
-#X connect 34 0 32 0;
-#X connect 37 0 32 1;
-#X connect 38 0 32 1;
-#X connect 39 0 32 1;
-#X connect 40 0 32 1;
-#X connect 41 0 37 0;
-#X connect 41 1 38 0;
-#X connect 41 2 39 0;
-#X connect 41 3 40 0;
-#X connect 41 4 42 0;
-#X connect 41 5 43 0;
-#X connect 42 0 32 1;
-#X connect 43 0 32 1;
-#X connect 45 0 44 0;
-#X connect 47 0 48 1;
-#X connect 48 0 46 0;
-#X connect 49 0 48 0;
-#X connect 50 0 51 0;
-#X connect 51 0 28 0;
-#X connect 51 0 17 0;
-#X connect 52 0 50 0;
-#X connect 53 0 54 0;
-#X connect 54 0 74 0;
-#X connect 54 1 58 0;
-#X connect 55 0 56 0;
-#X connect 56 0 77 0;
-#X connect 56 1 57 0;
-#X connect 59 0 68 0;
-#X connect 60 0 80 0;
-#X connect 61 0 69 0;
-#X connect 62 0 61 1;
-#X connect 64 0 3 0;
-#X connect 65 0 66 0;
-#X connect 66 0 67 0;
-#X connect 68 0 60 0;
-#X connect 68 1 65 0;
-#X connect 69 0 65 1;
-#X connect 73 0 74 1;
-#X connect 74 0 72 0;
-#X connect 76 0 77 1;
-#X connect 77 0 75 0;
-#X connect 78 0 8 2;
-#X connect 79 0 8 4;
-#X connect 81 0 19 0;
-#X connect 81 1 82 0;
-#X connect 83 0 62 0;
-#X connect 84 0 61 0;
-#X connect 85 0 86 0;
-#X connect 87 0 85 0;
-#X coords 0 -1 1 1 232 70 1 180 80;
-#X restore 600 117 pd \$0-saveloadsession;
+#X connect 30 0 31 1;
+#X connect 32 0 11 0;
+#X connect 33 0 36 1;
+#X connect 34 0 39 0;
+#X connect 35 0 36 3;
+#X connect 37 0 36 4;
+#X connect 38 0 36 2;
+#X connect 39 0 36 0;
+#X connect 40 0 4 1;
+#X connect 43 0 4 1;
+#X connect 44 0 4 1;
+#X connect 51 0 4 1;
+#X coords 0 -1 1 1 400 70 1 180 80;
+#X restore 432 117 pd \$0-saveloadsession;
+#X obj 860 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 860 67 s reset;
+#X obj 1179 144 res/main;
+#X obj 852 305 bng 30 250 50 0 reset empty RESET 0 -10 0 10 -258113
+-1 -1;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
 #X connect 8 0 5 0;
+#X connect 10 0 15 0;
 #X connect 11 0 16 0;
 #X connect 12 0 17 0;
-#X connect 13 0 18 0;
-#X connect 14 0 15 0;
-#X connect 15 0 13 0;
-#X connect 15 0 12 0;
-#X connect 15 0 11 0;
-#X connect 20 0 19 0;
-#X connect 25 0 28 0;
-#X connect 26 0 27 0;
-#X connect 27 0 25 0;
-#X connect 29 0 32 0;
-#X connect 30 0 31 0;
-#X connect 31 0 29 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 14 0 11 0;
+#X connect 14 0 10 0;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 19 0;
+#X connect 23 0 24 0;
 #X coords 0 0 1 1 800 800 2 100 100;

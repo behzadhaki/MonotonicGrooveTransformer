@@ -1,8 +1,0 @@
-#N canvas 1361 -1057 960 1035 12;
-#X text 955 14 things to save BPM PPQ Groove_vel_scale Likelihood/max_count_volumes
-;
-#X text 951 -48 For full functionality like saving and snapshoting
-you need cyclone/coll use https://github.com/jonwwilkes/purr-data/releases
-;
-#X obj -239 -45 source/internals;
-#X coords 0 1035 1 1034 1024 1024 0;
