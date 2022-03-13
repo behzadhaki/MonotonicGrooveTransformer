@@ -1,7 +1,8 @@
 Updates 
 ----
 #### Version 0.2
-- Added direct controls for changing the model and generation delay from within the pure-data GUI
+- Added direct controls for changing the model and generation delay from within the pure-data GUI. There are two versions of the trained transformer model: (1) a light one that is smaller, and (2) a larger one that is more computationally intensive. You can go back and forth between these two directly from within the PD patch without re-running the python engine with new parameters. Moreover, if you want to adjust the minimum computation time between the generations, you can now do this directly from PD as well
+
 - Rearranged the GUI to improve the usability
 - Added toggle to enable/disable the Numpad for playing grooves via keyboard
 - Resolved some bugs related to saving/loading sessions/presets
