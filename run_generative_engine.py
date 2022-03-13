@@ -51,7 +51,7 @@ if __name__ == '__main__':
 
     # set the minimum time needed between generations
     min_wait_time_btn_gens = args.wait
-    print(min_wait_time_btn_gens)
+
 
     # -----------------------------------------------------
 
@@ -73,11 +73,25 @@ if __name__ == '__main__':
             input_tensor[:, int(args[2]), 2] = 1 if args[0] > 0 else 0  # set hit
             input_tensor[:, int(args[2]), 11] = args[0] / 127  # set velocity
             input_tensor[:, int(args[2]), 20] = args[1]  # set utiming
-        if "threshold" in address:
+        elif "threshold" in address:
             voice_thresholds[int(address.split("/")[-1])] = 1-args[0]
-        if "max_count" in address:
+        elif "max_count" in address:
             voice_max_count_allowed[int(address.split("/")[-1])] = int(args[0])
-
+        elif "change_model"  in address:
+            global groove_transformer
+            global model_name
+            if args[0] != model_name:
+                print("Change Model from {} to {}".format(model_name, args[0]))
+                model_name = args[0]  # "groove_transformer_trained"
+                model_path = f"trained_torch_models/{model_name}.model"
+                groove_transformer = load_model(model_name, model_path)
+        elif "regenerate" in address:
+            pass
+        elif "time_between_generations" in address:
+            global min_wait_time_btn_gens
+            min_wait_time_btn_gens = args[0]
+        else:
+            print ("Unknown Message Received, address {}, value {}".format(address, args))
     # python-osc method for establishing the UDP communication with pd
     server = OscMessageReceiver(ip, receiving_from_pd_port, message_queue=message_queue)
     server.start()

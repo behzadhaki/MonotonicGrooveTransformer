@@ -12,7 +12,12 @@
 #X msg 330 178 9;
 #X obj 190 260 expr $f1/9*127;
 #X obj 205 292 s realtime_velocity;
-#X connect 0 0 9 0;
+#X obj 215 22 r keyboard_enabled;
+#X obj 167 89 spigot;
+#X obj 217 48 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 154 349 5 0 0 0 - - -;
+#X connect 0 0 14 0;
 #X connect 1 0 11 0;
 #X connect 2 0 11 0;
 #X connect 3 0 11 0;
@@ -32,3 +37,7 @@
 #X connect 9 8 10 0;
 #X connect 10 0 11 0;
 #X connect 11 0 12 0;
+#X connect 11 0 16 0;
+#X connect 13 0 15 0;
+#X connect 14 0 9 0;
+#X connect 15 0 14 1;

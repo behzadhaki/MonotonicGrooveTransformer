@@ -1,4 +1,4 @@
-#N canvas 0 -1057 1009 1035 12;
+#N canvas 0 23 1009 825 12;
 #X obj 67 0 r v1;
 #X obj 127 63 r ut1;
 #X text 232 53 step;
@@ -226,6 +226,9 @@
 #X obj 690 990 r v32;
 #X obj 751 991 r ut32;
 #X msg 821 984 32;
+#X obj 475 -28 inlet;
+#X text 518 -26 resend data bang;
+#X obj 474 -3 s resend_groove_data;
 #X connect 0 0 6 0;
 #X connect 1 0 6 1;
 #X connect 3 0 7 0;
@@ -387,3 +390,4 @@
 #X connect 224 0 213 0;
 #X connect 225 0 213 1;
 #X connect 226 0 213 2;
+#X connect 227 0 229 0;
