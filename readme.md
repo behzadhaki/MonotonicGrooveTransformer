@@ -1,3 +1,19 @@
+Updates 
+----
+#### Version 0.2
+- Added direct controls for changing the model and generation delay from within the pure-data GUI
+- Rearranged the GUI to improve the usability
+- Added toggle to enable/disable the Numpad for playing grooves via keyboard
+- Resolved some bugs related to saving/loading sessions/presets
+    
+  ###### NOTE
+  
+  Tested on Pd-0.51-3 on Mac OSX 10.15.7
+  
+        Requires Cyclone/coll external 
+        (can be installed via purr-data: https://agraef.github.io/purr-data/)
+        
+
 Installation
 ----
 ### Source code
