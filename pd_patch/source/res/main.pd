@@ -1,20 +1,20 @@
-#N canvas -1547 -252 1440 827 12;
-#X obj 25 141 cnv 15 600 120 empty empty TEMPO_(QPM)_&_Clock_Related_Stuff
+#N canvas -228 82 1440 825 12;
+#X obj 25 139 cnv 15 600 120 empty empty TEMPO_(QPM)_&_Clock_Related_Stuff
 20 12 0 14 -261682 -4160 0;
-#X floatatom 70 209 5 0 0 0 - - -;
-#X obj 70 230 s playback_pos;
-#X obj 25 13 cnv 15 600 120 empty empty Initialize 20 12 0 14 -228856
+#X floatatom 70 207 5 0 0 0 - - -;
+#X obj 70 228 s playback_pos;
+#X obj 25 11 cnv 15 600 120 empty empty Initialize 20 12 0 14 -228856
 -4160 0;
-#X obj 26 264 cnv 15 600 300 empty empty Update_groove_when_a_velocity_is_received
+#X obj 26 262 cnv 15 600 300 empty empty Update_groove_when_a_velocity_is_received
 20 12 0 14 -204800 -4160 0;
-#X obj 755 227 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 -228856
+#X obj 755 225 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 -228856
 -4160 0;
-#X obj 754 100 cnv 15 600 120 empty empty Recording_Groove 20 12 0
-14 -228856 -4160 0;
-#X obj 756 351 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
+#X obj 754 98 cnv 15 600 120 empty empty Recording_Groove 20 12 0 14
 -228856 -4160 0;
-#X obj 761 310 dac~;
-#X obj 754 38 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
+#X obj 756 349 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
+-228856 -4160 0;
+#X obj 761 308 dac~;
+#X obj 754 36 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
 12 0 14 -262130 -4160 0;
 #N canvas 0 23 888 639 metronome_midi_note_out 0;
 #X obj 67 170 pack f f;
@@ -61,40 +61,40 @@
 #X connect 19 0 3 0;
 #X connect 20 0 8 0;
 #X connect 20 0 11 0;
-#X restore 400 225 pd metronome_midi_note_out;
-#X obj 410 201 r metronome_beat_trigger;
-#X obj 388 178 r metronome_measure_trigger;
-#X text 63 167 Master Clock;
-#X text 362 142 sends midi note 1 and 2 for;
-#X text 361 157 beat locations to manually sync daw;
-#X text 36 297 Whenever a note is played \, the velocity and utimings
+#X restore 400 223 pd metronome_midi_note_out;
+#X obj 410 199 r metronome_beat_trigger;
+#X obj 388 176 r metronome_measure_trigger;
+#X text 63 165 Master Clock;
+#X text 362 140 sends midi note 1 and 2 for;
+#X text 361 155 beat locations to manually sync daw;
+#X text 36 295 Whenever a note is played \, the velocity and utimings
 are updated at their corresponding time-steps (for an event to be sent
 out to python via osc the values of the vel and utime sliders should
 be changed rather than the groove plot - in other words \, the groove
 plot just visualizes the groove, f 84;
-#X text 982 40 reads the voice by voice generated drums (defined and
+#X text 982 38 reads the voice by voice generated drums (defined and
 tracked in res/see_generated_pattern) and sends out (via midi out drum_out_channel)
 ;
-#X text 949 128 Use numbers 1 to 9 (low to hi) to play a groove using
+#X text 949 126 Use numbers 1 to 9 (low to hi) to play a groove using
 keyboard (increase groove_volume on gui to hear the sound);
-#X obj 51 44 initialize_2;
-#X obj 52 79 ppq_setter;
-#X obj 70 187 clock, f 10;
-#X obj 390 274 update_on_new_groove_event;
-#X obj 761 284 metronome_sound;
-#X obj 758 252 mixer_and_synths;
-#X obj 785 195 midi_in;
-#X obj 785 168 update_slider_for_event;
-#X obj 784 134 keyboard_interface;
-#X obj 771 62 midi_out_drums;
-#X obj 761 385 send_groove_events;
-#X obj 762 410 process_received_generated_notes;
-#X obj 769 441 scale_groove_vels;
-#X obj 968 379 osc_receiver;
+#X obj 51 42 initialize_2;
+#X obj 52 77 ppq_setter;
+#X obj 70 185 clock, f 10;
+#X obj 390 272 update_on_new_groove_event;
+#X obj 761 282 metronome_sound;
+#X obj 758 250 mixer_and_synths;
+#X obj 785 193 midi_in;
+#X obj 785 166 update_slider_for_event;
+#X obj 784 132 keyboard_interface;
+#X obj 771 60 midi_out_drums;
+#X obj 762 408 process_received_generated_notes;
+#X obj 769 439 scale_groove_vels;
+#X obj 968 377 osc_receiver;
+#X obj 761 383 send_osc_messages_to_py;
 #X connect 1 0 2 0;
 #X connect 11 0 10 1;
 #X connect 12 0 10 0;
 #X connect 21 0 1 0;
 #X connect 23 0 8 0;
 #X connect 23 0 8 1;
-#X coords 0 827 1 826 800 800 0;
+#X coords 0 825 1 824 800 800 0;

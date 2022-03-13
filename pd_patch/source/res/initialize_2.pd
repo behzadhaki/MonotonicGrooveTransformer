@@ -1,42 +1,36 @@
-#N canvas 0 23 1291 806 12;
+#N canvas 0 24 719 824 12;
 #X obj 66 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 66 27 loadbang;
 #X obj 75 81 r reset;
 #X obj 60 145 t b b b b b b b b b b b b b b, f 78;
-#X msg 254 204 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r
-0 \; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r
-0 \; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
-0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
-0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
-#X msg 335 204 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
-ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
-0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
-\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
-ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
-0 \; ut32r 0 \;;
 #X msg 572 411 \; KICK const 0 \; SNARE const 0 \; HH_CLOSED const
 0 \; HH_OPEN const 0 \; TOM_3_LO const 0 \; TOM_2_MID const 0 \; TOM_1_HI
 const 0 \; CRASH const 0 \; RIDE const 0 \;;
-#X msg 409 207 \; thres_0_init 0.4 \; max_count_0_init 6 \; thres_1_init
-0.5 \; max_count_1_init 2 \; thres_2_init 0.8 \; max_count_2_init 32
-\; thres_3_init 1 \; max_count_3_init 32 \; thres_4_init 1 \; max_count_4_init
-0 \; thres_5_init 1 \; max_count_5_init 0 \; thres_6_init 1 \; max_count_6_init
-0 \; thres_7_init 1 \; max_count_7_init 0 \; thres_8_init 1 \; max_count_8_init
-0 \;;
 #X obj 209 65 t b b;
-#X msg 612 294 \; groove_vel_scale_init 1 \; meter_numerator_preset
-3 \; meter_denominator_preset 2 \; metronome_volume_init 0.1 \; groove_volume
-0.1 \; ppq_selection_init 0 \; pd dsp 1 \;, f 56;
 #X msg 754 182 \; py2pd_port_init 1123 \; pd2py_port_init 1415 \; drum_out_channel_init
 10 \; bpm_r 70 \;;
+#X obj 426 45 r reset;
+#X obj 547 77 t b b b;
+#X msg 612 294 \; groove_vel_scale_init 1 \; meter_numerator_preset
+3 \; meter_denominator_preset 2 \; metronome_volume_init 0.01 \; groove_volume
+0 \; ppq_selection_init 0 \; pd dsp 1 \;, f 56;
+#X msg 409 207 \; thres_0_init 0.4 \; max_count_0_init 6 \; thres_1_init
+0.5 \; max_count_1_init 2 \; thres_2_init 0.6 \; max_count_2_init 32
+\; thres_3_init 0.7 \; max_count_3_init 32 \; thres_4_init 0.95 \;
+max_count_4_init 0 \; thres_5_init 0.95 \; max_count_5_init 0 \; thres_6_init
+0.95 \; max_count_6_init 0 \; thres_7_init 0.95 \; max_count_7_init
+0 \; thres_8_init 0.7 \; max_count_8_init 0 \; vel_scale_0_in 1 \;
+vel_scale_1_in 1 \; vel_scale_2_in 1 \; vel_scale_3_in 1 \; vel_scale_4_in
+1 \; vel_scale_5_in 1 \; vel_scale_6_in 1 \; vel_scale_7_in 1 \; vel_scale_8_in
+1 \;;
 #X connect 0 0 3 0;
-#X connect 1 0 8 0;
+#X connect 1 0 5 0;
 #X connect 2 0 0 0;
-#X connect 3 9 4 0;
-#X connect 3 10 5 0;
-#X connect 3 11 7 0;
-#X connect 3 12 6 0;
+#X connect 3 11 10 0;
+#X connect 3 12 4 0;
 #X connect 3 13 9 0;
-#X connect 8 0 0 0;
-#X connect 8 1 10 0;
+#X connect 5 0 0 0;
+#X connect 5 1 6 0;
+#X connect 7 0 8 0;
+#X connect 8 2 10 0;

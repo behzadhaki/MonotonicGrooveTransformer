@@ -84,12 +84,14 @@ def get_new_drum_osc_msgs(hvo_tuple_new, hvo_tuple_prev=None):
     return message_list
 
 
-def get_prediction(trained_model, input_tensor, voice_thresholds, voice_max_count_allowed):
+def get_prediction(trained_model, input_tensor, voice_thresholds, voice_max_count_allowed, sampling_mode=0):
     trained_model.eval()
     with torch.no_grad():
         _h, v, o = trained_model.forward(input_tensor)  # Nx32xembedding_size_src/3,Nx32xembedding_size_src/3,Nx32xembedding_size_src/3
-    _h = torch.sigmoid(_h)
-    h = torch.zeros_like(_h)
+
+        _h = torch.sigmoid(_h)
+        h = torch.zeros_like(_h)
+
 
     for ix, (thres, max_count) in enumerate(zip(voice_thresholds, voice_max_count_allowed)):
         max_indices = torch.topk(_h[:, :, ix], max_count).indices[0]
