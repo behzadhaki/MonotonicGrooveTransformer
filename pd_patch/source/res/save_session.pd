@@ -213,10 +213,10 @@
 #X obj 2380 908 s metronome_volume_init;
 #X obj 2340 143 r metronome_volume;
 #X obj 2396 943 s meter_numerator_preset;
-#X obj 2470 967 s meter_denominator_preset;
+#X obj 2378 967 s meter_denominator_preset;
 #X obj 2346 168 r meter_numerator;
 #X obj 2355 201 r meter_denominator;
-#X obj 2236 -6 r groove_vel_scale;
+#X obj 2236 13 r groove_vel_scale;
 #X obj 2263 766 s groove_vel_scale_init;
 #X obj 780 28 inlet;
 #X text 835 30 load index;
