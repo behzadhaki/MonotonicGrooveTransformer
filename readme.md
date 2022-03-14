@@ -15,10 +15,11 @@ Updates
     - **Shift+ENTER** Takes snapshot
     - **<** or **>** (shift , or shift .) navigates snapshots
     - **Shift D** Deletes (resets) the input groove 
-   
+- Clock is now sent only through channel 16 of midi out. 
+At each beat/bar a single note is also sent out to check synchronization over time
    ######Note
     
-   Tested on a Macbook laptop with US International Keyboard Layout. To modify the shortcuts, modify ***midi_map_block.pd*** file 
+   Tested on a Macbook laptop with US International Keyboard Layout. To modify the shortcuts, modify ***keyboard_interface.pd*** file 
         
 #### Version 0.2
 - Added direct controls for changing the model and generation delay from within the pure-data GUI. There are two versions of the trained transformer model: (1) a light one that is smaller, and (2) a larger one that is more computationally intensive. You can go back and forth between these two directly from within the PD patch without re-running the python engine with new parameters. Moreover, if you want to adjust the minimum computation time between the generations, you can now do this directly from PD as well
