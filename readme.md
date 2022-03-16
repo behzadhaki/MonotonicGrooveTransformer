@@ -1,5 +1,30 @@
 Updates 
 ----
+
+#### Version 0.3
+
+- Added the following keyboard shortcuts (These are enabled only when **CAPS LOCK** is on):
+    - *SHORT-CUTS ARE SHOWN ON GUI USING **ORANGE** MARKERS BELOW CORRESPONDING PARAMETERS*
+    - **CAPS LOCK** turns keyboard shortcuts on/off
+    - **Z, X, C, V, B, N, M** can be used to play a groove in realtime while recording is enabled. 
+    The Z has the lowest velocity and M has the highest one
+    - **Left** or **Right** arrows  turns metronome volume up or down
+    - **Up** or **Down** arrows can be used to increase/decrease volume of the internal clap sound player
+    - **P** for Play/Pause 
+    - **R** for Record On/Off
+    - **Shift+ENTER** Takes snapshot
+    - **<** or **>** (shift , or shift .) navigates snapshots
+    - **Shift D** Deletes (resets) the input groove 
+- Clock is now sent only through channel 16 of midi out. 
+
+- Midi controllers with infinite encoders or slider/potentiometers (0-127) can be used for controlling generation params.
+The mappings can also be saved so as to import in future projects as well 
+
+At each beat/bar a single note is also sent out to check synchronization over time
+   ######Note
+    
+   Tested on a Macbook laptop with US International Keyboard Layout. To modify the shortcuts, modify ***keyboard_interface.pd*** file 
+        
 #### Version 0.2
 - Added direct controls for changing the model and generation delay from within the pure-data GUI. There are two versions of the trained transformer model: (1) a light one that is smaller, and (2) a larger one that is more computationally intensive. You can go back and forth between these two directly from within the PD patch without re-running the python engine with new parameters. Moreover, if you want to adjust the minimum computation time between the generations, you can now do this directly from PD as well
 

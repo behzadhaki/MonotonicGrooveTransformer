@@ -1,0 +1,127 @@
+#N canvas 960 24 960 1124 12;
+#X obj 564 43 inlet;
+#X obj 705 102 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 1034 327 get_cc_learnable;
+#X floatatom 1031 351 5 0 0 0 - - -;
+#X text 1000 376 cc value;
+#X floatatom 1070 351 5 0 0 0 - - -;
+#X text 1062 375 learnt cc;
+#X obj 858 159 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X floatatom 1137 352 5 0 0 0 - - -;
+#X text 1129 376 learnt channel_port;
+#X text 460 24 type of cc (0) button (1) Encoder (3) Potentiometer/slider
+;
+#X obj 728 45 inlet;
+#X obj 745 665 outlet;
+#X obj 1004 401 s \$0-value;
+#X obj 1011 668 outlet;
+#X obj 787 45 inlet;
+#X floatatom 481 510 10 0 0 2 current_value - -;
+#X obj 393 556 rotary_encoder_to_value;
+#X obj 419 507 spigot;
+#X obj 360 454 r \$0-value;
+#X obj 456 457 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 454 421 r \$0-encoder;
+#X obj 658 48 inlet;
+#X floatatom 559 587 5 0 0 0 - - -;
+#X text 473 635 Set on-off outlet for push button;
+#X obj 41 173 s \$0-pushbutton;
+#X obj 41 227 s \$0-encoder;
+#X msg 42 250 0;
+#X obj 42 274 s \$0-pot-slider;
+#X msg 41 149 0;
+#X msg 41 203 1;
+#X obj 749 508 spigot;
+#X obj 690 455 r \$0-value;
+#X obj 786 458 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 784 422 r \$0-pot-slider;
+#X obj 202 175 s \$0-pushbutton;
+#X obj 202 229 s \$0-encoder;
+#X obj 203 276 s \$0-pot-slider;
+#X msg 202 151 0;
+#X msg 203 252 1;
+#X msg 202 205 0;
+#X floatatom 752 590 5 0 0 0 - - -;
+#X obj 548 617 change;
+#X obj 1077 194 unpack;
+#X floatatom 1065 236 5 0 0 0 - - -;
+#X floatatom 1112 236 5 0 0 0 - - -;
+#X obj 705 114 cnv 4 80 8 empty empty Encoder_or_Slider/Potentiometer
+0 4 0 4 -66577 -262144 0;
+#X obj 661 69 cnv 4 30 8 empty empty CurrentVal 0 4 0 5 -33289 -262144
+0;
+#X obj 730 67 cnv 4 46 8 empty empty stpSize_min_max 0 4 0 5 -33289
+-262144 0;
+#X obj 781 65 cnv 4 46 8 empty empty cc_channel|port 0 4 0 5 -33289
+-262144 0;
+#X obj 758 103 cnv 4 15 8 empty empty Learn 0 4 0 5 -33289 -262144
+0;
+#X obj 1018 537 pack f f;
+#X text 911 635 force (cc num \, channel/port);
+#X obj 1175 614 change;
+#X obj 1203 670 outlet;
+#X obj 862 66 inlet;
+#X obj 547 65 cnv 4 80 8 empty empty Button_Encoder_Slider/Potentiometer
+0 4 0 5 -33289 -262144 0;
+#X text 1257 666 connect directly to last inlet;
+#X obj 37 116 sel 0 1, f 49;
+#X obj 734 340 unpack f f f, f 24;
+#X obj 793 561 expr $f1/127*($f3-$f2)+$f2;
+#X floatatom 938 358 5 0 0 0 - - -;
+#X floatatom 848 374 5 0 0 0 - - -;
+#X connect 0 0 1 0;
+#X connect 1 0 58 0;
+#X connect 2 0 3 0;
+#X connect 2 1 5 0;
+#X connect 2 2 8 0;
+#X connect 2 3 53 0;
+#X connect 3 0 13 0;
+#X connect 5 0 51 0;
+#X connect 7 0 2 0;
+#X connect 8 0 51 1;
+#X connect 11 0 16 0;
+#X connect 15 0 43 0;
+#X connect 16 0 17 1;
+#X connect 17 0 23 0;
+#X connect 18 0 17 0;
+#X connect 19 0 18 0;
+#X connect 20 0 18 1;
+#X connect 21 0 20 0;
+#X connect 22 0 17 2;
+#X connect 22 0 59 0;
+#X connect 23 0 42 0;
+#X connect 27 0 28 0;
+#X connect 29 0 25 0;
+#X connect 29 0 30 0;
+#X connect 30 0 26 0;
+#X connect 30 0 27 0;
+#X connect 31 0 60 0;
+#X connect 32 0 31 0;
+#X connect 33 0 31 1;
+#X connect 34 0 33 0;
+#X connect 38 0 35 0;
+#X connect 38 0 40 0;
+#X connect 39 0 37 0;
+#X connect 40 0 36 0;
+#X connect 40 0 39 0;
+#X connect 41 0 12 0;
+#X connect 42 0 12 0;
+#X connect 43 0 44 0;
+#X connect 43 1 45 0;
+#X connect 44 0 2 1;
+#X connect 45 0 2 2;
+#X connect 51 0 14 0;
+#X connect 53 0 54 0;
+#X connect 55 0 7 0;
+#X connect 58 0 29 0;
+#X connect 58 1 38 0;
+#X connect 59 1 60 1;
+#X connect 59 1 62 0;
+#X connect 59 2 60 2;
+#X connect 59 2 61 0;
+#X connect 60 0 41 0;
+#X coords 0 -1 1 1 121 22 2 700 100;
