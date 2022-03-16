@@ -1,4 +1,4 @@
-#N canvas 0 23 1440 825 12;
+#N canvas 0 -1057 960 1035 12;
 #X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 793 -28 Todo: 1 per voice tres 2 per voice max count 3 scale
@@ -69,23 +69,23 @@ _1_2_4_8_ -2 -8 0 8 -232576 -1 -1 2;
 #X obj 343 310 hsl 110 15 0 1 0 0 groove_volume groove_volume_init
 Clap_Sound_Volume -2 -8 0 10 -261234 -1 -1 0 0;
 #X obj 349 519 hsl 110 15 0 1 0 0 metronome_volume metronome_volume_r
-Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
+Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X obj 181 81 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
 0;
-#X obj 195 105 tgl 30 0 empty play_r PLAY 4 -10 0 10 -262144 -1 -1
-0 1;
-#X obj 241 105 tgl 30 0 record record_r RECORD 4 -10 0 10 -262144 -1
+#X obj 195 100 tgl 30 0 empty play_r PLAY 4 -5 0 10 -262144 -1 -1 0
+1;
+#X obj 241 100 tgl 30 0 record record_r RECORD 4 -5 0 10 -262144 -1
 -1 0 1;
-#X obj 315 105 tgl 30 0 send_clock_out send_clock_out_r Send_Clock_Out
--30 -10 0 10 -262144 -1 -1 1 1;
-#X floatatom 148 49 10 0 0 2 BPM bpm_init -;
+#X obj 315 100 tgl 30 0 send_clock_out send_clock_out_r Send_Clock_Out
+-30 -5 0 10 -262144 -1 -1 1 1;
+#X floatatom 148 8 10 0 0 2 BPM bpm_init -;
 #X obj -3 99 ctlin 85, f 14;
 #X obj -3 118 res/pushbutton_cc2toggle, f 26;
 #X obj -4 173 res/pushbutton_cc2toggle, f 26;
 #X floatatom 380 114 10 0 0 2 BPM bpm_r bpm;
 #X obj -4 154 ctlin 86, f 14;
-#X obj 36 49 ctlin 14, f 14;
-#X obj 36 67 res/rotary_encoder_to_value;
+#X obj 36 8 ctlin 14, f 14;
+#X obj 36 26 res/rotary_encoder_to_value;
 #X text 185 928 >> python run_generative_engine.py --help;
 #X text 205 905 Prior to Loading a Preset/Session;
 #X text 181 884 Don't Forget to Load the Generative Engine;
@@ -114,7 +114,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X obj 504 1148 change;
 #X obj 513 1124 s wait_time_between_generations;
 #X obj 192 1104 vradio 20 1 0 2 empty empty empty 0 -8 0 10 -203302
--1 -1 1;
+-1 -1 0;
 #X text 215 1105 Light;
 #X text 215 1125 Heavy;
 #X obj 51 1166 s model_version;
@@ -136,8 +136,8 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 ;
 #X obj 319 25 loadbang;
 #X msg 319 52 1;
-#X obj 202 138 cnv 2 12 8 empty empty P 4 4 0 9 -260097 -262144 0;
-#X obj 249 138 cnv 2 12 8 empty empty R 4 4 0 9 -260097 -262144 0;
+#X obj 203 133 cnv 2 12 8 empty empty P 4 4 0 9 -260097 -262144 0;
+#X obj 250 133 cnv 2 12 8 empty empty R 4 4 0 9 -260097 -262144 0;
 #X text 266 1007 -- Version 0.3;
 #X obj 346 536 cnv 2 45 8 empty empty Left_Arrow 3 5 0 7 -260097 -262144
 0;
@@ -152,12 +152,10 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X connect 4 2 1 0;
 #X connect 5 0 3 0;
 #X connect 12 0 13 1;
-#X connect 13 1 15 0;
 #X connect 14 0 13 0;
 #X connect 15 0 43 0;
 #X connect 16 0 18 0;
 #X connect 16 0 17 0;
-#X connect 17 0 13 3;
 #X connect 18 0 13 2;
 #X connect 19 0 3 1;
 #X connect 20 0 3 1;
@@ -216,8 +214,8 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 1;
 #X obj 102 192 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 102 395 vradio 30 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+#X obj 102 395 vradio 30 1 0 4 empty empty empty 0 -8 0 10 -262144
+-1 -1 2;
 #X obj -1 427 loadbang;
 #X msg 2 451 1;
 #N canvas 0 23 1440 825 \$0-gvo 0;
@@ -240,7 +238,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X obj 1310 28 inlet;
 #X obj 1533 259 s pd-\$0-gvo;
 #X msg 1533 237 donecanvasdialog 1 -1 \$1 0 -1 1 1 700 124 0 \$2;
-#X obj 169 9 hsl 512 15 0 3072 0 0 current_pos playback_pos empty -2
+#X obj 172 9 hsl 512 15 0 3072 0 0 current_pos playback_pos empty -2
 -8 0 10 -228856 -1 -1 798 1;
 #X obj 171 29 vsl 16 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
 -1 0 0;
@@ -378,16 +376,57 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X text 491 104 21;
 #X text 553 104 25;
 #X text 621 103 29;
-#X obj 93 28 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 1986 0;
-#X floatatom 93 97 5 0 0 0 - - groove_vel_scale;
-#X text 134 30 Vel;
-#X text 127 69 uTime;
-#X text 65 46 +/-;
-#X floatatom 48 174 5 0 0 0 - - -;
-#X obj 46 149 ctlin 1, f 41;
-#X floatatom 47 213 5 0 0 0 - - -;
-#X obj 48 193 expr ($f1/127+.1)*2;
+#X obj 116 28 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
+0 -9 0 10 -262144 -1 -1 457 0;
+#X floatatom 116 97 5 0 0 0 - - groove_vel_scale;
+#X text 145 30 Vel;
+#X text 131 69 uTime;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 28 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 1 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 351 98 loadbang;
+#X obj 62 171 r groove_vel_scale_ccNum_channelPort_r;
+#X obj 62 189 r groove_vel_scale;
+#X obj 62 208 r groove_vel_scale_stepSize_min_max;
+#X obj 62 226 r groove_vel_scale_cc_type_r;
+#X obj 62 303 s groove_vel_scale_init;
+#X obj 131 411 s groove_vel_scale_ccNum_channelPort;
+#X obj 351 133 s groove_vel_scale_stepSize_min_max;
+#X obj 107 115 s groove_vel_scale_cc_type;
+#X msg 351 115 0.005 0 3;
+#X connect 0 0 15 0;
+#X connect 0 0 6 0;
+#X connect 1 0 6 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 12 0;
+#X connect 6 1 4 0;
+#X connect 6 1 5 0;
+#X connect 6 1 13 0;
+#X connect 6 2 1 0;
+#X connect 7 0 16 0;
+#X connect 8 0 4 0;
+#X connect 8 0 6 3;
+#X connect 9 0 6 2;
+#X connect 10 0 6 1;
+#X connect 11 0 0 0;
+#X connect 16 0 14 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 16 7 pd midi_mapper;
+#X obj 3 23 cnv 4 110 8 empty empty Select_(1)_EndlessEncoder_(2)_Slider/Pot
+0 4 0 4 -33289 -262144 0;
+#X obj 50 -1 cnv 4 15 8 empty empty Learn 2 4 0 4 -33289 -262144 0
+;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;
 #X connect 3 0 15 0;
@@ -405,10 +444,6 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X connect 13 0 2 0;
 #X connect 15 0 14 0;
 #X connect 89 0 90 0;
-#X connect 94 0 97 0;
-#X connect 95 0 94 0;
-#X connect 96 0 89 0;
-#X connect 97 0 96 0;
 #X coords 0 -1 1 1 700 124 1 0 0;
 #X restore 132 271 pd \$0-gvo;
 #N canvas 0 191 1440 657 \$0-visualizer 0;
@@ -455,7 +490,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X connect 14 0 13 0;
 #X coords 0 -1 1 1 700 80 1 0 0;
 #X restore 132 191 pd \$0-visualizer;
-#N canvas 154 23 1286 825 \$0-params 1;
+#N canvas 305 -960 1440 825 \$0-params 0;
 #X obj 1 502 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
 0;
 #X obj 1 1 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
@@ -494,28 +529,9 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X obj 170 921 cnv 15 512 36 empty empty RIDE 0 8 0 12 -26605 -33289
 0;
 #X text 266 534 Likelihood;
-#X text 381 533 Max Count;
-#X text 494 533 Vol;
-#X obj 20 598 cnv 15 140 36 empty empty empty 0 8 0 12 -225077 -33289
-0;
-#X obj 20 643 cnv 15 140 36 empty empty empty 0 8 0 12 -262013 -33289
-0;
-#X obj 20 691 cnv 15 140 36 empty empty empty 0 8 0 12 -257398 -33289
-0;
-#X obj 20 739 cnv 15 140 36 empty empty empty 0 8 0 12 -262136 -33289
-0;
-#X obj 20 786 cnv 15 140 36 empty empty empty 0 8 0 12 -261996 -33289
-0;
-#X obj 20 829 cnv 15 140 36 empty empty empty 0 8 0 12 -261600 -33289
-0;
-#X obj 20 876 cnv 15 140 36 empty empty empty 0 8 0 12 -55982 -33289
-0;
-#X obj 20 921 cnv 15 140 36 empty empty empty 0 8 0 12 -26605 -33289
-0;
-#X obj 21 553 cnv 15 140 36 empty empty empty 0 8 0 12 -229182 -33289
-0;
+#X text 391 533 Max Count;
+#X text 554 533 Vol;
 #X text 555 11 GENERATED PATTERNS;
-#X text 533 513 GENERATION PARAMETERS;
 #X msg 1359 245 donecanvasdialog 1 -1 \$1 0 -1 1 1 700 492 0 \$2;
 #X msg 1499 193 1002;
 #X obj 1 1003 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
@@ -538,90 +554,90 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 0;
 #X obj 170 1422 cnv 15 512 36 empty empty RIDE 0 8 0 12 -26605 -33289
 0;
-#X obj 258 1062 hsl 48 17 0 1 0 0 empty thres_0_in empty -2 -8 0 10
+#X obj 259 1054 hsl 48 17 0 1 0 0 empty thres_0_in empty -2 -8 0 10
 -262144 -1 -1 4700 0;
 #X text 266 1035 Likelihood;
-#X floatatom 308 1062 5 0 1 0 - - thres0;
-#X obj 358 1062 hsl 48 17 0 32 0 0 empty max_count_0_in empty -2 -8
-0 10 -262144 -1 -1 0 0;
-#X floatatom 408 1062 5 0 32 0 - - max_count_0;
+#X floatatom 309 1054 5 0 1 0 - - thres0;
+#X obj 359 1054 hsl 48 17 0 32 0 0 empty max_count_0_in empty -2 -8
+0 10 -262144 -1 -1 4700 0;
+#X floatatom 409 1054 5 0 32 0 - - max_count_0;
 #X text 381 1034 Max Count;
-#X obj 459 1062 hsl 48 17 0 3 0 0 empty vel_scale_0_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
+#X obj 460 1054 hsl 48 17 0 3 0 0 empty vel_scale_0_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
 #X text 494 1034 Vol;
-#X floatatom 509 1062 5 0 0 0 - - vel_scale_0;
-#X obj 258 1108 hsl 48 17 0 1 0 0 empty thres_1_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 308 1108 5 0 1 0 - - thres1;
-#X obj 358 1108 hsl 48 17 0 32 0 0 empty max_count_1_in empty -2 -8
+#X floatatom 510 1054 5 0 0 0 - - vel_scale_0;
+#X obj 259 1100 hsl 48 17 0 1 0 0 empty thres_1_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 309 1100 5 0 1 0 - - thres1;
+#X obj 359 1100 hsl 48 17 0 32 0 0 empty max_count_1_in empty -2 -8
+0 10 -262144 -1 -1 4700 0;
+#X floatatom 409 1100 5 0 32 0 - - max_count_1;
+#X obj 460 1100 hsl 48 17 0 3 0 0 empty vel_scale_1_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 408 1108 5 0 32 0 - - max_count_1;
-#X obj 459 1108 hsl 48 17 0 3 0 0 empty vel_scale_1_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 509 1108 5 0 0 0 - - vel_scale_1;
-#X obj 258 1153 hsl 48 17 0 1 0 0 empty thres_2_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 308 1153 5 0 1 0 - - thres2;
-#X obj 358 1153 hsl 48 17 0 32 0 0 empty max_count_2_in empty -2 -8
+#X floatatom 510 1100 5 0 0 0 - - vel_scale_1;
+#X obj 259 1145 hsl 48 17 0 1 0 0 empty thres_2_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 309 1145 5 0 1 0 - - thres2;
+#X obj 359 1145 hsl 48 17 0 32 0 0 empty max_count_2_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 408 1153 5 0 32 0 - - max_count_2;
-#X obj 459 1153 hsl 48 17 0 3 0 0 empty vel_scale_2_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 509 1153 5 0 0 0 - - vel_scale_2;
-#X obj 260 1200 hsl 48 17 0 1 0 0 empty thres_3_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 310 1200 5 0 1 0 - - thres3;
-#X obj 360 1200 hsl 48 17 0 32 0 0 empty max_count_3_in empty -2 -8
+#X floatatom 409 1145 5 0 32 0 - - max_count_2;
+#X obj 460 1145 hsl 48 17 0 3 0 0 empty vel_scale_2_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 410 1200 5 0 32 0 - - max_count_3;
-#X obj 461 1200 hsl 48 17 0 3 0 0 empty vel_scale_3_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 511 1200 5 0 0 0 - - vel_scale_3;
-#X obj 259 1250 hsl 48 17 0 1 0 0 empty thres_4_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 309 1250 5 0 1 0 - - thres4;
-#X obj 359 1250 hsl 48 17 0 32 0 0 empty max_count_4_in empty -2 -8
+#X floatatom 510 1145 5 0 0 0 - - vel_scale_2;
+#X obj 261 1192 hsl 48 17 0 1 0 0 empty thres_3_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 311 1192 5 0 1 0 - - thres3;
+#X obj 361 1192 hsl 48 17 0 32 0 0 empty max_count_3_in empty -2 -8
+0 10 -262144 -1 -1 4700 0;
+#X floatatom 411 1192 5 0 32 0 - - max_count_3;
+#X obj 462 1192 hsl 48 17 0 3 0 0 empty vel_scale_3_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 409 1250 5 0 32 0 - - max_count_4;
-#X obj 460 1250 hsl 48 17 0 3 0 0 empty vel_scale_4_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 510 1250 5 0 0 0 - - vel_scale_4;
-#X obj 259 1296 hsl 48 17 0 1 0 0 empty thres_5_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 309 1296 5 0 1 0 - - thres5;
-#X obj 359 1296 hsl 48 17 0 32 0 0 empty max_count_5_in empty -2 -8
+#X floatatom 512 1192 5 0 0 0 - - vel_scale_3;
+#X obj 260 1242 hsl 48 17 0 1 0 0 empty thres_4_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 310 1242 5 0 1 0 - - thres4;
+#X obj 360 1242 hsl 48 17 0 32 0 0 empty max_count_4_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 409 1296 5 0 32 0 - - max_count_5;
-#X obj 460 1296 hsl 48 17 0 3 0 0 empty vel_scale_5_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 510 1296 5 0 0 0 - - vel_scale_5;
-#X obj 259 1341 hsl 48 17 0 1 0 0 empty thres_6_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 309 1341 5 0 1 0 - - thres6;
-#X obj 359 1341 hsl 48 17 0 32 0 0 empty max_count_6_in empty -2 -8
+#X floatatom 410 1242 5 0 32 0 - - max_count_4;
+#X obj 461 1242 hsl 48 17 0 3 0 0 empty vel_scale_4_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 409 1341 5 0 32 0 - - max_count_6;
-#X obj 460 1341 hsl 48 17 0 3 0 0 empty vel_scale_6_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 510 1341 5 0 0 0 - - vel_scale_6;
-#X obj 261 1388 hsl 48 17 0 1 0 0 empty thres_7_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 311 1388 5 0 1 0 - - thres7;
-#X obj 361 1388 hsl 48 17 0 32 0 0 empty max_count_7_in empty -2 -8
+#X floatatom 511 1242 5 0 0 0 - - vel_scale_4;
+#X obj 260 1288 hsl 48 17 0 1 0 0 empty thres_5_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 310 1288 5 0 1 0 - - thres5;
+#X obj 360 1288 hsl 48 17 0 32 0 0 empty max_count_5_in empty -2 -8
+0 10 -262144 -1 -1 4700 0;
+#X floatatom 410 1288 5 0 32 0 - - max_count_5;
+#X obj 461 1288 hsl 48 17 0 3 0 0 empty vel_scale_5_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 411 1388 5 0 32 0 - - max_count_7;
-#X obj 462 1388 hsl 48 17 0 3 0 0 empty vel_scale_7_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 512 1388 5 0 0 0 - - vel_scale_7;
-#X obj 262 1432 hsl 48 17 0 1 0 0 empty thres_8_in empty -2 -8 0 10
--262144 -1 -1 0 0;
-#X floatatom 312 1432 5 0 1 0 - - thres8;
-#X obj 362 1432 hsl 48 17 0 32 0 0 empty max_count_8_in empty -2 -8
+#X floatatom 511 1288 5 0 0 0 - - vel_scale_5;
+#X obj 260 1333 hsl 48 17 0 1 0 0 empty thres_6_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 310 1333 5 0 1 0 - - thres6;
+#X obj 360 1333 hsl 48 17 0 32 0 0 empty max_count_6_in empty -2 -8
 0 10 -262144 -1 -1 0 0;
-#X floatatom 412 1432 5 0 32 0 - - max_count_8;
-#X obj 463 1432 hsl 48 17 0 3 0 0 empty vel_scale_8_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 513 1432 5 0 0 0 - - vel_scale_8;
+#X floatatom 410 1333 5 0 32 0 - - max_count_6;
+#X obj 461 1333 hsl 48 17 0 3 0 0 empty vel_scale_6_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 511 1333 5 0 0 0 - - vel_scale_6;
+#X obj 262 1379 hsl 48 17 0 1 0 0 empty thres_7_in empty -2 -8 0 10
+-262144 -1 -1 4700 0;
+#X floatatom 312 1379 5 0 1 0 - - thres7;
+#X obj 362 1379 hsl 48 17 0 32 0 0 empty max_count_7_in empty -2 -8
+0 10 -262144 -1 -1 4700 0;
+#X floatatom 412 1379 5 0 32 0 - - max_count_7;
+#X obj 463 1379 hsl 48 17 0 3 0 0 empty vel_scale_7_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 513 1379 5 0 0 0 - - vel_scale_7;
+#X obj 263 1423 hsl 48 17 0 1 0 0 empty thres_8_in empty -2 -8 0 10
+-262144 -1 -1 0 0;
+#X floatatom 313 1423 5 0 1 0 - - thres8;
+#X obj 363 1423 hsl 48 17 0 32 0 0 empty max_count_8_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 413 1423 5 0 32 0 - - max_count_8;
+#X obj 464 1423 hsl 48 17 0 3 0 0 empty vel_scale_8_in empty -2 -8
+0 10 -262144 -1 -1 0 0;
+#X floatatom 514 1423 5 0 0 0 - - vel_scale_8;
 #X obj 20 1099 cnv 15 140 36 empty empty empty 0 8 0 12 -225077 -33289
 0;
 #X obj 20 1144 cnv 15 140 36 empty empty empty 0 8 0 12 -262013 -33289
@@ -721,52 +737,1172 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 109 1;
 #X obj -276 1106 s max_count_0_in;
 #X obj -151 1087 change;
 #X obj -151 1106 s vel_scale_0_in;
-#X obj 61 1039 hradio 20 1 0 3 cc_page_for_generations cc_page_for_generations_in
-empty 0 -8 0 14 -262144 -1 -1 1;
-#X obj 41 1023 cnv 15 30 13 empty empty likelihood 0 6 0 5 -233017
--1 0;
-#X obj 77 1023 cnv 15 26 13 empty empty Max_Count 0 6 0 5 -233017 -1
+#X obj 34 1040 cnv 9 34 13 empty empty Likelihood 0 6 2 8 -1 -262144
 0;
-#X obj 108 1022 cnv 15 24 13 empty empty Volume 0 6 0 6 -233017 -1
+#X obj 74 1040 cnv 9 34 13 empty empty MaxCount 0 6 2 8 -1 -262144
 0;
 #X text 533 1014 GENERATION PARAMETERS;
-#X obj 744 1342 res/midi_cc_block, f 45;
-#X floatatom 1005 1291 5 0 0 0 - - -;
-#X text 998 1257 learnt cc;
-#X floatatom 1083 1293 5 0 0 0 - - -;
-#X text 1076 1259 learnt channel_port;
-#X obj 1074 1343 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
-#X obj 744 1317 hradio 25 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X floatatom 833 1285 5 0 0 0 - - -;
-#X text 819 1240 current value;
-#X floatatom 847 1382 5 0 0 0 - - -;
-#X floatatom 925 1384 5 0 0 0 - - -;
-#X floatatom 745 1382 5 0 0 0 - - -;
-#X obj 745 1403 s thres_0_in;
-#X msg 922 1282 0.05 0 1;
-#X obj 824 1209 r thres0;
-#X obj 921 1262 loadbang;
-#X obj 743 1179 r thres0_cc_type;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 62 303 s thres_0_in;
+#X obj 62 189 r thres0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 131 411 s thres0_ccNum_channelPort;
+#X obj 62 171 r thres0_ccNum_channelPort_r;
+#X obj 62 226 r thres0_cc_type_r;
+#X obj 107 115 s thres0_cc_type;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 13 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 1 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X connect 1 0 13 2;
+#X connect 2 0 7 0;
+#X connect 2 0 13 0;
+#X connect 3 0 13 4;
+#X connect 5 0 11 0;
+#X connect 5 0 13 3;
+#X connect 6 0 2 0;
+#X connect 8 0 13 1;
+#X connect 11 0 9 0;
+#X connect 11 1 10 0;
+#X connect 13 0 0 0;
+#X connect 13 1 11 0;
+#X connect 13 1 12 0;
+#X connect 13 1 4 0;
+#X connect 13 2 3 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 561 pd midi_mapper;
+#X obj 238 577 cnv 4 110 8 empty empty Select_(1)_EndlessEncoder_(2)_Slider/Pot
+0 4 0 4 -33289 -262144 0;
+#X obj 272 553 cnv 4 15 8 empty empty Learn 2 4 0 4 -33289 -262144
+0;
+#X obj 20 598 cnv 15 140 36 empty empty empty 0 8 0 12 -225077 -33289
+0;
+#X obj 20 643 cnv 15 140 36 empty empty empty 0 8 0 12 -262013 -33289
+0;
+#X obj 20 691 cnv 15 140 36 empty empty empty 0 8 0 12 -257398 -33289
+0;
+#X obj 20 739 cnv 15 140 36 empty empty empty 0 8 0 12 -262136 -33289
+0;
+#X obj 20 786 cnv 15 140 36 empty empty empty 0 8 0 12 -261996 -33289
+0;
+#X obj 20 829 cnv 15 140 36 empty empty empty 0 8 0 12 -261600 -33289
+0;
+#X obj 20 876 cnv 15 140 36 empty empty empty 0 8 0 12 -55982 -33289
+0;
+#X obj 20 921 cnv 15 140 36 empty empty empty 0 8 0 12 -26605 -33289
+0;
+#X floatatom 73 616 5 0 32 0 - max_count_1 -;
+#X floatatom 73 661 5 0 32 0 - max_count_2 -;
+#X floatatom 73 709 5 0 32 0 - max_count_3 -;
+#X floatatom 73 756 5 0 32 0 - max_count_4 -;
+#X floatatom 73 804 5 0 32 0 - max_count_5 -;
+#X floatatom 73 847 5 0 32 0 - max_count_6 -;
+#X floatatom 73 894 5 0 32 0 - max_count_7 -;
+#X floatatom 73 939 5 0 32 0 - max_count_8 -;
+#X floatatom 33 616 5 0 1 0 - thres1 -;
+#X floatatom 33 661 5 0 1 0 - thres2 -;
+#X floatatom 33 709 5 0 1 0 - thres3 -;
+#X floatatom 33 756 5 0 1 0 - thres4 -;
+#X floatatom 33 804 5 0 1 0 - thres5 -;
+#X floatatom 33 847 5 0 1 0 - thres6 -;
+#X floatatom 33 894 5 0 1 0 - thres7 -;
+#X floatatom 33 939 5 0 1 0 - thres8 -;
+#X floatatom 115 616 5 0 3 0 - vel_scale_1 -;
+#X floatatom 115 661 5 0 3 0 - vel_scale_2 -;
+#X floatatom 115 709 5 0 3 0 - vel_scale_3 -;
+#X floatatom 115 756 5 0 3 0 - vel_scale_4 -;
+#X floatatom 115 804 5 0 3 0 - vel_scale_5 -;
+#X floatatom 115 847 5 0 3 0 - vel_scale_6 -;
+#X floatatom 115 894 5 0 3 0 - vel_scale_7 -;
+#X floatatom 115 939 5 0 3 0 - vel_scale_8 -;
+#X obj -370 632 change;
+#X obj -369 679 change;
+#X obj -369 727 change;
+#X obj -370 651 s thres_1_in;
+#X obj -369 698 s thres_2_in;
+#X obj -369 746 s thres_3_in;
+#X obj -368 773 change;
+#X obj -368 792 s thres_4_in;
+#X obj -368 820 change;
+#X obj -368 864 change;
+#X obj -367 912 change;
+#X obj -367 956 change;
+#X obj -368 839 s thres_5_in;
+#X obj -368 883 s thres_6_in;
+#X obj -367 931 s thres_7_in;
+#X obj -367 975 s thres_8_in;
+#X obj -276 633 change;
+#X obj -275 680 change;
+#X obj -275 728 change;
+#X obj -274 774 change;
+#X obj -274 821 change;
+#X obj -274 865 change;
+#X obj -273 913 change;
+#X obj -273 957 change;
+#X obj -276 652 s max_count_1_in;
+#X obj -275 699 s max_count_2_in;
+#X obj -275 746 s max_count_3_in;
+#X obj -274 793 s max_count_4_in;
+#X obj -274 840 s max_count_5_in;
+#X obj -274 884 s max_count_6_in;
+#X obj -273 932 s max_count_7_in;
+#X obj -273 976 s max_count_8_in;
+#X obj -151 633 change;
+#X obj -150 680 change;
+#X obj -150 728 change;
+#X obj -149 774 change;
+#X obj -149 821 change;
+#X obj -149 865 change;
+#X obj -148 913 change;
+#X obj -148 957 change;
+#X obj -151 651 s vel_scale_1_in;
+#X obj -150 699 s vel_scale_2_in;
+#X obj -150 746 s vel_scale_3_in;
+#X obj -149 793 s vel_scale_4_in;
+#X obj -149 840 s vel_scale_5_in;
+#X obj -149 884 s vel_scale_6_in;
+#X obj -148 932 s vel_scale_7_in;
+#X obj -148 976 s vel_scale_8_in;
+#X obj 21 553 cnv 15 140 36 empty empty empty 0 8 0 12 -229182 -33289
+0;
+#X floatatom 73 569 5 0 32 0 - max_count_0 -;
+#X floatatom 33 569 5 0 1 0 - thres0 -;
+#X floatatom 115 569 5 0 3 0 - vel_scale_0 -;
+#X obj -370 585 change;
+#X obj -370 604 s thres_0_in;
+#X obj -276 586 change;
+#X obj -276 605 s max_count_0_in;
+#X obj -151 586 change;
+#X obj -151 605 s vel_scale_0_in;
+#N canvas 0 23 960 1125 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 1 256;
+#X obj 193 46 unpack;
+#X floatatom 206 617 5 0 0 0 - - -;
+#X obj 107 115 s max_count_0_cc_type;
+#X obj 101 165 r max_count_0_ccNum_channelPort_r;
+#X obj 73 187 r max_count_0;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 226 r max_count_0_cc_type_r;
+#X obj 61 527 s max_count_0_in;
+#X obj 126 555 s max_count_0_ccNum_channelPort;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X connect 0 0 6 0;
+#X connect 0 0 13 0;
+#X connect 1 0 13 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 7 0 4 0;
+#X connect 7 0 13 3;
+#X connect 8 0 13 2;
+#X connect 9 0 13 1;
+#X connect 10 0 0 0;
+#X connect 13 0 11 0;
+#X connect 13 1 4 0;
+#X connect 13 1 5 0;
+#X connect 13 1 12 0;
+#X connect 13 2 1 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 561 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 1 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 107 115 s vel_scale_0_cc_type;
+#X obj 62 171 r vel_scale_0_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_0;
+#X obj 62 226 r vel_scale_0_cc_type_r;
+#X obj 62 303 s vel_scale_0_in;
+#X obj 127 331 s vel_scale_0_ccNum_channelPort;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X connect 0 0 6 0;
+#X connect 0 0 13 0;
+#X connect 1 0 13 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 7 0 4 0;
+#X connect 7 0 13 3;
+#X connect 8 0 13 2;
+#X connect 9 0 0 0;
+#X connect 12 0 13 1;
+#X connect 13 0 10 0;
+#X connect 13 1 4 0;
+#X connect 13 1 5 0;
+#X connect 13 1 11 0;
+#X connect 13 2 1 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 561 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 14 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 2 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres1_cc_type;
+#X obj 62 171 r thres1_ccNum_channelPort_r;
+#X obj 62 189 r thres1;
+#X obj 62 226 r thres1_cc_type_r;
+#X obj 62 303 s thres_1_in;
+#X obj 131 411 s thres1_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 608 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 2 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_1_cc_type;
+#X obj 62 171 r max_count_1_ccNum_channelPort_r;
+#X obj 62 189 r max_count_1;
+#X obj 62 226 r max_count_1_cc_type_r;
+#X obj 62 313 s max_count_1_in;
+#X obj 127 331 s max_count_1_ccNum_channelPort;
+#X obj 62 292 / 1;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 14 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X connect 14 0 12 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 608 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 2 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 62 171 r vel_scale_1_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_1;
+#X obj 62 226 r vel_scale_1_cc_type_r;
+#X obj 107 115 s vel_scale_1_cc_type;
+#X obj 62 303 s vel_scale_1_in;
+#X obj 127 331 s vel_scale_1_ccNum_channelPort;
+#X connect 0 0 11 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 8 0 4 0;
+#X connect 8 0 7 3;
+#X connect 9 0 7 2;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 608 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 15 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 3 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres2_cc_type;
+#X obj 62 171 r thres2_ccNum_channelPort_r;
+#X obj 62 189 r thres2;
+#X obj 62 226 r thres2_cc_type_r;
+#X obj 62 303 s thres_2_in;
+#X obj 131 411 s thres2_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 653 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 3 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_2_cc_type;
+#X obj 62 171 r max_count_2_ccNum_channelPort_r;
+#X obj 62 189 r max_count_2;
+#X obj 62 226 r max_count_2_cc_type_r;
+#X obj 127 331 s max_count_2_ccNum_channelPort;
+#X obj 62 313 s max_count_2_in;
+#X obj 62 292 / 1;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 14 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 12 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X connect 14 0 13 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 653 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 3 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_2_cc_type;
+#X obj 62 171 r vel_scale_2_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_2;
+#X obj 62 226 r vel_scale_2_cc_type_r;
+#X obj 62 303 s vel_scale_2_in;
+#X obj 127 331 s vel_scale_2_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 653 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 16 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 4 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres3_cc_type;
+#X obj 62 171 r thres3_ccNum_channelPort_r;
+#X obj 62 189 r thres3;
+#X obj 62 226 r thres3_cc_type_r;
+#X obj 62 303 s thres_3_in;
+#X obj 131 411 s thres3_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 1 5 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 702 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 4 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_3_cc_type;
+#X obj 62 171 r max_count_3_ccNum_channelPort_r;
+#X obj 62 189 r max_count_3;
+#X obj 62 226 r max_count_3_cc_type_r;
+#X obj 62 314 s max_count_3_in;
+#X obj 127 331 s max_count_3_ccNum_channelPort;
+#X obj 62 285 / 1;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 14 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X connect 14 0 12 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 702 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 4 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_3_cc_type;
+#X obj 62 171 r vel_scale_3_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_3;
+#X obj 62 226 r vel_scale_3_cc_type_r;
+#X obj 62 303 s vel_scale_3_in;
+#X obj 127 331 s vel_scale_3_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 702 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 17 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 5 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres4_cc_type;
+#X obj 62 171 r thres4_ccNum_channelPort_r;
+#X obj 62 189 r thres4;
+#X obj 62 226 r thres4_cc_type_r;
+#X obj 62 303 s thres_4_in;
+#X obj 131 411 s thres4_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 750 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 5 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_4_cc_type;
+#X obj 62 171 r max_count_4_ccNum_channelPort_r;
+#X obj 62 189 r max_count_4;
+#X obj 62 226 r max_count_4_cc_type_r;
+#X obj 62 313 s max_count_4_in;
+#X obj 127 331 s max_count_4_ccNum_channelPort;
+#X obj 62 284 / 1;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 14 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X connect 14 0 12 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 750 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 5 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_4_cc_type;
+#X obj 62 171 r vel_scale_4_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_4;
+#X obj 62 226 r vel_scale_4_cc_type_r;
+#X obj 62 303 s vel_scale_4_in;
+#X obj 127 331 s vel_scale_4_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 750 pd midi_mapper;
+#N canvas 629 -984 1546 1035 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 18 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 6 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 62 171 r thres5_ccNum_channelPort_r;
+#X obj 62 189 r thres5;
+#X obj 62 226 r thres5_cc_type_r;
+#X obj 62 303 s thres_5_in;
+#X obj 131 411 s thres5_ccNum_channelPort;
+#X obj 107 115 s thres5_cc_type;
+#X connect 0 0 13 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 11 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 12 0;
+#X connect 7 2 1 0;
+#X connect 8 0 5 0;
+#X connect 8 0 7 3;
+#X connect 9 0 7 2;
+#X connect 10 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 799 pd midi_mapper;
+#N canvas 1031 -852 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 6 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 69 134 s max_count_5_cc_type;
+#X obj 68 155 r max_count_5_ccNum_channelPort_r;
+#X obj 62 189 r max_count_5;
+#X obj 61 232 r max_count_5_cc_type_r;
+#X obj 62 303 s max_count_5_in;
+#X obj 127 331 s max_count_5_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 799 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 6 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_5_cc_type;
+#X obj 62 171 r vel_scale_5_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_5;
+#X obj 62 226 r vel_scale_5_cc_type_r;
+#X obj 62 303 s vel_scale_5_in;
+#X obj 127 331 s vel_scale_5_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 799 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 19 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 7 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres6_cc_type;
+#X obj 62 171 r thres6_ccNum_channelPort_r;
+#X obj 62 189 r thres6;
+#X obj 62 226 r thres6_cc_type_r;
+#X obj 62 303 s thres_6_in;
+#X obj 131 411 s thres6_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 841 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 7 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_6_cc_type;
+#X obj 62 171 r max_count_6_ccNum_channelPort_r;
+#X obj 62 189 r max_count_6;
+#X obj 62 226 r max_count_6_cc_type_r;
+#X obj 62 303 s max_count_6_in;
+#X obj 127 331 s max_count_6_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 841 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 7 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_6_cc_type;
+#X obj 62 171 r vel_scale_6_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_6;
+#X obj 62 226 r vel_scale_6_cc_type_r;
+#X obj 62 303 s vel_scale_6_in;
+#X obj 127 331 s vel_scale_6_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 841 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 20 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 8 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres7_cc_type;
+#X obj 62 171 r thres7_ccNum_channelPort_r;
+#X obj 62 189 r thres7;
+#X obj 62 226 r thres7_cc_type_r;
+#X obj 62 303 s thres_7_in;
+#X obj 131 411 s thres7_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 888 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 8 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_7_cc_type;
+#X obj 62 171 r max_count_7_ccNum_channelPort_r;
+#X obj 62 189 r max_count_7;
+#X obj 62 226 r max_count_7_cc_type_r;
+#X obj 62 303 s max_count_7_in;
+#X obj 127 331 s max_count_7_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 888 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 31 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 8 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_7_cc_type;
+#X obj 62 171 r vel_scale_7_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_7;
+#X obj 62 226 r vel_scale_7_cc_type_r;
+#X obj 62 303 s vel_scale_7_in;
+#X obj 127 331 s vel_scale_7_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 888 pd midi_mapper;
+#N canvas 0 23 1546 1124 midi_mapper 0;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 62 208 r trs_stepSize_min_max;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 21 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 9 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s thres8_cc_type;
+#X obj 62 171 r thres8_ccNum_channelPort_r;
+#X obj 62 189 r thres8;
+#X obj 62 226 r thres8_cc_type_r;
+#X obj 62 303 s thres_8_in;
+#X obj 131 411 s thres8_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 2 0 7 1;
+#X connect 5 0 3 0;
+#X connect 5 1 4 0;
+#X connect 7 0 12 0;
+#X connect 7 1 5 0;
+#X connect 7 1 6 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 5 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 238 933 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 12 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 9 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r max_count_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s max_count_8_cc_type;
+#X obj 62 171 r max_count_8_ccNum_channelPort_r;
+#X obj 62 189 r max_count_8;
+#X obj 62 226 r max_count_8_cc_type_r;
+#X obj 62 303 s max_count_8_in;
+#X obj 127 331 s max_count_8_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 372 933 pd midi_mapper;
+#N canvas 720 23 720 825 midi_mapper 0;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
+-1 1;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
+1;
+#X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
+-232576 -1 -1 119 256;
+#X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
+4 -232576 -1 -1 1 256;
+#X obj 193 46 unpack;
+#X floatatom 225 277 5 0 0 0 - - -;
+#X obj 62 208 r vel_scale_stepSize_min_max;
+#X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
+;
+#X obj 107 115 s vel_scale_8_cc_type;
+#X obj 62 171 r vel_scale_8_ccNum_channelPort_r;
+#X obj 62 189 r vel_scale_8;
+#X obj 62 226 r vel_scale_8_cc_type_r;
+#X obj 62 303 s vel_scale_8_in;
+#X obj 127 331 s vel_scale_8_ccNum_channelPort;
+#X connect 0 0 8 0;
+#X connect 0 0 7 0;
+#X connect 1 0 7 4;
+#X connect 4 0 2 0;
+#X connect 4 1 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 12 0;
+#X connect 7 1 4 0;
+#X connect 7 1 5 0;
+#X connect 7 1 13 0;
+#X connect 7 2 1 0;
+#X connect 9 0 4 0;
+#X connect 9 0 7 3;
+#X connect 10 0 7 2;
+#X connect 11 0 0 0;
+#X coords 0 -1 1 1 116 15 2 100 100;
+#X restore 506 933 pd midi_mapper;
+#X obj 114 1040 cnv 9 34 13 empty empty Volume 3 6 2 8 -33289 -262144
+0;
+#X obj 762 525 loadbang;
+#X msg 762 542 0.005 0 1;
+#X obj 762 560 s trs_stepSize_min_max;
+#X obj 765 597 loadbang;
+#X obj 766 632 s max_count_stepSize_min_max;
+#X msg 765 614 0.01 0 32;
+#X obj 766 659 loadbang;
+#X obj 766 694 s vel_scale_stepSize_min_max;
+#X msg 766 676 0.01 0 3;
+#X text 323 513 MIDI MAPPING (PLACE CC DEVICE AS FIRST MIDI DEVICE)
+;
+#X obj 42 516 bng 20 250 50 0 empty empty SAVE_MIDI_MAPPING -36 -7
+0 10 -260097 -1 -1;
+#X obj 122 516 bng 20 250 50 0 empty empty LOAD 0 -7 0 10 -260097 -1
+-1;
+#X obj -144 493 s save_midi_mapping;
+#X obj -144 516 s load_midi_mapping;
+#X obj 240 520 bng 10 250 50 0 empty empty FORGET_MIDI_MAPPING -30
+-7 0 5 -258113 -1 -1;
+#X obj -187 454 s forget_midi_mapping;
+#X obj 34 539 cnv 9 34 13 empty empty Likelihood 0 6 2 8 -1 -262144
+0;
+#X obj 74 539 cnv 9 34 13 empty empty MaxCount 0 6 2 8 -1 -262144 0
+;
+#X obj 114 539 cnv 9 34 13 empty empty Volume 3 6 2 8 -33289 -262144
+0;
 #X connect 2 0 7 0;
 #X connect 3 0 5 0;
 #X connect 4 0 7 0;
-#X connect 5 0 38 0;
+#X connect 5 0 28 0;
 #X connect 6 0 11 0;
 #X connect 6 1 13 0;
-#X connect 6 2 39 0;
+#X connect 6 2 29 0;
 #X connect 7 0 8 0;
 #X connect 7 1 6 0;
 #X connect 7 2 3 0;
 #X connect 8 0 5 0;
 #X connect 11 0 5 1;
 #X connect 13 0 5 1;
-#X connect 38 0 14 0;
-#X connect 39 0 5 1;
-#X connect 50 0 52 0;
+#X connect 28 0 14 0;
+#X connect 29 0 5 1;
+#X connect 40 0 42 0;
+#X connect 43 0 44 0;
+#X connect 46 0 48 0;
+#X connect 49 0 50 0;
+#X connect 51 0 52 0;
 #X connect 53 0 54 0;
-#X connect 56 0 58 0;
+#X connect 55 0 56 0;
+#X connect 57 0 58 0;
 #X connect 59 0 60 0;
 #X connect 61 0 62 0;
 #X connect 63 0 64 0;
@@ -786,80 +1922,124 @@ empty 0 -8 0 14 -262144 -1 -1 1;
 #X connect 91 0 92 0;
 #X connect 93 0 94 0;
 #X connect 95 0 96 0;
-#X connect 97 0 98 0;
-#X connect 99 0 100 0;
-#X connect 101 0 102 0;
-#X connect 103 0 104 0;
-#X connect 105 0 106 0;
-#X connect 115 0 155 0;
-#X connect 116 0 156 0;
-#X connect 117 0 157 0;
-#X connect 118 0 158 0;
-#X connect 119 0 159 0;
-#X connect 120 0 160 0;
+#X connect 105 0 145 0;
+#X connect 106 0 146 0;
+#X connect 107 0 147 0;
+#X connect 108 0 148 0;
+#X connect 109 0 149 0;
+#X connect 110 0 150 0;
+#X connect 111 0 151 0;
+#X connect 112 0 152 0;
+#X connect 113 0 129 0;
+#X connect 114 0 130 0;
+#X connect 115 0 131 0;
+#X connect 116 0 135 0;
+#X connect 117 0 137 0;
+#X connect 118 0 138 0;
+#X connect 119 0 139 0;
+#X connect 120 0 140 0;
 #X connect 121 0 161 0;
 #X connect 122 0 162 0;
-#X connect 123 0 139 0;
-#X connect 124 0 140 0;
-#X connect 125 0 141 0;
-#X connect 126 0 145 0;
-#X connect 127 0 147 0;
-#X connect 128 0 148 0;
-#X connect 129 0 149 0;
-#X connect 130 0 150 0;
-#X connect 131 0 171 0;
-#X connect 132 0 172 0;
-#X connect 133 0 173 0;
-#X connect 134 0 174 0;
-#X connect 135 0 175 0;
-#X connect 136 0 176 0;
-#X connect 137 0 177 0;
-#X connect 138 0 178 0;
-#X connect 139 0 142 0;
-#X connect 140 0 143 0;
-#X connect 141 0 144 0;
-#X connect 145 0 146 0;
-#X connect 147 0 151 0;
-#X connect 148 0 152 0;
-#X connect 149 0 153 0;
-#X connect 150 0 154 0;
-#X connect 155 0 163 0;
-#X connect 156 0 164 0;
-#X connect 157 0 165 0;
-#X connect 158 0 166 0;
-#X connect 159 0 167 0;
-#X connect 160 0 168 0;
+#X connect 123 0 163 0;
+#X connect 124 0 164 0;
+#X connect 125 0 165 0;
+#X connect 126 0 166 0;
+#X connect 127 0 167 0;
+#X connect 128 0 168 0;
+#X connect 129 0 132 0;
+#X connect 130 0 133 0;
+#X connect 131 0 134 0;
+#X connect 135 0 136 0;
+#X connect 137 0 141 0;
+#X connect 138 0 142 0;
+#X connect 139 0 143 0;
+#X connect 140 0 144 0;
+#X connect 145 0 153 0;
+#X connect 146 0 154 0;
+#X connect 147 0 155 0;
+#X connect 148 0 156 0;
+#X connect 149 0 157 0;
+#X connect 150 0 158 0;
+#X connect 151 0 159 0;
+#X connect 152 0 160 0;
 #X connect 161 0 169 0;
 #X connect 162 0 170 0;
-#X connect 171 0 179 0;
-#X connect 172 0 180 0;
-#X connect 173 0 181 0;
-#X connect 174 0 182 0;
-#X connect 175 0 183 0;
-#X connect 176 0 184 0;
-#X connect 177 0 185 0;
-#X connect 178 0 186 0;
-#X connect 188 0 193 0;
-#X connect 189 0 191 0;
-#X connect 190 0 195 0;
-#X connect 191 0 192 0;
-#X connect 193 0 194 0;
-#X connect 195 0 196 0;
-#X connect 202 0 213 0;
-#X connect 202 1 211 0;
-#X connect 202 2 212 0;
-#X connect 202 3 207 0;
-#X connect 203 0 202 3;
-#X connect 205 0 202 4;
-#X connect 207 0 202 5;
-#X connect 208 0 202 0;
-#X connect 209 0 202 1;
-#X connect 213 0 214 0;
-#X connect 215 0 202 2;
-#X connect 216 0 209 0;
-#X connect 217 0 215 0;
-#X connect 218 0 208 0;
-#X coords 0 -1 1 1 700 492 1 0 0;
+#X connect 163 0 171 0;
+#X connect 164 0 172 0;
+#X connect 165 0 173 0;
+#X connect 166 0 174 0;
+#X connect 167 0 175 0;
+#X connect 168 0 176 0;
+#X connect 178 0 183 0;
+#X connect 179 0 181 0;
+#X connect 180 0 185 0;
+#X connect 181 0 182 0;
+#X connect 183 0 184 0;
+#X connect 185 0 186 0;
+#X connect 201 0 241 0;
+#X connect 202 0 242 0;
+#X connect 203 0 243 0;
+#X connect 204 0 244 0;
+#X connect 205 0 245 0;
+#X connect 206 0 246 0;
+#X connect 207 0 247 0;
+#X connect 208 0 248 0;
+#X connect 209 0 225 0;
+#X connect 210 0 226 0;
+#X connect 211 0 227 0;
+#X connect 212 0 231 0;
+#X connect 213 0 233 0;
+#X connect 214 0 234 0;
+#X connect 215 0 235 0;
+#X connect 216 0 236 0;
+#X connect 217 0 257 0;
+#X connect 218 0 258 0;
+#X connect 219 0 259 0;
+#X connect 220 0 260 0;
+#X connect 221 0 261 0;
+#X connect 222 0 262 0;
+#X connect 223 0 263 0;
+#X connect 224 0 264 0;
+#X connect 225 0 228 0;
+#X connect 226 0 229 0;
+#X connect 227 0 230 0;
+#X connect 231 0 232 0;
+#X connect 233 0 237 0;
+#X connect 234 0 238 0;
+#X connect 235 0 239 0;
+#X connect 236 0 240 0;
+#X connect 241 0 249 0;
+#X connect 242 0 250 0;
+#X connect 243 0 251 0;
+#X connect 244 0 252 0;
+#X connect 245 0 253 0;
+#X connect 246 0 254 0;
+#X connect 247 0 255 0;
+#X connect 248 0 256 0;
+#X connect 257 0 265 0;
+#X connect 258 0 266 0;
+#X connect 259 0 267 0;
+#X connect 260 0 268 0;
+#X connect 261 0 269 0;
+#X connect 262 0 270 0;
+#X connect 263 0 271 0;
+#X connect 264 0 272 0;
+#X connect 274 0 279 0;
+#X connect 275 0 277 0;
+#X connect 276 0 281 0;
+#X connect 277 0 278 0;
+#X connect 279 0 280 0;
+#X connect 281 0 282 0;
+#X connect 310 0 311 0;
+#X connect 311 0 312 0;
+#X connect 313 0 315 0;
+#X connect 315 0 314 0;
+#X connect 316 0 318 0;
+#X connect 318 0 317 0;
+#X connect 320 0 322 0;
+#X connect 321 0 323 0;
+#X connect 324 0 325 0;
+#X coords 0 -1 1 1 700 492 1 0 501;
 #X restore 132 395 pd \$0-params;
 #X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
@@ -1000,9 +2180,9 @@ empty 0 -8 0 14 -262144 -1 -1 1;
 -262144 -1 -1;
 #X obj 229 869 res/save_preset;
 #X msg 994 652 donecanvasdialog 1 -1 \$1 0 -1 1 1 400 70 180 \$2;
-#X obj 447 104 bng 30 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
--262144 -1 -1;
-#X obj 536 104 bng 30 250 50 0 empty empty LOAD 2 -7 0 10 -262144 -1
+#X obj 460 110 bng 20 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
+-159808 -1 -1;
+#X obj 520 110 bng 20 250 50 0 empty empty LOAD 0 -7 0 10 -159808 -257985
 -1;
 #X obj 602 187 r reset;
 #X obj 476 231 res/save_session;
@@ -1083,7 +2263,6 @@ the performance;
 #X obj 860 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 860 67 s reset;
-#X obj 1014 144 res/main;
 #X obj 852 139 bng 30 250 50 0 reset empty RESET_PROGRAM -17 -10 0
 8 -258113 -1 -1;
 #X obj 851 325 bng 30 250 50 0 empty clear_groove_r Clear_Groove -17
@@ -1101,6 +2280,8 @@ ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
 0 \; ut32r 0 \;;
 #X obj 845 359 cnv 2 45 8 empty empty Shift+D 4 4 0 9 -260097 -262144
 0;
+#X obj 1014 144 res/main;
+#X msg 48 467 2;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
@@ -1108,13 +2289,14 @@ ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
 #X connect 9 0 14 0;
 #X connect 10 0 15 0;
 #X connect 11 0 12 0;
-#X connect 12 0 10 0;
+#X connect 11 0 28 0;
 #X connect 12 0 9 0;
 #X connect 12 0 8 0;
 #X connect 16 0 19 0;
 #X connect 17 0 18 0;
 #X connect 18 0 16 0;
 #X connect 20 0 21 0;
-#X connect 24 0 25 0;
-#X connect 24 0 26 0;
+#X connect 23 0 24 0;
+#X connect 23 0 25 0;
+#X connect 28 0 10 0;
 #X coords 0 0 1 1 800 800 2 100 100;

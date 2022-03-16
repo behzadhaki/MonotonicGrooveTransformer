@@ -16,6 +16,10 @@ Updates
     - **<** or **>** (shift , or shift .) navigates snapshots
     - **Shift D** Deletes (resets) the input groove 
 - Clock is now sent only through channel 16 of midi out. 
+
+- Midi controllers with infinite encoders or slider/potentiometers (0-127) can be used for controlling generation params.
+The mappings can also be saved so as to import in future projects as well 
+
 At each beat/bar a single note is also sent out to check synchronization over time
    ######Note
     

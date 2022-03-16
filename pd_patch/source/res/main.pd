@@ -78,7 +78,6 @@ tracked in res/see_generated_pattern) and sends out (via midi out drum_out_chann
 ;
 #X text 949 126 Use numbers 1 to 9 (low to hi) to play a groove using
 keyboard (increase groove_volume on gui to hear the sound);
-#X obj 51 42 initialize_2;
 #X obj 52 77 ppq_setter;
 #X obj 70 185 clock, f 10;
 #X obj 390 272 update_on_new_groove_event;
@@ -94,10 +93,20 @@ keyboard (increase groove_volume on gui to hear the sound);
 #X obj 761 383 send_osc_messages_to_py;
 #X text 159 190 clock and midi notes for clock;
 #X text 165 207 are only sent via channel 16;
+#X obj 51 42 initialize_2;
+#X obj 755 472 cnv 15 300 120 empty empty MIDI_MAPPING_PRESET_SAVER_LOADER
+20 12 0 14 -228856 -4160 0;
+#X obj 765 505 r save_midi_mapping;
+#X obj 832 525 r load_midi_mapping;
+#X obj 765 564 save_midi_mapping, f 39;
+#X obj 888 545 r forget_midi_mapping;
 #X connect 1 0 2 0;
 #X connect 11 0 10 1;
 #X connect 12 0 10 0;
-#X connect 21 0 1 0;
-#X connect 23 0 8 0;
-#X connect 23 0 8 1;
+#X connect 20 0 1 0;
+#X connect 22 0 8 0;
+#X connect 22 0 8 1;
+#X connect 36 0 38 0;
+#X connect 37 0 38 1;
+#X connect 39 0 38 2;
 #X coords 0 825 1 824 800 800 0;
