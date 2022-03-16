@@ -23,9 +23,22 @@ max_count_5_in 6 \; max_count_6_in 6 \; max_count_7_in 6 \; max_count_8_in
 0 \; vel_scale_0_in 2 \; vel_scale_1_in 1 \; vel_scale_2_in 2 \; vel_scale_3_in
 2 \; vel_scale_4_in 3 \; vel_scale_5_in 3 \; vel_scale_6_in 3 \; vel_scale_7_in
 2 \; vel_scale_8_in 1 \;;
+#X msg 149 308 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r
+0 \; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r
+0 \; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
+0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
+0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
+#X msg 230 308 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
+ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
+0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
+\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
+ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
+0 \; ut32r 0 \;;
 #X connect 0 0 3 0;
 #X connect 1 0 5 0;
 #X connect 2 0 0 0;
+#X connect 3 5 11 0;
+#X connect 3 6 12 0;
 #X connect 3 12 4 0;
 #X connect 3 13 7 0;
 #X connect 5 0 0 0;

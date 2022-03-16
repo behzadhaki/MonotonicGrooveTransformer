@@ -1,5 +1,11 @@
 Updates 
 ----
+#### Version 0.4
+
+- Improved the performance by updating the logic involved in repainting of events in plot_trigger.pd
+ 
+    - Instead of resetting the entirety of a timestep before re-plotting, now only the old value is reset. This wont be able to remove manually drawn events in the groove canvas. As a result, a repaint button was added to force repaint the groove with the actual vels and utimings 
+    
 
 #### Version 0.3
 

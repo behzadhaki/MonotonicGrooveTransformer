@@ -1,6 +1,6 @@
-#N canvas 593 55 1121 918 12;
-#X text 227 813 For full functionality like saving and snapshoting
+#N canvas 319 23 1121 825 12;
+#X text 227 720 For full functionality like saving and snapshoting
 you need cyclone/coll use https://github.com/jonwwilkes/purr-data/releases
 ;
-#X obj 4 3 pd_patch/source/internals;
-#X coords 0 918 1 917 810 810 0;
+#X obj 4 -90 pd_patch/source/internals;
+#X coords 0 825 1 824 810 810 0;
