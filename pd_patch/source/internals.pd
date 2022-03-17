@@ -1,4 +1,4 @@
-#N canvas 401 -1057 960 1035 12;
+#N canvas 401 23 960 825 12;
 #X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 793 -28 Todo: 1 per voice tres 2 per voice max count 3 scale
@@ -90,7 +90,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X text 205 905 Prior to Loading a Preset/Session;
 #X text 181 884 Don't Forget to Load the Generative Engine;
 #X obj 286 309 tgl 15 0 keyboard_enabled keyboard_enabled_r Enable_Keyboard
--100 6 0 10 -261682 -1 -1 0 1;
+-100 6 0 10 -261682 -1 -1 1 1;
 #X msg 1893 202 980;
 #X obj 181 981 cnv 15 298 68 empty empty empty 20 12 0 14 -262144 -66577
 0;
@@ -132,7 +132,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X obj 3 344 symbol;
 #X obj 3 367 sel Caps_Lock;
 #X obj 5 392 f;
-#X obj 6 423 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
+#X obj 6 423 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
 #X obj 319 25 loadbang;
 #X msg 319 52 1;
@@ -210,12 +210,12 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X msg 129 64 1;
 #X obj 131 191 cnv 15 698 700 empty empty empty 20 12 0 14 -237242
 -66577 0;
-#X obj 102 271 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 102 271 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 102 192 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 102 395 vradio 30 1 0 4 empty empty empty 0 -8 0 10 -262144
--1 -1 2;
+-1 -1 1;
 #X obj -1 427 loadbang;
 #X msg 2 451 1;
 #N canvas 0 23 1440 825 \$0-gvo 0;
@@ -223,7 +223,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 0;
 #X msg 1447 184 0;
 #X obj 1320 72 hradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 0;
 #X obj 1533 216 pack f f;
 #X obj 1587 156 sel 1 2 3;
 #X obj 1446 86 t f f b;
@@ -241,17 +241,17 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X obj 172 9 hsl 512 15 0 3072 0 0 current_pos playback_pos empty -2
 -8 0 10 -228856 -1 -1 798 1;
 #X obj 171 29 vsl 16 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
--1 0 0;
+-1 6400 0;
 #X obj 174 97 hsl 11 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
--262144 -1 505 0;
+-262144 -1 763 0;
 #X obj 187 29 vsl 16 65 0 127 0 0 v2 v2r empty 0 -9 0 10 -262144 -33289
--1 0 0;
+-1 2145 0;
 #X obj 190 97 hsl 11 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 886 0;
 #X obj 203 29 vsl 16 65 0 127 0 0 v3 v3r empty 0 -9 0 10 -262144 -33289
--1 0 0;
+-1 5552 0;
 #X obj 206 97 hsl 11 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 381 0;
 #X obj 219 29 vsl 16 65 0 127 0 0 v4 v4r empty 0 -9 0 10 -262144 -33289
 -1 0 0;
 #X obj 222 97 hsl 11 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 -262144
@@ -265,93 +265,93 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X obj 254 97 hsl 11 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 267 29 vsl 16 65 0 127 0 0 v7 v7r empty 0 -9 0 10 -262144 -33289
--1 0 0;
+-1 5300 0;
 #X obj 270 97 hsl 11 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 474 0;
 #X obj 283 29 vsl 16 65 0 127 0 0 v8 v8r empty 0 -9 0 10 -262144 -33289
--1 0 0;
+-1 4921 0;
 #X obj 286 97 hsl 11 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 412 0;
 #X obj 299 29 vsl 16 65 0 127 0 0 v9 v9r empty 0 -9 0 10 -228856 -33289
--1 0 0;
+-1 6400 0;
 #X obj 302 97 hsl 11 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
--33289 -1 505 0;
+-33289 -1 588 0;
 #X obj 315 29 vsl 16 65 0 127 0 0 v10 v10r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4038 0;
 #X obj 318 97 hsl 11 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 557 0;
 #X obj 331 29 vsl 16 65 0 127 0 0 v11 v11r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 3785 0;
 #X obj 334 97 hsl 11 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 347 29 vsl 16 65 0 127 0 0 v12 v12r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4290 0;
 #X obj 350 97 hsl 11 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 567 0;
 #X obj 363 29 vsl 16 65 0 127 0 0 v13 v13r empty 0 -9 0 10 -228856
--33289 -1 0 0;
+-33289 -1 4416 0;
 #X obj 366 97 hsl 11 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
--33289 -1 505 0;
+-33289 -1 464 0;
 #X obj 379 29 vsl 16 65 0 127 0 0 v14 v14r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 5931 0;
 #X obj 382 97 hsl 11 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 433 0;
 #X obj 395 29 vsl 16 65 0 127 0 0 v15 v15r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 5173 0;
 #X obj 398 97 hsl 11 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 454 0;
 #X obj 411 29 vsl 16 65 0 127 0 0 v16 v16r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 6400 0;
 #X obj 414 97 hsl 11 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 567 0;
 #X text 175 105 1;
 #X text 237 105 5;
 #X text 297 105 9;
 #X text 361 105 13;
 #X obj 427 29 vsl 16 65 0 127 0 0 v17 v17r empty 0 -9 0 10 -128992
--262144 -1 0 0;
+-262144 -1 6400 0;
 #X obj 430 97 hsl 11 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
--262144 -1 505 0;
+-262144 -1 402 0;
 #X obj 443 29 vsl 16 65 0 127 0 0 v18 v18r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 446 97 hsl 11 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 459 29 vsl 16 65 0 127 0 0 v19 v19r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4290 0;
 #X obj 462 97 hsl 11 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 381 0;
 #X obj 475 29 vsl 16 65 0 127 0 0 v20 v20r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4669 0;
 #X obj 478 97 hsl 11 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 412 0;
 #X obj 491 29 vsl 16 65 0 127 0 0 v21 v21r empty 0 -9 0 10 -228856
--33289 -1 0 0;
+-33289 -1 4921 0;
 #X obj 494 97 hsl 11 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
--33289 -1 505 0;
+-33289 -1 433 0;
 #X obj 507 29 vsl 16 65 0 127 0 0 v22 v22r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4164 0;
 #X obj 510 97 hsl 11 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 371 0;
 #X obj 523 29 vsl 16 65 0 127 0 0 v23 v23r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 6183 0;
 #X obj 526 97 hsl 11 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 484 0;
 #X obj 539 29 vsl 16 65 0 127 0 0 v24 v24r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 542 97 hsl 11 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 555 29 vsl 16 65 0 127 0 0 v25 v25r empty 0 -9 0 10 -228856
--33289 -1 0 0;
+-33289 -1 5552 0;
 #X obj 558 97 hsl 11 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
--33289 -1 505 0;
+-33289 -1 907 0;
 #X obj 571 29 vsl 16 65 0 127 0 0 v26 v26r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 574 97 hsl 11 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 587 29 vsl 16 65 0 127 0 0 v27 v27r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4290 0;
 #X obj 590 97 hsl 11 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 680 0;
 #X obj 603 29 vsl 16 65 0 127 0 0 v28 v28r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 606 97 hsl 11 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
@@ -361,13 +361,13 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X obj 622 97 hsl 11 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 635 29 vsl 16 65 0 127 0 0 v30 v30r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 5931 0;
 #X obj 638 97 hsl 11 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 876 0;
 #X obj 651 29 vsl 16 65 0 127 0 0 v31 v31r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 5804 0;
 #X obj 654 97 hsl 11 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 876 0;
 #X obj 667 29 vsl 16 65 0 127 0 0 v32 v32r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 670 97 hsl 11 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
@@ -377,7 +377,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X text 553 104 25;
 #X text 621 103 29;
 #X obj 116 28 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 1986 0;
+0 -9 0 10 -262144 -1 -1 5305 0;
 #X floatatom 116 97 5 0 0 0 - - groove_vel_scale;
 #X text 145 30 Vel;
 #X text 131 69 uTime;
@@ -444,7 +444,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X connect 13 0 2 0;
 #X connect 15 0 14 0;
 #X connect 89 0 90 0;
-#X coords 0 -1 1 1 700 124 1 0 0;
+#X coords 0 0 1 1 700 124 0;
 #X restore 132 271 pd \$0-gvo;
 #N canvas 0 191 1440 657 \$0-visualizer 0;
 #X msg 1381 184 0;
@@ -559,25 +559,25 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X obj 170 1422 cnv 15 512 36 empty empty RIDE 0 8 0 12 -26605 -33289
 0;
 #X obj 259 1054 hsl 48 17 0 1 0 0 empty thres_0_in empty -2 -8 0 10
--262144 -1 -1 1880 0;
+-262144 -1 -1 3220 0;
 #X text 266 1035 Likelihood;
 #X floatatom 309 1054 5 0 1 0 - - thres0;
 #X obj 359 1054 hsl 48 17 0 32 0 0 empty max_count_0_in empty -2 -8
-0 10 -262144 -1 -1 881 0;
+0 10 -262144 -1 -1 1221 0;
 #X floatatom 409 1054 5 0 32 0 - - max_count_0;
 #X text 381 1034 Max Count;
 #X obj 460 1054 hsl 48 17 0 3 0 0 empty vel_scale_0_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
+0 10 -262144 -1 -1 4700 0;
 #X text 494 1034 Vol;
 #X floatatom 510 1054 5 0 0 0 - - vel_scale_0;
 #X obj 259 1100 hsl 48 17 0 1 0 0 empty thres_1_in empty -2 -8 0 10
--262144 -1 -1 2350 0;
+-262144 -1 -1 444 0;
 #X floatatom 309 1100 5 0 1 0 - - thres1;
 #X obj 359 1100 hsl 48 17 0 32 0 0 empty max_count_1_in empty -2 -8
-0 10 -262144 -1 -1 294 0;
+0 10 -262144 -1 -1 1369 0;
 #X floatatom 409 1100 5 0 32 0 - - max_count_1;
 #X obj 460 1100 hsl 48 17 0 3 0 0 empty vel_scale_1_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
+0 10 -262144 -1 -1 0 0;
 #X floatatom 510 1100 5 0 0 0 - - vel_scale_1;
 #X obj 259 1145 hsl 48 17 0 1 0 0 empty thres_2_in empty -2 -8 0 10
 -262144 -1 -1 2820 0;
@@ -586,7 +586,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 0 10 -262144 -1 -1 4700 0;
 #X floatatom 409 1145 5 0 32 0 - - max_count_2;
 #X obj 460 1145 hsl 48 17 0 3 0 0 empty vel_scale_2_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
+0 10 -262144 -1 -1 4700 0;
 #X floatatom 510 1145 5 0 0 0 - - vel_scale_2;
 #X obj 261 1192 hsl 48 17 0 1 0 0 empty thres_3_in empty -2 -8 0 10
 -262144 -1 -1 3290 0;
@@ -595,7 +595,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 0 10 -262144 -1 -1 4700 0;
 #X floatatom 411 1192 5 0 32 0 - - max_count_3;
 #X obj 462 1192 hsl 48 17 0 3 0 0 empty vel_scale_3_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
+0 10 -262144 -1 -1 4700 0;
 #X floatatom 512 1192 5 0 0 0 - - vel_scale_3;
 #X obj 260 1242 hsl 48 17 0 1 0 0 empty thres_4_in empty -2 -8 0 10
 -262144 -1 -1 4465 0;
@@ -2043,7 +2043,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 #X connect 320 0 322 0;
 #X connect 321 0 323 0;
 #X connect 324 0 325 0;
-#X coords 0 -1 1 1 700 492 1 0 501;
+#X coords 0 -1 1 1 700 492 1 0 0;
 #X restore 132 395 pd \$0-params;
 #X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
@@ -2142,7 +2142,7 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
 ;
 #X floatatom 355 431 5 0 0 0 - - -;
 #X obj 357 122 spigot;
-#X obj 417 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 417 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 456 94 != 0;
 #X obj 463 294 - 1;

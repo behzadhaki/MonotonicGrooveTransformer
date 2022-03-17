@@ -4,8 +4,11 @@ Updates
 
 - Improved the performance by updating the logic involved in repainting of events in plot_trigger.pd
  
-    - Instead of resetting the entirety of a timestep before re-plotting, now only the old value is reset. This wont be able to remove manually drawn events in the groove canvas. As a result, a repaint button was added to force repaint the groove with the actual vels and utimings 
-    
+    - Instead of resetting the entirety of a timestep before re-plotting, now only the old value is reset. 
+    This wont be able to remove manually drawn events in the groove canvas. As a result, a repaint button was added to force repaint the groove with the actual vels and utimings 
+ 
+ - Fixed clock out issue: Removed channel specifier for sending clock out as specifying it wouldn't 
+     allow the DAW to receive transport information sent out of pure data's **[midisystemrealtime]** module.
 
 #### Version 0.3
 
