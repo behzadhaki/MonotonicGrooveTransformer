@@ -16,7 +16,7 @@
 #X obj 761 306 dac~;
 #X obj 754 34 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
 12 0 14 -262130 -4160 0;
-#N canvas 0 23 888 639 metronome_midi_note_out 1;
+#N canvas 0 23 888 639 metronome_midi_note_out 0;
 #X obj 67 170 pack f f;
 #X obj 60 120 t f f;
 #X obj 65 260 makenote 0 100;

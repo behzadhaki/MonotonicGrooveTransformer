@@ -34,12 +34,14 @@ ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
 0 \; pd dsp 1 \;, f 56;
 #X msg 754 182 \; py2pd_port_init 1123 \; pd2py_port_init 1415 \; drum_out_channel_init
 10 \; metronome_as_midi_out_channel_init 16 \; bpm_r 70 \;;
+#X msg 740 426 \; starting_step_init 0 \;;
 #X connect 0 0 3 0;
 #X connect 1 0 5 0;
 #X connect 2 0 0 0;
 #X connect 3 5 9 0;
 #X connect 3 6 10 0;
 #X connect 3 12 4 0;
+#X connect 3 12 13 0;
 #X connect 3 13 11 0;
 #X connect 5 0 0 0;
 #X connect 5 1 12 0;
