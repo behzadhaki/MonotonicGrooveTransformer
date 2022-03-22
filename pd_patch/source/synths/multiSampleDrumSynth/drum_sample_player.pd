@@ -2,20 +2,20 @@
 #X obj 669 73 inlet;
 #X text 718 75 enable;
 #X obj 153 277 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 114 296 spigot;
 #X obj 669 113 s \$0-enable_drum_sample_player;
-#X obj 669 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 669 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 114 224 5 0 0 0 - - -;
 #X obj 114 360 throw~ drum_sound;
 #X obj 130 194 route 36;
 #X obj 448 263 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 409 282 spigot;
 #X floatatom 409 210 5 0 0 0 - - -;
 #X obj 409 346 throw~ drum_sound;
-#N canvas 180 250 720 506 play_snare 0;
+#N canvas 610 240 720 506 play_snare 0;
 #X obj 174 449 readsf~;
 #X floatatom 174 84 5 0 0 0 - - -;
 #X floatatom 174 269 5 0 0 0 - - -;
@@ -54,7 +54,7 @@
 #X restore 409 305 pd play_snare;
 #X obj 425 180 route 38;
 #X obj 757 273 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 718 292 spigot;
 #X floatatom 718 220 5 0 0 0 - - -;
 #X obj 718 356 throw~ drum_sound;
@@ -124,28 +124,28 @@
 #X connect 31 0 28 0;
 #X restore 718 315 pd play_hats;
 #X obj 840 270 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 801 289 spigot;
 #X floatatom 801 217 5 0 0 0 - - -;
 #X obj 734 190 route 42;
 #X obj 817 187 route 46;
 #X obj 161 525 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 122 544 spigot;
 #X floatatom 122 472 5 0 0 0 - - -;
 #X obj 122 608 throw~ drum_sound;
 #X obj 164 788 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 125 807 spigot;
 #X floatatom 125 735 5 0 0 0 - - -;
 #X obj 125 871 throw~ drum_sound;
 #X obj 689 530 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 650 549 spigot;
 #X floatatom 650 477 5 0 0 0 - - -;
 #X obj 650 613 throw~ drum_sound;
 #X obj 772 527 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 733 546 spigot;
 #X floatatom 733 474 5 0 0 0 - - -;
 #N canvas 682 236 720 506 play_lo_tom 0;
@@ -288,7 +288,7 @@
 #X restore 125 830 pd play_crash;
 #X obj 141 705 route 49;
 #X obj 373 788 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 334 807 spigot;
 #X floatatom 334 735 5 0 0 0 - - -;
 #X obj 334 871 throw~ drum_sound;
@@ -331,13 +331,13 @@
 #X obj 547 990 vfreeverb~, f 14;
 #X obj 537 911 catch~ drum_sound;
 #X obj 291 273 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 252 292 spigot;
 #X floatatom 252 220 5 0 0 0 - - -;
 #X obj 252 356 throw~ drum_sound;
 #X obj 268 190 route 36;
 #X obj 597 265 tgl 15 0 empty \$0-enable_drum_sample_player empty 17
-7 0 10 -262144 -1 -1 0 1;
+7 0 10 -262144 -1 -1 1 1;
 #X obj 558 284 spigot;
 #X floatatom 558 212 5 0 0 0 - - -;
 #X obj 558 348 throw~ drum_sound;
@@ -369,7 +369,7 @@
 #X obj 382 323 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 457 206 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 8372 1;
+-262144 -1 -1 9037 1;
 #X obj 412 355 i;
 #X floatatom 457 342 5 0 0 0 - - -;
 #X obj 412 190 t b f;
@@ -489,7 +489,7 @@
 #X obj 535 285 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 580 156 vsl 15 127 1 127 0 1 empty empty VELOCITY 0 -9 0 10
--262144 -1 -1 4810 1;
+-262144 -1 -1 3398 1;
 #X obj 535 305 i;
 #X floatatom 580 292 5 0 0 0 - - -;
 #X obj 535 140 t b f;
@@ -554,8 +554,6 @@
 #X obj 1331 93 inlet;
 #X obj 430 1078 outlet~;
 #X obj 249 68 inlet;
-#X obj 247 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
 #X obj 247 113 s \$0-drumNote;
 #X obj 113 168 r \$0-drumNote;
 #X obj 251 164 r \$0-drumNote;
@@ -652,15 +650,14 @@
 #X connect 86 0 84 0;
 #X connect 87 0 85 0;
 #X connect 89 0 90 0;
-#X connect 90 0 91 0;
-#X connect 92 0 8 0;
-#X connect 93 0 59 0;
-#X connect 94 0 14 0;
-#X connect 95 0 65 0;
-#X connect 96 0 23 0;
-#X connect 97 0 24 0;
-#X connect 98 0 44 0;
-#X connect 99 0 43 0;
-#X connect 100 0 41 0;
-#X connect 101 0 46 0;
-#X connect 102 0 52 0;
+#X connect 91 0 8 0;
+#X connect 92 0 59 0;
+#X connect 93 0 14 0;
+#X connect 94 0 65 0;
+#X connect 95 0 23 0;
+#X connect 96 0 24 0;
+#X connect 97 0 44 0;
+#X connect 98 0 43 0;
+#X connect 99 0 41 0;
+#X connect 100 0 46 0;
+#X connect 101 0 52 0;

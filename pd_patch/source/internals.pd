@@ -1,4 +1,4 @@
-#N canvas 0 23 1185 823 12;
+#N canvas 401 -1057 1920 1035 12;
 #X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #X text 793 -28 Todo: 1 per voice tres 2 per voice max count 3 scale
@@ -6,7 +6,7 @@ velocities of sliders 4 live record via midi, f 38;
 #X obj 949 111 cnv 15 400 200 empty empty Settings_and_Source_Not_Shown_On_Main_GUI
 20 12 0 14 -258113 -66577 0;
 #X obj 132 102 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+-1 -1 8;
 #N canvas 0 23 960 823 \$0-setting-panes 0;
 #X obj 1503 64 inlet;
 #X msg 1510 192 0;
@@ -61,13 +61,13 @@ _1_2_4_8_ -2 -8 0 8 -232576 -1 -1 2;
 #X obj 343 310 hsl 110 15 0 1 0 0 groove_volume groove_volume_init
 Clap_Sound_Volume -2 -8 0 10 -261234 -1 -1 0 0;
 #X obj 349 519 hsl 110 15 0 1 0 0 metronome_volume metronome_volume_r
-Metronome_Volume -2 -8 0 10 -232576 -1 -1 0 1;
+Metronome_Volume -2 -8 0 10 -232576 -1 -1 2180 1;
 #X obj 181 81 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
 0;
-#X obj 195 100 tgl 30 0 empty play_r PLAY 4 -5 0 10 -262144 -1 -1 0
+#X obj 195 100 tgl 30 0 empty play_r PLAY 4 -5 0 10 -262144 -1 -1 1
 1;
 #X obj 241 100 tgl 30 0 record record_r RECORD 4 -5 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 315 100 tgl 30 0 send_clock_out send_clock_out_r Send_Clock_Out
 -30 -5 0 10 -262144 -1 -1 1 1;
 #X floatatom 380 114 10 0 0 2 BPM bpm_r bpm;
@@ -179,7 +179,7 @@ metronome_as_midi_out_channel;
 #X connect 81 0 45 0;
 #X connect 82 0 83 0;
 #X connect 83 0 40 0;
-#X coords 0 -1 1 1 300 70 1 180 80;
+#X coords 0 -1 1 1 300 70 1 180 1080;
 #X restore 132 117 pd \$0-setting-panes;
 #X obj 128 46 loadbang;
 #X msg 129 64 1;
@@ -212,7 +212,7 @@ metronome_as_midi_out_channel;
 #X obj 1533 259 s pd-\$0-gvo;
 #X msg 1533 237 donecanvasdialog 1 -1 \$1 0 -1 1 1 700 124 0 \$2;
 #X obj 172 14 hsl 512 15 0 3072 0 0 current_pos playback_pos empty
--2 -8 0 10 -228856 -1 -1 798 1;
+-2 -8 0 10 -228856 -1 -1 16900 1;
 #X obj 171 32 vsl 16 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
 -1 0 0;
 #X obj 174 100 hsl 11 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
@@ -242,9 +242,9 @@ metronome_as_midi_out_channel;
 #X obj 270 100 hsl 11 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 283 32 vsl 16 65 0 127 0 0 v8 v8r empty 0 -9 0 10 -262144 -33289
--1 0 0;
+-1 5191 0;
 #X obj 286 100 hsl 11 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 299 0;
 #X obj 299 32 vsl 16 65 0 127 0 0 v9 v9r empty 0 -9 0 10 -228856 -33289
 -1 0 0;
 #X obj 302 100 hsl 11 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
@@ -262,17 +262,17 @@ metronome_as_midi_out_channel;
 #X obj 350 100 hsl 11 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 363 32 vsl 16 65 0 127 0 0 v13 v13r empty 0 -9 0 10 -228856
--33289 -1 0 0;
+-33289 -1 3376 0;
 #X obj 366 100 hsl 11 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
--33289 -1 505 0;
+-33289 -1 526 0;
 #X obj 379 32 vsl 16 65 0 127 0 0 v14 v14r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 2369 0;
 #X obj 382 100 hsl 11 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 433 0;
 #X obj 395 32 vsl 16 65 0 127 0 0 v15 v15r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4636 0;
 #X obj 398 100 hsl 11 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 474 0;
 #X obj 411 32 vsl 16 65 0 127 0 0 v16 v16r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 414 100 hsl 11 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
@@ -282,37 +282,37 @@ metronome_as_midi_out_channel;
 #X text 301 105 9;
 #X text 362 105 13;
 #X obj 427 32 vsl 16 65 0 127 0 0 v17 v17r empty 0 -9 0 10 -128992
--262144 -1 0 0;
+-262144 -1 2217 0;
 #X obj 430 100 hsl 11 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
--262144 -1 505 0;
+-262144 -1 515 0;
 #X obj 443 32 vsl 16 65 0 127 0 0 v18 v18r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4132 0;
 #X obj 446 100 hsl 11 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 938 0;
 #X obj 459 32 vsl 16 65 0 127 0 0 v19 v19r empty 0 -9 0 10 -262144
 -33289 -1 0 0;
 #X obj 462 100 hsl 11 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 475 32 vsl 16 65 0 127 0 0 v20 v20r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4233 0;
 #X obj 478 100 hsl 11 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 814 0;
 #X obj 491 32 vsl 16 65 0 127 0 0 v21 v21r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
 #X obj 494 100 hsl 11 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
 -33289 -1 505 0;
 #X obj 507 32 vsl 16 65 0 127 0 0 v22 v22r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 3679 0;
 #X obj 510 100 hsl 11 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 474 0;
 #X obj 523 32 vsl 16 65 0 127 0 0 v23 v23r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4031 0;
 #X obj 526 100 hsl 11 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 598 0;
 #X obj 539 32 vsl 16 65 0 127 0 0 v24 v24r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 4636 0;
 #X obj 542 100 hsl 11 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 680 0;
 #X obj 555 32 vsl 16 65 0 127 0 0 v25 v25r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
 #X obj 558 100 hsl 11 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
@@ -326,9 +326,9 @@ metronome_as_midi_out_channel;
 #X obj 590 100 hsl 11 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 603 32 vsl 16 65 0 127 0 0 v28 v28r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 3427 0;
 #X obj 606 100 hsl 11 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 649 0;
 #X obj 619 32 vsl 16 65 0 127 0 0 v29 v29r empty 0 -9 0 10 -228856
 -33289 -1 0 0;
 #X obj 622 100 hsl 11 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
@@ -342,24 +342,24 @@ metronome_as_midi_out_channel;
 #X obj 654 100 hsl 11 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
 -1 -1 505 0;
 #X obj 667 32 vsl 16 65 0 127 0 0 v32 v32r empty 0 -9 0 10 -262144
--33289 -1 0 0;
+-33289 -1 5291 0;
 #X obj 670 100 hsl 11 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
--1 -1 505 0;
+-1 -1 443 0;
 #X text 425 105 17;
 #X text 490 105 21;
 #X text 553 105 25;
 #X text 617 104 29;
 #X obj 13 27 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 2900 0;
+0 -9 0 10 -262144 -1 -1 1986 0;
 #X text 145 33 Vel;
 #X text 131 72 uTime;
 #X obj 29 81 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
-0 -8 0 10 -262144 -1 -1 1.41406 256;
+0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 29 125 change;
 #X obj 1 441 cnv 15 698 122 empty empty empty 20 12 0 14 -237242 -66577
 0;
 #X obj 172 454 hsl 512 15 0 3072 0 0 current_pos playback_pos empty
--2 -8 0 10 -228856 -1 -1 798 1;
+-2 -8 0 10 -228856 -1 -1 16900 1;
 #N canvas 0 23 1440 823 midi_mapper 0;
 #X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
 -1 1;
@@ -408,11 +408,19 @@ metronome_as_midi_out_channel;
 0;
 #X obj 29 166 s groove_vel_scale_init;
 #X obj 13 467 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 2900 0;
+0 -9 0 10 -262144 -1 -1 1986 0;
 #X obj 29 521 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
-0 -8 0 10 -262144 -1 -1 1.41406 256;
+0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 29 565 change;
 #X obj 29 606 s groove_vel_scale_init;
+#X obj 173 2 tgl 10 0 empty force_start_here Always_Start_Here -106
+5 0 10 -258113 -1 -258113 0 1;
+#X obj 256 167 s force_start_here;
+#X obj 255 138 change;
+#X obj 173 442 tgl 10 0 empty force_start_here Always_Start_Here -106
+5 0 10 -258113 -1 -258113 0 1;
+#X obj 256 607 s force_start_here;
+#X obj 255 578 change;
 #X connect 1 0 3 0;
 #X connect 2 0 5 0;
 #X connect 3 0 15 0;
@@ -435,6 +443,10 @@ metronome_as_midi_out_channel;
 #X connect 100 0 101 0;
 #X connect 101 0 102 0;
 #X connect 102 0 103 0;
+#X connect 104 0 106 0;
+#X connect 106 0 105 0;
+#X connect 107 0 109 0;
+#X connect 109 0 108 0;
 #X coords 0 -1 1 1 700 124 1 0 0;
 #X restore 132 271 pd \$0-gvo;
 #N canvas 0 189 1440 657 \$0-visualizer 0;
@@ -466,17 +478,26 @@ metronome_as_midi_out_channel;
 #X obj 634 3 bng 15 250 50 0 empty empty Redraw 17 7 0 10 -4032 -1
 -260097;
 #X obj 741 17 s force_redraw_groove;
-#X obj 171 60 hradio 16 1 0 32 empty empty Starting_Step -80 7 0 10
--237503 -1 -1 22;
+#X obj 171 60 hradio 16 1 0 32 empty starting_step_init Starting_Step
+-80 7 0 10 -237503 -1 -1 14;
 #X obj 10 6 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty 0
--9 0 10 -262144 -1 -1 2900 0;
+-9 0 10 -262144 -1 -1 1986 0;
 #X obj 27 60 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
-0 -8 0 10 -262144 -1 -1 1.41406 256;
+0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 27 104 change;
 #X obj 28 141 s groove_vel_scale_init;
 #X obj 216 146 s starting_step;
 #X obj 216 99 + 1;
 #X floatatom 216 123 5 0 0 0 - - -;
+#X obj 566 138 r half_step_ticks;
+#X obj 466 136 r step_ticks;
+#X floatatom 466 160 5 0 0 0 - - -;
+#X floatatom 566 162 5 0 0 0 - - -;
+#X obj 473 256 s starting_tick_pos;
+#X obj 424 202 expr ($f1-1)*$f2+$f3;
+#X floatatom 473 233 5 0 0 0 - - -;
+#X obj 352 294 s force_resend_data_to_py;
+#X obj 427 225 t b f;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
 #X connect 2 0 14 0;
@@ -500,6 +521,15 @@ metronome_as_midi_out_channel;
 #X connect 23 0 24 0;
 #X connect 26 0 27 0;
 #X connect 27 0 25 0;
+#X connect 27 0 33 0;
+#X connect 28 0 31 0;
+#X connect 29 0 30 0;
+#X connect 30 0 33 1;
+#X connect 31 0 33 2;
+#X connect 33 0 36 0;
+#X connect 34 0 32 0;
+#X connect 36 0 35 0;
+#X connect 36 1 34 0;
 #X coords 0 -1 1 1 700 80 1 0 0;
 #X restore 132 190 pd \$0-visualizer;
 #N canvas 831 -935 1244 823 \$0-params 0;
@@ -1934,7 +1964,7 @@ metronome_as_midi_out_channel;
 #X obj 370 1698 cnv 15 300 150 empty empty Internal_Electric_Piano_Synth
 20 12 0 14 -203904 -66577 0;
 #X obj 638 1703 tgl 15 0 empty empty enable -10 22 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #X obj 522 1767 vsl 15 64 0 1 0 0 empty empty Wet 0 -9 0 10 -262144
 -1 -1 1071 0;
 #X obj 572 1767 vsl 15 64 0 3 0 0 empty empty Room_Size -15 -9 0 10
@@ -1947,7 +1977,7 @@ metronome_as_midi_out_channel;
 #X obj 629 1531 tgl 15 0 empty empty enable -10 22 0 10 -262144 -1
 -1 0 1;
 #X obj 295 1533 tgl 15 0 empty empty enable -10 22 0 10 -262144 -1
--1 0 1;
+-1 1 1;
 #X obj 876 1907 *~;
 #X obj 745 1690 loadbang;
 #X msg 823 1725 1;
