@@ -1,4 +1,4 @@
-#N canvas 720 24 720 824 12;
+#N canvas 720 23 720 823 12;
 #X text 120 34 Step 1;
 #X obj 127 168 expr if($f2>0 \, $f1 \, 0);
 #X obj 127 189 t f f, f 6;
@@ -28,8 +28,8 @@
 #X obj 71 10 r groove_vel_scale;
 #X obj 20 180 f;
 #X obj 127 106 f;
-#X obj 385 95 r resend_groove_data;
-#X obj 387 118 t b b b;
+#X obj 337 -1 r resend_groove_data;
+#X obj 339 22 t b b b;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 1 3 1;
