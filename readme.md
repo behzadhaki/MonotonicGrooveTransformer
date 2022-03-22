@@ -1,5 +1,8 @@
 Updates 
 ----
+#### Version 0.6
+- Added a hradio object to GUI to specify the starting time-step of the sequence
+
 #### Version 0.5
 - Incorporated an internal drum synthesizer for easier testing. The drum engine is a hybrid sample/synthesis patch.
         
