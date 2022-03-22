@@ -10,7 +10,7 @@
 #X obj 277 175 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 447 187 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1411 1;
+-1 -1 10000 1;
 #X obj 304 349 *~;
 #X obj 553 227 soundfiler;
 #X floatatom 547 274 5 0 0 0 - - -;
