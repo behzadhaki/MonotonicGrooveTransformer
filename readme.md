@@ -1,5 +1,25 @@
 Updates 
 ----
+#### Version 0.5
+- Incorporated an internal drum synthesizer for easier testing. The drum engine is a hybrid sample/synthesis patch.
+        
+        The samples were obtained from:
+        https://github.com/crabacus/the-open-source-drumkit
+        
+        The synths were incroporated from mymembrane~ instruments developed by Mike Moreno DSP
+        https://github.com/MikeMorenoDSP/pd-mkmr/tree/master/instruments 
+        
+- Incorporated two internal synthesizers using the patches developed by ***Mike Moreno DSP***:
+
+        santur obtained from https://github.com/MikeMorenoDSP/pd-mkmr/tree/master/instruments
+        EP-MK1 obtained from https://github.com/MikeMorenoDSP/EP-MK1
+  ###### Note
+  These patches have been slightly modified so as to use internal midi routes without using any virtual midi paths within the patch
+  
+- From this version on, a separate midi out channel can be specified to send out two notes corresponding to beat/bar positions. 
+This can be used for debugging/synchronizing external clock receivers
+    
+    
 #### Version 0.4
 
 - Improved the performance by updating the logic involved in repainting of events in plot_trigger.pd

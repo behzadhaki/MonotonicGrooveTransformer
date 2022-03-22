@@ -9,13 +9,13 @@
 #X text 793 268 State = 1 when push 0 when released;
 #X obj 695 208 r keyboard_enabled;
 #X obj 656 244 spigot;
-#X obj 695 228 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 695 228 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 0 23 598 442 check_if_caps_lock_is_on 0;
 #X obj 52 62 unpack s f;
 #X obj 70 127 f;
 #X obj 52 89 sel Caps_Lock;
-#X obj 71 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 71 150 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 52 26 inlet;
 #X text 113 22 list of key symbol and state (1 pressed/0 released)
@@ -29,7 +29,7 @@ together;
 #X connect 4 0 0 0;
 #X restore 434 226 pd check_if_caps_lock_is_on;
 #X text 726 188 pack key symbol and volume together;
-#X obj 434 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 434 248 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 433 267 s keyboard_enabled_r;
 #N canvas 191 96 1150 751 play_a_groove_via_keyboard 0;
@@ -183,7 +183,7 @@ play groove;
 #X obj 201 570 r groove_volume;
 #X obj 41 615 s groove_volume_init;
 #X obj 43 666 r keySymbole_State;
-#N canvas 0 23 598 442 toggle_play_and_record_buttons 0;
+#N canvas 0 23 598 442 toggle_play_and_record_buttons 1;
 #X obj 52 26 inlet;
 #X text 113 22 list of key symbol and state (1 pressed/0 released)
 together;
@@ -448,6 +448,35 @@ played in real-time;
 #X obj 324 570 r metronome_volume;
 #X obj 735 98 s \$0-current-value-metronome;
 #X obj 258 621 s metronome_volume_r;
+#X text 471 976 Press S to enable sustain of internal electro piano
+synth;
+#X obj 46 964 r keySymbole_State;
+#X obj 46 1011 s enable_ep_mk1_sustain;
+#N canvas 0 23 598 442 toggle_ep_mk1_sustain 0;
+#X obj 52 26 inlet;
+#X text 113 22 list of key symbol and state (1 pressed/0 released)
+together;
+#X obj 55 243 outlet;
+#X floatatom 182 153 5 0 0 0 - - -;
+#X obj 54 187 expr if($f2==0 \, 1 \, 0);
+#X obj 54 59 unpack s f;
+#X obj 53 110 f, f 10;
+#X obj 53 139 sel 1;
+#X obj 53 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 54 86 sel S, f 6;
+#X obj 184 126 r sustain_out;
+#X connect 0 0 5 0;
+#X connect 3 0 4 1;
+#X connect 4 0 2 0;
+#X connect 5 0 9 0;
+#X connect 5 1 6 1;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 9 0 6 0;
+#X connect 10 0 3 0;
+#X restore 46 987 pd toggle_ep_mk1_sustain;
 #X connect 0 0 2 0;
 #X connect 0 1 1 0;
 #X connect 1 0 4 1;
@@ -478,3 +507,5 @@ played in real-time;
 #X connect 38 0 21 0;
 #X connect 38 1 41 0;
 #X connect 39 0 38 2;
+#X connect 43 0 45 0;
+#X connect 45 0 44 0;
