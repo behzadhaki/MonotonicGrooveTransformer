@@ -14,6 +14,8 @@
 #X text 335 21 velocity;
 #X obj 124 248 outlet;
 #X text 179 251 new velocity;
+#X text 132 113 previous scale factor;
+#X text -30 135 current factor;
 #X connect 0 0 1 0;
 #X connect 1 1 5 0;
 #X connect 2 0 0 1;
