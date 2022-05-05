@@ -1,0 +1,31 @@
+#N canvas 629 -972 1291 806 12;
+#X obj 66 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 66 27 loadbang;
+#X obj 75 81 r reset;
+#X obj 60 145 t b b b b b b b b b b b b b b, f 78;
+#X msg 25 254 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r 0
+\; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r 0
+\; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
+0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
+0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
+#X msg 106 254 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
+ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
+0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
+\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
+ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
+0 \; ut32r 0 \;;
+#X msg 208 307 \; KICK const 0 \; SNARE const 0 \; HH_CLOSED const
+0 \; HH_OPEN const 0 \; TOM_3_LO const 0 \; TOM_2_MID const 0 \; TOM_1_HI
+const 0 \; CRASH const 0 \; RIDE const 0 \;;
+#X obj 209 65 t b b;
+#X msg 611 233 \; groove_vel_scale_init 1 \; pd dsp 1 \; bpm_init 70
+\;, f 56;
+#X connect 0 0 3 0;
+#X connect 1 0 7 0;
+#X connect 2 0 0 0;
+#X connect 3 9 4 0;
+#X connect 3 10 5 0;
+#X connect 3 12 6 0;
+#X connect 3 13 8 0;
+#X connect 7 0 0 0;

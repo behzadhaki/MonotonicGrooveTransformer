@@ -1,5 +1,15 @@
 Updates 
 ----
+
+#### Version 0.7
+- Cleaned up the implementation for setting the slider ut and vel values based on incoming velocities. The send destinations are now dynamically adjusted 
+- From now on, by default, the groove is updated only when the velocity is changed (if you need to update on utiming change
+as well, deactivate the toggle labeled ***"Update_Only_On_Vel_Change"***)
+- Two graphs added
+    1. Onset_Tracker: showing all events over time
+    2. Onset_Histogram: showing the number of triggers at each time-step  
+
+
 #### Version 0.6
 - Added a hradio object to GUI to specify the starting time-step of the sequence
 - The sequence starting point can now be adjusted. 
@@ -17,6 +27,7 @@ Updates
 
         santur obtained from https://github.com/MikeMorenoDSP/pd-mkmr/tree/master/instruments
         EP-MK1 obtained from https://github.com/MikeMorenoDSP/EP-MK1
+ 
   ###### Note
   These patches have been slightly modified so as to use internal midi routes without using any virtual midi paths within the patch
   

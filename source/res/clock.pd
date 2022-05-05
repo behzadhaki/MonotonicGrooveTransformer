@@ -1,0 +1,49 @@
+#N canvas 0 23 1440 806 12;
+#X obj 521 107 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 245 93 5 0 0 0 - - -;
+#X obj 245 46 inlet;
+#X obj 528 59 inlet;
+#X text 535 38 Run, f 7;
+#X text 473 727 current Tick Position;
+#X text 248 23 qpm;
+#X obj 546 698 outlet;
+#X obj 599 58 t b b;
+#X obj 688 44 loadbang;
+#X obj 74 355 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 207 349 5 0 0 0 - - -;
+#X text 220 368 BPM-->;
+#X text 137 486 clock out;
+#X obj 74 448 midisystemrealtime;
+#X obj 75 483 midiout;
+#X obj 515 -2 tgl 30 0 empty run empty 17 7 0 30 -262144 -1 -1 0 1
+;
+#X text 549 3 Run;
+#X obj 186 -9 r bpm;
+#X obj 138 397 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 134 303 r send_clock_out;
+#X obj 518 432 qpm_tick_generator;
+#X obj 646 392 r force_counter_value;
+#X msg 275 451 16;
+#X obj 273 415 loadbang;
+#X connect 0 0 10 0;
+#X connect 0 0 21 0;
+#X connect 1 0 11 0;
+#X connect 1 0 21 1;
+#X connect 2 0 1 0;
+#X connect 3 0 0 0;
+#X connect 8 0 0 0;
+#X connect 8 1 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 14 0;
+#X connect 11 0 14 2;
+#X connect 14 0 15 0;
+#X connect 16 0 0 0;
+#X connect 18 0 1 0;
+#X connect 19 0 14 1;
+#X connect 20 0 19 0;
+#X connect 21 0 7 0;
+#X connect 22 0 21 2;
+#X connect 24 0 23 0;
