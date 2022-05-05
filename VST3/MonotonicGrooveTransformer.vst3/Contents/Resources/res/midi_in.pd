@@ -1,0 +1,33 @@
+#N canvas 0 23 1248 776 12;
+#X obj 139 41 notein;
+#X floatatom 139 65 5 0 0 0 - - -;
+#X obj 151 259 moses 1;
+#X obj 201 290 s realtime_velocity;
+#X floatatom 214 70 5 0 0 0 - - -;
+#X obj 287 70 r drum_out_channel;
+#X obj 213 104 !=;
+#X obj 165 162 spigot;
+#X obj 211 133 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X text 249 151 AVOIDS MIDI LOOP BACK BY ENSURING THAT DRUM OUT CHANNEL
+IS ONLY USED FOR SENDING MIDI RATHER THAN RECEIVING;
+#X floatatom 168 351 5 0 0 0 - - -;
+#X floatatom 267 94 5 0 0 0 - - -;
+#X obj 266 128 !=;
+#X obj 340 94 r metronome_as_midi_out_channel_init;
+#X obj 178 198 spigot;
+#X connect 0 1 1 0;
+#X connect 0 2 4 0;
+#X connect 0 2 11 0;
+#X connect 1 0 7 0;
+#X connect 2 1 3 0;
+#X connect 2 1 10 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 8 0;
+#X connect 7 0 14 0;
+#X connect 8 0 7 1;
+#X connect 11 0 12 0;
+#X connect 12 0 14 1;
+#X connect 13 0 12 1;
+#X connect 14 0 2 0;

@@ -1,0 +1,76 @@
+#N canvas 720 24 720 805 10;
+#X msg 163 123 252;
+#X msg 64 123 250;
+#X msg 13 123 248;
+#X obj 13 102 metro 20.8333;
+#X obj 372 40 expr (60000/$f1/24), f 7;
+#X obj 13 72 tgl 15 0 empty empty Clock -7 -5 0 10 -203904 -1 -262144
+0 1;
+#X msg 114 123 251;
+#X obj 114 67 bng 15 250 50 0 empty empty Continue -17 -7 0 10 -203904
+-4034 -262144;
+#X obj 163 67 bng 15 250 50 0 empty empty Stop -5 -7 0 10 -203904 -258113
+-262144;
+#X obj 64 67 bng 15 250 50 0 empty empty Start -7 -7 0 10 -203904 -4034
+-262144;
+#X obj 309 50 select;
+#X obj 237 67 tgl 15 0 empty empty Start(X)/Stop+Clock -44 -7 0 10
+-228992 -1 -262144 0 1;
+#X msg 191 108 set 0, f 3;
+#X msg 222 108 set 1, f 3;
+#X obj 339 -157 nbx 5 14 1 1000 0 0 empty empty BPM 0 -8 0 10 -203904
+-1 -262144 70 256;
+#X msg 237 180 color 13 0 0;
+#X obj 13 144 select;
+#X msg 237 160 color 8 22 0;
+#X text 28 222 by NoDSP;
+#X text 28 208 Midi System Realtime;
+#X text 28 235 v0.1;
+#X obj 306 -179 inlet;
+#X obj 226 270 outlet;
+#X obj 80 -179 inlet;
+#X text 342 -177 bpm;
+#X text 92 -162 run;
+#X obj 180 -176 inlet;
+#X text 205 -163 send clock out;
+#X obj 177 -143 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X obj 87 -95 spigot;
+#X obj 78 -12 sel 1;
+#X text 54 40 start continue stop;
+#X connect 0 0 22 0;
+#X connect 1 0 22 0;
+#X connect 2 0 22 0;
+#X connect 3 0 2 0;
+#X connect 4 0 3 1;
+#X connect 5 0 3 0;
+#X connect 5 0 16 0;
+#X connect 6 0 22 0;
+#X connect 7 0 6 0;
+#X connect 7 0 13 0;
+#X connect 8 0 0 0;
+#X connect 8 0 12 0;
+#X connect 9 0 1 0;
+#X connect 9 0 13 0;
+#X connect 10 0 8 0;
+#X connect 10 0 17 0;
+#X connect 10 1 9 0;
+#X connect 10 1 15 0;
+#X connect 11 0 10 0;
+#X connect 11 0 5 0;
+#X connect 12 0 11 0;
+#X connect 13 0 11 0;
+#X connect 14 0 4 0;
+#X connect 15 0 11 0;
+#X connect 16 0 17 0;
+#X connect 16 1 15 0;
+#X connect 17 0 11 0;
+#X connect 21 0 14 0;
+#X connect 23 0 29 0;
+#X connect 26 0 28 0;
+#X connect 28 0 29 1;
+#X connect 29 0 5 0;
+#X connect 29 0 30 0;
+#X connect 30 0 9 0;
+#X connect 30 0 7 0;
+#X connect 30 1 8 0;
