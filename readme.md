@@ -1,3 +1,93 @@
+Description
+--------
+
+A real-time drum generation system capable of accompanying a human instrumentalist. The drum generation model is a transformer encoder trained to predict a short drum pattern given a reduced rhythmic representation. A Camomile-based VST3 plugin is available to try the system.
+
+Details with regards to training, implementation and all other resources necessary for using the plugin can be found here
+
+----
+
+Generative Model Development, Training and Demo
+----
+Details regarding design, development and training of the generative engine can be found here
+
+        https://github.com/marinaniet0/TransformerGrooveTap2Drum
+
+Demos
+----
+All Videos & Audios:
+
+    https://drive.google.com/drive/folders/1ulW6s68WM4-1pQlGoRKvZF66t_2t1qAy?usp=sharing
+
+OR Use the following links:
+
+A detailed overview of the training process
+
+    ./Detailed Training Overview.pdf
+
+A Tutorial on how to use the system
+
+    https://vimeo.com/706414509
+ 
+A video recording of a typical jam session with the system
+
+    https://vimeo.com/706414714
+ 
+Audio Recordings of some Jams & Generations using the system
+
+    https://soundcloud.com/anonomy-submer/sets/realtime_sessions
+----
+
+
+Installation
+----
+### Source code
+Clone the repository wherever you prefer
+    
+        git clone https://github.com/behzadhaki/MonotonicGrooveTransformer
+        
+### Python Environment Setup (using venv) 
+
+Then, open the terminal and navigate to the project folder
+    
+    cd MonotonicGrooveTransformer
+    
+Now create a virtual environment for installing the dependencies
+
+    python3 -m venv TorchOSC_venv 
+
+Activate the environment
+
+    source TorchOSC_venv/bin/activate
+
+upgrade pip
+
+    pip3 install --upgrade pip
+        
+goto https://pytorch.org/get-started/locally/ and get the write pip command for installing torch on your computer. 
+(double check the installers using the link)
+ 
+    MAC and Win:
+    pip3 install torch torchvision torchaudio
+
+    Linux:
+    pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+
+Now, install python-osc package
+
+    pip3 install python-osc
+
+### Running Python script
+
+Go to CMC folder, and activate environment
+    
+    source TorchOSC_venv/bin/activate
+    
+Finally, run the python script
+
+    python run_generative_engine.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2 --model light_version
+    
+    
 Updates 
 ----
 
@@ -84,51 +174,5 @@ At each beat/bar a single note is also sent out to check synchronization over ti
         (can be installed via purr-data: https://agraef.github.io/purr-data/)
         
 
-Installation
-----
-### Source code
-Clone the repository wherever you prefer
-    
-        git clone https://github.com/behzadhaki/MonotonicGrooveTransformer
-        
-### Python Environment Setup (using venv) 
 
-Then, open the terminal and navigate to the project folder
-    
-    cd MonotonicGrooveTransformer
-    
-Now create a virtual environment for installing the dependencies
-
-    python3 -m venv TorchOSC_venv 
-
-Activate the environment
-
-    source TorchOSC_venv/bin/activate
-
-upgrade pip
-
-    pip3 install --upgrade pip
-        
-goto https://pytorch.org/get-started/locally/ and get the write pip command for installing torch on your computer. 
-(double check the installers using the link)
- 
-    MAC and Win:
-    pip3 install torch torchvision torchaudio
-
-    Linux:
-    pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
-
-Now, install python-osc package
-
-    pip3 install python-osc
-
-### Running Python script
-
-Go to CMC folder, and activate environment
-    
-    source TorchOSC_venv/bin/activate
-    
-Finally, run the python script
-
-    python run_generative_engine.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2 --model light_version
     
