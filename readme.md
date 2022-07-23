@@ -11,33 +11,61 @@ Generative Model Development, Training and Demo
 ----
 Details regarding design, development and training of the generative engine can be found here
 
-        https://github.com/marinaniet0/TransformerGrooveTap2Drum
+
+<pre>
+ <code>
+  <a href="https://github.com/marinaniet0/TransformerGrooveTap2Drum">https://github.com/marinaniet0/TransformerGrooveTap2Drum</a>
+ </code>
+</pre>
 
 Demos
 ----
 All Videos & Audios:
 
-    https://drive.google.com/drive/folders/1ulW6s68WM4-1pQlGoRKvZF66t_2t1qAy?usp=sharing
+
+<pre>
+ <code>
+  <a href="https://drive.google.com/drive/folders/1ulW6s68WM4-1pQlGoRKvZF66t_2t1qAy?usp=sharing">All Videos</a>
+ </code>
+</pre>
 
 OR Use the following links:
 
 A detailed overview of the training process
 
-    ./Detailed Training Overview.pdf
+<pre>
+ <code>
+  <a href=https://github.com/behzadhaki/MonotonicGrooveTransformer/blob/main/Detailed%20Training%20Overview.pdf>Detailed Training Overview.pdf</a>
+ </code>
+</pre>
 
 A Tutorial on how to use the system
 
-    https://youtu.be/hgo_GfRtkco
- 
+ <pre>
+ <code>
+  <a href=https://youtu.be/hgo_GfRtkco>https://youtu.be/hgo_GfRtkco</a>
+ </code>
+</pre>
+
 A video recording of a typical jam session with the system
 
-    https://youtu.be/EaGyyhXeVmA
+        
+  <pre>
+ <code>
+  <a href=https://youtu.be/EaGyyhXeVmA>https://youtu.be/EaGyyhXeVmA</a>
+ </code>
+</pre>
  
 Audio Recordings of some Jams & Generations using the system
 
-    https://youtu.be/BXMRIpaETzc
-    https://youtu.be/B7Z7CqnD0WU
-    https://youtu.be/9V1qbxNF3VQ
+ <pre>
+ <code>
+  <a href=https://youtu.be/BXMRIpaETzc>https://youtu.be/BXMRIpaETzc</a>
+  <a href=https://youtu.be/B7Z7CqnD0WU>https://youtu.be/B7Z7CqnD0WU</a>
+  <a href=https://youtu.be/9V1qbxNF3VQ>https://youtu.be/9V1qbxNF3VQ</a>
+
+ </code>
+</pre>        
     
 ----
 
@@ -53,42 +81,42 @@ Clone the repository wherever you prefer
 
 Then, open the terminal and navigate to the project folder
     
-    cd MonotonicGrooveTransformer
+        cd MonotonicGrooveTransformer
     
 Now create a virtual environment for installing the dependencies
 
-    python3 -m venv TorchOSC_venv 
+        python3 -m venv TorchOSC_venv 
 
 Activate the environment
 
-    source TorchOSC_venv/bin/activate
+        source TorchOSC_venv/bin/activate
 
 upgrade pip
 
-    pip3 install --upgrade pip
+        pip3 install --upgrade pip
         
 goto https://pytorch.org/get-started/locally/ and get the write pip command for installing torch on your computer. 
 (double check the installers using the link)
  
-    MAC and Win:
-    pip3 install torch torchvision torchaudio
+        MAC and Win:
+        pip3 install torch torchvision torchaudio
 
-    Linux:
-    pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+        Linux:
+        pip3 install torch==1.10.2+cpu torchvision==0.11.3+cpu torchaudio==0.10.2+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
 
 Now, install python-osc package
 
-    pip3 install python-osc
+        pip3 install python-osc
 
 ### Running Python script
 
 Go to CMC folder, and activate environment
     
-    source TorchOSC_venv/bin/activate
+        source TorchOSC_venv/bin/activate
     
 Finally, run the python script
 
-    python run_generative_engine.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2 --model light_version
+        python run_generative_engine.py  --py2pd_port 1123 --pd2py_port 1415 --wait 2 --model light_version
     
     
 Updates 
