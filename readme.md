@@ -27,15 +27,18 @@ A detailed overview of the training process
 
 A Tutorial on how to use the system
 
-    https://vimeo.com/706414509
+    https://youtu.be/hgo_GfRtkco
  
 A video recording of a typical jam session with the system
 
-    https://vimeo.com/706414714
+    https://youtu.be/EaGyyhXeVmA
  
 Audio Recordings of some Jams & Generations using the system
 
-    https://soundcloud.com/anonomy-submer/sets/realtime_sessions
+    https://youtu.be/BXMRIpaETzc
+    https://youtu.be/B7Z7CqnD0WU
+    https://youtu.be/9V1qbxNF3VQ
+    
 ----
 
 
