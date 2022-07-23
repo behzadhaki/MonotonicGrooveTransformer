@@ -6,8 +6,10 @@ A real-time drum generation system capable of accompanying a human instrumentali
 Details with regards to training, implementation and all other resources necessary for using the plugin can be found here
 
 
-Generative Model Development, Training and Demo![real-time-implemented_camera_ready](https://user-images.githubusercontent.com/35939495/180599833-7648185f-2209-4f77-9a68-c237377cd6ec.png)
+![real-time-implemented_camera_ready](https://user-images.githubusercontent.com/35939495/180599833-7648185f-2209-4f77-9a68-c237377cd6ec.png)
 
+
+Generative Model Development, Training and Demo
 ----
 Details regarding design, development and training of the generative engine can be found here
 
