@@ -1,8 +1,8 @@
 # Import model
 import torch
-from trained_torch_models.params import model_params
-from BaseGrooveTransformers.models.transformer import GrooveTransformerEncoder
-
+from helpers.VAE.modelLoader import load_variational_mgt_model
+import os
+import numpy as np
 import time
 
 import threading
@@ -25,27 +25,62 @@ ROLAND_REDUCED_MAPPING = {
 }
 ROLAND_REDUCED_MAPPING_VOICES = ['/KICK', '/SNARE', '/HH_CLOSED', '/HH_OPEN', '/TOM_3_LO', '/TOM_2_MID', '/TOM_1_HI', '/CRASH', '/RIDE']
 
+
+def encode_into_latent_z(model_, in_groove):
+    """ returns Z corresponding to a provided groove of shape (1, 32, 3)
+    """
+    # Generation using an Input Groove
+    # Step 1. Get the mean and var of the latent encoding
+    mu, logvar = model_.encode_to_mu_logvar(in_groove)
+
+    # Step 2. Sample a latent vector (z) from latent distribution
+    latent_z = model_.reparametrize(mu, logvar)
+
+    return latent_z
+
+
+def generate_from_groove(model_, in_groove, voice_thresholds_, voice_max_count_allowed_):
+    """ returns a full drum pattern based on the provided input groove
+    """
+    latent_z = encode_into_latent_z(model_, in_groove)
+
+    # Step 3. Generate using the latent encoding
+    return model_.sample(
+        latent_z=latent_z,
+        voice_thresholds=voice_thresholds_,
+        voice_max_count_allowed=voice_max_count_allowed_,
+        return_concatenated=False,
+        sampling_mode=0)
+
+
+def decode_z_into_drums(model_, latent_z, voice_thresholds, voice_max_count_allowed):
+    """ returns a full drum pattern based on a provided latent encoding Z
+    """
+    return model_.sample(latent_z=torch.tensor(latent_z, dtype=torch.float32),
+                         voice_thresholds=voice_thresholds,
+                         voice_max_count_allowed=voice_max_count_allowed,
+                         return_concatenated=False,
+                         sampling_mode=0)
+
+def get_random_sample_from_style(style_, model_,
+                                 voice_thresholds_,
+                                 voice_max_count_allowed_,
+                                 z_means_dict, z_stds_dict,
+                                 scale_means_factor=1.0, scale_stds_factor=1.0):
+
+    assert style_ in z_means_dict.keys(), f"Make sure the style is one of {list(z_means_dict.keys())}"
+    z = np.random.normal(loc=np.array(z_means_dict[style_]) * scale_means_factor,
+                         scale=np.array(z_stds_dict[style_]) * scale_stds_factor)
+    h_,v_,o_ = decode_z_into_drums(model_, z, voice_thresholds_, voice_max_count_allowed_)
+    return z, (h_, v_, o_)
+
 def load_model(model_name, model_path):
 
-    # load model parameters from params.py file
-    params = model_params[model_name]
-
-    # load checkpoint
-    checkpoint = torch.load(model_path, map_location=params['device'])
-
     # Initialize model
-    groove_transformer = GrooveTransformerEncoder(params['d_model'],
-                                                  params['embedding_sz'],
-                                                  params['embedding_sz'],
-                                                  params['n_heads'],
-                                                  params['dim_ff'],
-                                                  params['dropout'],
-                                                  params['n_layers'],
-                                                  params['max_len'],
-                                                  params['device'])
+    groove_transformer = load_variational_mgt_model(os.path.join(model_path, model_name))
+    
 
-    # Load model and put in evaluation mode
-    groove_transformer.load_state_dict(checkpoint['model_state_dict'])
+    # put in evaluation mode
     groove_transformer.eval()
 
     return groove_transformer
@@ -86,19 +121,7 @@ def get_new_drum_osc_msgs(hvo_tuple_new, hvo_tuple_prev=None):
 
 def get_prediction(trained_model, input_tensor, voice_thresholds, voice_max_count_allowed, sampling_mode=0):
     trained_model.eval()
-    with torch.no_grad():
-        _h, v, o = trained_model.forward(input_tensor)  # Nx32xembedding_size_src/3,Nx32xembedding_size_src/3,Nx32xembedding_size_src/3
-
-        _h = torch.sigmoid(_h)
-        h = torch.zeros_like(_h)
-
-
-    for ix, (thres, max_count) in enumerate(zip(voice_thresholds, voice_max_count_allowed)):
-        max_indices = torch.topk(_h[:, :, ix], max_count).indices[0]
-        h[:, max_indices, ix]  = _h[:, max_indices, ix]
-        h[:, :, ix] = torch.where(h[:, :, ix] > thres, 1, 0)
-
-    return h, v, o
+    return generate_from_groove(trained_model, input_tensor, voice_thresholds, voice_max_count_allowed)
 
 
 class OscMessageReceiver(threading.Thread):

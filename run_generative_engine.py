@@ -1,5 +1,5 @@
 # Import model
-from py_utils.utils import load_model, get_new_drum_osc_msgs, get_prediction, OscMessageReceiver
+from py_utils.utils import *
 import torch
 import time
 
@@ -8,6 +8,8 @@ from pythonosc.osc_server import BlockingOSCUDPServer
 from pythonosc.dispatcher import Dispatcher
 from pythonosc.udp_client import SimpleUDPClient
 import queue
+import pickle
+import os
 
 # Parser for terminal commands
 import argparse
@@ -24,27 +26,42 @@ parser.add_argument('--wait', type=float, default=2,
 parser.add_argument('--show_count', type=bool, default=True,
                     help='prints out the number of sequences generated',
                     required=False)
-parser.add_argument('--model', type=str, default="light_version",
-                    help='name of the model: (1) light_version: less computationally intensive, or '
-                         '(2) heavy_version: more computationally intensive',
-                    required=False)
+# parser.add_argument('--model', type=str, default="100",
+#                     help='name of the model: (1) light_version: less computationally intensive, or '
+#                          '(2) heavy_version: more computationally intensive',
+#                     required=False)
 
 args = parser.parse_args()
 
 if __name__ == '__main__':
     # ------------------ Load Trained Model  ------------------ #
-    model_name = args.model         # "groove_transformer_trained"
-    model_path = f"trained_torch_models/{model_name}.model"
-
+    model_path = f"trained_torch_models"
+    model_name = "100.pth"
     show_count = args.show_count
 
-    groove_transformer = load_model(model_name, model_path)
+    groove_transformer_vae = load_model(model_name, model_path)
 
     voice_thresholds = [0.01 for _ in range(9)]
     voice_max_count_allowed = [16 for _ in range(9)]
 
+    # load per style means/stds of z encodings
+    file = open(os.path.join(model_path, "z_means.pkl"), 'rb')
+    z_means_dict = pickle.load(file)
+    file.close()
+    file = open(os.path.join(model_path, "z_stds.pkl"), 'rb')
+    z_stds_dict = pickle.load(file)
+    file.close()
+    print("Available styles: ", list(z_means_dict.keys()))
+    # get_random_sample_from_style(style_="global",
+    #                              model_=groove_transformer_vae,
+    #                              voice_thresholds_=voice_thresholds,
+    #                              voice_max_count_allowed_=voice_max_count_allowed,
+    #                              z_means_dict=z_means_dict,
+    #                              z_stds_dict=z_stds_dict,
+    #                              scale_means_factor=1.0, scale_stds_factor=1.0)
+
     # ------  Create an empty an empty torch tensor
-    input_tensor = torch.zeros((1, 32, 27))
+    input_tensor = torch.zeros((1, 32, 3))
 
     # ------  Create an empty h, v, o tuple for previously generated events to avoid duplicate messages
     (h_old, v_old, o_old) = (torch.zeros((1, 32, 9)), torch.zeros((1, 32, 9)), torch.zeros((1, 32, 9)))
@@ -70,21 +87,13 @@ if __name__ == '__main__':
 
     def process_message_from_queue(address, args):
         if "VelutimeIndex" in address:
-            input_tensor[:, int(args[2]), 2] = 1 if args[0] > 0 else 0  # set hit
-            input_tensor[:, int(args[2]), 11] = args[0] / 127  # set velocity
-            input_tensor[:, int(args[2]), 20] = args[1]  # set utiming
+            input_tensor[:, int(args[2]), 0] = 1 if args[0] > 0 else 0  # set hit
+            input_tensor[:, int(args[2]), 1] = args[0] / 127  # set velocity
+            input_tensor[:, int(args[2]), 2] = args[1]  # set utiming
         elif "threshold" in address:
             voice_thresholds[int(address.split("/")[-1])] = 1-args[0]
         elif "max_count" in address:
             voice_max_count_allowed[int(address.split("/")[-1])] = int(args[0])
-        elif "change_model"  in address:
-            global groove_transformer
-            global model_name
-            if args[0] != model_name:
-                print("Change Model from {} to {}".format(model_name, args[0]))
-                model_name = args[0]  # "groove_transformer_trained"
-                model_path = f"trained_torch_models/{model_name}.model"
-                groove_transformer = load_model(model_name, model_path)
         elif "regenerate" in address:
             pass
         elif "time_between_generations" in address:
@@ -100,8 +109,8 @@ if __name__ == '__main__':
 
 
     # ------------------ NOTE GENERATION  ------------------ #
-    drum_voice_pitch_map = {"kick": 36, 'snare': 38, 'tom-1': 47, 'tom-2': 42, 'chat': 64, 'ohat': 63}
-    drum_voices = list(drum_voice_pitch_map.keys())
+    # drum_voice_pitch_map = {"kick": 36, 'snare': 38, 'tom-1': 47, 'tom-2': 42, 'chat': 64, 'ohat': 63}
+    # drum_voices = list(drum_voice_pitch_map.keys())
     
     number_of_generations = 0
     count = 0
@@ -111,10 +120,12 @@ if __name__ == '__main__':
 
         # only generate new pattern when there isnt any other osc messages backed up for processing in the message_queue
         if (message_queue.qsize() == 0):
-            # h_new, v_new, o_new = groove_transformer.predict(input_tensor, thres=0.5)
-            h_new, v_new, o_new = get_prediction(groove_transformer, input_tensor, voice_thresholds,
-                                                 voice_max_count_allowed)
-            _h, v, o = groove_transformer.forward(input_tensor)
+
+            h_new, v_new, o_new = generate_from_groove(
+                model_=groove_transformer_vae,
+                in_groove=input_tensor,
+                voice_thresholds_=voice_thresholds,
+                voice_max_count_allowed_=voice_max_count_allowed)
 
             # send to pd
             osc_messages_to_send = get_new_drum_osc_msgs((h_new, v_new, o_new))

@@ -1,17 +1,17 @@
-#N canvas 401 -1057 1920 1035 12;
-#X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 -233017
--66577 0;
+#N canvas 320 85 1600 847 12;
+#X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 #e0e0e0
+#404040 0;
 #X text 793 -28 Todo: 1 per voice tres 2 per voice max count 3 scale
 velocities of sliders 4 live record via midi, f 38;
 #X obj 949 111 cnv 15 400 200 empty empty Settings_and_Source_Not_Shown_On_Main_GUI
-20 12 0 14 -258113 -66577 0;
-#X obj 132 102 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
--1 -1 8;
-#N canvas 0 23 960 823 \$0-setting-panes 0;
+20 12 0 14 #fc0400 #404040 0;
+#X obj 132 102 hradio 15 1 0 10 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#N canvas 0 25 960 823 \$0-setting-panes 0;
 #X obj 1503 64 inlet;
 #X msg 1510 192 0;
-#X obj 1327 49 hradio 15 1 0 10 empty empty empty 0 -8 0 10 -262144
--1 -1 9;
+#X obj 1327 49 hradio 15 1 0 10 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X obj 1596 224 pack f f;
 #X obj 1509 94 t f f b;
 #X obj 1483 138 != 0;
@@ -20,10 +20,10 @@ velocities of sliders 4 live record via midi, f 38;
 ;
 #X obj 1533 338 s pd-\$0-setting-panes;
 #X obj 765 74 bng 15 250 50 0 disconnect_py2pd_connection empty disconnect_py2pd_connection
-17 7 0 10 -262144 -1 -1;
+17 7 0 10 #fcfcfc #000000 #000000;
 #X obj 766 92 bng 15 250 50 0 disconnect_pd2py_connection empty disconnect_pd2py_connection
-17 7 0 10 -262144 -1 -1;
-#X floatatom 709 58 5 0 0 0 - - -;
+17 7 0 10 #fcfcfc #000000 #000000;
+#X floatatom 709 58 5 0 0 0 - - - 0;
 #X msg 1663 197 80;
 #X msg 1704 197 280;
 #X msg 1738 201 480;
@@ -31,53 +31,53 @@ velocities of sliders 4 live record via midi, f 38;
 #X msg 1533 311 donecanvasdialog 1 -1 \$1 0 -1 1 1 300 70 180 \$2;
 #X msg 1822 198 780;
 #X msg 1826 249 880;
-#X obj 181 881 cnv 15 298 68 empty empty empty 20 12 0 14 -262144 -66577
+#X obj 181 881 cnv 15 298 68 empty empty empty 20 12 0 14 #fcfcfc #404040
 0;
-#X obj 181 781 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 181 781 cnv 15 298 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X obj 267 814 hradio 30 1 0 4 ppq_selection ppq_selection_init PPQ_384_192__96__48
--19 -8 0 12 -262130 -1 -1 0;
+-19 -8 0 12 #fcfcc4 #000000 #000000 0;
 #X text 398 797 Resolution;
 #X text 422 782 PPQ;
-#X obj 181 681 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 181 681 cnv 15 298 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X floatatom 288 684 5 0 0 0 py2pd_port py2pd_port_init py2pd_port
-;
+0;
 #X floatatom 412 685 5 0 0 0 pd2py_port pd2py_port_init pd2py_port
-;
+0;
 #X floatatom 412 707 5 0 0 0 drum_out_channel drum_out_channel_init
-drum_out_channel;
-#X obj 181 481 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
+drum_out_channel 0;
+#X obj 181 481 cnv 15 298 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X obj 195 514 hradio 10 1 0 5 meter_numerator meter_numerator_preset
-_1_2_3_4_6_ -2 -8 0 8 -232576 -1 -1 3;
+_1_2_3_4_6_ -2 -8 0 8 #e0c4fc #000000 #000000 0;
 #X obj 198 537 hradio 10 1 0 4 meter_denominator meter_denominator_preset
-_1_2_4_8_ -2 -8 0 8 -232576 -1 -1 2;
+_1_2_4_8_ -2 -8 0 8 #e0c4fc #000000 #000000 0;
 #X text 258 509 Numerator;
 #X text 248 533 Denominator;
 #X text 202 487 Meter (only affects metronome sound);
-#X obj 181 281 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 181 281 cnv 15 298 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X obj 343 310 hsl 110 15 0 1 0 0 groove_volume groove_volume_init
-Clap_Sound_Volume -2 -8 0 10 -261234 -1 -1 0 0;
+Clap_Sound_Volume -2 -8 0 10 #fcc4c4 #000000 #000000 0 0;
 #X obj 349 519 hsl 110 15 0 1 0 0 metronome_volume metronome_volume_r
-Metronome_Volume -2 -8 0 10 -232576 -1 -1 2180 1;
-#X obj 181 81 cnv 15 298 68 empty empty empty 20 12 0 14 -237242 -66577
+Metronome_Volume -2 -8 0 10 #e0c4fc #000000 #000000 0 1;
+#X obj 181 81 cnv 15 298 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
-#X obj 195 100 tgl 30 0 empty play_r PLAY 4 -5 0 10 -262144 -1 -1 1
-1;
-#X obj 241 100 tgl 30 0 record record_r RECORD 4 -5 0 10 -262144 -1
--1 1 1;
+#X obj 195 100 tgl 30 0 empty play_r PLAY 4 -5 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 241 100 tgl 30 0 record record_r RECORD 4 -5 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 315 100 tgl 30 0 send_clock_out send_clock_out_r Send_Clock_Out
--30 -5 0 10 -262144 -1 -1 1 1;
-#X floatatom 380 114 10 0 0 2 BPM bpm_r bpm;
+-30 -5 0 10 #fcfcfc #000000 #000000 0 1;
+#X floatatom 380 114 10 0 0 2 BPM bpm_r bpm 0;
 #X text 185 928 >> python run_generative_engine.py --help;
 #X text 205 905 Prior to Loading a Preset/Session;
 #X text 181 884 Don't Forget to Load the Generative Engine;
 #X obj 286 309 tgl 15 0 keyboard_enabled keyboard_enabled_r Enable_Keyboard
--100 6 0 10 -261682 -1 -1 0 1;
+-100 6 0 10 #fce0c4 #000000 #000000 0 1;
 #X msg 1893 202 980;
-#X obj 181 981 cnv 15 298 68 empty empty empty 20 12 0 14 -262144 -66577
+#X obj 181 981 cnv 15 298 68 empty empty empty 20 12 0 14 #fcfcfc #404040
 0;
 #X obj 190 238 s run;
 #X obj 249 230 s force_resend_data_to_py;
@@ -85,51 +85,51 @@ Metronome_Volume -2 -8 0 10 -232576 -1 -1 2180 1;
 #X msg 1944 201 1080;
 #X msg 1992 204 1180;
 #X obj 1650 164 sel 1 2 3 4 5 6 7 8 9, f 42;
-#X obj 181 1081 cnv 15 298 68 empty empty empty 20 12 0 14 -237242
--66577 0;
-#X obj 181 1181 cnv 15 298 68 empty empty empty 20 12 0 14 -262144
--66577 0;
+#X obj 181 1081 cnv 15 298 68 empty empty empty 20 12 0 14 #e4e8e4
+#404040 0;
+#X obj 181 1181 cnv 15 298 68 empty empty empty 20 12 0 14 #fcfcfc
+#404040 0;
 #X text 181 1180 Light Model: Smaller Transformer \,;
 #X text 260 1195 Less Computationally Intensive;
 #X text 260 1232 More Computationally Intensive;
 #X text 181 1215 Heavy Model: Larger Transformer \,;
 #X obj 273 1120 hsl 128 15 0.1 20 0 0 empty empty Delay_Between_Generations
--2 -8 0 10 -203904 -1 -1 0 0;
-#X floatatom 403 1118 5 0 0 0 - - -;
+-2 -8 0 10 #c4c4fc #000000 #000000 0 0;
+#X floatatom 403 1118 5 0 0 0 - - - 0;
 #X obj 504 1148 change;
 #X obj 513 1124 s wait_time_between_generations;
-#X obj 192 1104 vradio 20 1 0 2 empty empty empty 0 -8 0 10 -203302
--1 -1 1;
+#X obj 95 1103 vradio 20 1 0 2 empty empty empty 0 -8 0 10 #c4a094
+#000000 #000000 0;
 #X text 215 1105 Light;
 #X text 215 1125 Heavy;
 #X obj 51 1166 s model_version;
 #X obj 65 1054 r model_version_r;
-#X text 195 1080 Select Model and Minimum Delay btn Gens;
 #X obj 202 166 t f f;
-#X obj 274 328 cnv 2 40 8 empty empty CapsLock 0 4 0 8 -260097 -262144
+#X obj 274 328 cnv 2 40 8 empty empty CapsLock 0 4 0 8 #fc8000 #fcfcfc
 0;
-#X obj 340 327 cnv 2 10 8 empty empty - 3 4 0 8 -260097 -262144 0;
-#X obj 445 327 cnv 2 10 8 empty empty + 3 4 0 8 -260097 -262144 0;
+#X obj 340 327 cnv 2 10 8 empty empty - 3 4 0 8 #fc8000 #fcfcfc 0;
+#X obj 445 327 cnv 2 10 8 empty empty + 3 4 0 8 #fc8000 #fcfcfc 0;
 #X obj 56 217 keyname;
-#X symbolatom 103 263 10 0 0 0 - - -;
-#X floatatom 18 265 5 0 0 0 - - -;
+#X symbolatom 103 263 10 0 0 0 - - - 0;
+#X floatatom 18 265 5 0 0 0 - - - 0;
 #X obj 13 300 t b f;
 #X obj 3 344 symbol;
 #X obj 3 367 sel Caps_Lock;
 #X obj 5 392 f;
-#X obj 6 423 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
-;
+#X obj 6 423 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000 #000000
+0 1;
 #X obj 319 25 loadbang;
 #X msg 319 52 1;
-#X obj 203 133 cnv 2 12 8 empty empty P 4 4 0 9 -260097 -262144 0;
-#X obj 250 133 cnv 2 12 8 empty empty R 4 4 0 9 -260097 -262144 0;
-#X obj 346 536 cnv 2 45 8 empty empty Left_Arrow 3 5 0 7 -260097 -262144
+#X obj 203 133 cnv 2 12 8 empty empty P 4 4 0 9 #fc8000 #fcfcfc 0;
+#X obj 250 133 cnv 2 12 8 empty empty R 4 4 0 9 #fc8000 #fcfcfc 0;
+#X obj 346 536 cnv 2 45 8 empty empty Left_Arrow 3 5 0 7 #fc8000 #fcfcfc
 0;
-#X obj 416 536 cnv 2 45 8 empty empty Right_Arrow 3 5 0 7 -260097 -262144
+#X obj 416 536 cnv 2 45 8 empty empty Right_Arrow 3 5 0 7 #fc8000 #fcfcfc
 0;
 #X text 266 1007 -- Version 0.5;
 #X floatatom 412 727 5 0 0 0 metronome_as_midi_out_channel metronome_as_midi_out_channel_init
-metronome_as_midi_out_channel;
+metronome_as_midi_out_channel 0;
+#X text 195 1080 Select Minimum Delay btn Gens;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 4 0;
@@ -145,7 +145,7 @@ metronome_as_midi_out_channel;
 #X connect 16 0 8 0;
 #X connect 17 0 3 1;
 #X connect 18 0 3 1;
-#X connect 38 0 70 0;
+#X connect 38 0 69 0;
 #X connect 46 0 3 1;
 #X connect 50 0 49 0;
 #X connect 51 0 3 1;
@@ -163,40 +163,30 @@ metronome_as_midi_out_channel;
 #X connect 61 0 62 0;
 #X connect 61 0 63 0;
 #X connect 62 0 60 0;
-#X connect 64 0 67 0;
-#X connect 68 0 64 0;
-#X connect 70 0 48 0;
-#X connect 70 1 50 0;
-#X connect 74 0 76 0;
-#X connect 74 1 75 0;
-#X connect 75 0 78 1;
+#X connect 69 0 48 0;
+#X connect 69 1 50 0;
+#X connect 73 0 75 0;
+#X connect 73 1 74 0;
+#X connect 74 0 77 1;
+#X connect 75 0 76 0;
 #X connect 76 0 77 0;
+#X connect 76 1 79 1;
 #X connect 77 0 78 0;
-#X connect 77 1 80 1;
 #X connect 78 0 79 0;
 #X connect 79 0 80 0;
-#X connect 80 0 81 0;
-#X connect 81 0 45 0;
-#X connect 82 0 83 0;
-#X connect 83 0 40 0;
-#X coords 0 -1 1 1 300 70 1 180 1080;
+#X connect 80 0 45 0;
+#X connect 81 0 82 0;
+#X connect 82 0 40 0;
+#X coords 0 -1 1 1 300 70 1 180 80;
 #X restore 132 117 pd \$0-setting-panes;
 #X obj 128 46 loadbang;
 #X msg 129 64 1;
-#X obj 131 191 cnv 15 698 700 empty empty empty 20 12 0 14 -237242
--66577 0;
-#X obj 102 192 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X obj 102 395 vradio 30 1 0 5 empty empty empty 0 -8 0 10 -262144
--1 -1 4;
-#X obj -1 427 loadbang;
-#X msg 2 451 1;
-#N canvas 0 23 1440 823 \$0-gvo 0;
-#X obj 1 1 cnv 15 698 122 empty empty empty 20 12 0 14 -237242 -66577
-0;
+#X obj 131 191 cnv 15 698 700 empty empty empty 20 12 0 14 #e4e8e4
+#404040 0;
+#N canvas 480 317 1440 823 \$0-gvo 0;
 #X msg 1447 184 0;
-#X obj 1320 72 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+#X obj 1320 72 hradio 15 1 0 6 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X obj 1533 216 pack f f;
 #X obj 1587 156 sel 1 2 3;
 #X obj 1446 86 t f f b;
@@ -207,170 +197,25 @@ metronome_as_midi_out_channel;
 #X msg 1600 188 0;
 #X msg 1641 189 440;
 #X msg 1675 192 880;
-#X floatatom 1344 156 5 0 0 0 - - -;
+#X floatatom 1344 156 5 0 0 0 - - - 0;
 #X obj 1310 28 inlet;
 #X obj 1533 259 s pd-\$0-gvo;
 #X msg 1533 237 donecanvasdialog 1 -1 \$1 0 -1 1 1 700 124 0 \$2;
-#X obj 172 14 hsl 512 15 0 3072 0 0 current_pos playback_pos empty
--2 -8 0 10 -228856 -1 -1 16900 1;
-#X obj 171 32 vsl 16 65 0 127 0 0 v1 v1r empty 0 -9 0 10 -128992 -262144
--1 0 0;
-#X obj 174 100 hsl 11 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 -128992
--262144 -1 505 0;
-#X obj 187 32 vsl 16 65 0 127 0 0 v2 v2r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 190 100 hsl 11 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 203 32 vsl 16 65 0 127 0 0 v3 v3r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 206 100 hsl 11 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 219 32 vsl 16 65 0 127 0 0 v4 v4r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 222 100 hsl 11 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 235 32 vsl 16 65 0 127 0 0 v5 v5r empty 0 -9 0 10 -228856 -33289
--1 0 0;
-#X obj 238 100 hsl 11 8 -0.5 0.49 0 0 ut5 ut5r empty -2 -8 0 4 -228856
--33289 -1 505 0;
-#X obj 251 32 vsl 16 65 0 127 0 0 v6 v6r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 254 100 hsl 11 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 267 32 vsl 16 65 0 127 0 0 v7 v7r empty 0 -9 0 10 -262144 -33289
--1 0 0;
-#X obj 270 100 hsl 11 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 283 32 vsl 16 65 0 127 0 0 v8 v8r empty 0 -9 0 10 -262144 -33289
--1 5191 0;
-#X obj 286 100 hsl 11 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 -262144
--1 -1 299 0;
-#X obj 299 32 vsl 16 65 0 127 0 0 v9 v9r empty 0 -9 0 10 -228856 -33289
--1 0 0;
-#X obj 302 100 hsl 11 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 -228856
--33289 -1 505 0;
-#X obj 315 32 vsl 16 65 0 127 0 0 v10 v10r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 318 100 hsl 11 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 331 32 vsl 16 65 0 127 0 0 v11 v11r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 334 100 hsl 11 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 347 32 vsl 16 65 0 127 0 0 v12 v12r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 350 100 hsl 11 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 363 32 vsl 16 65 0 127 0 0 v13 v13r empty 0 -9 0 10 -228856
--33289 -1 3376 0;
-#X obj 366 100 hsl 11 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 -228856
--33289 -1 526 0;
-#X obj 379 32 vsl 16 65 0 127 0 0 v14 v14r empty 0 -9 0 10 -262144
--33289 -1 2369 0;
-#X obj 382 100 hsl 11 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 -262144
--1 -1 433 0;
-#X obj 395 32 vsl 16 65 0 127 0 0 v15 v15r empty 0 -9 0 10 -262144
--33289 -1 4636 0;
-#X obj 398 100 hsl 11 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 -262144
--1 -1 474 0;
-#X obj 411 32 vsl 16 65 0 127 0 0 v16 v16r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 414 100 hsl 11 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X text 174 105 1;
-#X text 238 105 5;
-#X text 301 105 9;
-#X text 362 105 13;
-#X obj 427 32 vsl 16 65 0 127 0 0 v17 v17r empty 0 -9 0 10 -128992
--262144 -1 2217 0;
-#X obj 430 100 hsl 11 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 -128992
--262144 -1 515 0;
-#X obj 443 32 vsl 16 65 0 127 0 0 v18 v18r empty 0 -9 0 10 -262144
--33289 -1 4132 0;
-#X obj 446 100 hsl 11 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 -262144
--1 -1 938 0;
-#X obj 459 32 vsl 16 65 0 127 0 0 v19 v19r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 462 100 hsl 11 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 475 32 vsl 16 65 0 127 0 0 v20 v20r empty 0 -9 0 10 -262144
--33289 -1 4233 0;
-#X obj 478 100 hsl 11 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 -262144
--1 -1 814 0;
-#X obj 491 32 vsl 16 65 0 127 0 0 v21 v21r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 494 100 hsl 11 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 -228856
--33289 -1 505 0;
-#X obj 507 32 vsl 16 65 0 127 0 0 v22 v22r empty 0 -9 0 10 -262144
--33289 -1 3679 0;
-#X obj 510 100 hsl 11 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 -262144
--1 -1 474 0;
-#X obj 523 32 vsl 16 65 0 127 0 0 v23 v23r empty 0 -9 0 10 -262144
--33289 -1 4031 0;
-#X obj 526 100 hsl 11 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 -262144
--1 -1 598 0;
-#X obj 539 32 vsl 16 65 0 127 0 0 v24 v24r empty 0 -9 0 10 -262144
--33289 -1 4636 0;
-#X obj 542 100 hsl 11 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 -262144
--1 -1 680 0;
-#X obj 555 32 vsl 16 65 0 127 0 0 v25 v25r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 558 100 hsl 11 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 -228856
--33289 -1 505 0;
-#X obj 571 32 vsl 16 65 0 127 0 0 v26 v26r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 574 100 hsl 11 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 587 32 vsl 16 65 0 127 0 0 v27 v27r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 590 100 hsl 11 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 603 32 vsl 16 65 0 127 0 0 v28 v28r empty 0 -9 0 10 -262144
--33289 -1 3427 0;
-#X obj 606 100 hsl 11 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 -262144
--1 -1 649 0;
-#X obj 619 32 vsl 16 65 0 127 0 0 v29 v29r empty 0 -9 0 10 -228856
--33289 -1 0 0;
-#X obj 622 100 hsl 11 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 -228856
--33289 -1 505 0;
-#X obj 635 32 vsl 16 65 0 127 0 0 v30 v30r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 638 100 hsl 11 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 651 32 vsl 16 65 0 127 0 0 v31 v31r empty 0 -9 0 10 -262144
--33289 -1 0 0;
-#X obj 654 100 hsl 11 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 -262144
--1 -1 505 0;
-#X obj 667 32 vsl 16 65 0 127 0 0 v32 v32r empty 0 -9 0 10 -262144
--33289 -1 5291 0;
-#X obj 670 100 hsl 11 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 -262144
--1 -1 443 0;
-#X text 425 105 17;
-#X text 490 105 21;
-#X text 553 105 25;
-#X text 617 104 29;
-#X obj 13 27 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 1986 0;
-#X text 145 33 Vel;
-#X text 131 72 uTime;
-#X obj 29 81 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
-0 -8 0 10 -262144 -1 -1 1 256;
-#X obj 29 125 change;
-#X obj 1 441 cnv 15 698 122 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 1 441 cnv 15 698 122 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X obj 172 454 hsl 512 15 0 3072 0 0 current_pos playback_pos empty
--2 -8 0 10 -228856 -1 -1 16900 1;
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
 #N canvas 0 23 1440 823 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 28 256;
+#e0c4fc #000000 #000000 28 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 1 256;
+4 #e0c4fc #000000 #000000 1 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 351 98 loadbang;
@@ -403,101 +248,19 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 125 14 2 100 100;
 #X restore 140 532 pd midi_mapper;
 #X obj 127 548 cnv 4 110 8 empty empty Select_(1)_EndlessEncoder_(2)_Slider/Pot
-0 4 0 4 -33289 -262144 0;
-#X obj 174 524 cnv 4 15 8 empty empty Learn 2 4 0 4 -33289 -262144
+0 4 0 4 #202020 #fcfcfc 0;
+#X obj 174 524 cnv 4 15 8 empty empty Learn 2 4 0 4 #202020 #fcfcfc
 0;
-#X obj 29 166 s groove_vel_scale_init;
 #X obj 13 467 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
-0 -9 0 10 -262144 -1 -1 1986 0;
+0 -9 0 10 #fcfcfc #000000 #000000 0 0;
 #X obj 29 521 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
-0 -8 0 10 -262144 -1 -1 1 256;
+0 -8 0 10 #fcfcfc #000000 #000000 0 256;
 #X obj 29 565 change;
 #X obj 29 606 s groove_vel_scale_init;
-#X obj 173 2 tgl 10 0 empty force_start_here Always_Start_Here -106
-5 0 10 -258113 -1 -258113 0 1;
-#X obj 256 167 s force_start_here;
-#X obj 255 138 change;
 #X obj 173 442 tgl 10 0 empty force_start_here Always_Start_Here -106
-5 0 10 -258113 -1 -258113 0 1;
+5 0 10 #fc0400 #000000 #fc0400 0 1;
 #X obj 256 607 s force_start_here;
 #X obj 255 578 change;
-#X connect 1 0 3 0;
-#X connect 2 0 5 0;
-#X connect 3 0 15 0;
-#X connect 4 0 9 0;
-#X connect 4 1 10 0;
-#X connect 4 2 11 0;
-#X connect 5 0 6 0;
-#X connect 5 1 4 0;
-#X connect 5 2 1 0;
-#X connect 6 0 3 0;
-#X connect 6 0 12 0;
-#X connect 9 0 3 1;
-#X connect 10 0 3 1;
-#X connect 11 0 3 1;
-#X connect 13 0 2 0;
-#X connect 15 0 14 0;
-#X connect 89 0 92 0;
-#X connect 92 0 93 0;
-#X connect 93 0 99 0;
-#X connect 100 0 101 0;
-#X connect 101 0 102 0;
-#X connect 102 0 103 0;
-#X connect 104 0 106 0;
-#X connect 106 0 105 0;
-#X connect 107 0 109 0;
-#X connect 109 0 108 0;
-#X coords 0 -1 1 1 700 124 1 0 0;
-#X restore 132 271 pd \$0-gvo;
-#N canvas 0 189 1440 657 \$0-visualizer 0;
-#X msg 1381 184 0;
-#X obj 1254 72 hradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 1467 216 pack f f;
-#X obj 1521 156 sel 1 2 3;
-#X obj 1380 86 t f f b;
-#X obj 1354 130 != 0;
-#X text 1187 186 get's messy without this ->;
-#X text 1643 74 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
-;
-#X msg 1534 188 0;
-#X msg 1575 189 440;
-#X msg 1609 192 880;
-#X floatatom 1278 156 5 0 0 0 - - -;
-#X obj 1244 28 inlet;
-#X obj 1349 328 s pd-\$0-visualizer;
-#X msg 1461 241 donecanvasdialog 1 -1 \$1 0 -1 1 1 700 80 0 \$2;
-#X obj 1 1 cnv 15 698 78 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#N canvas 0 22 450 278 (subpatch) 0;
-#X array groove 3072 float 2;
-#X coords 0 127 3072 0 512 35 1;
-#X restore 171 20 graph;
-#X obj 1 441 cnv 15 698 78 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 634 3 bng 15 250 50 0 empty empty Redraw 17 7 0 10 -4032 -1
--260097;
-#X obj 741 17 s force_redraw_groove;
-#X obj 171 60 hradio 16 1 0 32 empty starting_step_init Starting_Step
--80 7 0 10 -237503 -1 -1 14;
-#X obj 10 6 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty 0
--9 0 10 -262144 -1 -1 1986 0;
-#X obj 27 60 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
-0 -8 0 10 -262144 -1 -1 1 256;
-#X obj 27 104 change;
-#X obj 28 141 s groove_vel_scale_init;
-#X obj 216 146 s starting_step;
-#X obj 216 99 + 1;
-#X floatatom 216 123 5 0 0 0 - - -;
-#X obj 566 138 r half_step_ticks;
-#X obj 466 136 r step_ticks;
-#X floatatom 466 160 5 0 0 0 - - -;
-#X floatatom 566 162 5 0 0 0 - - -;
-#X obj 473 256 s starting_tick_pos;
-#X obj 424 202 expr ($f1-1)*$f2+$f3;
-#X floatatom 473 233 5 0 0 0 - - -;
-#X obj 352 294 s force_resend_data_to_py;
-#X obj 427 225 t b f;
 #X connect 0 0 2 0;
 #X connect 1 0 4 0;
 #X connect 2 0 14 0;
@@ -514,33 +277,436 @@ metronome_as_midi_out_channel;
 #X connect 10 0 2 1;
 #X connect 12 0 1 0;
 #X connect 14 0 13 0;
-#X connect 18 0 19 0;
-#X connect 20 0 26 0;
+#X connect 20 0 21 0;
 #X connect 21 0 22 0;
 #X connect 22 0 23 0;
-#X connect 23 0 24 0;
-#X connect 26 0 27 0;
-#X connect 27 0 25 0;
-#X connect 27 0 33 0;
-#X connect 28 0 31 0;
-#X connect 29 0 30 0;
-#X connect 30 0 33 1;
-#X connect 31 0 33 2;
-#X connect 33 0 36 0;
-#X connect 34 0 32 0;
-#X connect 36 0 35 0;
-#X connect 36 1 34 0;
-#X coords 0 -1 1 1 700 80 1 0 0;
-#X restore 132 190 pd \$0-visualizer;
-#N canvas 831 -935 1244 823 \$0-params 0;
-#X obj 1 502 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
+#X connect 24 0 26 0;
+#X connect 26 0 25 0;
+#X coords 0 0 1 1 700 124 0;
+#X restore -653 78 pd \$0-gvo;
+#X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X obj 428 46 loadbang;
+#X msg 429 64 1;
+#N canvas 990 129 784 825 \$0-saveloadsession 0;
+#X obj 181 781 cnv 15 398 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
-#X obj 1 1 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 964 403 inlet;
+#X msg 971 516 0;
+#X obj 844 421 hradio 15 1 0 7 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X obj 1040 606 pack f f;
+#X obj 964 447 t f f b;
+#X obj 944 479 != 0;
+#X text 811 552 get's messy without this ->;
+#X text 1028 350 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
+;
+#X msg 1111 560 80;
+#X obj 1111 516 sel 1 2 3 4 5 6;
+#X obj 994 696 s pd-\$0-saveloadsession;
+#X obj 181 81 cnv 15 398 68 empty empty empty 20 12 0 14 #e4e8e4 #404040
+0;
+#X floatatom 228 96 8 0 0 2 nSnapshots nSnapshots_r nSnapshots_s 0
+;
+#X floatatom 237 117 6 0 0 3 Current - - 0;
+#X obj 310 116 bng 20 250 50 0 empty next_snapshot_r > 5 9 0 18 #00fc04
+#000000 #9c00fc;
+#X obj 189 117 bng 20 250 50 0 empty previous_snapshot_r < 5 9 0 18
+#fcc4c4 #000000 #9c00fc;
+#X obj 368 105 bng 30 250 50 0 empty take_snapshot_r SNAPSHOT -5 -7
+0 8 #c4fcfc #000000 #000000;
+#X floatatom 225 253 5 0 0 0 - - - 0;
+#X floatatom 290 211 5 0 0 0 - - - 0;
+#X obj 392 189 r reset;
+#X msg 342 189 0;
+#X obj 225 273 s nSnapshots_r;
+#N canvas 0 23 976 557 snapshot_counter 0;
+#X obj 174 183 f;
+#X obj 212 183 + 1;
+#X obj 174 136 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X floatatom 176 252 5 0 0 0 - - - 0;
+#X floatatom 177 339 5 0 0 0 - - - 0;
+#X obj 161 54 inlet;
+#X text 210 59 increase count;
+#X obj 177 375 outlet;
+#X obj 399 53 inlet;
+#X floatatom 399 77 5 0 0 0 - - - 0;
+#X text 453 55 start at shift;
+#X obj 627 59 inlet;
+#X obj 627 87 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X text 680 57 reset;
+#X msg 365 221 0;
+#X obj 177 288 + 1;
+#X msg 214 297 \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 0 15 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 8 0 9 0;
+#X connect 9 0 15 1;
+#X connect 9 0 16 0;
+#X connect 11 0 12 0;
+#X connect 12 0 14 0;
+#X connect 14 0 4 0;
+#X connect 14 0 3 0;
+#X connect 15 0 4 0;
+#X connect 16 0 4 0;
+#X restore 225 232 pd snapshot_counter;
+#N canvas 0 23 1245 819 move_to_snapshot 0;
+#X obj 285 26 inlet;
+#X obj 385 28 inlet;
+#X obj 478 36 inlet;
+#X text 374 -1 move right;
+#X text 281 0 move left;
+#X text 486 3 nSnapshots;
+#X msg 287 64 -1;
+#X msg 387 62 1;
+#X floatatom 344 299 5 0 0 0 - - - 0;
+#X floatatom 539 82 5 0 0 0 - - - 0;
+#X obj 334 496 outlet;
+#X text 381 463 current snapshot pos;
+#X obj 244 188 f;
+#X obj 827 33 inlet, f 6;
+#X floatatom 827 81 5 0 0 0 - - - 0;
+#X text 795 4 force position to;
+#X obj 290 155 t f b;
+#X floatatom 396 244 5 0 0 0 - - - 0;
+#X obj 343 347 mod;
+#X obj 347 391 + 1;
+#X obj 322 216 expr if ($f3==0 \, 1 \, if($f1<0 \, $f2-1 \, $f2+1))
+;
+#X floatatom 355 431 5 0 0 0 - - - 0;
+#X obj 357 122 spigot;
+#X obj 417 100 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 456 94 != 0;
+#X obj 463 294 - 1;
+#X obj 624 300 - 1;
+#X connect 0 0 6 0;
+#X connect 1 0 7 0;
+#X connect 2 0 9 0;
+#X connect 6 0 22 0;
+#X connect 7 0 22 0;
+#X connect 8 0 12 1;
+#X connect 8 0 18 0;
+#X connect 9 0 18 1;
+#X connect 9 0 20 2;
+#X connect 9 0 24 0;
+#X connect 9 0 25 0;
+#X connect 12 0 20 1;
+#X connect 13 0 14 0;
+#X connect 14 0 26 0;
+#X connect 16 0 20 0;
+#X connect 16 1 12 0;
+#X connect 17 0 8 0;
+#X connect 18 0 19 0;
+#X connect 19 0 21 0;
+#X connect 20 0 17 0;
+#X connect 21 0 10 0;
+#X connect 22 0 16 0;
+#X connect 23 0 22 1;
+#X connect 24 0 23 0;
+#X connect 25 0 8 0;
+#X connect 26 0 8 0;
+#X restore 49 234 pd move_to_snapshot;
+#X floatatom 64 271 5 0 0 0 - - - 0;
+#X obj 53 300 s currentSnapshots;
+#X obj 126 195 change;
+#X obj 299 160 r snapshot_init_from_load_session;
+#X obj 218 804 bng 30 250 50 0 empty empty SAVE_TEMPLATE -18 -7 0 10
+#fcfcfc #000000 #000000;
+#X obj 318 804 bng 30 250 50 0 empty empty LOAD_TEMPLATE -18 -7 0 10
+#fcfcfc #000000 #000000;
+#X obj 229 869 res/save_preset;
+#X msg 994 652 donecanvasdialog 1 -1 \$1 0 -1 1 1 400 70 180 \$2;
+#X obj 460 110 bng 20 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
+#9c00fc #000000 #000000;
+#X obj 520 110 bng 20 250 50 0 empty empty LOAD 0 -7 0 10 #9c00fc #f8fc00
+#000000;
+#X obj 602 187 r reset;
+#X obj 476 231 res/save_session;
+#X obj 619 232 r currentSnapshots;
+#X obj 552 161 r nSnapshots_r;
+#X obj 456 201 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X msg 1165 553 480;
+#X obj 181 481 cnv 15 398 68 empty empty empty 20 12 0 14 #fcfcfc #404040
+0;
+#X text 206 522 You can move back to a snapshot taken previously;
+#X msg 1237 553 780;
+#X msg 1199 553 600;
+#X obj 181 601 cnv 15 398 68 empty empty empty 20 12 0 14 #fcfcfc #404040
+0;
+#X text 181 615 If you like a pattern \, take a snapshot of it;
+#X text 181 598 Save the entirety of the session \, and reload it later
+on;
+#X text 205 505 Snapshots save the current state of the program;
+#X text 204 488 This functionality requires the cyclone/coll external
+;
+#X text 180 633 You can navigate back to any of the snapshots during
+the performance;
+#X msg 1283 553 900;
+#X obj 181 901 cnv 15 398 68 empty empty empty 20 12 0 14 #fcfcfc #404040
+0;
+#X text 181 923 You can save the parameters of the program as a template
+;
+#X obj 189 138 cnv 2 19 8 empty empty < 7 4 0 9 #fc8000 #fcfcfc 0;
+#X obj 351 138 cnv 2 66 8 empty empty Shift+Enter 4 4 0 9 #fc8000 #fcfcfc
+0;
+#X obj 310 138 cnv 2 19 8 empty empty > 7 4 0 9 #fc8000 #fcfcfc 0;
+#X obj 309 47 metro 2000;
+#X obj 301 25 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X connect 1 0 3 0;
+#X connect 2 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 32 0;
+#X connect 5 0 6 0;
+#X connect 5 1 10 0;
+#X connect 5 2 2 0;
+#X connect 6 0 4 0;
+#X connect 9 0 4 1;
+#X connect 10 0 9 0;
+#X connect 10 1 40 0;
+#X connect 10 2 44 0;
+#X connect 10 3 43 0;
+#X connect 10 4 51 0;
+#X connect 14 0 27 0;
+#X connect 15 0 24 1;
+#X connect 16 0 24 0;
+#X connect 17 0 23 0;
+#X connect 18 0 22 0;
+#X connect 18 0 24 2;
+#X connect 19 0 23 1;
+#X connect 20 0 21 0;
+#X connect 20 0 23 2;
+#X connect 21 0 19 0;
+#X connect 23 0 18 0;
+#X connect 24 0 25 0;
+#X connect 25 0 14 0;
+#X connect 25 0 26 0;
+#X connect 27 0 24 3;
+#X connect 28 0 19 0;
+#X connect 29 0 31 0;
+#X connect 30 0 31 1;
+#X connect 32 0 11 0;
+#X connect 33 0 36 1;
+#X connect 34 0 39 0;
+#X connect 35 0 36 3;
+#X connect 37 0 36 4;
+#X connect 38 0 36 2;
+#X connect 39 0 36 0;
+#X connect 40 0 4 1;
+#X connect 43 0 4 1;
+#X connect 44 0 4 1;
+#X connect 51 0 4 1;
+#X connect 57 0 15 0;
+#X connect 58 0 57 0;
+#X coords 0 -1 1 1 400 70 1 180 80;
+#X restore 432 117 pd \$0-saveloadsession;
+#X obj 860 48 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 860 67 s reset;
+#X obj 852 139 bng 30 250 50 0 reset empty RESET_PROGRAM -17 -10 0
+8 #fc0400 #000000 #000000;
+#X obj 851 325 bng 30 250 50 0 empty clear_groove_r Clear_Groove -17
+-10 0 8 #fcc4c4 #000000 #000000;
+#X msg 1503 354 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r
+0 \; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r
+0 \; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
+0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
+0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
+#X msg 1584 354 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
+ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
+0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
+\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
+ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
+0 \; ut32r 0 \;;
+#X obj 845 359 cnv 2 45 8 empty empty Shift+D 4 4 0 9 #fc8000 #fcfcfc
+0;
+#X obj 1014 144 res/main;
+#X obj 309 47 metro 2000;
+#X obj 301 25 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 135 271 cnv 15 698 122 empty empty empty 20 12 0 14 #e4e8e4
+#404040 0;
+#X obj 306 284 hsl 512 15 0 3072 0 0 current_pos playback_pos empty
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 305 302 vsl 16 65 0 127 0 0 v1 v1r empty 0 -9 0 10 #7c7c7c #fcfcfc
+#000000 0 0;
+#X obj 308 370 hsl 11 8 -0.5 0.49 0 0 ut1 ut1r empty -2 -8 0 4 #7c7c7c
+#fcfcfc #000000 0 0;
+#X obj 321 302 vsl 16 65 0 127 0 0 v2 v2r empty 0 -9 0 10 #fcfcfc #202020
+#000000 0 0;
+#X obj 324 370 hsl 11 8 -0.5 0.49 0 0 ut2 ut2r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 337 302 vsl 16 65 0 127 0 0 v3 v3r empty 0 -9 0 10 #fcfcfc #202020
+#000000 0 0;
+#X obj 340 370 hsl 11 8 -0.5 0.49 0 0 ut3 ut3r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 353 302 vsl 16 65 0 127 0 0 v4 v4r empty 0 -9 0 10 #fcfcfc #202020
+#000000 0 0;
+#X obj 356 370 hsl 11 8 -0.5 0.49 0 0 ut4 ut4r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 369 302 vsl 16 65 0 127 0 0 v5 v5r empty 0 -9 0 10 #dcdcdc #202020
+#000000 0 0;
+#X obj 372 370 hsl 11 8 -0.5 0.49 0 0 ut5 ut5r empty -2 -8 0 4 #dcdcdc
+#202020 #000000 0 0;
+#X obj 385 302 vsl 16 65 0 127 0 0 v6 v6r empty 0 -9 0 10 #fcfcfc #202020
+#000000 0 0;
+#X obj 388 370 hsl 11 8 -0.5 0.49 0 0 ut6 ut6r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 401 302 vsl 16 65 0 127 0 0 v7 v7r empty 0 -9 0 10 #fcfcfc #202020
+#000000 0 0;
+#X obj 404 370 hsl 11 8 -0.5 0.49 0 0 ut7 ut7r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 417 302 vsl 16 65 0 127 0 0 v8 v8r empty 0 -9 0 10 #fcfcfc #202020
+#000000 0 0;
+#X obj 420 370 hsl 11 8 -0.5 0.49 0 0 ut8 ut8r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 433 302 vsl 16 65 0 127 0 0 v9 v9r empty 0 -9 0 10 #dcdcdc #202020
+#000000 0 0;
+#X obj 436 370 hsl 11 8 -0.5 0.49 0 0 ut9 ut9r empty -2 -8 0 4 #dcdcdc
+#202020 #000000 0 0;
+#X obj 449 302 vsl 16 65 0 127 0 0 v10 v10r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 452 370 hsl 11 8 -0.5 0.49 0 0 ut10 ut10r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 465 302 vsl 16 65 0 127 0 0 v11 v11r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 468 370 hsl 11 8 -0.5 0.49 0 0 ut11 ut11r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 481 302 vsl 16 65 0 127 0 0 v12 v12r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 484 370 hsl 11 8 -0.5 0.49 0 0 ut12 ut12r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 497 302 vsl 16 65 0 127 0 0 v13 v13r empty 0 -9 0 10 #dcdcdc
+#202020 #000000 0 0;
+#X obj 500 370 hsl 11 8 -0.5 0.49 0 0 ut13 ut13r empty -2 -8 0 4 #dcdcdc
+#202020 #000000 0 0;
+#X obj 513 302 vsl 16 65 0 127 0 0 v14 v14r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 516 370 hsl 11 8 -0.5 0.49 0 0 ut14 ut14r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 529 302 vsl 16 65 0 127 0 0 v15 v15r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 532 370 hsl 11 8 -0.5 0.49 0 0 ut15 ut15r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 545 302 vsl 16 65 0 127 0 0 v16 v16r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 548 370 hsl 11 8 -0.5 0.49 0 0 ut16 ut16r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X text 308 375 1;
+#X text 372 375 5;
+#X text 435 375 9;
+#X text 496 375 13;
+#X obj 561 302 vsl 16 65 0 127 0 0 v17 v17r empty 0 -9 0 10 #7c7c7c
+#fcfcfc #000000 0 0;
+#X obj 564 370 hsl 11 8 -0.5 0.49 0 0 ut17 ut17r empty -2 -8 0 4 #7c7c7c
+#fcfcfc #000000 0 0;
+#X obj 577 302 vsl 16 65 0 127 0 0 v18 v18r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 580 370 hsl 11 8 -0.5 0.49 0 0 ut18 ut18r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 593 302 vsl 16 65 0 127 0 0 v19 v19r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 596 370 hsl 11 8 -0.5 0.49 0 0 ut19 ut19r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 609 302 vsl 16 65 0 127 0 0 v20 v20r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 612 370 hsl 11 8 -0.5 0.49 0 0 ut20 ut20r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 625 302 vsl 16 65 0 127 0 0 v21 v21r empty 0 -9 0 10 #dcdcdc
+#202020 #000000 0 0;
+#X obj 628 370 hsl 11 8 -0.5 0.49 0 0 ut21 ut21r empty -2 -8 0 4 #dcdcdc
+#202020 #000000 0 0;
+#X obj 641 302 vsl 16 65 0 127 0 0 v22 v22r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 644 370 hsl 11 8 -0.5 0.49 0 0 ut22 ut22r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 657 302 vsl 16 65 0 127 0 0 v23 v23r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 660 370 hsl 11 8 -0.5 0.49 0 0 ut23 ut23r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 673 302 vsl 16 65 0 127 0 0 v24 v24r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 676 370 hsl 11 8 -0.5 0.49 0 0 ut24 ut24r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 689 302 vsl 16 65 0 127 0 0 v25 v25r empty 0 -9 0 10 #dcdcdc
+#202020 #000000 0 0;
+#X obj 692 370 hsl 11 8 -0.5 0.49 0 0 ut25 ut25r empty -2 -8 0 4 #dcdcdc
+#202020 #000000 0 0;
+#X obj 705 302 vsl 16 65 0 127 0 0 v26 v26r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 708 370 hsl 11 8 -0.5 0.49 0 0 ut26 ut26r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 721 302 vsl 16 65 0 127 0 0 v27 v27r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 724 370 hsl 11 8 -0.5 0.49 0 0 ut27 ut27r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 737 302 vsl 16 65 0 127 0 0 v28 v28r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 740 370 hsl 11 8 -0.5 0.49 0 0 ut28 ut28r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 753 302 vsl 16 65 0 127 0 0 v29 v29r empty 0 -9 0 10 #dcdcdc
+#202020 #000000 0 0;
+#X obj 756 370 hsl 11 8 -0.5 0.49 0 0 ut29 ut29r empty -2 -8 0 4 #dcdcdc
+#202020 #000000 0 0;
+#X obj 769 302 vsl 16 65 0 127 0 0 v30 v30r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 772 370 hsl 11 8 -0.5 0.49 0 0 ut30 ut30r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 785 302 vsl 16 65 0 127 0 0 v31 v31r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 788 370 hsl 11 8 -0.5 0.49 0 0 ut31 ut31r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X obj 801 302 vsl 16 65 0 127 0 0 v32 v32r empty 0 -9 0 10 #fcfcfc
+#202020 #000000 0 0;
+#X obj 804 370 hsl 11 8 -0.5 0.49 0 0 ut32 ut32r empty -2 -8 0 4 #fcfcfc
+#000000 #000000 0 0;
+#X text 559 375 17;
+#X text 624 375 21;
+#X text 687 375 25;
+#X text 751 374 29;
+#X obj 147 297 vsl 16 65 0.1 3 0 0 empty groove_vel_scale_init empty
+0 -9 0 10 #fcfcfc #000000 #000000 0 0;
+#X text 279 303 Vel;
+#X text 265 342 uTime;
+#X obj 163 351 nbx 5 14 -1e+37 1e+37 0 0 groove_vel_scale empty Scale_Velocities
+0 -8 0 10 #fcfcfc #000000 #000000 0 256;
+#X obj -81 365 change;
+#X obj -82 384 s groove_vel_scale_init;
+#X obj 307 272 tgl 10 0 empty force_start_here Always_Start_Here -106
+5 0 10 #fc0400 #000000 #fc0400 0 1;
+#X obj 390 437 s force_start_here;
+#X obj 389 408 change;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array groove 3072 float 2;
+#X coords 0 127 3072 0 512 35 1;
+#X restore 302 209 graph;
+#X obj 765 192 bng 15 250 50 0 empty empty Redraw 17 7 0 10 #00f8fc
+#000000 #fc8000;
+#X obj 872 206 s force_redraw_groove;
+#X obj 302 249 hradio 16 1 0 32 empty starting_step_init Starting_Step
+-80 7 0 10 #e4f8f8 #000000 #000000 0;
+#X obj 112 395 vradio 20 1 0 5 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
+#X obj -1 427 loadbang;
+#X msg 2 451 1;
+#N canvas 427 25 1493 1084 \$0-params 0;
+#X obj 1 502 cnv 15 698 490 empty empty empty 20 12 0 14 #e4e8e4 #404040
+0;
+#X obj 1 1 cnv 15 698 490 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X obj 1320 75 inlet;
 #X msg 1363 189 0;
-#X obj 1200 91 hradio 15 1 0 5 empty empty empty 0 -8 0 10 -262144
--1 -1 4;
+#X obj 1200 91 hradio 15 1 0 5 empty empty empty 0 -8 0 10 #fcfcfc
+#000000 #000000 0;
 #X obj 1357 217 pack f f;
 #X obj 1326 105 t f f b;
 #X obj 1336 135 != 0;
@@ -551,23 +717,23 @@ metronome_as_midi_out_channel;
 #X obj 3 19 res/see_generated_pattern;
 #X msg 1465 190 501;
 #X obj 1359 271 s pd-\$0-params;
-#X obj 171 552 cnv 15 512 36 empty empty KICK 0 8 0 12 -229182 -33289
+#X obj 171 552 cnv 15 512 36 empty empty KICK 0 8 0 12 #dcf0f4 #202020
 0;
-#X obj 170 598 cnv 15 512 36 empty empty SNARE 0 8 0 12 -225077 -33289
+#X obj 170 598 cnv 15 512 36 empty empty SNARE 0 8 0 12 #d8f0d0 #202020
 0;
-#X obj 170 643 cnv 15 512 36 empty empty HH_CLOSED 0 8 0 12 -262013
--33289 0;
-#X obj 170 691 cnv 15 512 36 empty empty HH_OPEN 0 8 0 12 -257398 -33289
+#X obj 170 643 cnv 15 512 36 empty empty HH_CLOSED 0 8 0 12 #fcf4f0
+#202020 0;
+#X obj 170 691 cnv 15 512 36 empty empty HH_OPEN 0 8 0 12 #f8d4d4 #202020
 0;
-#X obj 170 739 cnv 15 512 36 empty empty TOM_3_LO 0 8 0 12 -262136
--33289 0;
-#X obj 170 786 cnv 15 512 36 empty empty TOM_2_MID 0 8 0 12 -261996
--33289 0;
-#X obj 170 829 cnv 15 512 36 empty empty TOM_1_HI 0 8 0 12 -261600
--33289 0;
-#X obj 170 876 cnv 15 512 36 empty empty CRASH 0 8 0 12 -55982 -33289
+#X obj 170 739 cnv 15 512 36 empty empty TOM_3_LO 0 8 0 12 #fcfcdc
+#202020 0;
+#X obj 170 786 cnv 15 512 36 empty empty TOM_2_MID 0 8 0 12 #fcf4ac
+#202020 0;
+#X obj 170 829 cnv 15 512 36 empty empty TOM_1_HI 0 8 0 12 #fcdc7c
+#202020 0;
+#X obj 170 876 cnv 15 512 36 empty empty CRASH 0 8 0 12 #34a8b4 #202020
 0;
-#X obj 170 921 cnv 15 512 36 empty empty RIDE 0 8 0 12 -26605 -33289
+#X obj 170 921 cnv 15 512 36 empty empty RIDE 0 8 0 12 #187cb0 #202020
 0;
 #X text 266 534 Likelihood;
 #X text 391 533 Max Count;
@@ -575,150 +741,150 @@ metronome_as_midi_out_channel;
 #X text 555 11 GENERATED PATTERNS;
 #X msg 1359 245 donecanvasdialog 1 -1 \$1 0 -1 1 1 700 492 0 \$2;
 #X msg 1499 193 1002;
-#X obj 1 1003 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 1 1003 cnv 15 698 490 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
-#X obj 171 1053 cnv 15 512 36 empty empty KICK 0 8 0 12 -229182 -33289
+#X obj 171 1053 cnv 15 512 36 empty empty KICK 0 8 0 12 #dcf0f4 #202020
 0;
-#X obj 170 1099 cnv 15 512 36 empty empty SNARE 0 8 0 12 -225077 -33289
+#X obj 170 1099 cnv 15 512 36 empty empty SNARE 0 8 0 12 #d8f0d0 #202020
 0;
-#X obj 170 1144 cnv 15 512 36 empty empty HH_CLOSED 0 8 0 12 -262013
--33289 0;
-#X obj 170 1192 cnv 15 512 36 empty empty HH_OPEN 0 8 0 12 -257398
--33289 0;
-#X obj 170 1240 cnv 15 512 36 empty empty TOM_3_LO 0 8 0 12 -262136
--33289 0;
-#X obj 170 1287 cnv 15 512 36 empty empty TOM_2_MID 0 8 0 12 -261996
--33289 0;
-#X obj 170 1330 cnv 15 512 36 empty empty TOM_1_HI 0 8 0 12 -261600
--33289 0;
-#X obj 170 1377 cnv 15 512 36 empty empty CRASH 0 8 0 12 -55982 -33289
+#X obj 170 1144 cnv 15 512 36 empty empty HH_CLOSED 0 8 0 12 #fcf4f0
+#202020 0;
+#X obj 170 1192 cnv 15 512 36 empty empty HH_OPEN 0 8 0 12 #f8d4d4
+#202020 0;
+#X obj 170 1240 cnv 15 512 36 empty empty TOM_3_LO 0 8 0 12 #fcfcdc
+#202020 0;
+#X obj 170 1287 cnv 15 512 36 empty empty TOM_2_MID 0 8 0 12 #fcf4ac
+#202020 0;
+#X obj 170 1330 cnv 15 512 36 empty empty TOM_1_HI 0 8 0 12 #fcdc7c
+#202020 0;
+#X obj 170 1377 cnv 15 512 36 empty empty CRASH 0 8 0 12 #34a8b4 #202020
 0;
-#X obj 170 1422 cnv 15 512 36 empty empty RIDE 0 8 0 12 -26605 -33289
+#X obj 170 1422 cnv 15 512 36 empty empty RIDE 0 8 0 12 #187cb0 #202020
 0;
 #X obj 259 1054 hsl 48 17 0 1 0 0 empty thres_0_in empty -2 -8 0 10
--262144 -1 -1 1880 0;
+#fcfcfc #000000 #000000 0 0;
 #X text 266 1035 Likelihood;
-#X floatatom 309 1054 5 0 1 0 - - thres0;
+#X floatatom 309 1054 5 0 1 0 - - thres0 0;
 #X obj 359 1054 hsl 48 17 0 32 0 0 empty max_count_0_in empty -2 -8
-0 10 -262144 -1 -1 881 0;
-#X floatatom 409 1054 5 0 32 0 - - max_count_0;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 409 1054 5 0 32 0 - - max_count_0 0;
 #X text 381 1034 Max Count;
 #X obj 460 1054 hsl 48 17 0 3 0 0 empty vel_scale_0_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
+0 10 #fcfcfc #000000 #000000 0 0;
 #X text 494 1034 Vol;
-#X floatatom 510 1054 5 0 0 0 - - vel_scale_0;
+#X floatatom 510 1054 5 0 0 0 - - vel_scale_0 0;
 #X obj 259 1100 hsl 48 17 0 1 0 0 empty thres_1_in empty -2 -8 0 10
--262144 -1 -1 2350 0;
-#X floatatom 309 1100 5 0 1 0 - - thres1;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 309 1100 5 0 1 0 - - thres1 0;
 #X obj 359 1100 hsl 48 17 0 32 0 0 empty max_count_1_in empty -2 -8
-0 10 -262144 -1 -1 294 0;
-#X floatatom 409 1100 5 0 32 0 - - max_count_1;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 409 1100 5 0 32 0 - - max_count_1 0;
 #X obj 460 1100 hsl 48 17 0 3 0 0 empty vel_scale_1_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 510 1100 5 0 0 0 - - vel_scale_1;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 510 1100 5 0 0 0 - - vel_scale_1 0;
 #X obj 259 1145 hsl 48 17 0 1 0 0 empty thres_2_in empty -2 -8 0 10
--262144 -1 -1 2820 0;
-#X floatatom 309 1145 5 0 1 0 - - thres2;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 309 1145 5 0 1 0 - - thres2 0;
 #X obj 359 1145 hsl 48 17 0 32 0 0 empty max_count_2_in empty -2 -8
-0 10 -262144 -1 -1 4700 0;
-#X floatatom 409 1145 5 0 32 0 - - max_count_2;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 409 1145 5 0 32 0 - - max_count_2 0;
 #X obj 460 1145 hsl 48 17 0 3 0 0 empty vel_scale_2_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
-#X floatatom 510 1145 5 0 0 0 - - vel_scale_2;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 510 1145 5 0 0 0 - - vel_scale_2 0;
 #X obj 261 1192 hsl 48 17 0 1 0 0 empty thres_3_in empty -2 -8 0 10
--262144 -1 -1 3290 0;
-#X floatatom 311 1192 5 0 1 0 - - thres3;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 311 1192 5 0 1 0 - - thres3 0;
 #X obj 361 1192 hsl 48 17 0 32 0 0 empty max_count_3_in empty -2 -8
-0 10 -262144 -1 -1 4700 0;
-#X floatatom 411 1192 5 0 32 0 - - max_count_3;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 411 1192 5 0 32 0 - - max_count_3 0;
 #X obj 462 1192 hsl 48 17 0 3 0 0 empty vel_scale_3_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
-#X floatatom 512 1192 5 0 0 0 - - vel_scale_3;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 512 1192 5 0 0 0 - - vel_scale_3 0;
 #X obj 260 1242 hsl 48 17 0 1 0 0 empty thres_4_in empty -2 -8 0 10
--262144 -1 -1 4465 0;
-#X floatatom 310 1242 5 0 1 0 - - thres4;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 310 1242 5 0 1 0 - - thres4 0;
 #X obj 360 1242 hsl 48 17 0 32 0 0 empty max_count_4_in empty -2 -8
-0 10 -262144 -1 -1 881 0;
-#X floatatom 410 1242 5 0 32 0 - - max_count_4;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 410 1242 5 0 32 0 - - max_count_4 0;
 #X obj 461 1242 hsl 48 17 0 3 0 0 empty vel_scale_4_in empty -2 -8
-0 10 -262144 -1 -1 4700 0;
-#X floatatom 511 1242 5 0 0 0 - - vel_scale_4;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 511 1242 5 0 0 0 - - vel_scale_4 0;
 #X obj 260 1288 hsl 48 17 0 1 0 0 empty thres_5_in empty -2 -8 0 10
--262144 -1 -1 4465 0;
-#X floatatom 310 1288 5 0 1 0 - - thres5;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 310 1288 5 0 1 0 - - thres5 0;
 #X obj 360 1288 hsl 48 17 0 32 0 0 empty max_count_5_in empty -2 -8
-0 10 -262144 -1 -1 881 0;
-#X floatatom 410 1288 5 0 32 0 - - max_count_5;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 410 1288 5 0 32 0 - - max_count_5 0;
 #X obj 461 1288 hsl 48 17 0 3 0 0 empty vel_scale_5_in empty -2 -8
-0 10 -262144 -1 -1 4700 0;
-#X floatatom 511 1288 5 0 0 0 - - vel_scale_5;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 511 1288 5 0 0 0 - - vel_scale_5 0;
 #X obj 260 1333 hsl 48 17 0 1 0 0 empty thres_6_in empty -2 -8 0 10
--262144 -1 -1 4465 0;
-#X floatatom 310 1333 5 0 1 0 - - thres6;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 310 1333 5 0 1 0 - - thres6 0;
 #X obj 360 1333 hsl 48 17 0 32 0 0 empty max_count_6_in empty -2 -8
-0 10 -262144 -1 -1 881 0;
-#X floatatom 410 1333 5 0 32 0 - - max_count_6;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 410 1333 5 0 32 0 - - max_count_6 0;
 #X obj 461 1333 hsl 48 17 0 3 0 0 empty vel_scale_6_in empty -2 -8
-0 10 -262144 -1 -1 4700 0;
-#X floatatom 511 1333 5 0 0 0 - - vel_scale_6;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 511 1333 5 0 0 0 - - vel_scale_6 0;
 #X obj 262 1379 hsl 48 17 0 1 0 0 empty thres_7_in empty -2 -8 0 10
--262144 -1 -1 4465 0;
-#X floatatom 312 1379 5 0 1 0 - - thres7;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 312 1379 5 0 1 0 - - thres7 0;
 #X obj 362 1379 hsl 48 17 0 32 0 0 empty max_count_7_in empty -2 -8
-0 10 -262144 -1 -1 881 0;
-#X floatatom 412 1379 5 0 32 0 - - max_count_7;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 412 1379 5 0 32 0 - - max_count_7 0;
 #X obj 463 1379 hsl 48 17 0 3 0 0 empty vel_scale_7_in empty -2 -8
-0 10 -262144 -1 -1 3133 0;
-#X floatatom 513 1379 5 0 0 0 - - vel_scale_7;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 513 1379 5 0 0 0 - - vel_scale_7 0;
 #X obj 263 1423 hsl 48 17 0 1 0 0 empty thres_8_in empty -2 -8 0 10
--262144 -1 -1 3290 0;
-#X floatatom 313 1423 5 0 1 0 - - thres8;
+#fcfcfc #000000 #000000 0 0;
+#X floatatom 313 1423 5 0 1 0 - - thres8 0;
 #X obj 363 1423 hsl 48 17 0 32 0 0 empty max_count_8_in empty -2 -8
-0 10 -262144 -1 -1 0 0;
-#X floatatom 413 1423 5 0 32 0 - - max_count_8;
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 413 1423 5 0 32 0 - - max_count_8 0;
 #X obj 464 1423 hsl 48 17 0 3 0 0 empty vel_scale_8_in empty -2 -8
-0 10 -262144 -1 -1 1567 0;
-#X floatatom 514 1423 5 0 0 0 - - vel_scale_8;
-#X obj 20 1099 cnv 15 140 36 empty empty empty 0 8 0 12 -225077 -33289
+0 10 #fcfcfc #000000 #000000 0 0;
+#X floatatom 514 1423 5 0 0 0 - - vel_scale_8 0;
+#X obj 20 1099 cnv 15 140 36 empty empty empty 0 8 0 12 #d8f0d0 #202020
 0;
-#X obj 20 1144 cnv 15 140 36 empty empty empty 0 8 0 12 -262013 -33289
+#X obj 20 1144 cnv 15 140 36 empty empty empty 0 8 0 12 #fcf4f0 #202020
 0;
-#X obj 20 1192 cnv 15 140 36 empty empty empty 0 8 0 12 -257398 -33289
+#X obj 20 1192 cnv 15 140 36 empty empty empty 0 8 0 12 #f8d4d4 #202020
 0;
-#X obj 20 1240 cnv 15 140 36 empty empty empty 0 8 0 12 -262136 -33289
+#X obj 20 1240 cnv 15 140 36 empty empty empty 0 8 0 12 #fcfcdc #202020
 0;
-#X obj 20 1287 cnv 15 140 36 empty empty empty 0 8 0 12 -261996 -33289
+#X obj 20 1287 cnv 15 140 36 empty empty empty 0 8 0 12 #fcf4ac #202020
 0;
-#X obj 20 1330 cnv 15 140 36 empty empty empty 0 8 0 12 -261600 -33289
+#X obj 20 1330 cnv 15 140 36 empty empty empty 0 8 0 12 #fcdc7c #202020
 0;
-#X obj 20 1377 cnv 15 140 36 empty empty empty 0 8 0 12 -55982 -33289
+#X obj 20 1377 cnv 15 140 36 empty empty empty 0 8 0 12 #34a8b4 #202020
 0;
-#X obj 20 1422 cnv 15 140 36 empty empty empty 0 8 0 12 -26605 -33289
+#X obj 20 1422 cnv 15 140 36 empty empty empty 0 8 0 12 #187cb0 #202020
 0;
-#X floatatom 73 1117 5 0 32 0 - max_count_1 -;
-#X floatatom 73 1162 5 0 32 0 - max_count_2 -;
-#X floatatom 73 1210 5 0 32 0 - max_count_3 -;
-#X floatatom 73 1257 5 0 32 0 - max_count_4 -;
-#X floatatom 73 1305 5 0 32 0 - max_count_5 -;
-#X floatatom 73 1348 5 0 32 0 - max_count_6 -;
-#X floatatom 73 1395 5 0 32 0 - max_count_7 -;
-#X floatatom 73 1440 5 0 32 0 - max_count_8 -;
-#X floatatom 33 1117 5 0 1 0 - thres1 -;
-#X floatatom 33 1162 5 0 1 0 - thres2 -;
-#X floatatom 33 1210 5 0 1 0 - thres3 -;
-#X floatatom 33 1257 5 0 1 0 - thres4 -;
-#X floatatom 33 1305 5 0 1 0 - thres5 -;
-#X floatatom 33 1348 5 0 1 0 - thres6 -;
-#X floatatom 33 1395 5 0 1 0 - thres7 -;
-#X floatatom 33 1440 5 0 1 0 - thres8 -;
-#X floatatom 115 1117 5 0 3 0 - vel_scale_1 -;
-#X floatatom 115 1162 5 0 3 0 - vel_scale_2 -;
-#X floatatom 115 1210 5 0 3 0 - vel_scale_3 -;
-#X floatatom 115 1257 5 0 3 0 - vel_scale_4 -;
-#X floatatom 115 1305 5 0 3 0 - vel_scale_5 -;
-#X floatatom 115 1348 5 0 3 0 - vel_scale_6 -;
-#X floatatom 115 1395 5 0 3 0 - vel_scale_7 -;
-#X floatatom 115 1440 5 0 3 0 - vel_scale_8 -;
+#X floatatom 73 1117 5 0 32 0 - max_count_1 - 0;
+#X floatatom 73 1162 5 0 32 0 - max_count_2 - 0;
+#X floatatom 73 1210 5 0 32 0 - max_count_3 - 0;
+#X floatatom 73 1257 5 0 32 0 - max_count_4 - 0;
+#X floatatom 73 1305 5 0 32 0 - max_count_5 - 0;
+#X floatatom 73 1348 5 0 32 0 - max_count_6 - 0;
+#X floatatom 73 1395 5 0 32 0 - max_count_7 - 0;
+#X floatatom 73 1440 5 0 32 0 - max_count_8 - 0;
+#X floatatom 33 1117 5 0 1 0 - thres1 - 0;
+#X floatatom 33 1162 5 0 1 0 - thres2 - 0;
+#X floatatom 33 1210 5 0 1 0 - thres3 - 0;
+#X floatatom 33 1257 5 0 1 0 - thres4 - 0;
+#X floatatom 33 1305 5 0 1 0 - thres5 - 0;
+#X floatatom 33 1348 5 0 1 0 - thres6 - 0;
+#X floatatom 33 1395 5 0 1 0 - thres7 - 0;
+#X floatatom 33 1440 5 0 1 0 - thres8 - 0;
+#X floatatom 115 1117 5 0 3 0 - vel_scale_1 - 0;
+#X floatatom 115 1162 5 0 3 0 - vel_scale_2 - 0;
+#X floatatom 115 1210 5 0 3 0 - vel_scale_3 - 0;
+#X floatatom 115 1257 5 0 3 0 - vel_scale_4 - 0;
+#X floatatom 115 1305 5 0 3 0 - vel_scale_5 - 0;
+#X floatatom 115 1348 5 0 3 0 - vel_scale_6 - 0;
+#X floatatom 115 1395 5 0 3 0 - vel_scale_7 - 0;
+#X floatatom 115 1440 5 0 3 0 - vel_scale_8 - 0;
 #X obj -370 1133 change;
 #X obj -369 1180 change;
 #X obj -369 1228 change;
@@ -767,40 +933,40 @@ metronome_as_midi_out_channel;
 #X obj -149 1385 s vel_scale_6_in;
 #X obj -148 1433 s vel_scale_7_in;
 #X obj -148 1477 s vel_scale_8_in;
-#X obj 21 1054 cnv 15 140 36 empty empty empty 0 8 0 12 -229182 -33289
+#X obj 21 1054 cnv 15 140 36 empty empty empty 0 8 0 12 #dcf0f4 #202020
 0;
-#X floatatom 73 1070 5 0 32 0 - max_count_0 -;
-#X floatatom 33 1070 5 0 1 0 - thres0 -;
-#X floatatom 115 1070 5 0 3 0 - vel_scale_0 -;
+#X floatatom 73 1070 5 0 32 0 - max_count_0 - 0;
+#X floatatom 33 1070 5 0 1 0 - thres0 - 0;
+#X floatatom 115 1070 5 0 3 0 - vel_scale_0 - 0;
 #X obj -370 1086 change;
 #X obj -370 1105 s thres_0_in;
 #X obj -276 1087 change;
 #X obj -276 1106 s max_count_0_in;
 #X obj -151 1087 change;
 #X obj -151 1106 s vel_scale_0_in;
-#X obj 34 1040 cnv 9 34 13 empty empty Likelihood 0 6 2 8 -1 -262144
+#X obj 34 1040 cnv 9 34 13 empty empty Likelihood 0 6 2 8 #000000 #fcfcfc
 0;
-#X obj 74 1040 cnv 9 34 13 empty empty MaxCount 0 6 2 8 -1 -262144
+#X obj 74 1040 cnv 9 34 13 empty empty MaxCount 0 6 2 8 #000000 #fcfcfc
 0;
 #X text 533 1014 GENERATION PARAMETERS;
 #N canvas 0 23 1546 1124 midi_mapper 0;
 #X obj 62 303 s thres_0_in;
 #X obj 62 189 r thres0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 131 411 s thres0_ccNum_channelPort;
 #X obj 62 171 r thres0_ccNum_channelPort_r;
 #X obj 62 226 r thres0_cc_type_r;
 #X obj 107 115 s thres0_cc_type;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 13 256;
+#e0c4fc #000000 #000000 13 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 1 256;
+4 #e0c4fc #000000 #000000 1 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X connect 1 0 13 2;
@@ -821,49 +987,49 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 561 pd midi_mapper;
 #X obj 238 577 cnv 4 110 8 empty empty Select_(1)_EndlessEncoder_(2)_Slider/Pot
-0 4 0 4 -33289 -262144 0;
-#X obj 272 553 cnv 4 15 8 empty empty Learn 2 4 0 4 -33289 -262144
+0 4 0 4 #202020 #fcfcfc 0;
+#X obj 272 553 cnv 4 15 8 empty empty Learn 2 4 0 4 #202020 #fcfcfc
 0;
-#X obj 20 598 cnv 15 140 36 empty empty empty 0 8 0 12 -225077 -33289
+#X obj 20 598 cnv 15 140 36 empty empty empty 0 8 0 12 #d8f0d0 #202020
 0;
-#X obj 20 643 cnv 15 140 36 empty empty empty 0 8 0 12 -262013 -33289
+#X obj 20 643 cnv 15 140 36 empty empty empty 0 8 0 12 #fcf4f0 #202020
 0;
-#X obj 20 691 cnv 15 140 36 empty empty empty 0 8 0 12 -257398 -33289
+#X obj 20 691 cnv 15 140 36 empty empty empty 0 8 0 12 #f8d4d4 #202020
 0;
-#X obj 20 739 cnv 15 140 36 empty empty empty 0 8 0 12 -262136 -33289
+#X obj 20 739 cnv 15 140 36 empty empty empty 0 8 0 12 #fcfcdc #202020
 0;
-#X obj 20 786 cnv 15 140 36 empty empty empty 0 8 0 12 -261996 -33289
+#X obj 20 786 cnv 15 140 36 empty empty empty 0 8 0 12 #fcf4ac #202020
 0;
-#X obj 20 829 cnv 15 140 36 empty empty empty 0 8 0 12 -261600 -33289
+#X obj 20 829 cnv 15 140 36 empty empty empty 0 8 0 12 #fcdc7c #202020
 0;
-#X obj 20 876 cnv 15 140 36 empty empty empty 0 8 0 12 -55982 -33289
+#X obj 20 876 cnv 15 140 36 empty empty empty 0 8 0 12 #34a8b4 #202020
 0;
-#X obj 20 921 cnv 15 140 36 empty empty empty 0 8 0 12 -26605 -33289
+#X obj 20 921 cnv 15 140 36 empty empty empty 0 8 0 12 #187cb0 #202020
 0;
-#X floatatom 73 616 5 0 32 0 - max_count_1 -;
-#X floatatom 73 661 5 0 32 0 - max_count_2 -;
-#X floatatom 73 709 5 0 32 0 - max_count_3 -;
-#X floatatom 73 756 5 0 32 0 - max_count_4 -;
-#X floatatom 73 804 5 0 32 0 - max_count_5 -;
-#X floatatom 73 847 5 0 32 0 - max_count_6 -;
-#X floatatom 73 894 5 0 32 0 - max_count_7 -;
-#X floatatom 73 939 5 0 32 0 - max_count_8 -;
-#X floatatom 33 616 5 0 1 0 - thres1 -;
-#X floatatom 33 661 5 0 1 0 - thres2 -;
-#X floatatom 33 709 5 0 1 0 - thres3 -;
-#X floatatom 33 756 5 0 1 0 - thres4 -;
-#X floatatom 33 804 5 0 1 0 - thres5 -;
-#X floatatom 33 847 5 0 1 0 - thres6 -;
-#X floatatom 33 894 5 0 1 0 - thres7 -;
-#X floatatom 33 939 5 0 1 0 - thres8 -;
-#X floatatom 115 616 5 0 3 0 - vel_scale_1 -;
-#X floatatom 115 661 5 0 3 0 - vel_scale_2 -;
-#X floatatom 115 709 5 0 3 0 - vel_scale_3 -;
-#X floatatom 115 756 5 0 3 0 - vel_scale_4 -;
-#X floatatom 115 804 5 0 3 0 - vel_scale_5 -;
-#X floatatom 115 847 5 0 3 0 - vel_scale_6 -;
-#X floatatom 115 894 5 0 3 0 - vel_scale_7 -;
-#X floatatom 115 939 5 0 3 0 - vel_scale_8 -;
+#X floatatom 73 616 5 0 32 0 - max_count_1 - 0;
+#X floatatom 73 661 5 0 32 0 - max_count_2 - 0;
+#X floatatom 73 709 5 0 32 0 - max_count_3 - 0;
+#X floatatom 73 756 5 0 32 0 - max_count_4 - 0;
+#X floatatom 73 804 5 0 32 0 - max_count_5 - 0;
+#X floatatom 73 847 5 0 32 0 - max_count_6 - 0;
+#X floatatom 73 894 5 0 32 0 - max_count_7 - 0;
+#X floatatom 73 939 5 0 32 0 - max_count_8 - 0;
+#X floatatom 33 616 5 0 1 0 - thres1 - 0;
+#X floatatom 33 661 5 0 1 0 - thres2 - 0;
+#X floatatom 33 709 5 0 1 0 - thres3 - 0;
+#X floatatom 33 756 5 0 1 0 - thres4 - 0;
+#X floatatom 33 804 5 0 1 0 - thres5 - 0;
+#X floatatom 33 847 5 0 1 0 - thres6 - 0;
+#X floatatom 33 894 5 0 1 0 - thres7 - 0;
+#X floatatom 33 939 5 0 1 0 - thres8 - 0;
+#X floatatom 115 616 5 0 3 0 - vel_scale_1 - 0;
+#X floatatom 115 661 5 0 3 0 - vel_scale_2 - 0;
+#X floatatom 115 709 5 0 3 0 - vel_scale_3 - 0;
+#X floatatom 115 756 5 0 3 0 - vel_scale_4 - 0;
+#X floatatom 115 804 5 0 3 0 - vel_scale_5 - 0;
+#X floatatom 115 847 5 0 3 0 - vel_scale_6 - 0;
+#X floatatom 115 894 5 0 3 0 - vel_scale_7 - 0;
+#X floatatom 115 939 5 0 3 0 - vel_scale_8 - 0;
 #X obj -370 632 change;
 #X obj -369 679 change;
 #X obj -369 727 change;
@@ -912,11 +1078,11 @@ metronome_as_midi_out_channel;
 #X obj -149 884 s vel_scale_6_in;
 #X obj -148 932 s vel_scale_7_in;
 #X obj -148 976 s vel_scale_8_in;
-#X obj 21 553 cnv 15 140 36 empty empty empty 0 8 0 12 -229182 -33289
+#X obj 21 553 cnv 15 140 36 empty empty empty 0 8 0 12 #dcf0f4 #202020
 0;
-#X floatatom 73 569 5 0 32 0 - max_count_0 -;
-#X floatatom 33 569 5 0 1 0 - thres0 -;
-#X floatatom 115 569 5 0 3 0 - vel_scale_0 -;
+#X floatatom 73 569 5 0 32 0 - max_count_0 - 0;
+#X floatatom 33 569 5 0 1 0 - thres0 - 0;
+#X floatatom 115 569 5 0 3 0 - vel_scale_0 - 0;
 #X obj -370 585 change;
 #X obj -370 604 s thres_0_in;
 #X obj -276 586 change;
@@ -924,16 +1090,16 @@ metronome_as_midi_out_channel;
 #X obj -151 586 change;
 #X obj -151 605 s vel_scale_0_in;
 #N canvas 0 23 960 1125 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 1 256;
+4 #e0c4fc #000000 #000000 1 256;
 #X obj 193 46 unpack;
-#X floatatom 206 617 5 0 0 0 - - -;
+#X floatatom 206 617 5 0 0 0 - - - 0;
 #X obj 107 115 s max_count_0_cc_type;
 #X obj 101 165 r max_count_0_ccNum_channelPort_r;
 #X obj 73 187 r max_count_0;
@@ -961,16 +1127,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 561 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 1 256;
+4 #e0c4fc #000000 #000000 1 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 107 115 s vel_scale_0_cc_type;
 #X obj 62 171 r vel_scale_0_ccNum_channelPort_r;
 #X obj 62 189 r vel_scale_0;
@@ -998,17 +1164,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 561 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 14 256;
+#e0c4fc #000000 #000000 14 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 2 256;
+4 #e0c4fc #000000 #000000 2 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres1_cc_type;
@@ -1035,16 +1201,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 608 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 2 256;
+4 #e0c4fc #000000 #000000 2 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1074,16 +1240,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 608 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 2 256;
+4 #e0c4fc #000000 #000000 2 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1111,17 +1277,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 608 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 15 256;
+#e0c4fc #000000 #000000 15 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 3 256;
+4 #e0c4fc #000000 #000000 3 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres2_cc_type;
@@ -1148,16 +1314,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 653 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 3 256;
+4 #e0c4fc #000000 #000000 3 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1187,16 +1353,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 653 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 3 256;
+4 #e0c4fc #000000 #000000 3 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1224,17 +1390,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 653 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 16 256;
+#e0c4fc #000000 #000000 16 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 4 256;
+4 #e0c4fc #000000 #000000 4 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres3_cc_type;
@@ -1261,16 +1427,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 702 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 4 256;
+4 #e0c4fc #000000 #000000 4 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1300,16 +1466,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 702 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 4 256;
+4 #e0c4fc #000000 #000000 4 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1337,17 +1503,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 702 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 17 256;
+#e0c4fc #000000 #000000 17 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 5 256;
+4 #e0c4fc #000000 #000000 5 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres4_cc_type;
@@ -1374,16 +1540,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 750 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 5 256;
+4 #e0c4fc #000000 #000000 5 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1413,16 +1579,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 750 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 5 256;
+4 #e0c4fc #000000 #000000 5 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1450,17 +1616,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 750 pd midi_mapper;
 #N canvas 629 -984 1546 1035 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 18 256;
+#e0c4fc #000000 #000000 18 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 6 256;
+4 #e0c4fc #000000 #000000 6 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 62 171 r thres5_ccNum_channelPort_r;
@@ -1487,16 +1653,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 799 pd midi_mapper;
 #N canvas 1031 -852 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 6 256;
+4 #e0c4fc #000000 #000000 6 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1524,16 +1690,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 799 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 6 256;
+4 #e0c4fc #000000 #000000 6 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1561,17 +1727,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 799 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 19 256;
+#e0c4fc #000000 #000000 19 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 7 256;
+4 #e0c4fc #000000 #000000 7 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres6_cc_type;
@@ -1598,16 +1764,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 841 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 7 256;
+4 #e0c4fc #000000 #000000 7 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1635,16 +1801,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 841 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 7 256;
+4 #e0c4fc #000000 #000000 7 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1672,17 +1838,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 841 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 20 256;
+#e0c4fc #000000 #000000 20 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 8 256;
+4 #e0c4fc #000000 #000000 8 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres7_cc_type;
@@ -1709,16 +1875,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 888 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 8 256;
+4 #e0c4fc #000000 #000000 8 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1746,16 +1912,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 888 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 31 256;
+#e0c4fc #000000 #000000 31 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 8 256;
+4 #e0c4fc #000000 #000000 8 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1783,17 +1949,17 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 888 pd midi_mapper;
 #N canvas 0 23 1546 1124 midi_mapper 0;
-#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 106 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 62 208 r trs_stepSize_min_max;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 21 256;
+#e0c4fc #000000 #000000 21 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 9 256;
+4 #e0c4fc #000000 #000000 9 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
 #X obj 107 115 s thres8_cc_type;
@@ -1820,16 +1986,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 238 933 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 12 256;
+#e0c4fc #000000 #000000 12 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 9 256;
+4 #e0c4fc #000000 #000000 9 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r max_count_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1857,16 +2023,16 @@ metronome_as_midi_out_channel;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 372 933 pd midi_mapper;
 #N canvas 720 23 720 825 midi_mapper 0;
-#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 -232576 -1
--1 1;
-#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 -232576 -1 -1 0
-1;
+#X obj 107 103 hradio 10 1 0 2 empty empty empty 0 -8 0 6 #e0c4fc #000000
+#000000 0;
+#X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
+#000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
--232576 -1 -1 119 256;
+#e0c4fc #000000 #000000 119 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 -232576 -1 -1 1 256;
+4 #e0c4fc #000000 #000000 1 256;
 #X obj 193 46 unpack;
-#X floatatom 225 277 5 0 0 0 - - -;
+#X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 208 r vel_scale_stepSize_min_max;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
 ;
@@ -1893,7 +2059,7 @@ metronome_as_midi_out_channel;
 #X connect 11 0 0 0;
 #X coords 0 -1 1 1 116 15 2 100 100;
 #X restore 506 933 pd midi_mapper;
-#X obj 114 1040 cnv 9 34 13 empty empty Volume 3 6 2 8 -33289 -262144
+#X obj 114 1040 cnv 9 34 13 empty empty Volume 3 6 2 8 #202020 #fcfcfc
 0;
 #X obj 762 525 loadbang;
 #X msg 762 542 0.005 0 1;
@@ -1907,141 +2073,136 @@ metronome_as_midi_out_channel;
 #X text 323 513 MIDI MAPPING (PLACE CC DEVICE AS FIRST MIDI DEVICE)
 ;
 #X obj 42 516 bng 20 250 50 0 empty empty SAVE_MIDI_MAPPING -36 -7
-0 10 -260097 -1 -1;
-#X obj 122 516 bng 20 250 50 0 empty empty LOAD 0 -7 0 10 -260097 -1
--1;
+0 10 #fc8000 #000000 #000000;
+#X obj 122 516 bng 20 250 50 0 empty empty LOAD 0 -7 0 10 #fc8000 #000000
+#000000;
 #X obj -144 493 s save_midi_mapping;
 #X obj -144 516 s load_midi_mapping;
 #X obj 240 520 bng 10 250 50 0 empty empty FORGET_MIDI_MAPPING -30
--7 0 5 -258113 -1 -1;
+-7 0 5 #fc0400 #000000 #000000;
 #X obj -187 454 s forget_midi_mapping;
-#X obj 34 539 cnv 9 34 13 empty empty Likelihood 0 6 2 8 -1 -262144
+#X obj 34 539 cnv 9 34 13 empty empty Likelihood 0 6 2 8 #000000 #fcfcfc
 0;
-#X obj 74 539 cnv 9 34 13 empty empty MaxCount 0 6 2 8 -1 -262144 0
-;
-#X obj 114 539 cnv 9 34 13 empty empty Volume 3 6 2 8 -33289 -262144
+#X obj 74 539 cnv 9 34 13 empty empty MaxCount 0 6 2 8 #000000 #fcfcfc
+0;
+#X obj 114 539 cnv 9 34 13 empty empty Volume 3 6 2 8 #202020 #fcfcfc
 0;
 #X msg 1552 193 1503;
 #X obj 1411 157 sel 1 2 3 4;
-#X obj 1 1504 cnv 15 698 490 empty empty empty 20 12 0 14 -237242 -66577
+#X obj 1 1504 cnv 15 698 490 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
-#X obj 817 1904 *~;
-#X obj 27 1523 cnv 15 300 150 empty empty Internal_Drum_Synth 20 12
-0 14 -261022 -66577 0;
-#X obj -176 1671 synths/multiSampleDrumSynth/drum_sample_player, f
-22;
-#X obj 179 1592 vsl 15 64 0 1 0 0 empty empty Wet 0 -9 0 10 -262144
--1 -1 0 0;
-#X obj 229 1592 vsl 15 64 0 3 0 0 empty empty Room_Size -15 -9 0 10
--262144 -1 -1 1050 0;
-#X obj 280 1592 vsl 15 64 0 3 0 0 empty empty Damp 0 -9 0 10 -262144
--1 -1 4200 0;
-#X obj -102 1530 loadbang;
-#X msg -99 1568 2;
-#X msg -132 1568 0.5;
-#X obj 822 1952 dac~;
-#X obj 509 1668 synths/santur/santur-poly;
-#X obj 844 1906 *~;
-#X obj -251 1671 r drumNote;
-#X obj 367 1523 cnv 15 300 150 empty empty Internal_Plucked_Synth 20
-12 0 14 -261682 -66577 0;
-#X obj 519 1592 vsl 15 64 0 1 0 0 empty empty Wet 0 -9 0 10 -262144
--1 -1 1890 0;
-#X obj 569 1592 vsl 15 64 0 3 0 0 empty empty Room_Size -15 -9 0 10
--262144 -1 -1 630 0;
-#X obj 620 1592 vsl 15 64 0 3 0 0 empty empty Damp 0 -9 0 10 -262144
--1 -1 4200 0;
-#X obj 751 1511 loadbang;
-#X msg 792 1547 0.3;
-#X msg 759 1547 2;
-#X msg 726 1547 0.3;
-#X obj 71 1587 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 -262144
--1 -1 1380 0;
-#X msg -35 1568 0.6;
-#X obj 392 1585 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 -262144
--1 -1 2300 0;
+#X obj 27 1523 cnv 15 300 150 empty empty Drum_SoundFont 20 12 0 14
+#fcb874 #404040 0;
+#X obj 367 1523 cnv 15 300 150 empty empty Instrumental_SoundFont 20
+12 0 14 #fce0c4 #404040 0;
+#X obj 71 1587 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 #fcfcfc
+#000000 #000000 0 0;
+#X obj 392 1585 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 #fcfcfc
+#000000 #000000 0 0;
 #X msg 829 1546 1;
-#X obj 370 1698 cnv 15 300 150 empty empty Internal_Electric_Piano_Synth
-20 12 0 14 -203904 -66577 0;
-#X obj 638 1703 tgl 15 0 empty empty enable -10 22 0 10 -262144 -1
--1 0 1;
-#X obj 522 1767 vsl 15 64 0 1 0 0 empty empty Wet 0 -9 0 10 -262144
--1 -1 1071 0;
-#X obj 572 1767 vsl 15 64 0 3 0 0 empty empty Room_Size -15 -9 0 10
--262144 -1 -1 2100 0;
-#X obj 623 1767 vsl 15 64 0 3 0 0 empty empty Damp 0 -9 0 10 -262144
--1 -1 4200 0;
-#X obj 395 1759 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 -262144
--1 -1 2300 0;
-#X obj 492 1852 synths/EP_MK/EP-MK1, f 22;
-#X obj 629 1531 tgl 15 0 empty empty enable -10 22 0 10 -262144 -1
--1 0 1;
-#X obj 295 1533 tgl 15 0 empty empty enable -10 22 0 10 -262144 -1
--1 1 1;
-#X obj 876 1907 *~;
-#X obj 745 1690 loadbang;
-#X msg 823 1725 1;
-#X msg 720 1726 1;
-#X msg 753 1726 2;
-#X obj 457 1789 tgl 15 0 empty empty Sustain -10 -8 0 10 -262144 -1
--1 0 1;
-#X obj 402 1720 r enable_ep_mk1_sustain;
-#X obj 421 1827 s sustain_out;
-#X msg 786 1726 0.17;
-#X msg -67 1568 0;
+#X obj 629 1531 tgl 15 0 empty empty enable -10 22 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 295 1533 tgl 15 0 empty empty enable -10 22 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 10 1886 cnv 15 300 100 empty empty Midi_Out_Routing 20 12 0
-14 -261952 -33289 0;
+14 #fcf0fc #202020 0;
 #X obj 46 1927 hradio 15 1 0 16 empty empty drum_out_channel 0 20 0
-10 -262144 -1 -1 9;
-#X obj -395 1792 s drum_out_channel_init;
-#X obj -395 1819 s drum_out_channel;
-#X obj -264 1817 r drum_out_channel_init;
-#N canvas 0 23 859 500 route_midi_to_synths 0;
-#X obj 60 104 pack f f;
-#X obj 60 53 notein;
-#X obj 60 124 spigot;
-#X obj 213 31 r drum_out_channel;
-#X obj 165 128 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
-#X floatatom 244 138 5 0 0 0 - - -;
-#X floatatom 161 58 5 0 0 0 - - -;
-#X obj 82 81 expr if($f1!=$f2 \, if($f1!=$f3 \, 1 \, 0) \, 0);
-#X obj 213 49 r metronome_as_midi_out_channel;
-#X floatatom 321 112 5 0 0 0 - - -;
-#X obj 288 296 outlet;
-#X obj 64 274 outlet;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 1 1 0 1;
-#X connect 1 2 6 0;
-#X connect 1 2 7 0;
-#X connect 2 0 10 0;
-#X connect 2 0 11 0;
-#X connect 3 0 5 0;
-#X connect 3 0 7 1;
-#X connect 7 0 2 1;
-#X connect 7 0 4 0;
-#X connect 8 0 7 2;
-#X connect 8 0 9 0;
-#X restore 699 1778 pd route_midi_to_synths;
-#X obj -194 1838 - 1;
-#X obj -298 1839 change;
-#X obj -330 1839 + 1;
-#X obj -226 1790 r drum_out_channel;
-#X obj 46 1956 hradio 15 1 0 16 empty empty metronome_as_note_out_channel
-0 20 0 10 -262144 -1 -1 15;
-#X obj -194 1946 - 1;
-#X obj -298 1947 change;
-#X obj -330 1947 + 1;
-#X obj -226 1897 r metronome_as_midi_out_channel;
-#X obj -264 1925 r metronome_as_midi_out_channel_init;
-#X obj -395 1927 s metronome_as_midi_out_channel_channel;
-#X obj -395 1900 s metronome_as_midi_out_channel_init;
+10 #fcfcfc #000000 #000000 0;
+#X obj -180 2196 s drum_out_channel_init;
+#X obj -180 2223 s drum_out_channel;
+#X obj -49 2221 r drum_out_channel_init;
+#X obj 21 2242 - 1;
+#X obj -83 2243 change;
+#X obj -115 2243 + 1;
+#X obj -11 2194 r drum_out_channel;
+#X obj 46 2012 hradio 15 1 0 16 empty empty metronome_as_note_out_channel
+0 20 0 10 #fcfcfc #000000 #000000 0;
+#X obj 21 2350 - 1;
+#X obj -83 2351 change;
+#X obj -115 2351 + 1;
+#X obj -11 2301 r metronome_as_midi_out_channel;
+#X obj -49 2329 r metronome_as_midi_out_channel_init;
+#X obj -180 2331 s metronome_as_midi_out_channel_channel;
+#X obj -180 2304 s metronome_as_midi_out_channel_init;
 #X text 47 1907 1;
 #X text 92 1907 4;
 #X text 153 1907 8;
 #X text 208 1906 12;
 #X text 267 1906 16;
+#X obj 28 1691 outlet;
+#X obj 798 1443 loadbang;
+#X msg 798 1467 1;
+#X obj 945 1744 dac~;
+#X obj 942 1656 *~;
+#X obj 1182 1635 print info;
+#X text 800 1615 click to open file -->;
+#N canvas 1306 546 492 281 open 0;
+#X obj 70 61 openpanel;
+#X obj 70 31 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
+#000000;
+#X text 96 33 load a different soundfont;
+#X obj 70 215 outlet;
+#X text 215 78 If no extension is given \, it searches for both ".sf2"
+and ".sf3" extensions. This is the same for the argument., f 38;
+#X msg 89 86 symbol sf/Theremin;
+#X text 137 178 no symbol opens dialog window;
+#X msg 70 117 open \$1;
+#X msg 84 147 open sf/Waves.sf2;
+#X msg 102 179 open;
+#X obj 54 7 inlet;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 1 0;
+#X restore 941 1583 pd open;
+#X text 850 1578 load --> soundfonts, f 10;
+#X obj 629 1577 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 553 1598 Load Soundfont;
+#X obj -107 1671 print info;
+#X text -489 1651 click to open file -->;
+#N canvas 1306 546 492 281 open 0;
+#X obj 70 61 openpanel;
+#X obj 70 31 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
+#000000;
+#X text 96 33 load a different soundfont;
+#X obj 70 215 outlet;
+#X text 215 78 If no extension is given \, it searches for both ".sf2"
+and ".sf3" extensions. This is the same for the argument., f 38;
+#X msg 89 86 symbol sf/Theremin;
+#X text 137 178 no symbol opens dialog window;
+#X msg 70 117 open \$1;
+#X msg 84 147 open sf/Waves.sf2;
+#X msg 102 179 open;
+#X obj 54 7 inlet;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 1 0;
+#X restore -348 1619 pd open;
+#X text -439 1614 load --> soundfonts, f 10;
+#X obj -343 1828 dac~;
+#X obj -348 1592 r drumNote;
+#X obj 295 1579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj -344 1709 *~;
+#X text -355 1563 Drum Soundfont;
+#X text 211 1601 Load Soundfont;
+#X text 139 1729 To be able to use the soundfonts: 1 Install FluidSynth
+https://www.fluidsynth.org/download/ 2 Install ELSE external (from
+help/Find_externals in pd);
+#X obj 977 1431 notein;
+#X obj 985 1475 pack f f;
+#X floatatom 1054 1541 5 0 0 0 - - - 0;
+#X floatatom 1120 1517 5 0 0 0 - - - 0;
+#X obj -348 1651 else/sfont~ ../../soundfonts/DrumsKit.sf2;
+#X obj 941 1615 else/sfont~ ../../soundfonts/rhodes.sf2;
 #X connect 2 0 6 0;
 #X connect 3 0 5 0;
 #X connect 4 0 6 0;
@@ -2203,334 +2364,69 @@ metronome_as_midi_out_channel;
 #X connect 329 1 12 0;
 #X connect 329 2 28 0;
 #X connect 329 3 328 0;
-#X connect 331 0 340 1;
-#X connect 331 0 340 0;
-#X connect 333 0 331 0;
-#X connect 334 0 333 2;
-#X connect 335 0 333 3;
-#X connect 336 0 333 4;
-#X connect 337 0 338 0;
-#X connect 337 0 374 0;
-#X connect 337 0 339 0;
-#X connect 337 0 353 0;
-#X connect 338 0 336 0;
-#X connect 339 0 335 0;
-#X connect 341 0 342 0;
-#X connect 342 0 340 1;
-#X connect 342 0 340 0;
-#X connect 343 0 333 0;
-#X connect 345 0 341 2;
-#X connect 346 0 341 3;
-#X connect 347 0 341 4;
-#X connect 348 0 351 0;
-#X connect 348 0 350 0;
-#X connect 348 0 349 0;
-#X connect 348 0 355 0;
-#X connect 349 0 345 0;
-#X connect 350 0 347 0;
-#X connect 351 0 346 0;
-#X connect 352 0 331 1;
-#X connect 353 0 352 0;
-#X connect 354 0 342 1;
-#X connect 355 0 354 0;
-#X connect 357 0 362 2;
-#X connect 358 0 362 3;
-#X connect 359 0 362 4;
-#X connect 360 0 362 5;
-#X connect 361 0 365 1;
-#X connect 362 0 365 0;
-#X connect 363 0 341 1;
-#X connect 364 0 333 1;
-#X connect 365 0 340 1;
-#X connect 365 0 340 0;
-#X connect 366 0 368 0;
-#X connect 366 0 369 0;
-#X connect 366 0 373 0;
-#X connect 366 0 367 0;
-#X connect 367 0 361 0;
-#X connect 368 0 359 0;
-#X connect 369 0 360 0;
-#X connect 370 0 362 1;
-#X connect 370 0 372 0;
-#X connect 371 0 370 0;
-#X connect 373 0 358 0;
-#X connect 374 0 334 0;
-#X connect 376 0 382 0;
-#X connect 379 0 381 0;
-#X connect 380 0 341 0;
-#X connect 380 1 362 0;
-#X connect 381 0 376 0;
+#X connect 333 0 360 0;
+#X connect 333 0 378 1;
+#X connect 334 0 364 1;
+#X connect 335 0 334 0;
+#X connect 335 0 333 0;
+#X connect 339 0 344 0;
+#X connect 342 0 343 0;
+#X connect 343 0 339 0;
+#X connect 344 0 345 0;
+#X connect 345 0 340 0;
+#X connect 345 0 341 0;
+#X connect 346 0 343 0;
+#X connect 347 0 349 0;
+#X connect 348 0 347 0;
+#X connect 349 0 350 0;
+#X connect 350 0 353 0;
+#X connect 350 0 354 0;
+#X connect 351 0 348 0;
+#X connect 352 0 348 0;
+#X connect 361 0 362 0;
+#X connect 361 0 335 0;
+#X connect 362 0 337 0;
+#X connect 362 0 336 0;
+#X connect 364 0 363 0;
+#X connect 364 0 363 1;
+#X connect 367 0 387 0;
+#X connect 369 0 367 0;
+#X connect 373 0 386 0;
+#X connect 376 0 386 0;
+#X connect 377 0 373 0;
+#X connect 378 0 375 0;
+#X connect 378 0 375 1;
 #X connect 382 0 383 0;
-#X connect 383 0 377 0;
-#X connect 383 0 378 0;
-#X connect 384 0 381 0;
-#X connect 385 0 387 0;
-#X connect 386 0 385 0;
-#X connect 387 0 388 0;
-#X connect 388 0 391 0;
-#X connect 388 0 392 0;
-#X connect 389 0 386 0;
-#X connect 390 0 386 0;
-#X coords 0 -1 1 1 700 492 1 0 1503;
+#X connect 382 0 384 0;
+#X connect 382 1 383 1;
+#X connect 382 1 385 0;
+#X connect 383 0 387 0;
+#X connect 386 0 378 0;
+#X connect 386 2 371 0;
+#X connect 387 0 364 0;
+#X connect 387 2 365 0;
+#X coords 0 -1 1 1 700 492 1 0 0;
 #X restore 132 394 pd \$0-params;
-#X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 428 46 loadbang;
-#X msg 429 64 1;
-#N canvas 656 23 784 825 \$0-saveloadsession 0;
-#X obj 181 781 cnv 15 398 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X obj 964 403 inlet;
-#X msg 971 516 0;
-#X obj 844 421 hradio 15 1 0 7 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X obj 1040 606 pack f f;
-#X obj 964 447 t f f b;
-#X obj 944 479 != 0;
-#X text 811 552 get's messy without this ->;
-#X text 1028 350 https://forum.pdpatchrepo.info/topic/9799/gui-tab-like-question/2
-;
-#X msg 1111 560 80;
-#X obj 1111 516 sel 1 2 3 4 5 6;
-#X obj 994 696 s pd-\$0-saveloadsession;
-#X obj 181 81 cnv 15 398 68 empty empty empty 20 12 0 14 -237242 -66577
-0;
-#X floatatom 228 96 8 0 0 2 nSnapshots nSnapshots_r nSnapshots_s;
-#X floatatom 237 117 6 0 0 3 Current - -;
-#X obj 310 116 bng 20 250 50 0 empty next_snapshot_r > 5 9 0 18 -4034
--1 -159808;
-#X obj 189 117 bng 20 250 50 0 empty previous_snapshot_r < 5 9 0 18
--261234 -1 -159808;
-#X obj 368 105 bng 30 250 50 0 empty take_snapshot_r SNAPSHOT -5 -7
-0 8 -204800 -1 -1;
-#X floatatom 225 253 5 0 0 0 - - -;
-#X floatatom 290 211 5 0 0 0 - - -;
-#X obj 392 189 r reset;
-#X msg 342 189 0;
-#X obj 225 273 s nSnapshots_r;
-#N canvas 0 23 976 557 snapshot_counter 0;
-#X obj 174 183 f;
-#X obj 212 183 + 1;
-#X obj 174 136 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 176 252 5 0 0 0 - - -;
-#X floatatom 177 339 5 0 0 0 - - -;
-#X obj 161 54 inlet;
-#X text 210 59 increase count;
-#X obj 177 375 outlet;
-#X obj 399 53 inlet;
-#X floatatom 399 77 5 0 0 0 - - -;
-#X text 453 55 start at shift;
-#X obj 627 59 inlet;
-#X obj 627 87 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X text 680 57 reset;
-#X msg 365 221 0;
-#X obj 177 288 + 1;
-#X msg 214 297 \$1;
-#X connect 0 0 3 0;
-#X connect 1 0 0 1;
-#X connect 2 0 0 0;
-#X connect 3 0 1 0;
-#X connect 3 0 15 0;
-#X connect 4 0 7 0;
-#X connect 5 0 2 0;
-#X connect 8 0 9 0;
-#X connect 9 0 15 1;
-#X connect 9 0 16 0;
-#X connect 11 0 12 0;
-#X connect 12 0 14 0;
-#X connect 14 0 4 0;
-#X connect 14 0 3 0;
-#X connect 15 0 4 0;
-#X connect 16 0 4 0;
-#X restore 225 232 pd snapshot_counter;
-#N canvas 0 23 1245 819 move_to_snapshot 0;
-#X obj 285 26 inlet;
-#X obj 385 28 inlet;
-#X obj 478 36 inlet;
-#X text 374 -1 move right;
-#X text 281 0 move left;
-#X text 486 3 nSnapshots;
-#X msg 287 64 -1;
-#X msg 387 62 1;
-#X floatatom 344 299 5 0 0 0 - - -;
-#X floatatom 539 82 5 0 0 0 - - -;
-#X obj 334 496 outlet;
-#X text 381 463 current snapshot pos;
-#X obj 244 188 f;
-#X obj 827 33 inlet, f 6;
-#X floatatom 827 81 5 0 0 0 - - -;
-#X text 795 4 force position to;
-#X obj 290 155 t f b;
-#X floatatom 396 244 5 0 0 0 - - -;
-#X obj 343 347 mod;
-#X obj 347 391 + 1;
-#X obj 322 216 expr if ($f3==0 \, 1 \, if($f1<0 \, $f2-1 \, $f2+1))
-;
-#X floatatom 355 431 5 0 0 0 - - -;
-#X obj 357 122 spigot;
-#X obj 417 100 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
-1;
-#X obj 456 94 != 0;
-#X obj 463 294 - 1;
-#X obj 624 300 - 1;
-#X connect 0 0 6 0;
-#X connect 1 0 7 0;
-#X connect 2 0 9 0;
-#X connect 6 0 22 0;
-#X connect 7 0 22 0;
-#X connect 8 0 12 1;
-#X connect 8 0 18 0;
-#X connect 9 0 18 1;
-#X connect 9 0 20 2;
-#X connect 9 0 24 0;
-#X connect 9 0 25 0;
-#X connect 12 0 20 1;
-#X connect 13 0 14 0;
-#X connect 14 0 26 0;
-#X connect 16 0 20 0;
-#X connect 16 1 12 0;
-#X connect 17 0 8 0;
-#X connect 18 0 19 0;
-#X connect 19 0 21 0;
-#X connect 20 0 17 0;
-#X connect 21 0 10 0;
-#X connect 22 0 16 0;
-#X connect 23 0 22 1;
-#X connect 24 0 23 0;
-#X connect 25 0 8 0;
-#X connect 26 0 8 0;
-#X restore 49 234 pd move_to_snapshot;
-#X floatatom 64 271 5 0 0 0 - - -;
-#X obj 53 300 s currentSnapshots;
-#X obj 126 195 change;
-#X obj 299 160 r snapshot_init_from_load_session;
-#X obj 218 804 bng 30 250 50 0 empty empty SAVE_TEMPLATE -18 -7 0 10
--262144 -1 -1;
-#X obj 318 804 bng 30 250 50 0 empty empty LOAD_TEMPLATE -18 -7 0 10
--262144 -1 -1;
-#X obj 229 869 res/save_preset;
-#X msg 994 652 donecanvasdialog 1 -1 \$1 0 -1 1 1 400 70 180 \$2;
-#X obj 460 110 bng 20 250 50 0 empty empty SAVE_SESSION -18 -7 0 10
--159808 -1 -1;
-#X obj 520 110 bng 20 250 50 0 empty empty LOAD 0 -7 0 10 -159808 -257985
--1;
-#X obj 602 187 r reset;
-#X obj 476 231 res/save_session;
-#X obj 619 232 r currentSnapshots;
-#X obj 552 161 r nSnapshots_r;
-#X obj 456 201 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X msg 1165 553 480;
-#X obj 181 481 cnv 15 398 68 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X text 206 522 You can move back to a snapshot taken previously;
-#X msg 1237 553 780;
-#X msg 1199 553 600;
-#X obj 181 601 cnv 15 398 68 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X text 181 615 If you like a pattern \, take a snapshot of it;
-#X text 181 598 Save the entirety of the session \, and reload it later
-on;
-#X text 205 505 Snapshots save the current state of the program;
-#X text 204 488 This functionality requires the cyclone/coll external
-;
-#X text 180 633 You can navigate back to any of the snapshots during
-the performance;
-#X msg 1283 553 900;
-#X obj 181 901 cnv 15 398 68 empty empty empty 20 12 0 14 -262144 -66577
-0;
-#X text 181 923 You can save the parameters of the program as a template
-;
-#X obj 189 138 cnv 2 19 8 empty empty < 7 4 0 9 -260097 -262144 0;
-#X obj 351 138 cnv 2 66 8 empty empty Shift+Enter 4 4 0 9 -260097 -262144
-0;
-#X obj 310 138 cnv 2 19 8 empty empty > 7 4 0 9 -260097 -262144 0;
-#X connect 1 0 3 0;
-#X connect 2 0 4 0;
-#X connect 3 0 5 0;
-#X connect 4 0 32 0;
-#X connect 5 0 6 0;
-#X connect 5 1 10 0;
-#X connect 5 2 2 0;
-#X connect 6 0 4 0;
-#X connect 9 0 4 1;
-#X connect 10 0 9 0;
-#X connect 10 1 40 0;
-#X connect 10 2 44 0;
-#X connect 10 3 43 0;
-#X connect 10 4 51 0;
-#X connect 14 0 27 0;
-#X connect 15 0 24 1;
-#X connect 16 0 24 0;
-#X connect 17 0 23 0;
-#X connect 18 0 22 0;
-#X connect 18 0 24 2;
-#X connect 19 0 23 1;
-#X connect 20 0 21 0;
-#X connect 20 0 23 2;
-#X connect 21 0 19 0;
-#X connect 23 0 18 0;
-#X connect 24 0 25 0;
-#X connect 25 0 14 0;
-#X connect 25 0 26 0;
-#X connect 27 0 24 3;
-#X connect 28 0 19 0;
-#X connect 29 0 31 0;
-#X connect 30 0 31 1;
-#X connect 32 0 11 0;
-#X connect 33 0 36 1;
-#X connect 34 0 39 0;
-#X connect 35 0 36 3;
-#X connect 37 0 36 4;
-#X connect 38 0 36 2;
-#X connect 39 0 36 0;
-#X connect 40 0 4 1;
-#X connect 43 0 4 1;
-#X connect 44 0 4 1;
-#X connect 51 0 4 1;
-#X coords 0 -1 1 1 400 70 1 180 80;
-#X restore 432 117 pd \$0-saveloadsession;
-#X obj 860 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 860 67 s reset;
-#X obj 852 139 bng 30 250 50 0 reset empty RESET_PROGRAM -17 -10 0
-8 -258113 -1 -1;
-#X obj 851 325 bng 30 250 50 0 empty clear_groove_r Clear_Groove -17
--10 0 8 -261234 -1 -1;
-#X msg 925 477 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r
-0 \; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r
-0 \; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
-0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
-0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
-#X msg 1006 477 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
-ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
-0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
-\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
-ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
-0 \; ut32r 0 \;;
-#X obj 845 359 cnv 2 45 8 empty empty Shift+D 4 4 0 9 -260097 -262144
-0;
-#X obj 1014 144 res/main;
-#X msg 48 467 2;
-#X obj 101 270 vradio 30 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
+#X msg 48 467 4;
+#X text 1047 522 Instrumental Soundfont;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
-#X connect 8 0 13 0;
-#X connect 9 0 14 0;
+#X connect 9 0 12 0;
 #X connect 10 0 11 0;
-#X connect 10 0 27 0;
-#X connect 11 0 8 0;
-#X connect 11 0 28 0;
-#X connect 15 0 18 0;
+#X connect 11 0 9 0;
+#X connect 13 0 14 0;
 #X connect 16 0 17 0;
-#X connect 17 0 15 0;
-#X connect 19 0 20 0;
-#X connect 22 0 23 0;
-#X connect 22 0 24 0;
-#X connect 27 0 9 0;
-#X connect 28 0 12 0;
+#X connect 16 0 18 0;
+#X connect 22 0 21 0;
+#X connect 97 0 100 0;
+#X connect 100 0 101 0;
+#X connect 101 0 102 0;
+#X connect 103 0 105 0;
+#X connect 105 0 104 0;
+#X connect 107 0 108 0;
+#X connect 110 0 113 0;
+#X connect 111 0 112 0;
+#X connect 111 0 114 0;
+#X connect 114 0 110 0;
 #X coords 0 0 1 1 800 800 2 100 100;
