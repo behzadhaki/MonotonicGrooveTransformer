@@ -52,6 +52,19 @@ def generate_from_groove(model_, in_groove, voice_thresholds_, voice_max_count_a
         return_concatenated=False,
         sampling_mode=0)
 
+def generate_random_pattern(model_, voice_thresholds_, voice_max_count_allowed_,
+                            means_dict, stds_dict, style):
+    assert style in means_dict, f"Style must be one of {list(means_dict.keys())}"
+    means = means_dict[style]
+    stds = stds_dict[style]
+    random_z = [np.random.normal(loc=means[ix], scale=stds[ix]) for ix in range(128)]
+    # Step 3. Generate using the latent encoding
+    return model_.sample(
+        latent_z=torch.tensor(random_z, dtype=torch.float32),
+        voice_thresholds=voice_thresholds_,
+        voice_max_count_allowed=voice_max_count_allowed_,
+        return_concatenated=False,
+        sampling_mode=0)
 
 def decode_z_into_drums(model_, latent_z, voice_thresholds, voice_max_count_allowed):
     """ returns a full drum pattern based on a provided latent encoding Z

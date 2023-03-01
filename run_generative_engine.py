@@ -47,10 +47,11 @@ if __name__ == '__main__':
     # load per style means/stds of z encodings
     file = open(os.path.join(model_path, "z_means.pkl"), 'rb')
     z_means_dict = pickle.load(file)
+    print(z_means_dict)
     file.close()
     file = open(os.path.join(model_path, "z_stds.pkl"), 'rb')
     z_stds_dict = pickle.load(file)
-    file.close()
+
     print("Available styles: ", list(z_means_dict.keys()))
     # get_random_sample_from_style(style_="global",
     #                              model_=groove_transformer_vae,
@@ -121,12 +122,29 @@ if __name__ == '__main__':
         # only generate new pattern when there isnt any other osc messages backed up for processing in the message_queue
         if (message_queue.qsize() == 0):
 
+            # ----------------------------------------------------------------------------------------------- #
+            # ----------------------------------------------------------------------------------------------- #
+            # EITHER GENERATE USING GROOVE OR GENERATE A RANDOM PATTERN
+
+            # case 1. generate using groove
             h_new, v_new, o_new = generate_from_groove(
                 model_=groove_transformer_vae,
                 in_groove=input_tensor,
                 voice_thresholds_=voice_thresholds,
                 voice_max_count_allowed_=voice_max_count_allowed)
 
+            # case 2. generate randomly
+            # h_new, v_new, o_new = generate_random_pattern(
+            #     model_=groove_transformer_vae,
+            #     voice_thresholds_=voice_thresholds,
+            #     voice_max_count_allowed_=voice_max_count_allowed,
+            #     means_dict=z_means_dict,
+            #     stds_dict=z_stds_dict,
+            #     style="funk"
+            # )
+
+            # ----------------------------------------------------------------------------------------------- #
+            # ----------------------------------------------------------------------------------------------- #
             # send to pd
             osc_messages_to_send = get_new_drum_osc_msgs((h_new, v_new, o_new))
             number_of_generations += 1

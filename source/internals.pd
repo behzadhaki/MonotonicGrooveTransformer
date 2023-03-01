@@ -2194,7 +2194,7 @@ metronome_as_midi_out_channel 0;
 #X connect 362 0 370 0;
 #X connect 364 0 368 0;
 #X connect 366 0 333 0;
-#X coords 0 -1 1 1 700 492 1 0 1503;
+#X coords 0 -1 1 1 700 492 1 0 0;
 #X restore 132 394 pd \$0-params;
 #X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
