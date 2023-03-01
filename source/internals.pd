@@ -1,4 +1,4 @@
-#N canvas 0 25 1440 823 12;
+#N canvas 70 209 1440 823 12;
 #X obj 101 101 cnv 15 798 798 empty empty empty 20 12 0 14 #e0e0e0
 #404040 0;
 #X text 793 -28 Todo: 1 per voice tres 2 per voice max count 3 scale
@@ -179,7 +179,7 @@ metronome_as_midi_out_channel 0;
 #X connect 81 0 45 0;
 #X connect 82 0 83 0;
 #X connect 83 0 40 0;
-#X coords 0 -1 1 1 300 70 1 180 480;
+#X coords 0 -1 1 1 300 70 1 180 80;
 #X restore 132 117 pd \$0-setting-panes;
 #X obj 128 46 loadbang;
 #X msg 129 64 1;
@@ -364,9 +364,9 @@ metronome_as_midi_out_channel 0;
 #X obj 136 103 tgl 10 0 empty empty empty 20 7 0 10 #e0c4fc #000000
 #000000 0 1;
 #X obj 163 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty ccnum -14 4 0 4
-#e0c4fc #000000 #000000 28 256;
+#e0c4fc #000000 #000000 1 256;
 #X obj 198 104 nbx 2 8 -1e+37 1e+37 0 1 empty empty Channel -18 4 0
-4 #e0c4fc #000000 #000000 1 256;
+4 #e0c4fc #000000 #000000 2 256;
 #X obj 193 46 unpack;
 #X floatatom 225 277 5 0 0 0 - - - 0;
 #X obj 62 258 res/midi_cc_block_endlessEncoder_or_potentiometerSlider
@@ -565,7 +565,7 @@ metronome_as_midi_out_channel 0;
 #X connect 38 0 2 1;
 #X coords 0 -1 1 1 700 80 1 0 0;
 #X restore 132 190 pd \$0-visualizer;
-#N canvas 196 -875 1244 823 \$0-params 0;
+#N canvas 186 64 1244 823 \$0-params 0;
 #X obj 1 502 cnv 15 698 490 empty empty empty 20 12 0 14 #e4e8e4 #404040
 0;
 #X obj 1 1 cnv 15 698 490 empty empty empty 20 12 0 14 #e4e8e4 #404040
@@ -1962,7 +1962,7 @@ metronome_as_midi_out_channel 0;
 0 14 #fcb874 #404040 0;
 #X obj 367 1523 cnv 15 300 150 empty empty Internal_Plucked_Synth 20
 12 0 14 #fce0c4 #404040 0;
-#X obj 71 1587 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 #fcfcfc
+#X obj 71 1587 vsl 15 70 0 5 0 0 empty empty Volume 0 -9 0 10 #fcfcfc
 #000000 #000000 0 0;
 #X obj 392 1585 vsl 15 70 0 3 0 0 empty empty Volume 0 -9 0 10 #fcfcfc
 #000000 #000000 0 0;
@@ -1995,76 +1995,20 @@ metronome_as_midi_out_channel 0;
 #X text 153 1907 8;
 #X text 208 1906 12;
 #X text 267 1906 16;
-#X msg -98 1523 1;
+#X msg 369 1496 1;
 #X obj -98 1503 loadbang;
-#X obj -96 1609 print info;
-#X text -478 1589 click to open file -->;
-#N canvas 1306 546 492 281 open 0;
-#X obj 70 61 openpanel;
-#X obj 70 31 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
-#000000;
-#X text 96 33 load a different soundfont;
-#X obj 70 215 outlet;
-#X text 215 78 If no extension is given \, it searches for both ".sf2"
-and ".sf3" extensions. This is the same for the argument., f 38;
-#X msg 89 86 symbol sf/Theremin;
-#X text 137 178 no symbol opens dialog window;
-#X msg 70 117 open \$1;
-#X msg 84 147 open sf/Waves.sf2;
-#X msg 102 179 open;
-#X obj 54 7 inlet;
-#X connect 0 0 7 0;
-#X connect 1 0 0 0;
-#X connect 5 0 7 0;
-#X connect 7 0 3 0;
-#X connect 8 0 3 0;
-#X connect 9 0 3 0;
-#X connect 10 0 1 0;
-#X restore -337 1557 pd open;
-#X text -428 1552 load --> soundfonts, f 10;
-#X obj -332 1766 dac~;
-#X obj -337 1530 r drumNote;
-#X obj -333 1647 *~;
 #X text -344 1501 Drum Soundfont;
-#X obj 945 1744 dac~;
-#X obj 942 1656 *~;
-#X obj 1182 1635 print info;
-#X text 800 1615 click to open file -->;
-#N canvas 1306 546 492 281 open 0;
-#X obj 70 61 openpanel;
-#X obj 70 31 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
-#000000;
-#X text 96 33 load a different soundfont;
-#X obj 70 215 outlet;
-#X text 215 78 If no extension is given \, it searches for both ".sf2"
-and ".sf3" extensions. This is the same for the argument., f 38;
-#X msg 89 86 symbol sf/Theremin;
-#X text 137 178 no symbol opens dialog window;
-#X msg 70 117 open \$1;
-#X msg 84 147 open sf/Waves.sf2;
-#X msg 102 179 open;
-#X obj 54 7 inlet;
-#X connect 0 0 7 0;
-#X connect 1 0 0 0;
-#X connect 5 0 7 0;
-#X connect 7 0 3 0;
-#X connect 8 0 3 0;
-#X connect 9 0 3 0;
-#X connect 10 0 1 0;
-#X restore 941 1583 pd open;
-#X text 850 1578 load --> soundfonts, f 10;
-#X obj 977 1431 notein;
-#X obj 985 1475 pack f f;
-#X floatatom 1054 1541 5 0 0 0 - - - 0;
-#X floatatom 1120 1517 5 0 0 0 - - - 0;
 #X obj 629 1577 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X text 553 1598 Load Soundfont;
 #X obj 295 1579 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
 #000000 #000000;
 #X text 211 1601 Load Soundfont;
-#X obj -337 1589 else/sfont~ res/soundfonts/DrumsKit.sf2;
-#X obj 941 1615 else/sfont~ res/soundfonts/rhodes.sf2;
+#X msg -22 1536 2.6;
+#X obj 15 1708 outlet;
+#X obj 83 1710 outlet;
+#X obj 479 1684 outlet;
+#X obj 547 1686 outlet;
 #X connect 2 0 6 0;
 #X connect 3 0 5 0;
 #X connect 4 0 6 0;
@@ -2226,8 +2170,8 @@ and ".sf3" extensions. This is the same for the argument., f 38;
 #X connect 329 1 12 0;
 #X connect 329 2 28 0;
 #X connect 329 3 328 0;
-#X connect 333 0 367 1;
-#X connect 334 0 370 1;
+#X connect 333 0 367 0;
+#X connect 334 0 369 0;
 #X connect 338 0 343 0;
 #X connect 341 0 342 0;
 #X connect 342 0 338 0;
@@ -2242,30 +2186,15 @@ and ".sf3" extensions. This is the same for the argument., f 38;
 #X connect 349 0 353 0;
 #X connect 350 0 347 0;
 #X connect 351 0 347 0;
-#X connect 359 0 333 0;
 #X connect 359 0 334 0;
 #X connect 359 0 336 0;
 #X connect 359 0 335 0;
 #X connect 360 0 359 0;
-#X connect 363 0 383 0;
-#X connect 366 0 383 0;
-#X connect 367 0 365 0;
-#X connect 367 0 365 1;
-#X connect 370 0 369 0;
-#X connect 370 0 369 1;
-#X connect 373 0 384 0;
-#X connect 375 0 376 0;
-#X connect 375 0 377 0;
-#X connect 375 1 376 1;
-#X connect 375 1 378 0;
-#X connect 376 0 384 0;
-#X connect 379 0 373 0;
-#X connect 381 0 363 0;
-#X connect 383 0 367 0;
-#X connect 383 2 361 0;
-#X connect 384 0 370 0;
-#X connect 384 2 371 0;
-#X coords 0 -1 1 1 700 492 1 0 0;
+#X connect 360 0 366 0;
+#X connect 362 0 370 0;
+#X connect 364 0 368 0;
+#X connect 366 0 333 0;
+#X coords 0 -1 1 1 700 492 1 0 1503;
 #X restore 132 394 pd \$0-params;
 #X obj 432 102 hradio 15 1 0 6 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
@@ -2492,19 +2421,8 @@ the performance;
 #X obj 860 67 s reset;
 #X obj 852 139 bng 30 250 50 0 reset empty RESET_PROGRAM -17 -10 0
 8 #fc0400 #000000 #000000;
-#X obj 851 325 bng 30 250 50 0 empty clear_groove_r Clear_Groove -17
--10 0 8 #fcc4c4 #000000 #000000;
-#X msg 925 477 \; v1r 0 \; v2r 0 \; v3r 0 \; v4r 0 \; v5r 0 \; v6r
-0 \; v7r 0 \; v8r 0 \; v9r 0 \; v10r 0 \; v11r 0 \; v12r 0 \; v13r
-0 \; v14r 0 \; v15r 0 \; v16r 0 \; v17r 0 \; v18r 0 \; v19r 0 \; v20r
-0 \; v21r 0 \; v22r 0 \; v23r 0 \; v24r 0 \; v25r 0 \; v26r 0 \; v27r
-0 \; v28r 0 \; v29r 0 \; v30r 0 \; v31r 0 \; v32r 0 \;;
-#X msg 1006 477 \; ut1r 0 \; ut2r 0 \; ut3r 0 \; ut4r 0 \; ut5r 0 \;
-ut6r 0 \; ut7r 0 \; ut8r 0 \; ut9r 0 \; ut10r 0 \; ut11r 0 \; ut12r
-0 \; ut13r 0 \; ut14r 0 \; ut15r 0 \; ut16r 0 \; ut17r 0 \; ut18r 0
-\; ut19r 0 \; ut20r 0 \; ut21r 0 \; ut22r 0 \; ut23r 0 \; ut24r 0 \;
-ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
-0 \; ut32r 0 \;;
+#X obj 851 325 bng 30 250 50 0 clear_groove_request_gui clear_groove_r
+Clear_Groove -17 -10 0 8 #fcc4c4 #000000 #000000;
 #X obj 845 359 cnv 2 45 8 empty empty Shift+D 4 4 0 9 #fc8000 #fcfcfc
 0;
 #X obj 1014 144 res/main;
@@ -2512,25 +2430,160 @@ ut25r 0 \; ut26r 0 \; ut27r 0 \; ut28r 0 \; ut29r 0 \; ut30r 0 \; ut31r
 #000000 #000000 0;
 #X obj 112 190 vradio 20 1 0 4 empty empty empty 0 -8 0 10 #fcfcfc
 #000000 #000000 0;
-#X msg 1013 393 \; onset_tracker const 0 \; onset_histogram const 0
-\;;
 #X msg 48 467 4;
+#X obj 390 979 print info;
+#X text -21 957 click to open file -->;
+#N canvas 1306 546 492 281 open 0;
+#X obj 70 61 openpanel;
+#X obj 70 31 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
+#000000;
+#X text 96 33 load a different soundfont;
+#X obj 70 215 outlet;
+#X text 215 78 If no extension is given \, it searches for both ".sf2"
+and ".sf3" extensions. This is the same for the argument., f 38;
+#X msg 89 86 symbol sf/Theremin;
+#X text 137 178 no symbol opens dialog window;
+#X msg 70 117 open \$1;
+#X msg 84 147 open sf/Waves.sf2;
+#X msg 102 179 open;
+#X obj 54 7 inlet;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 1 0;
+#X restore 120 932 pd open;
+#X text 29 927 load --> soundfonts, f 10;
+#X obj 120 905 r drumNote;
+#X obj 119 980 *~;
+#X obj 636 993 *~;
+#X obj 901 979 print info;
+#N canvas 1306 546 492 281 open 0;
+#X obj 70 61 openpanel;
+#X obj 70 31 bng 18 250 50 0 empty empty empty 17 7 0 10 #dcdcdc #000000
+#000000;
+#X text 96 33 load a different soundfont;
+#X obj 70 215 outlet;
+#X text 215 78 If no extension is given \, it searches for both ".sf2"
+and ".sf3" extensions. This is the same for the argument., f 38;
+#X msg 89 86 symbol sf/Theremin;
+#X text 137 178 no symbol opens dialog window;
+#X msg 70 117 open \$1;
+#X msg 84 147 open sf/Waves.sf2;
+#X msg 102 179 open;
+#X obj 54 7 inlet;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 5 0 7 0;
+#X connect 7 0 3 0;
+#X connect 8 0 3 0;
+#X connect 9 0 3 0;
+#X connect 10 0 1 0;
+#X restore 826 902 pd open;
+#X obj 661 903 notein, f 16;
+#X obj 661 932 pack f f;
+#X obj 227 1011 loadbang;
+#N canvas 448 497 907 600 compressor 0;
+#X obj 104 51 inlet~;
+#N canvas 667 241 314 331 set 0;
+#X obj 80 40 inlet;
+#X obj 102 206 s \$0-ratio;
+#X obj 134 185 s \$0-attack;
+#X obj 166 164 s \$0-release;
+#X obj 71 227 s \$0-thresh;
+#X obj 176 134 s \$0-gain;
+#X obj 78 78 route thresh ratio attack release gain, f 12;
+#X connect 0 0 6 0;
+#X connect 6 0 4 0;
+#X connect 6 1 1 0;
+#X connect 6 2 2 0;
+#X connect 6 3 3 0;
+#X connect 6 4 5 0;
+#X restore 178 82 pd set;
+#X obj 178 51 inlet;
+#X text 102 29 in;
+#X obj 207 571 outlet~;
+#X obj 104 491 *~;
+#X obj 122 400 min~ 1;
+#X obj 140 293 /~;
+#X obj 122 248 -~;
+#X obj 122 325 -~;
+#X obj 158 235 max 1;
+#X obj 156 169 r \$0-thresh;
+#X obj 158 209 r \$0-ratio;
+#X obj 207 530 *~;
+#X obj 225 471 r \$0-gain;
+#X obj 140 138 cyclone/average~ 512 rms;
+#X obj 122 363 cyclone/dbtoa~;
+#X obj 225 496 cyclone/dbtoa;
+#X obj 122 438 cyclone/rampsmooth~;
+#X obj 258 359 r \$0-release;
+#X obj 322 384 r \$0-attack;
+#X obj 322 410 * 44.1;
+#X obj 258 392 * 44.1;
+#X connect 0 0 5 0;
+#X connect 0 0 15 0;
+#X connect 2 0 1 0;
+#X connect 5 0 13 0;
+#X connect 6 0 18 0;
+#X connect 7 0 9 1;
+#X connect 8 0 7 0;
+#X connect 8 0 9 0;
+#X connect 9 0 16 0;
+#X connect 10 0 7 1;
+#X connect 11 0 8 0;
+#X connect 12 0 10 0;
+#X connect 13 0 4 0;
+#X connect 14 0 17 0;
+#X connect 15 0 8 1;
+#X connect 16 0 6 0;
+#X connect 17 0 13 1;
+#X connect 18 0 5 1;
+#X connect 19 0 22 0;
+#X connect 20 0 21 0;
+#X connect 21 0 18 2;
+#X connect 22 0 18 1;
+#X restore 120 1068 pd compressor;
+#X obj 120 1106 dac~;
+#X msg 227 1037 tresh -20 \, ratio 5 \, attack 10 \, release 10 \,
+gain 10, f 30;
+#X obj 120 957 else/sfont~ ./../soundfonts/DrumsKit.sf2;
+#X obj 660 959 else/sfont~ ./../soundfonts/rhodes.sf2;
 #X connect 3 0 4 0;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
 #X connect 8 0 13 0;
 #X connect 9 0 10 0;
-#X connect 9 0 29 0;
-#X connect 10 0 26 0;
-#X connect 10 0 27 0;
+#X connect 9 0 26 0;
+#X connect 10 0 24 0;
+#X connect 10 0 25 0;
+#X connect 13 0 32 1;
+#X connect 13 1 29 0;
+#X connect 13 2 33 1;
+#X connect 13 3 35 0;
 #X connect 14 0 17 0;
 #X connect 15 0 16 0;
 #X connect 16 0 14 0;
 #X connect 18 0 19 0;
-#X connect 21 0 22 0;
-#X connect 21 0 23 0;
-#X connect 21 0 28 0;
-#X connect 26 0 11 0;
-#X connect 27 0 12 0;
-#X connect 29 0 8 0;
+#X connect 24 0 11 0;
+#X connect 25 0 12 0;
+#X connect 26 0 8 0;
+#X connect 29 0 42 0;
+#X connect 31 0 42 0;
+#X connect 32 0 39 0;
+#X connect 33 0 39 0;
+#X connect 35 0 43 0;
+#X connect 36 0 37 0;
+#X connect 36 1 37 1;
+#X connect 37 0 43 0;
+#X connect 38 0 41 0;
+#X connect 39 0 40 0;
+#X connect 39 0 40 1;
+#X connect 41 0 39 1;
+#X connect 42 0 32 0;
+#X connect 42 2 27 0;
+#X connect 43 0 33 0;
+#X connect 43 2 34 0;
 #X coords 0 0 1 1 800 800 2 100 100;

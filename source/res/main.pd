@@ -1,28 +1,28 @@
-#N canvas 0 23 1440 823 12;
+#N canvas 152 149 1440 823 12;
 #X obj 25 137 cnv 15 600 120 empty empty TEMPO_(QPM)_&_Clock_Related_Stuff
-20 12 0 14 -261682 -4160 0;
-#X floatatom 70 205 5 0 0 0 - - -;
+20 12 0 14 #fce0c4 #0400fc 0;
+#X floatatom 70 205 5 0 0 0 - - - 0;
 #X obj 70 226 s playback_pos;
-#X obj 25 9 cnv 15 600 120 empty empty Initialize 20 12 0 14 -228856
--4160 0;
+#X obj 25 9 cnv 15 600 120 empty empty Initialize 20 12 0 14 #dcdcdc
+#0400fc 0;
 #X obj 26 260 cnv 15 600 300 empty empty Update_groove_when_a_velocity_is_received
-20 12 0 14 -204800 -4160 0;
-#X obj 755 223 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 -228856
--4160 0;
+20 12 0 14 #c4fcfc #0400fc 0;
+#X obj 755 223 cnv 15 600 120 empty empty SYNTHESIZER 20 12 0 14 #dcdcdc
+#0400fc 0;
 #X obj 754 96 cnv 15 600 120 empty empty Recording_Groove 20 12 0 14
--228856 -4160 0;
+#dcdcdc #0400fc 0;
 #X obj 756 347 cnv 15 300 120 empty empty OSC_Components 20 12 0 14
--228856 -4160 0;
+#dcdcdc #0400fc 0;
 #X obj 761 306 dac~;
 #X obj 754 34 cnv 15 600 50 empty empty Code_to_plot_and_playback 20
-12 0 14 -262130 -4160 0;
+12 0 14 #fcfcc4 #0400fc 0;
 #N canvas 0 23 888 639 metronome_midi_note_out 0;
 #X obj 67 170 pack f f;
 #X obj 60 120 t f f;
 #X obj 65 260 makenote 0 100;
 #X obj 72 326 noteout;
 #X obj 64 53 inlet;
-#X floatatom 323 106 5 0 0 0 - - -;
+#X floatatom 323 106 5 0 0 0 - - - 0;
 #X obj 329 177 pack f f;
 #X obj 322 127 t f f;
 #X obj 327 267 makenote 0 100;
@@ -89,15 +89,13 @@ keyboard (increase groove_volume on gui to hear the sound);
 #X text 165 205 are only sent via channel 16;
 #X obj 51 40 initialize_2;
 #X obj 755 470 cnv 15 300 120 empty empty MIDI_MAPPING_PRESET_SAVER_LOADER
-20 12 0 14 -228856 -4160 0;
+20 12 0 14 #dcdcdc #0400fc 0;
 #X obj 765 503 r save_midi_mapping;
 #X obj 832 523 r load_midi_mapping;
 #X obj 765 562 save_midi_mapping, f 39;
 #X obj 888 543 r forget_midi_mapping;
-#X floatatom 299 674 5 0 0 0 - - -;
-#X obj 305 586 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 297 638 expr exp(1);
+#X obj 737 380 cnv 15 20 20 empty empty empty 20 12 0 14 #ff0400 #404040
+0;
 #X connect 1 0 2 0;
 #X connect 11 0 10 1;
 #X connect 12 0 10 0;
@@ -107,6 +105,4 @@ keyboard (increase groove_volume on gui to hear the sound);
 #X connect 36 0 38 0;
 #X connect 37 0 38 1;
 #X connect 39 0 38 2;
-#X connect 41 0 42 0;
-#X connect 42 0 40 0;
 #X coords 0 823 1 822 800 800 0;
